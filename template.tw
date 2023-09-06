@@ -757,7 +757,7 @@ You ready?
 <<timed 16s>>
   <<audio "mapappear" "play">>
 <</timed>>
-<<timed 17s>>
+<<timed 16.2s>>
    <<replace "#map">>
     <img src="./assets/img/mapss.png">
    <</replace>>
