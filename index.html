@@ -555,10 +555,18 @@ setup.backThirty = () => {
 &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3&quot; &gt;&lt;/audio&gt;
 &lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
 
-&lt;div id=&quot;mount&quot;&gt;&lt;div class=&quot;duppy-img-container&quot;&gt;&lt;img src=&quot;./../assets/img/duppydetector.jpg&quot; alt=&quot;The Duppy Detector - an archaic oil lamp with a super radiance&quot; class=&quot;pulse&quot;/&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;timed 10s&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;div class=&quot;duppy-img-container appear&quot;&gt;&lt;img src=&quot;./../assets/img/duppydetector.jpg&quot; alt=&quot;The Duppy Detector - an archaic oil lamp with a super radiance&quot; id=&quot;detector&quot;/&gt;&lt;/div&gt;
+  &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;timed 2s&gt;&gt;
+    &lt;&lt;addclass &quot;#detector&quot; &quot;pulse&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 35s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
@@ -764,7 +772,7 @@ You ready?</tw-passagedata><tw-passagedata pid="19" name="SC1e" tags="nobr" posi
 
 &lt;&lt;timed 18s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I&#39;m on the grass&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;

@@ -527,10 +527,18 @@ setup.backThirty = () => {
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3" ></audio>
 <div id="audioText"></div></div>
 <main class="general">
+<div id="mount"></div>
 <div id="transcript"></div>
 <br/>
 
-<div id="mount"><div class="duppy-img-container"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" class="pulse"/></div></div>
+<<timed 10s>>
+   <<replace "#mount">>
+    <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
+  <</replace>>
+  <<timed 2s>>
+    <<addclass "#detector" "pulse">>
+    <</timed>>
+<</timed>>
 <<timed 35s>>
   <<replace "#mount">>
     <div class="menu-wrapper">
@@ -765,7 +773,7 @@ You ready?
 
 <<timed 18s>>
   <<replace "#mount">>
-        <div class="menu-wrapper">
+    <div class="menu-wrapper">
     <<button "I'm on the grass">><<goto $nextpass>><</button>> 
     </div>
    <</replace>>

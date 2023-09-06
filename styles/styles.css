@@ -96,6 +96,7 @@ body {
   color: var(--font-body-color);
   display: flex;
   flex-direction: column;
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.3, 0.7) 0s;
 }
 
 h1,
@@ -577,7 +578,7 @@ main.story > .mount > p {
 }
 
 .pulse {
-  animation: pulse-animation 2s infinite;
+  animation: pulse-animation 5s infinite;
 }
 
 @keyframes pulse-animation {
@@ -599,6 +600,7 @@ main.start {
 .duppy-img-container {
   max-width: 70%;
   margin: auto;
+  opacity: 0;
 }
 
 .duppy-img-container > img {
