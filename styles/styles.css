@@ -1,20 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Secular+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap");
-/* CONSTANTS  */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@300;400;500;900&display=swap");
 
+/* CONSTANTS  */
 :root {
-  --main-bg-color: black;
-  --accent-color-primary: orange;
-  --accent-color-secondary: grey;
-  --accent-color-shadow: rgb(73, 70, 70);
-  --color-yellow: #fea602;
-  --color-red: #ff0200;
-  --color-purple: #140246;
+  --main-bg-color: #080707;
+  --accent-color-primary: #b4970b;
+  --accent-color-secondary: #053724;
+  --accent-color-third: #b4242b;
+  --accent-color-shadow: #080707;
+
   --color-pink: #ff007c;
   --color-orange: #f75146;
-  --font-headings: "Poppins", sans-serif;
-  --font-body: "Open Sans", sans-serif;
+  --color-green: #1c5e45;
+  --color-darkgreen: #053724;
+  --color-mustard: #b4970b;
+  --color-red: #b4242b;
+  --background-image: "./../assets/img/textureLow.png";
+  background-size: contain;
+  --font-headings: "Anton", sans-serif;
+  --font-body: "Rubik", sans-serif;
+  --font-body-color: black;
   --padding: 1.5rem;
 }
 
@@ -33,20 +37,23 @@
 
 button,
 .inline-btn-wrapper > a {
-  background-color: transparent;
-  color: white;
-  border: white 1px solid;
+  background-color: var(--accent-color-primary);
+  background-image: url("./../assets/img/btn-bg.jpg");
+  background-size: contain;
+  color: black;
+  font-weight: 500;
+  border: black 2px solid;
   border-radius: 3px;
-  font-family: var(--font-headings);
+  font-family: var(--font-body);
   text-transform: uppercase;
   padding: 5px;
-  /* box-shadow: var(--accent-color-shadow) 4px 4px; */
+  box-shadow: var(--accent-color-shadow) 4px 4px;
 }
 
 button:hover {
-  background-color: var(--color-pink);
-  border: #fff 1px solid;
-  color: #fff;
+  background-color: var(--accent-color-third);
+  border: black 1px solid;
+  color: black;
 }
 
 button:focus,
@@ -60,7 +67,7 @@ a {
 }
 
 a:active {
-  background-color: var(--color-pink);
+  background-color: var(--accent-color-third);
 }
 
 a:hover {
@@ -79,10 +86,13 @@ a:hover {
 body {
   font-size: 1.6rem;
   font-family: var(--font-body);
+  font-weight: 500;
   overflow: scroll;
   background: var(--main-bg-color);
-
+  background-image: url("./../assets/img/textureLow.jpg");
+  background-size: contain;
   /* padding: 1.5rem */
+  color: var(--font-body-color);
   display: flex;
   flex-direction: column;
 }
@@ -93,6 +103,12 @@ h3,
 h4 {
   font-family: var(--font-headings);
   margin-block-end: 0;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.6rem;
 }
 
 header {
@@ -121,6 +137,10 @@ main {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+}
+
+main > #mount {
+  width: 100%;
 }
 
 /* inline button  */
@@ -219,7 +239,7 @@ textarea {
 /* MAP */
 .map {
   width: 100%;
-  height: 60vh;
+  /* height: 60vh; */
   border: 0;
   margin: auto;
 }
@@ -231,7 +251,7 @@ textarea {
 @media screen and (min-width: 450px) {
   .map {
     max-width: 60vw;
-    height: 50vh;
+    /* height: 50vh; */
     border: 0;
   }
 }
@@ -268,7 +288,11 @@ main.instructions > h2 {
 }
 
 main.instructions > #mount > p > .link-image > img,
-main.instructions > p > .link-image > img,
+main.instructions > p > .link-image > img {
+  width: 35px;
+  margin: 0 10px;
+}
+
 main.story > #mount > p > .link-image > img {
   width: 25px;
   margin: 0 10px;
@@ -293,11 +317,11 @@ main.story > #mount > p > .link-image > img {
 
 main.instructions > #mount > p,
 main.instructions > p {
-  background-color: var(--accent-color-secondary);
+  /* background-color: var(--accent-color-secondary); */
   padding: 6px 8px;
   border-radius: 10px;
-  border: black 0.5px solid;
-  color: black;
+  /* border: var(--font-body-color) 0.5px solid; */
+  color: var(--font-body-color);
   width: fit-content;
 }
 
@@ -306,9 +330,15 @@ main.instructions > p.amenities {
   padding: inherit;
   border-radius: inherit;
   border: inherit;
-  color: white;
+  color: var(--font-body-color);
   width: fit-content;
   text-align: right;
+}
+
+span.char-name {
+  font-weight: 600;
+  font-size: 2rem;
+  /* text-transform: uppercase; */
 }
 
 /* END  */
@@ -479,7 +509,7 @@ p.comment {
   padding: 6px 8px;
   border-radius: 10px;
   border: black 0.5px solid;
-  color: black;
+  color: var(--font-body-color);
   width: fit-content;
 }
 
@@ -492,6 +522,13 @@ main.story.captions {
   justify-content: center;
 }
 
+/* PLAY / PAUSE FOOTER  */
+
+#audioWrapper {
+  text-align: center;
+  padding: 2rem;
+}
+
 footer > .nav-wrapper.playpause-wrapper {
   width: 25px;
   display: flex;
@@ -500,12 +537,12 @@ footer > .nav-wrapper.playpause-wrapper {
 }
 
 #playpause.playhighlight {
-  background-color: var(--color-pink);
+  background-color: var(--accent-color-third);
 }
 
 main.story > #caption {
   z-index: 9999;
-  color: #ffff;
+  color: var(--font-body-color);
 
   padding: 0.5rem;
 }
@@ -549,4 +586,9 @@ main.story > .mount > p {
   100% {
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
   }
+}
+
+/* START  */
+main.start {
+  align-items: center;
 }

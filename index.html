@@ -98,59 +98,10 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://F9E39354-F641-4070-8B45-C337A3FDC8C9// --><tw-storydata name="Ends &amp; Tales" startnode="10" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C337A3FDC8C9" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://F9E39354-F641-4070-8B45-C337A3FDC8C9// --><tw-storydata name="Ends &amp; Tales" startnode="9" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C337A3FDC8C9" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url("styles/generics.css");
 @import url("styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
-
-// MAKE MAP FUNCTION
-
-setup.generateDirectionsMap = function (origin, destination, waypoints){
-const {originLat,originLong,originName} = origin;
-let waypointsString = "";
-if (waypoints) {
-waypointsString = `&waypoints=${waypoints}`
-}
-
-const iFrame = document.createElement("iframe")
-iFrame.classList.add("map")
-iFrame.setAttribute("loading", "lazy")
-iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyB7uJuBjDcK-tb0aJpTjaKA1ZNLWhEPN5M&center=${originLat},${originLong}&zoom=17&origin=${originName}&destination=${destination}${waypointsString}&mode=walking`)
-const mount = document.getElementById("mapMount")
-return iFrame
-
-}
-
-setup.generateDirectionsMapWP = function (origin, dest, wayp){
-const iFrame = document.createElement("iframe")
-iFrame.classList.add("map")
-iFrame.setAttribute("loading", "lazy")
-iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
-const mount = document.getElementById("mapMount")
-return iFrame
-}
-// <<set $map = setup.generateDirectionsMapWP([53.1, 1.48], [52.3, 1.50], "Blah St | Blah Blah St")>>
-
-
-setup.generateViewMap = function (origin, destination){
-const {originName, originLat,originLong} = origin;
-
-console.log("origin", origin)
-
-const iFrame = document.createElement("iframe")
-iFrame.classList.add("map")
-iFrame.setAttribute("loading", "lazy")
-iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/place?key=AIzaSyB7uJuBjDcK-tb0aJpTjaKA1ZNLWhEPN5M&center=${originLat},${originLong}&q=${originName}&zoom=17`)
-const mount = document.getElementById("mapMount")
-
-return iFrame
-}
-
-
-
 
 // TOUCHEVENTS 
 // taken from https://developer.mozilla.org/en-US/docs/Web/API/Touch_events  
@@ -241,16 +192,32 @@ function log(msg) {
 
 // document.addEventListener("DOMContentLoaded", startup);
 
-
+// AUDIO FUNCTIONS 
 setup.play = () => {
  const audio = document.getElementById("audio")
  audio.play();
+console.log("playing", audio)
   }
 
 setup.pause = () => {
  const audio = document.getElementById("audio")
  audio.pause();
+ console.log("pausing", audio)
   }
+
+setup.checkPlaying = () => {
+  console.log("checking if playing")
+   const audio = document.getElementById("audio");
+   if (audio && !audio.paused && audio.currentTime > 0 && !audio.ended) {
+      // Audio is currently playing
+      console.log(audio, "Audio is playing");
+      return true
+   } else {
+      // Audio is not playing
+      console.log(audio, "Audio is not playing");
+      return false
+   }
+}
 
 setup.showCap = () => {
     const track = document.getElementById("captrack")
@@ -366,11 +333,36 @@ setup.backThirty = () => {
   &lt;/div&gt;
   &lt;&lt;/if&gt;&gt;
   &lt;&lt;if $showAudio is true&gt;&gt;
-   &lt;div class=&quot;nav-wrapper&quot;&gt;
-    &lt;div class=&quot;nav-item&quot;&gt;
- &lt;&lt;link [img[assets/img/play.png]]&gt;&gt;&lt;&lt;replace &quot;#audio&quot;&gt;&gt;&lt;p&gt;[audio playing...]&lt;/p&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/link&gt;&gt;
-   &lt;/div&gt;
+  &lt;div class=&quot;nav-wrapper playpause-wrapper&quot;&gt;
+  &lt;div class=&quot;nav-item&quot; id=&quot;playpause&quot;&gt;
+       
+      &lt;&lt;link [img[assets/img/playpause.png]]&gt;&gt;
+        /* If audio is not playing  */
+        &lt;&lt;if $playToggle is false&gt;&gt;
+            /* Play audio  */
+          &lt;&lt;set $fn to setup.play()&gt;&gt;
+            /* Set playing variable to true  */
+          &lt;&lt;set $playToggle to true&gt;&gt;
+           /* Add the CSS highlight */
+          &lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+          &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;&lt;span&gt;[audio playing...]&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;elseif $playToggle is true&gt;&gt;
+         /* If audio is playing  */
+          &lt;&lt;set $fn to setup.pause()&gt;&gt;
+             /* pause audio  */
+          &lt;&lt;set $playToggle to false&gt;&gt;
+                 /* Set playing variable to false  */
+          &lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+           /* Remove the CSS highlight */
+           &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;&lt;span&gt;&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;else&gt;&gt;
+       &lt;&lt;set $fn to setup.pause()&gt;&gt;
+        &lt;&lt;set $playToggle to false&gt;&gt;
+      &lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+      &lt;&lt;/link&gt;&gt;
   &lt;/div&gt;
+&lt;/div&gt;
   &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $showReplay is true&gt;&gt;
      &lt;div class=&quot;nav-wrapper&quot;&gt;
@@ -379,7 +371,28 @@ setup.backThirty = () => {
     &lt;/div&gt;
     &lt;/div&gt;
     &lt;&lt;/if&gt;&gt;
-
+ &lt;&lt;if $showTranscriptIcon is true&gt;&gt;
+    &lt;div class=&quot;nav-wrapper&quot;&gt;
+      &lt;div class=&quot;nav-item&quot;&gt;
+      &lt;&lt;link [img[assets/img/transcript.png]]&gt;&gt;
+    &lt;&lt;if $transcript is false&gt;&gt;
+      &lt;&lt;set $transcript to true&gt;&gt;
+      &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
+        &lt;&lt;include $transcriptname&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;elseif $transcript is true&gt;&gt;
+    &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;set $transcript to false&gt;&gt;
+      &lt;&lt;else&gt;&gt;
+      &lt;&lt;set $transcript to false&gt;&gt;
+      &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+      &lt;&lt;/link&gt;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showForwards is true&gt;&gt;
     &lt;div class=&quot;nav-wrapper&quot; id=&quot;forIcon&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
@@ -387,7 +400,16 @@ setup.backThirty = () => {
     &lt;/div&gt;
   &lt;/div&gt;
      &lt;&lt;/if&gt;&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="5" name="footerback" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
+     
+&lt;/footer&gt;
+&lt;&lt;done&gt;&gt;
+  &lt;&lt;set $playToggle to setup.checkPlaying()&gt;&gt;
+  &lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;if $playToggle is true&gt;&gt;
+    &lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+    &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;&lt;span&gt;[audio playing...]&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="footerback" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
   &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
         [img[Back|assets/img/back.png][$prevpass]]
@@ -406,115 +428,21 @@ setup.backThirty = () => {
   &lt;/div&gt;
 
   
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="7" name="footerstory" tags="nobr" position="850,100" size="100,100">&lt;footer&gt;
-&lt;div class=&quot;nav-wrapper&quot;&gt;
-  &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;&lt;link &quot;-30s&quot;&gt;&gt;
-&lt;&lt;set $fn to setup.backThirty()&gt;&gt;
-  &lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;nav-wrapper playpause-wrapper&quot;&gt;
-  &lt;div class=&quot;nav-item&quot; id=&quot;playpause&quot;&gt;
-      &lt;&lt;link [img[assets/img/playpause.png]]&gt;&gt;
-        &lt;&lt;if $playToggle is false&gt;&gt;
-      &lt;&lt;set $fn to setup.play()&gt;&gt;
-      &lt;&lt;set $playToggle to true&gt;&gt;
-      &lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
-      &lt;&lt;else&gt;&gt;
-       &lt;&lt;set $fn to setup.pause()&gt;&gt;
-        &lt;&lt;set $playToggle to false&gt;&gt;
-      &lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-      &lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;nav-wrapper&quot;&gt;
-  &lt;div class=&quot;nav-item&quot;&gt;
-  &lt;&lt;link [img[assets/img/transcript.png]]&gt;&gt;
-&lt;&lt;if $transcript is false&gt;&gt;
-  &lt;&lt;set $transcript to true&gt;&gt;
-  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
-    &lt;&lt;include $transcriptname&gt;&gt;
-  &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;else&gt;&gt;
-  &lt;&lt;set $transcript to false&gt;&gt;
-  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
-  &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/if&gt;&gt;
-  &lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;nav-wrapper&quot;&gt;
-  &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;&lt;link &quot;+30s&quot;&gt;&gt;
-      &lt;&lt;set $fn to setup.addThirty()&gt;&gt;
-  &lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerstorywalk" tags="nobr" position="975,100" size="100,100">&lt;footer&gt;
-
-
-&lt;div class=&quot;nav-wrapper&quot;&gt;
-  &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;&lt;link &quot;-30s&quot;&gt;&gt;
-&lt;&lt;set $fn to setup.backThirty()&gt;&gt;
-  &lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;nav-wrapper playpause-wrapper&quot;&gt;
-  &lt;div class=&quot;nav-item&quot; id=&quot;playpause&quot;&gt;
-      &lt;&lt;link [img[assets/img/playpause.png]]&gt;&gt;
-        &lt;&lt;if $playToggle is false&gt;&gt;
-      &lt;&lt;set $fn to setup.play()&gt;&gt;
-      &lt;&lt;set $playToggle to true&gt;&gt;
-      &lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
-      &lt;&lt;else&gt;&gt;
-       &lt;&lt;set $fn to setup.pause()&gt;&gt;
-        &lt;&lt;set $playToggle to false&gt;&gt;
-      &lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-      &lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-
-&lt;div class=&quot;nav-wrapper&quot;&gt;
-  &lt;div class=&quot;nav-item&quot;&gt;
-  &lt;&lt;link [img[assets/img/transcript.png]]&gt;&gt;
-&lt;&lt;if $transcript is false&gt;&gt;
-  &lt;&lt;set $transcript to true&gt;&gt;
-  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
-    &lt;&lt;include $transcriptname&gt;&gt;
-  &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;else&gt;&gt;
-  &lt;&lt;set $transcript to false&gt;&gt;
-  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
-  &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/if&gt;&gt;
-  &lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;nav-wrapper&quot;&gt;
-  &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;&lt;link &quot;+30s&quot;&gt;&gt;
-      &lt;&lt;set $fn to setup.addThirty()&gt;&gt;
-  &lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footerMap" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="7" name="footermap" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
   &lt;div class=&quot;nav-wrapper&quot;&gt;
+    &lt;div class=&quot;nav-item&quot;&gt;
+        [img[Back|assets/img/back.png][$prevpass]]
+    &lt;/div&gt;
+  &lt;/div&gt;
 
+  &lt;div class=&quot;nav-wrapper&quot;&gt;
+   &lt;&lt;button $mapdest&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+  &lt;/div&gt;
+  
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerMap" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
+  &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
     &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
-        /* [img[Show Map|assets/img/map.png][toggleclass &quot;#map&quot; &quot;hide&quot;]] */
     &lt;/div&gt;&lt;/div&gt;
      &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
@@ -529,35 +457,39 @@ setup.backThirty = () => {
         &lt;&lt;button &quot;I&#39;ve arrived&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="10" name="beginning" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;beginning&quot;&gt;&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="start" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;start&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;start&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding&quot;&gt;&gt;
-&lt;&lt;set $openOrClosed to &quot;closed&quot;&gt;&gt;
-/* Menu Variables  */
+
+/* Footer Variables  */
 &lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $playToggle to false&gt;&gt;
 &lt;&lt;set $captionToggle to false&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to false&gt;&gt;
-
+/* ---- */
 &lt;&lt;set $showMap to false&gt;&gt;
 
 &lt;div class=&quot;comp-warning&quot;&gt;Best experienced on a phone&lt;/div&gt;
-&lt;main class=&quot;&quot; id=&quot;&quot;&gt;
+&lt;main class=&quot;start&quot; id=&quot;&quot;&gt;
+&lt;img src=&quot;./../assets/img/titleLow.png&quot;/&gt;
 
+&lt;span&gt;BY EDSON BURTON &amp; ST PAUL’S PEOPLE &lt;/span&gt;
 
+&lt;h2&gt;FOR THE PEOPLE &lt;/h2&gt;
+&lt;br/&gt;
     &lt;&lt;button &quot;Start&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="11" name="onboarding" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="10" name="onboarding" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;start&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;text&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1a&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
 &lt;&lt;set $showReplay to false&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
-
-
+&lt;&lt;set $showTranscriptIcon to false&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;h2&gt;Onboarding&lt;/h2&gt;
@@ -565,86 +497,645 @@ setup.backThirty = () => {
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;p&gt;This icon takes you to a map &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/p&gt;
+    &lt;p&gt;This icon takes you to a map &lt;&lt;link [img[assets/img/map-b.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/p&gt;
   &lt;&lt;/replace&gt;&gt;
 
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt;
    &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;This arrow takes you back[img[Back|assets/img/back.png][$prevpass]]&lt;/p&gt;
+&lt;p&gt;This arrow takes you back[img[Back|assets/img/back-b.png][$prevpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 4s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;This arrow skips you forward [img[Forward|assets/img/for.png][$nextpass]]&lt;/p&gt;
+&lt;p&gt;This arrow skips you forward [img[Forward|assets/img/forw-b.png][$nextpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
     
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s&gt;&gt;
 &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;You can replay with this icon   [img[Replay|assets/img/replay.png][$passage]]&lt;/p&gt;
+&lt;p&gt;You can replay with this icon   [img[Replay|assets/img/replay-b.png][$passage]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 8s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;To read a transcript of the audio press[img[Forward|assets/img/transcript.png][$nextpass]]&lt;/p&gt;
+&lt;p&gt;To read a transcript of the audio press[img[Forward|assets/img/trans-b.png][$nextpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 
 &lt;&lt;/timed&gt;&gt;
 
  &lt;&lt;timed 10s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+    &lt;p&gt;Buttons like this will move you along &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="text" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;text&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;duppyDetector&quot;&gt;&gt;
-&lt;&lt;set $showMap to true&gt;&gt;
-&lt;&lt;set $showAudio to false&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="SC1a" tags="nobr" position="100,225" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;onboarding&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1a&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1b&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
 
 
-&lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;comp-warning&quot;&gt;Best to experience on a phone&lt;/div&gt;
-&lt;main class=&quot;instructions&quot;&gt;
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1atranscript&quot;&gt;&gt;
+/* --- */
 
-&lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3&quot; &gt;&lt;/audio&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;Text text&lt;/p&gt;
 
-&lt;p&gt;Text text&lt;/p&gt;
-
-&lt;p&gt;Text text&lt;/p&gt;
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+&lt;&lt;timed 35s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;div class=&quot;menu-wrapper&quot;&gt;
+     &lt;&lt;button &quot;I can hear you&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
  
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="duppyDetector" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;text&quot;&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="SC1atranscript" tags="" position="225,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+
+You, we are heading into an exciting adventure but before we begin, let me just check that you can hear me loud and clear, if not turn up the volume on your phone will ya, done? 
+
+If you can hear me then you are ready to start.</tw-passagedata><tw-passagedata pid="13" name="SC1b" tags="nobr" position="350,225" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1a&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1b&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1c&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1btranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 45s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;&lt;button &quot;Let&#39;s do this&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="SC1btranscript" tags="" position="475,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+
+I’m the District Duppy Hunter Controller. 
+
+What is a Duppy? A Duppy in Ingland you would say ghost, but we from Caribbean know them as spirit. 
+
+There are different types – resting, trapped but the ones we hunt are the walking duppy. 
+
+These restless ras-cals cross over and possess humans in order to bring choas to the world. 
+
+A walking duppy has been detected in this area. Now soon I will match you with a Duppy Hunter and your job willl be to support them in finding the duppy. 
+
+Are you ready to help us find the duppy? 
+
+If so look at your phone and let me know and push the button to get going.</tw-passagedata><tw-passagedata pid="15" name="SC1c" tags="nobr" position="600,225" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1b&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1c&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1d&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1ctranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 37s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;div class=&quot;menu-wrapper&quot;&gt;
+     &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="SC1ctranscript" tags="" position="725,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+
+Good. 
+
+Now lemme mek sure you prepared. Phone charged? Water, fish food and salt inna ya hand? Walking shoes?  This isn’t the time for stilettos – you might have to run from the duppy. 
+
+From time to time you might have to look at your phone to inform me or the Hunter, so if there is a sound or mi gone quite then check you phone and let me know you alright. 
+
+There might be some choices you have to make so when I ask you to, take out your phone and choose the best option so we don’t lose our way.</tw-passagedata><tw-passagedata pid="17" name="SC1d" tags="nobr" position="850,225" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1c&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1d&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1e&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1dtranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 69s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Let&#39;s do this&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="SC1dtranscript" tags="" position="975,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+
+Alright I need to make sure you are mentally and physically ready to Duppy Hunt. 
+
+First the physical. 
+
+Put your arms out in front of you and on a count of three I want you to inhale push your elbows back, clench your hands into a fist and then punch forward. Ready. 1,2,3. Do that three times. Good.  
+
+Now for the mental:  
+
+Say out loud:  
+
+I am a duppy hunter. 
+
+Louder I am a duppy hunter 
+
+Louder I am a duppy hunter. 
+
+Good – you can’t be timid. Now I’ve matched you with one of our finest duppy hunters. You will be her eyes, ears, hands, and yes that means you will conquer the duppy.  
+
+You ready?</tw-passagedata><tw-passagedata pid="19" name="SC1e" tags="nobr" position="1100,225" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1d&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1e&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1f&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1etranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 5s&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+    &lt;img src=&quot;./assets/img/mapss.png&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+  
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 15s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I&#39;m on the grass&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="SC1etranscript" tags="" position="1225,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+
+Where is it? Where’s the Duppy?  
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+
+It might be in the garden. Walk straight ahead, open the gate to the garden walk down the path stop and stand on the grass.</tw-passagedata><tw-passagedata pid="21" name="SC1f" tags="nobr" position="100,350" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1e&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1f&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1g&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1ftranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 35s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+     &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I&#39;m at the corner&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="SC1ftranscript" tags="" position="225,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+
+Alright controller, I’ve got this now.  
+
+Can you see anyone? Anything strange. Take your time look, in every corner. 
+
+Scan the trees – you never know some duppy can climb. Behind you! 
+
+Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner – the far corner - to the right at the back of the garden? Take, a look – be careful.</tw-passagedata><tw-passagedata pid="23" name="SC1g" tags="nobr" position="350,350" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1f&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1g&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1h&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1gtranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 29s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;All clear. Let’s go.&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="SC1gtranscript" tags="" position="475,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+
+Have the salt ready. Throw the salt on the duppy if you find it. 	 
+
+Friend, you going to have be brave. I don’t want the duppy detecting my approach so I will need to stay quiet but don’t worry I’m still here and as long as I’m here it can’t possess you. 
+
+Look around to see if you can see it. If you don&#39;t find anything let me know.</tw-passagedata><tw-passagedata pid="25" name="SC1h" tags="nobr" position="600,350" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1g&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1h&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1i&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1htranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 17s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;All clear. Let’s go.&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="SC1htranscript" tags="" position="725,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+
+Oh I should have known. A low signal just means at - peace-duppy. You can’t see them their on the other side. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+
+Turn around and look behind you at the Church. Look at the two towers.</tw-passagedata><tw-passagedata pid="27" name="SC1i" tags="nobr" position="850,350" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1h&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1i&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1j&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1itranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3&quot;&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/audio&gt;
+&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 17s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="SC1itranscript" tags="" position="975,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Trinity Hall. Trinity Centre. I knew it looked familiar. The Beast Station the huge red brick station. Beast means police.This is where I first saw them.  I was playing outside among the graves - back then this garden was a graveyard- It was Sunday, 77 or 78, Dad and his friends were inside converting the Church into a community centre.  
+
+I saw them, some sitting, some rocking, some walking back and forth. Couples, friends, together 		and alone.  
+
+Fine black lace, top hats, cloth caps and waistcoats. Duppy elders who came back to listen to the echo of a hymn.  
+
+//All things bright and beautiful.  
+All creatures great and small 
+All things wise and wonderful,  
+the Lord God made them all.//
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+One of the last songs sung here before it closed in 76. 
+
+I was so scared but Mumma let me into a secret. I was a obeah woman from a long line of obeah woman born with the power to-  
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+to see and conquer duppies.  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+I was going to say that. Controller why are you still here? 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+(Sucks teeth). Cause your rusty.  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Not as much as you. You so rusty you spirit smell like iron. I’ve got this. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+I’ll be making sure ‘yu have it.’ It’s been a while since you did a hunt after-all.  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Sorry friend, can I call you friend? Sorry for the arguments – the Controller is my mother. She’s got issues.  
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Facety.</tw-passagedata><tw-passagedata pid="29" name="SC1j" tags="nobr" position="1100,350" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1i&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1j&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC1k&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1jtranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3&quot;&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/audio&gt;
+&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+
+/* &lt;&lt;timed 2s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+    &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;The stone tower&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+     &lt;&lt;button &quot;The junkyard castle&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+      &lt;&lt;button &quot;In the lodge&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt; */
+
+
+&lt;&lt;timed 69s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Next.&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="SC1jtranscript" tags="" position="1225,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+Ha why they send you?  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Who’s that? 
+
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+The one you looking for. You and the Controller too slow. I’m over by Newfoundland Road before the roundabout talking to a good shepherd, right outside the home of a saint. 
+
+I’m either by  
+a) The stone tower overlooking the green , 
+b) The junkyard castle ruled by pickney or 
+c) In the lodge about to start a meeting 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+You wretch.  
+
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+It’s too early for insults I haven’t got him yet. 
+
+This shepherd trusted by all the community,   
+
+From the youngest to the eldest and in-between. 
+
+I going to make them mine and then I can change anytime. 
+
+And no Duppy Hunter can catch me.  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Newfoundland Road? Before the roundabout. I know where that it is.</tw-passagedata><tw-passagedata pid="31" name="SC1k" tags="nobr" position="100,475" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1j&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC1k&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC1ktranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3&quot;&gt;
+&lt;div id=&quot;audioText&quot;&gt;&lt;/div&gt;&lt;/audio&gt;
+&lt;/div&gt;
+
+&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 48s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I’m walking down trinity road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="SC1ktranscript" tags="" position="225,475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;	
+Josie, Controller will direct. Please. You can’t see properly from a phone and you rusty. 
+
+Walk through the Trinity Centre entrance and turn into Trinity Road, it’ll be on your right. Get a move on.  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+Friend. We have to catch this duppy. St Paul’s means everything to me. It was one of the six wards I watched over. It’s where I was born and raised until I retired. But I had to answer the Controller’s call. I can’t have a duppy walking through my St Paul’s.  
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+When you’ve exited Trinity and turned right – let me know you reached and start walking 		down the road.</tw-passagedata><tw-passagedata pid="33" name="duppyDetector" tags="nobr" position="350,475" size="100,100">&lt;&lt;set $prevpass to &quot;text&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;duppyDetector&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;unscramble&quot;&gt;&gt;
+/* &lt;&lt;set $nextpass to &quot;unscramble&quot;&gt;&gt; */
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
 
 
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
 /* TODO CREATE SUPPY DETECTOR  */
+&lt;main&gt;
 &lt;p&gt;Duppy Detector&lt;/p&gt;
-The Duppy Detector appears with an icon of an archaic oil lamp  and is titled on screen. The icon is an oil lamp with a super radiance
+&lt;p&gt;The Duppy Detector appears with an icon of an archaic oil lamp  and is titled on screen. The icon is an oil lamp with a super radiance&lt;/p&gt;
 
-I&#39;m imagining that it&#39;s a button that the player presses which triggers a sound file and visual equivalent for hard-of-hearing audiences; it might be nice if it only played while the button were pressed and stopped/cued another file when released - which is new functionality I&#39;d love to have in the code bank - but also it could be simpler given where we are...
+&lt;p&gt;I&#39;m imagining that it&#39;s a button that the player presses which triggers a sound file and visual equivalent for hard-of-hearing audiences; it might be nice if it only played while the button were pressed and stopped/cued another file when released - which is new functionality I&#39;d love to have in the code bank - but also it could be simpler given where we are...&lt;/p&gt;
 
-The duppy detector beep/buzz on high volume when a duppy is near
-Later it buzzes furiously
+&lt;p&gt;The duppy detector beep/buzz on high volume when a duppy is near&lt;/p&gt;
+&lt;p&gt;Later it buzzes furiously&lt;/p&gt;
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
  
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="unscramble" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;duppyDetector&quot;&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;include &quot;footer&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="unscramble" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;duppyDetector&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;unscramble&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;longaudio&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -652,6 +1143,7 @@ Later it buzzes furiously
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
 
 /* TODO CREATE UNSCRAMBLE GAME  */
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
@@ -664,14 +1156,15 @@ ETNUHYPPUDAMAI
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
  
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="longaudio" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;text&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="longaudio" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;text&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;longaudio&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $transcript to false&gt;&gt;
-&lt;&lt;set $playToggle to false&gt;&gt;
+&lt;&lt;set $playtoggle to false&gt;&gt;
 &lt;&lt;set $captionToggle to false&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $sendOn to false&gt;&gt;
 &lt;&lt;set $transcriptname to  &quot;transcript&quot;&gt;&gt;
@@ -708,9 +1201,9 @@ Long audio (not sure if we need)
 
 
 
-&lt;&lt;include &quot;footerstory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="transcript" tags="" position="725,225" size="100,100">&lt;h2&gt;Transcript Example&lt;/h2&gt;
+&lt;&lt;include &quot;footerstory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="transcript" tags="" position="725,475" size="100,100">&lt;h2&gt;Transcript Example&lt;/h2&gt;
 
-This is a transcript example</tw-passagedata><tw-passagedata pid="17" name="end" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;longaudio&quot;&gt;&gt;
+This is a transcript example</tw-passagedata><tw-passagedata pid="37" name="end" tags="nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;SC1k&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -718,6 +1211,8 @@ This is a transcript example</tw-passagedata><tw-passagedata pid="17" name="end"
 &lt;&lt;set $showReplay to false&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showForwards to false&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to false&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 
 
 &lt;main class=&quot;end&quot;&gt;
