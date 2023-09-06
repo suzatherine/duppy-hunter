@@ -170,7 +170,8 @@ setup.backThirty = () => {
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-/* <<cacheaudio "57" "assets/audio/57v2.mp3">> */
+<<cacheaudio "mapappear" "assets/audio/DuppyHunter_FX_Generic_MapAppear.mp3">>
+<<cacheaudio "mapdisappear" "assets/audio/DuppyHunter_FX_Generic_MapDisappear.mp3">>
 
 <<waitforaudio>>
 
@@ -528,9 +529,8 @@ setup.backThirty = () => {
 <main class="general">
 <div id="transcript"></div>
 <br/>
-<div id="mount"></div>
 
-
+<div id="mount"><div class="duppy-img-container"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" class="pulse"/></div></div>
 <<timed 35s>>
   <<replace "#mount">>
     <div class="menu-wrapper">
@@ -754,14 +754,16 @@ You ready?
 <br/>
 <div id="mount"></div>
 
-<<timed 5s>>
-  <<replace "#map">>
+<<timed 16s>>
+  <<audio "mapappear" "play">>
+<</timed>>
+<<timed 17s>>
+   <<replace "#map">>
     <img src="./assets/img/mapss.png">
    <</replace>>
-  
-<</timed>>
+  <</timed>>
 
-<<timed 15s>>
+<<timed 18s>>
   <<replace "#mount">>
         <div class="menu-wrapper">
     <<button "I'm on the grass">><<goto $nextpass>><</button>> 
