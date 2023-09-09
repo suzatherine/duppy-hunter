@@ -154,17 +154,17 @@ setup.hideCap = () => {
      document.getElementById("caption").classList.add("hide")
   }
 
-setup.addThirty = () => {
+setup.addFive = () => {
   const audio = document.getElementById("audio")
   const timeHolder = audio.currentTime;
-  audio.currentTime = timeHolder +30;  
+  audio.currentTime = timeHolder +5;  
   }
 
 
-setup.backThirty = () => {
+setup.backFive = () => {
   const audio = document.getElementById("audio");
   const timeHolder = audio.currentTime;
-  audio.currentTime = timeHolder -30;
+  audio.currentTime = timeHolder -5;
   }
 
 
@@ -176,58 +176,11 @@ setup.backThirty = () => {
 <<waitforaudio>>
 
 
-:: header [nobr]{"position":"100,225","size":"100,100"}
-<header class="standard">
-<div class="header-item"></div>
-<div class="header-item">
-  <h1>$title</h1>
-  <h3 class="subtitle">$location</h3>
-
-<div class="multiple-icon-wrapper">
-<<if $bathroom is true>>
- <div class="multiple-icon-item">
-      <img src="assets/img/bathroom.png" >
-
-    </div>
-    <</if>>
-    <<if $wifi is true>>
-      <div class="multiple-icon-item">
-      <img src="assets/img/wifi.png" >
-
-    </div>
-     <</if>>
-    <<if $food is true>>
-      <div class="multiple-icon-item">
-      <img src="assets/img/food.png" >
-
-    </div>
-     <</if>>
-    <<if $charge is true>>
-      <div class="multiple-icon-item">
-      <img src="assets/img/charge.png" >
-
-    </div>
-     <</if>>
-    <<if $stepfree is true>>
-      <div class="multiple-icon-item">
-      <img src="assets/img/stepfree.png" >
-
-    </div>
-     <</if>>
-    <<if $caution is true>>
-     
-      <div class="multiple-icon-item">
-      <img src="assets/img/caution.png" >
-
-    </div>
-     <</if>>
-</div>
-</div >
-</header>
 
 
 
-:: headerstory [nobr]
+
+:: header [nobr]
 
 <header class="story">
 <<if $showBackwards is true>>
@@ -238,7 +191,7 @@ setup.backThirty = () => {
   </div>
   <</if>>
 
-<div id="headerinstmount"></div>
+<div id="audioText"></div>
 
 <<if $showForwards is true>>
  
@@ -256,10 +209,12 @@ setup.backThirty = () => {
 
 :: footer [nobr]{"position":"100,375","size":"100,100"}
 <footer>
-<<if $showBackwards is true>>
+<<if $showAudio is true>>
   <div class="nav-wrapper">
-    <div class="nav-item">
-        [img[Back|assets/img/back.png][$prevpass]]
+    <div class="nav-item controls">
+      <<link "-5s">>
+  <<set $fn to setup.backFive()>>
+    <</link>>
     </div>
   </div>
   <</if>>
@@ -334,21 +289,25 @@ setup.backThirty = () => {
       </div>
     </div>
 <</if>>
-<<if $showForwards is true>>
-    <div class="nav-wrapper" id="forIcon">
-    <div class="nav-item">
-         [img[Forward|assets/img/for.png][$nextpass]]
-    </div>
+<<if $showAudio is true>>
+  <div class="nav-wrapper">
+  <div class="nav-item controls">
+    <<link "+5s">>
+      <<set $fn to setup.addFive()>>
+  <</link>>
   </div>
+</div>
      <</if>>
      
 </footer>
 <<done>>
-  <<set $playToggle to setup.checkPlaying()>>
   <<timed 0.1s>>
+  <<set $playToggle to setup.checkPlaying()>>
     <<if $playToggle is true>>
-    <<addclass "#playpause" "playhighlight">><</if>>
-    <<replace "#audioText">><span>[audio playing...]</span><</replace>>
+    <<addclass "#playpause" "playhighlight">>
+    <<replace "#audioText">>
+    <span>[audio playing...]</span><</replace>>
+    <</if>>
   <</timed>>
 <</done>>
 
@@ -376,6 +335,22 @@ setup.backThirty = () => {
   </div>
 
   
+</footer>
+
+:: footersimple [nobr]{"position":"100,375","size":"100,100"}
+<footer>
+
+ <div class="nav-wrapper">
+    <div class="nav-item">
+        [img[Back|assets/img/back.png][$nextpass]]
+    </div>
+  </div>
+  <div class="nav-wrapper">
+    <div class="nav-item">
+        [img[Back|assets/img/for.png][$nextpass]]
+    </div>
+  </div>
+
 </footer>
 
 :: footermap [nobr]{"position":"100,375","size":"100,100"}
@@ -443,6 +418,8 @@ setup.backThirty = () => {
 <h2>FOR THE PEOPLE </h2>
 <br/>
     <<button "Start">><<goto $nextpass>><</button>>
+
+  
 <div></div>
 </main>
 
@@ -450,7 +427,7 @@ setup.backThirty = () => {
 :: onboarding [nobr]
 <<set $prevpass to "start">>
 <<set $passage to "onboarding">>
-<<set $nextpass to "SC1a">>
+<<set $nextpass to "SC1FX0">>
 <<set $showMap to false>>
 <<set $showAudio to false>>
 <<set $showReplay to false>>
@@ -499,15 +476,16 @@ setup.backThirty = () => {
   <</append>>
 <</timed>>
 </main>
-<<include "footer">>
+<<include "footerfor">>
 
 
-:: SC1a [nobr]
+
+:: SC1FX0 [nobr]
 
 /* Navigation options */
 <<set $prevpass to "onboarding">>
-<<set $passage to "SC1a">>
-<<set $nextpass to "SC1b">>
+<<set $passage to "SC1FX0">>
+<<set $nextpass to "SC1FX1">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -520,20 +498,29 @@ setup.backThirty = () => {
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1atranscript">>
+<<set $transcriptname to "SC1FX0transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3" ></audio>
-<div id="audioText"></div></div>
-<main class="general">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3" ></audio></div>
+
+<<include "header">><main class="general">
 <div id="mount"></div>
 <div id="transcript"></div>
 <br/>
 
-<<timed 10s>>
+<<timed 1s>>
+   <<replace "#mount">>
+    <p>A ghost or restless spirit is known as a 'Duppy' in Jamaica, or a Jumbie in many smaller Caribbean islands.</p>
+    <p> Traditionally, a good duppy is usually a deceased family member or friend who 'dreams you' – meaning they appear in your dreams and give you advice or information.</p>
+  <</replace>>
+ 
+<</timed>>
+
+<<timed 11s>>
    <<replace "#mount">>
     <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
+    <br/>
   <</replace>>
   <<timed 2s>>
     <<addclass "#detector" "pulse">>
@@ -548,22 +535,22 @@ setup.backThirty = () => {
 <</timed>>
  
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
 
-:: SC1atranscript 
+:: SC1FX0transcript 
 <span class="char-name">MummaD:</span>
 
 You, we are heading into an exciting adventure but before we begin, let me just check that you can hear me loud and clear, if not turn up the volume on your phone will ya, done? 
 
 If you can hear me then you are ready to start.  
 
-:: SC1b [nobr]
+:: SC1FX1 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1a">>
-<<set $passage to "SC1b">>
-<<set $nextpass to "SC1c">>
+<<set $prevpass to "SC1FX0">>
+<<set $passage to "SC1FX1">>
+<<set $nextpass to "SC1FX2">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -576,13 +563,13 @@ If you can hear me then you are ready to start.
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1btranscript">>
+<<set $transcriptname to "SC1FX1transcript">>
 /* --- */
 
 <div id="audioWrapper"><audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3"></audio>
-<div id="audioText"></div></div>
+</div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -594,9 +581,9 @@ If you can hear me then you are ready to start.
 <</timed>>
 
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
-:: SC1btranscript 
+:: SC1FX1transcript 
 <span class="char-name">MummaD:</span>
 
 I’m the District Duppy Hunter Controller. 
@@ -613,12 +600,12 @@ Are you ready to help us find the duppy?
 
 If so look at your phone and let me know and push the button to get going. 
 
-:: SC1c [nobr]
+:: SC1FX2 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1b">>
-<<set $passage to "SC1c">>
-<<set $nextpass to "SC1d">>
+<<set $prevpass to "SC1FX1">>
+<<set $passage to "SC1FX2">>
+<<set $nextpass to "SC1FX3">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -631,15 +618,15 @@ If so look at your phone and let me know and push the button to get going.
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1ctranscript">>
+<<set $transcriptname to "SC1FX2transcript">>
 /* --- */
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3"></audio>
-<div id="audioText"></div>
+
 </div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -653,9 +640,9 @@ If so look at your phone and let me know and push the button to get going.
 <</timed>>
 
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
-:: SC1ctranscript 
+:: SC1FX2transcript 
 <span class="char-name">MummaD:</span>
 
 Good. 
@@ -666,12 +653,12 @@ From time to time you might have to look at your phone to inform me or the Hunte
 
 There might be some choices you have to make so when I ask you to, take out your phone and choose the best option so we don’t lose our way.  
 
-:: SC1d [nobr]
+:: SC1FX3 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1c">>
-<<set $passage to "SC1d">>
-<<set $nextpass to "SC1e">>
+<<set $prevpass to "SC1FX2">>
+<<set $passage to "SC1FX3">>
+<<set $nextpass to "SC1FX4">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -684,15 +671,15 @@ There might be some choices you have to make so when I ask you to, take out your
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1dtranscript">>
+<<set $transcriptname to "SC1FX3transcript">>
 /* --- */
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3"></audio>
-<div id="audioText"></div>
+
 </div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -706,9 +693,9 @@ There might be some choices you have to make so when I ask you to, take out your
 <</timed>>
 
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
-:: SC1dtranscript 
+:: SC1FX3transcript 
 <span class="char-name">MummaD:</span>
 
 Alright I need to make sure you are mentally and physically ready to Duppy Hunt. 
@@ -731,12 +718,12 @@ Good – you can’t be timid. Now I’ve matched you with one of our finest dup
 
 You ready? 
 
-:: SC1e [nobr]
+:: SC1FX4 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1d">>
-<<set $passage to "SC1e">>
-<<set $nextpass to "SC1f">>
+<<set $prevpass to "SC1FX3">>
+<<set $passage to "SC1FX4">>
+<<set $nextpass to "SC1FX6">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -749,14 +736,14 @@ You ready?
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1etranscript">>
+<<set $transcriptname to "SC1FX4transcript">>
 /* --- */
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3"></audio>
-<div id="audioText"></div></div>
+</div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="map" class="map"></div>
 <div id="transcript"></div>
 <br/>
@@ -781,10 +768,10 @@ You ready?
 
 </main>
 <<timed 0.1s>>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 <</timed>>
 
-:: SC1etranscript 
+:: SC1FX4transcript 
 <span class="char-name">Josie:</span>
 
 Where is it? Where’s the Duppy?  
@@ -793,12 +780,12 @@ Where is it? Where’s the Duppy?  
 
 It might be in the garden. Walk straight ahead, open the gate to the garden walk down the path stop and stand on the grass.  
 
-:: SC1f [nobr]
+:: SC1FX6 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1e">>
-<<set $passage to "SC1f">>
-<<set $nextpass to "SC1g">>
+<<set $prevpass to "SC1FX4">>
+<<set $passage to "SC1FX6">>
+<<set $nextpass to "SC1FX7">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -811,14 +798,14 @@ It might be in the garden. Walk straight ahead, open the gate to the garden walk
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1ftranscript">>
+<<set $transcriptname to "SC1FX6transcript">>
 /* --- */
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3"></audio>
-<div id="audioText"></div></div>
+</div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -832,9 +819,9 @@ It might be in the garden. Walk straight ahead, open the gate to the garden walk
 <</timed>>
 
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
-:: SC1ftranscript 
+:: SC1FX6transcript 
 <span class="char-name">Josie:</span>
 
 Alright controller, I’ve got this now.  
@@ -846,12 +833,12 @@ Scan the trees – you never know some duppy can climb. Behind you!
 Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner – the far corner - to the right at the back of the garden? Take, a look – be careful.  
 
 
-:: SC1g [nobr]
+:: SC1FX7 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1f">>
-<<set $passage to "SC1g">>
-<<set $nextpass to "SC1h">>
+<<set $prevpass to "SC1FX6">>
+<<set $passage to "SC1FX7">>
+<<set $nextpass to "SC1FX8">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -864,14 +851,14 @@ Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner �
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1gtranscript">>
+<<set $transcriptname to "SC1FX7transcript">>
 /* --- */
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3"></audio>
-<div id="audioText"></div></div>
+</div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -885,9 +872,9 @@ Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner �
 <</timed>>
 
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
-:: SC1gtranscript 
+:: SC1FX7transcript 
 <span class="char-name">Josie:</span>
 
 Have the salt ready. Throw the salt on the duppy if you find it. 	 
@@ -897,12 +884,12 @@ Friend, you going to have be brave. I don’t want the duppy detecting my approa
 Look around to see if you can see it. If you don't find anything let me know.  
 
 
-:: SC1h [nobr]
+:: SC1FX8 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1g">>
-<<set $passage to "SC1h">>
-<<set $nextpass to "SC1i">>
+<<set $prevpass to "SC1FX7">>
+<<set $passage to "SC1FX8">>
+<<set $nextpass to "SC1FX9">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -915,14 +902,14 @@ Look around to see if you can see it. If you don't find anything let me know.
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1htranscript">>
+<<set $transcriptname to "SC1FX8transcript">>
 /* --- */
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3"></audio>
-<div id="audioText"></div></div>
+</div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -936,9 +923,9 @@ Look around to see if you can see it. If you don't find anything let me know.
 <</timed>>
 
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
-:: SC1htranscript 
+:: SC1FX8transcript 
 <span class="char-name">Josie:</span>
 
 Oh I should have known. A low signal just means at - peace-duppy. You can’t see them their on the other side. 
@@ -948,12 +935,12 @@ Oh I should have known. A low signal just means at - peace-duppy. You can’t se
 Turn around and look behind you at the Church. Look at the two towers. 
 
 
-:: SC1i [nobr]
+:: SC1FX9 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1h">>
-<<set $passage to "SC1i">>
-<<set $nextpass to "SC1j">>
+<<set $prevpass to "SC1FX8">>
+<<set $passage to "SC1FX9">>
+<<set $nextpass to "SC1FX10">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -966,15 +953,15 @@ Turn around and look behind you at the Church. Look at the two towers. 
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1itranscript">>
+<<set $transcriptname to "SC1FX9transcript">>
 /* --- */
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3"></audio>
-<div id="audioText"></div>
+
 </div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -988,9 +975,9 @@ Turn around and look behind you at the Church. Look at the two towers. 
 <</timed>>
 
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
-:: SC1itranscript 
+:: SC1FX9transcript 
 <span class="char-name">Josie:</span>
 Trinity Hall. Trinity Centre. I knew it looked familiar. The Beast Station the huge red brick station. Beast means police.This is where I first saw them.  I was playing outside among the graves - back then this garden was a graveyard- It was Sunday, 77 or 78, Dad and his friends were inside converting the Church into a community centre.  
 
@@ -1030,12 +1017,12 @@ Sorry friend, can I call you friend? Sorry for the arguments – the Controller 
 Facety. 
 
 
-:: SC1j [nobr]
+:: SC1FX10 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1i">>
-<<set $passage to "SC1j">>
-<<set $nextpass to "SC1k">>
+<<set $prevpass to "SC1FX9">>
+<<set $passage to "SC1FX10">>
+<<set $nextpass to "SC1FX_10.1">>
 
 /* Footer menu options */
 <<set $showMap to false>>
@@ -1048,15 +1035,15 @@ Facety.
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1jtranscript">>
+<<set $transcriptname to "SC1FX10transcript">>
 /* --- */
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3"></audio>
-<div id="audioText"></div>
+
 </div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="result"></div>
 <div id="mount"></div>
 <br/>
@@ -1083,9 +1070,9 @@ Facety.
 <</timed>>
 
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
-:: SC1jtranscript 
+:: SC1FX10transcript 
 <span class="char-name">Duppy:</span>
 Ha why they send you?  
 
@@ -1118,11 +1105,11 @@ And no Duppy Hunter can catch me.
 Newfoundland Road? Before the roundabout. I know where that it is.  
 
 
-:: SC1k [nobr]
+:: SC1FX_10.1 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC1j">>
-<<set $passage to "SC1k">>
+<<set $prevpass to "SC1FX10">>
+<<set $passage to "SC1FX_10.1">>
 <<set $nextpass to "end">>
 
 /* Footer menu options */
@@ -1136,15 +1123,15 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 /* Transcript options */
 <<set $transcript to true>>
-<<set $transcriptname to "SC1ktranscript">>
+<<set $transcriptname to "SC1FX_10.1transcript">>
 /* --- */
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3"></audio>
-<div id="audioText"></div>
+
 </div>
 
-<main class="general">
+<<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -1158,9 +1145,9 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 <</timed>>
 
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
-:: SC1ktranscript 
+:: SC1FX_10.1transcript 
 <span class="char-name">MummaD:</span>	
 Josie, Controller will direct. Please. You can’t see properly from a phone and you rusty. 
 
@@ -1191,7 +1178,7 @@ When you’ve exited Trinity and turned right – let me know you reached and st
 
 
 <div id="audio"></div>
-/* TODO CREATE SUPPY DETECTOR  */
+/* TODO CREATE DUPPY DETECTOR  */
 <main>
 <p>Duppy Detector</p>
 <p>The Duppy Detector appears with an icon of an archaic oil lamp  and is titled on screen. The icon is an oil lamp with a super radiance</p>
@@ -1205,7 +1192,7 @@ When you’ve exited Trinity and turned right – let me know you reached and st
 <<timed 3s>><<goto $nextpass>><</timed>>
  
 </main>
-<<timed 0.1s>><<include "footer">><</timed>>
+<<include "footer">>
 
 
 :: unscramble [nobr]
@@ -1234,53 +1221,7 @@ ETNUHYPPUDAMAI
 <<include "footer">>
 
 
-:: longaudio [nobr]  {"position":"700,175","size":"100,100"}
-<<set $prevpass to "text">>
-<<set $passage to "longaudio">>
-<<set $nextpass to "end">>
-<<set $transcript to false>>
-<<set $playtoggle to false>>
-<<set $captionToggle to false>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-<<set $showMap to false>>
-<<set $sendOn to false>>
-<<set $transcriptname to  "transcript">>
-<<include "headerstory">>
-<audio id="audio" autoplay>
-  <source src="">
-</audio>
-<main class="story" id="storyContainer">
-Long audio (not sure if we need)
-<div id="transcript"></div>
-<div id="mount"></div>
-<<timed 0.1s>><<replace "#headerinstmount">><p class="comment"> To listen press <div class="inline-btn-wrapper">
-<<link "play">>
-        <<if $playToggle is false>>
-      <<set $fn to setup.play()>>
-      <<set $playToggle to true>>
-      <<addclass "#playpause" "playhighlight">>
-      <</if>>
-<<replace "#headerinstmount">>
-<p class="comment"> When you're finished listening, let me know <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
- <</replace>>
- <</link>>
-  </div></p>
- <</replace>><</timed>>
 
- <<timed 30s>>
- <<replace "#headerinstmount">>
-<p class="comment"> When you're finished listening, let me know <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
- <</replace>>
-
- <</timed>>
-
-</main>
-
-
-
-<<include "footerstory">>
 
 
 
@@ -1294,7 +1235,7 @@ This is a transcript example
 
 
 :: end [nobr]
-<<set $prevpass to "SC1k">>
+<<set $prevpass to "SC1FX_10.1">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $showMap to false>>
@@ -1309,7 +1250,7 @@ This is a transcript example
 <main class="end">
   end
 </main>
-<<include "footer">>
+<<include "footerback">>
 
 
 

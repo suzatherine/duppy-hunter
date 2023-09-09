@@ -184,6 +184,10 @@ nav {
   margin-block-end: 1rem;
 }
 
+.nav-item > a {
+  color: var(--accent-color-primary);
+}
+
 .nav-item > a > img {
   width: 25px;
 }
@@ -526,7 +530,7 @@ main.story.captions {
 
 /* PLAY / PAUSE FOOTER  */
 
-#audioWrapper {
+#audioText {
   text-align: center;
   padding: 2rem;
 }
