@@ -519,7 +519,7 @@ setup.backFive = () => {
 
 <<include "header">><main class="general">
 <div id="mount"></div>
-<div id="transcript"><<include "duppyTitle">></div>
+<div id="transcript"></div>
 <br/>
 
 <<timed 1s>>
