@@ -1151,7 +1151,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 /* Navigation options */
 <<set $prevpass to "SC1FX10">>
 <<set $passage to "SC1FX_10.1">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC2FX11">>
 
 /* Footer menu options */
 <<set $showMap to true>>
@@ -1191,6 +1191,11 @@ Newfoundland Road? Before the roundabout. I know where that it is.
     <<button "I’m walking down trinity road">><<goto $nextpass>><</button>> 
     </div>
    <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "I’m walking down trinity road">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
 <</timed>>
 
 </main>
@@ -1210,12 +1215,117 @@ When you’ve exited Trinity and turned right – let me know you reached and st
 
 
 
+:: SC2FX11 [nobr]
+/* SHOWING MAP  */
+/* Navigation options */
+<<set $prevpass to "SC1FX_10.1">>
+<<set $passage to "SC2FX11">>
+<<set $nextpass to "end">>
 
+/* Footer menu options */
+<<set $showMap to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC2FX11transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene2_FX11Low.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+
+<<timed 133s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP2.jpeg" alt="map from Trinity Road to Stapleton Road">
+   <</replace>>
+<</timed>>
+
+<<timed 150s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached Stapleton Road">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+   <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "Reached Stapleton Road">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+
+:: SC2FX11transcript 
+<span class="char-name">Josie:</span>	
+Like I was telling you. 
+
+That’s the women who took over the vicarage when the Church was closing. It was a sanctuary from violence. Because I’m here you are hearing the echo memory of the past. It’s like layers, layers of sound. 
+
+<span class="char-name">Young Josie:</span>
+My island like  
+a swimming turtle  
+surfaces in the fish tank 
+Of the Television	 
+
+<span class="char-name">Josie:</span>	
+There’s the Old Library where I first fell in love with Caribbean writers who brought Mumma & 		Daddy’s island stories to life. 
+
+So, I was saying when I first saw the duppies I thought they were shadows. They didn’t pay any attention to me but there was one... a tall bone white man with a long face wearing a long Black cloak he pointed this gnarly twig of a finger at me and told me to come closer. 
+
+He smiled – perfect white teeth - opened his hand and in his palm was a ghost white doll, black eyes, black hair, black gown. 
+
+I was about to take it until I looked into his eyes, like a wolf eating prey. I screamed and called for Mumma.  
+
+<span class="char-name">MummaD:</span>	
+“Never take anything them offer you”
+
+You understand. Never. 
+
+If you’d taken that doll that duppy would have entered you.  
+
+<span class="char-name">Josie:</span>	
+And someone has.  
+
+Someone has taken a gift from a duppy and now the duppy walks the streets. 
+The duppy will want to enter as many hosts as possible. Every time it passes through a new host it becomes more powerful.  When it has possessed you it can make you do anything. 
+Salt is the weapon we use to put the duppy to rest – to conquer it – as we obeah women say.   
+
+ 
+<span class="char-name">Amelia Dyer:</span>	
+Got yourself into trouble. Need a hand?  
+
+<span class="char-name">Josie:</span>	
+Amelia Dyer – the killer. Her duppy as evil as when she lived.  
+
+We have bound her here for eternity.She keeps trying but she’ll never become a walking duppy.  
+
+<span class="char-name">Josie:</span>
+Turn right onto Stapleton road - pass Nadines and Maliks. 
+
+Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross just yet. Let me know you reached and just wait there for a moment.  
 
 
 
 :: end [nobr]
-<<set $prevpass to "SC1FX_10.1">>
+<<set $prevpass to "SC2FX11">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $showMap to false>>

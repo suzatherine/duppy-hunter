@@ -1097,7 +1097,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.</tw-passageda
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX10&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX_10.1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC2FX11&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -1137,6 +1137,11 @@ Newfoundland Road? Before the roundabout. I know where that it is.</tw-passageda
     &lt;&lt;button &quot;I’m walking down trinity road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I’m walking down trinity road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
@@ -1149,7 +1154,107 @@ Walk through the Trinity Centre entrance and turn into Trinity Road, it’ll be 
 Friend. We have to catch this duppy. St Paul’s means everything to me. It was one of the six wards I watched over. It’s where I was born and raised until I retired. But I had to answer the Controller’s call. I can’t have a duppy walking through my St Paul’s.  
 
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
-When you’ve exited Trinity and turned right – let me know you reached and start walking 		down the road.</tw-passagedata><tw-passagedata pid="34" name="end" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;SC1FX_10.1&quot;&gt;&gt;
+When you’ve exited Trinity and turned right – let me know you reached and start walking 		down the road.</tw-passagedata><tw-passagedata pid="34" name="SC2FX11" tags="nobr" position="475,475" size="100,100">/* SHOWING MAP  */
+/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC1FX_10.1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC2FX11&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC2FX11transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene2_FX11Low.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+
+&lt;&lt;timed 133s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP2.jpeg&quot; alt=&quot;map from Trinity Road to Stapleton Road&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 150s&gt;&gt;
+  &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached Stapleton Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+   &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached Stapleton Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="SC2FX11transcript" tags="" position="600,475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+Like I was telling you. 
+
+That’s the women who took over the vicarage when the Church was closing. It was a sanctuary from violence. Because I’m here you are hearing the echo memory of the past. It’s like layers, layers of sound. 
+
+&lt;span class=&quot;char-name&quot;&gt;Young Josie:&lt;/span&gt;
+My island like  
+a swimming turtle  
+surfaces in the fish tank 
+Of the Television	 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+There’s the Old Library where I first fell in love with Caribbean writers who brought Mumma &amp; 		Daddy’s island stories to life. 
+
+So, I was saying when I first saw the duppies I thought they were shadows. They didn’t pay any attention to me but there was one... a tall bone white man with a long face wearing a long Black cloak he pointed this gnarly twig of a finger at me and told me to come closer. 
+
+He smiled – perfect white teeth - opened his hand and in his palm was a ghost white doll, black eyes, black hair, black gown. 
+
+I was about to take it until I looked into his eyes, like a wolf eating prey. I screamed and called for Mumma.  
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;	
+“Never take anything them offer you”
+
+You understand. Never. 
+
+If you’d taken that doll that duppy would have entered you.  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+And someone has.  
+
+Someone has taken a gift from a duppy and now the duppy walks the streets. 
+The duppy will want to enter as many hosts as possible. Every time it passes through a new host it becomes more powerful.  When it has possessed you it can make you do anything. 
+Salt is the weapon we use to put the duppy to rest – to conquer it – as we obeah women say.   
+
+ 
+&lt;span class=&quot;char-name&quot;&gt;Amelia Dyer:&lt;/span&gt;	
+Got yourself into trouble. Need a hand?  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+Amelia Dyer – the killer. Her duppy as evil as when she lived.  
+
+We have bound her here for eternity.She keeps trying but she’ll never become a walking duppy.  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Turn right onto Stapleton road - pass Nadines and Maliks. 
+
+Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross just yet. Let me know you reached and just wait there for a moment.</tw-passagedata><tw-passagedata pid="36" name="end" tags="nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;SC2FX11&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
