@@ -276,7 +276,7 @@ setup.backThirty = () => {
   <<if $showAudio is true>>
   <div class="nav-wrapper playpause-wrapper">
   <div class="nav-item" id="playpause">
-       
+ 
       <<link [img[assets/img/playpause.png]]>>
         /* If audio is not playing  */
         <<if $playToggle is false>>
