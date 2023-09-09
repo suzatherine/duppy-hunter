@@ -130,13 +130,13 @@ setup.checkPlaying = () => {
    const audio = document.getElementById("audio");
    if (audio && !audio.paused) {
       // Audio is currently playing
-      console.log(audio.paused, "audio.paused");
-      console.log(audio, "Audio is playing");
+      // console.log(audio.paused, "audio.paused");
+      // console.log(audio, "Audio is playing");
       return true
    } else {
       // Audio is not playing
-      console.log(audio.paused, "audio.paused");
-      console.log(audio, "Audio is not playing");
+      // console.log(audio.paused, "audio.paused");
+      // console.log(audio, "Audio is not playing");
       return false
    }
 }
@@ -188,7 +188,7 @@ setup.backFive = () => {
 <<if $showBackwards is true>>
   <div class="nav-wrapper">
     <div class="nav-item">
-        [img[Back|assets/img/back.png][$prevpass]]
+        [img[Back|assets/img/back-b.png][$prevpass]]
     </div>
   </div>
   <</if>>
@@ -199,7 +199,7 @@ setup.backFive = () => {
  
     <div class="nav-wrapper" id="forIcon">
     <div class="nav-item " >
-         [img[Forward|assets/img/for.png][$nextpass]]
+         [img[Forward|assets/img/forw-b.png][$nextpass]]
     </div>
   </div>
 
@@ -221,7 +221,7 @@ setup.backFive = () => {
   </div>
   <</if>>
 
-  <<if $showMap is true>>
+  /* <<if $showMap is true>>
     <div class="nav-wrapper">
       <div class="nav-item">
     <<link [img[assets/img/map.png]]>>
@@ -229,7 +229,7 @@ setup.backFive = () => {
     <</link>>
     </div>
   </div>
-  <</if>>
+  <</if>> */
   <<if $showAudio is true>>
   <div class="nav-wrapper playpause-wrapper">
   <div class="nav-item" id="playpause">
@@ -272,7 +272,7 @@ setup.backFive = () => {
  <<if $showTranscriptIcon is true>>
     <div class="nav-wrapper">
       <div class="nav-item">
-      <<link [img[assets/img/transcript.png]]>>
+  <<link [img[assets/img/transcript.png]]>>
     <<if $transcript is false>>
       <<set $transcript to true>>
       <<replace "#transcript">>
@@ -280,11 +280,19 @@ setup.backFive = () => {
       <</replace>>
   <<elseif $transcript is true>>
     <<replace "#transcript">>
+      /* if the map needs to be shown there is no need for Duppy title */
+      <<if $showMap is false>>
+        <<include "duppyTitle">>
+      <</if>>
       <</replace>>
       <<set $transcript to false>>
-      <<else>>
+   <<else>>
       <<set $transcript to false>>
       <<replace "#transcript">>
+         /* if the map needs to be shown there is no need for Duppy title */
+        <<if $showMap is false>>
+        <<include "duppyTitle">>
+      <</if>>
       <</replace>>
       <</if>>
       <</link>>
@@ -300,7 +308,6 @@ setup.backFive = () => {
   </div>
 </div>
      <</if>>
-     
 </footer>
 <<done>>
   <<timed 0.5s>>
@@ -379,7 +386,7 @@ setup.backFive = () => {
 <footer>
   <div class="nav-wrapper">
     <div class="nav-item">
-    <<link [img[assets/img/map.png]]>><<toggleclass "#map" "hide">><</link>>
+    <<link [img[assets/img/MAP1.jpg]]>><<toggleclass "#map" "hide">><</link>>
     </div></div>
      <div class="nav-wrapper">
     <div class="nav-item">
@@ -395,6 +402,10 @@ setup.backFive = () => {
     </div>
   </div>
 </footer>
+
+:: duppyTitle [nobr]
+
+<img src="./../assets/img/titleTextLow.png" alt="Duppy Hunter"/>
 
 
 :: start [nobr]  {"position":"700,175","size":"100,100"}
@@ -499,27 +510,46 @@ setup.backFive = () => {
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX0transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3" ></audio></div>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3" ></audio></div>
 
 <<include "header">><main class="general">
 <div id="mount"></div>
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 
 <<timed 1s>>
    <<replace "#mount">>
-    <p>A ghost or restless spirit is known as a 'Duppy' in Jamaica, or a Jumbie in many smaller Caribbean islands.</p>
-    <p> Traditionally, a good duppy is usually a deceased family member or friend who 'dreams you' – meaning they appear in your dreams and give you advice or information.</p>
+    <div class="explain appear" >
+      <p >A ghost or restless spirit is known as a 'Duppy' in Jamaica, or a Jumbie in many smaller Caribbean islands.</p>
+    </div>
+  <</replace>>
+<</timed>>
+
+<<timed 4s>>
+  /* <<removeclass ".explain" "appear">> */
+  <<addclass ".explain" "dissolve">>
+  <</timed>>
+
+<<timed 6s>>
+   <<replace "#mount">>
+    <div class="explain appear">
+      <p> Traditionally, a good duppy is usually a deceased family member or friend who 'dreams you' – meaning they appear in your dreams and give you advice or information.</p>
+    </div>
   <</replace>>
  
 <</timed>>
 
 <<timed 11s>>
+  /* <<removeclass ".explain" "appear">> */
+  <<addclass ".explain" "dissolve">>
+  <</timed>>
+
+<<timed 13s>>
    <<replace "#mount">>
     <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
     <br/>
@@ -564,15 +594,16 @@ If you can hear me then you are ready to start.
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX1transcript">>
 /* --- */
 
-<div id="audioWrapper"><audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3"></audio>
+<div id="audioWrapper"><audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"></div>
+
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
@@ -619,17 +650,17 @@ If so look at your phone and let me know and push the button to get going.
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX2transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3"></audio>
 
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
@@ -672,17 +703,17 @@ There might be some choices you have to make so when I ask you to, take out your
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX3transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3"></audio>
 
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
@@ -737,35 +768,43 @@ You ready?
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX4transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
-<div id="map" class="map"></div>
+/* <div id="map" class="map"></div> */
+<div id="mount"></div>
 <div id="transcript"></div>
 <br/>
-<div id="mount"></div>
 
-<<timed 16s>>
-  <<audio controls "mapappear" "play">>
+
+/* <<timed 16s>>
+  <<audio "mapappear" "play">>
 <</timed>>
 <<timed 16.2s>>
    <<replace "#map">>
-    <img src="./assets/img/mapss.png">
+    <img src="./assets/img/MAP1.jpg">
+   <</replace>>
+  <</timed>> */
+
+<<timed 5s>>
+   <<replace "#mount">>
+<div class="explain appear"><p>  Walk straight ahead,
+<br/> open the gate to the garden, <br/>walk down the path,<br/> stop and stand on the grass.</p></div>
+<br/>
    <</replace>>
   <</timed>>
-
 <<timed 18s>>
-  <<replace "#mount">>
+  <<append "#mount">>
     <div class="menu-wrapper">
     <<button "I'm on the grass">><<goto $nextpass>><</button>> 
     </div>
-   <</replace>>
+   <</append>>
 <</timed>>
 
 </main>
@@ -799,16 +838,16 @@ It might be in the garden. Walk straight ahead, open the gate to the garden walk
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX6transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
@@ -852,16 +891,16 @@ Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner �
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX7transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
@@ -903,16 +942,16 @@ Look around to see if you can see it. If you don't find anything let me know.
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX8transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
@@ -954,17 +993,17 @@ Turn around and look behind you at the Church. Look at the two towers. 
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX9transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3"></audio>
 
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
@@ -1036,12 +1075,12 @@ Facety.
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX10transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3"></audio>
 
 </div>
 
@@ -1049,7 +1088,7 @@ Facety.
 <div id="result"></div>
 <div id="mount"></div>
 <br/>
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 
 /* <<timed 2s>>
   <<append "#mount">>
@@ -1108,14 +1147,14 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 
 :: SC1FX_10.1 [nobr]
-
+/* SHOWING MAP  */
 /* Navigation options */
 <<set $prevpass to "SC1FX10">>
 <<set $passage to "SC1FX_10.1">>
 <<set $nextpass to "end">>
 
 /* Footer menu options */
-<<set $showMap to false>>
+<<set $showMap to true>>
 <<set $showAudio to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1124,22 +1163,30 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 
 /* Transcript options */
-<<set $transcript to true>>
+<<set $transcript to false>>
 <<set $transcriptname to "SC1FX_10.1transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3"></audio>
 
 </div>
 
 <<include "header">><main class="general">
+<div id="map"></div>
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
 
+<<timed 5s>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP1.jpg" alt="map from Trinity Centre to Trinity Road">
+   <</replace>>
+<</timed>>
+
 <<timed 48s>>
-  <<replace "#mount">>
+  <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "I’m walking down trinity road">><<goto $nextpass>><</button>> 
     </div>
@@ -1164,75 +1211,6 @@ When you’ve exited Trinity and turned right – let me know you reached and st
 
 
 
-
-
-:: duppyDetector [nobr]
-
-<<set $prevpass to "text">>
-<<set $passage to "duppyDetector">>
-/* <<set $nextpass to "unscramble">> */
-<<set $showMap to true>>
-<<set $showAudio to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-
-
-<div id="audio"></div>
-/* TODO CREATE DUPPY DETECTOR  */
-<main>
-<p>Duppy Detector</p>
-<p>The Duppy Detector appears with an icon of an archaic oil lamp  and is titled on screen. The icon is an oil lamp with a super radiance</p>
-
-<p>I'm imagining that it's a button that the player presses which triggers a sound file and visual equivalent for hard-of-hearing audiences; it might be nice if it only played while the button were pressed and stopped/cued another file when released - which is new functionality I'd love to have in the code bank - but also it could be simpler given where we are...</p>
-
-<p>The duppy detector beep/buzz on high volume when a duppy is near</p>
-<p>Later it buzzes furiously</p>
-<<button "Next">><<goto $nextpass>><</button>> 
-
-<<timed 3s>><<goto $nextpass>><</timed>>
- 
-</main>
-<<include "footer">>
-
-
-:: unscramble [nobr]
-
-<<set $prevpass to "duppyDetector">>
-<<set $passage to "unscramble">>
-<<set $nextpass to "longaudio">>
-<<set $showMap to true>>
-<<set $showAudio to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-
-/* TODO CREATE UNSCRAMBLE GAME  */
-<div id="audio"></div>
-<p>Duppy Detector</p>
-ETNUHYPPUDAMAI
-
-
-...Of course it’s I am a duppy Hunter.
-
-<<button "Next">><<goto $nextpass>><</button>> 
- 
-</main>
-<<include "footer">>
-
-
-
-
-
-
-
-:: transcript
-
-<h2>Transcript Example</h2>
-
-This is a transcript example
 
 
 

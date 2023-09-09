@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://F9E39354-F641-4070-8B45-C337A3FDC8C9// --><tw-storydata name="Ends &amp; Tales" startnode="9" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C337A3FDC8C9" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://F9E39354-F641-4070-8B45-C337A3FDC8C9// --><tw-storydata name="Ends &amp; Tales" startnode="10" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C337A3FDC8C9" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url("styles/generics.css");
 @import url("styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
@@ -210,13 +210,13 @@ setup.checkPlaying = () => {
    const audio = document.getElementById("audio");
    if (audio && !audio.paused) {
       // Audio is currently playing
-      console.log(audio.paused, "audio.paused");
-      console.log(audio, "Audio is playing");
+      // console.log(audio.paused, "audio.paused");
+      // console.log(audio, "Audio is playing");
       return true
    } else {
       // Audio is not playing
-      console.log(audio.paused, "audio.paused");
-      console.log(audio, "Audio is not playing");
+      // console.log(audio.paused, "audio.paused");
+      // console.log(audio, "Audio is not playing");
       return false
    }
 }
@@ -254,7 +254,7 @@ setup.backFive = () => {
 &lt;&lt;if $showBackwards is true&gt;&gt;
   &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
-        [img[Back|assets/img/back.png][$prevpass]]
+        [img[Back|assets/img/back-b.png][$prevpass]]
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;&lt;/if&gt;&gt;
@@ -265,7 +265,7 @@ setup.backFive = () => {
  
     &lt;div class=&quot;nav-wrapper&quot; id=&quot;forIcon&quot;&gt;
     &lt;div class=&quot;nav-item &quot; &gt;
-         [img[Forward|assets/img/for.png][$nextpass]]
+         [img[Forward|assets/img/forw-b.png][$nextpass]]
     &lt;/div&gt;
   &lt;/div&gt;
 
@@ -282,7 +282,7 @@ setup.backFive = () => {
   &lt;/div&gt;
   &lt;&lt;/if&gt;&gt;
 
-  &lt;&lt;if $showMap is true&gt;&gt;
+  /* &lt;&lt;if $showMap is true&gt;&gt;
     &lt;div class=&quot;nav-wrapper&quot;&gt;
       &lt;div class=&quot;nav-item&quot;&gt;
     &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;
@@ -290,7 +290,7 @@ setup.backFive = () => {
     &lt;&lt;/link&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;&lt;/if&gt;&gt;
+  &lt;&lt;/if&gt;&gt; */
   &lt;&lt;if $showAudio is true&gt;&gt;
   &lt;div class=&quot;nav-wrapper playpause-wrapper&quot;&gt;
   &lt;div class=&quot;nav-item&quot; id=&quot;playpause&quot;&gt;
@@ -333,7 +333,7 @@ setup.backFive = () => {
  &lt;&lt;if $showTranscriptIcon is true&gt;&gt;
     &lt;div class=&quot;nav-wrapper&quot;&gt;
       &lt;div class=&quot;nav-item&quot;&gt;
-      &lt;&lt;link [img[assets/img/transcript.png]]&gt;&gt;
+  &lt;&lt;link [img[assets/img/transcript.png]]&gt;&gt;
     &lt;&lt;if $transcript is false&gt;&gt;
       &lt;&lt;set $transcript to true&gt;&gt;
       &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
@@ -341,11 +341,19 @@ setup.backFive = () => {
       &lt;&lt;/replace&gt;&gt;
   &lt;&lt;elseif $transcript is true&gt;&gt;
     &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
+      /* if the map needs to be shown there is no need for Duppy title */
+      &lt;&lt;if $showMap is false&gt;&gt;
+        &lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
       &lt;&lt;/replace&gt;&gt;
       &lt;&lt;set $transcript to false&gt;&gt;
-      &lt;&lt;else&gt;&gt;
+   &lt;&lt;else&gt;&gt;
       &lt;&lt;set $transcript to false&gt;&gt;
       &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
+         /* if the map needs to be shown there is no need for Duppy title */
+        &lt;&lt;if $showMap is false&gt;&gt;
+        &lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
       &lt;&lt;/replace&gt;&gt;
       &lt;&lt;/if&gt;&gt;
       &lt;&lt;/link&gt;&gt;
@@ -361,7 +369,6 @@ setup.backFive = () => {
   &lt;/div&gt;
 &lt;/div&gt;
      &lt;&lt;/if&gt;&gt;
-     
 &lt;/footer&gt;
 &lt;&lt;done&gt;&gt;
   &lt;&lt;timed 0.5s&gt;&gt;
@@ -418,7 +425,7 @@ setup.backFive = () => {
 &lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerMap" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
   &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
+    &lt;&lt;link [img[assets/img/MAP1.jpg]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
     &lt;/div&gt;&lt;/div&gt;
      &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
@@ -433,7 +440,7 @@ setup.backFive = () => {
         &lt;&lt;button &quot;I&#39;ve arrived&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="start" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;start&quot;&gt;&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="duppyTitle" tags="nobr" position="1100,100" size="100,100">&lt;img src=&quot;./../assets/img/titleTextLow.png&quot; alt=&quot;Duppy Hunter&quot;/&gt;</tw-passagedata><tw-passagedata pid="10" name="start" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;start&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;start&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding&quot;&gt;&gt;
 
@@ -458,7 +465,7 @@ setup.backFive = () => {
 
   
 &lt;div&gt;&lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="10" name="onboarding" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;start&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="11" name="onboarding" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;start&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX0&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -509,7 +516,7 @@ setup.backFive = () => {
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footerfor&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="SC1FX0" tags="nobr" position="100,225" size="100,100">/* Navigation options */
+&lt;&lt;include &quot;footerfor&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="SC1FX0" tags="nobr" position="225,225" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;onboarding&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX0&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX1&quot;&gt;&gt;
@@ -524,27 +531,46 @@ setup.backFive = () => {
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX0transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3&quot; &gt;&lt;/audio&gt;&lt;/div&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3&quot; &gt;&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 
 &lt;&lt;timed 1s&gt;&gt;
    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;p&gt;A ghost or restless spirit is known as a &#39;Duppy&#39; in Jamaica, or a Jumbie in many smaller Caribbean islands.&lt;/p&gt;
-    &lt;p&gt; Traditionally, a good duppy is usually a deceased family member or friend who &#39;dreams you&#39; – meaning they appear in your dreams and give you advice or information.&lt;/p&gt;
+    &lt;div class=&quot;explain appear&quot; &gt;
+      &lt;p &gt;A ghost or restless spirit is known as a &#39;Duppy&#39; in Jamaica, or a Jumbie in many smaller Caribbean islands.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 4s&gt;&gt;
+  /* &lt;&lt;removeclass &quot;.explain&quot; &quot;appear&quot;&gt;&gt; */
+  &lt;&lt;addclass &quot;.explain&quot; &quot;dissolve&quot;&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;div class=&quot;explain appear&quot;&gt;
+      &lt;p&gt; Traditionally, a good duppy is usually a deceased family member or friend who &#39;dreams you&#39; – meaning they appear in your dreams and give you advice or information.&lt;/p&gt;
+    &lt;/div&gt;
   &lt;&lt;/replace&gt;&gt;
  
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 11s&gt;&gt;
+  /* &lt;&lt;removeclass &quot;.explain&quot; &quot;appear&quot;&gt;&gt; */
+  &lt;&lt;addclass &quot;.explain&quot; &quot;dissolve&quot;&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 13s&gt;&gt;
    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;duppy-img-container appear&quot;&gt;&lt;img src=&quot;./../assets/img/duppydetector.jpg&quot; alt=&quot;The Duppy Detector - an archaic oil lamp with a super radiance&quot; id=&quot;detector&quot;/&gt;&lt;/div&gt;
     &lt;br/&gt;
@@ -562,11 +588,11 @@ setup.backFive = () => {
 &lt;&lt;/timed&gt;&gt;
  
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="SC1FX0transcript" tags="" position="225,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="SC1FX0transcript" tags="" position="350,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
 
 You, we are heading into an exciting adventure but before we begin, let me just check that you can hear me loud and clear, if not turn up the volume on your phone will ya, done? 
 
-If you can hear me then you are ready to start.</tw-passagedata><tw-passagedata pid="13" name="SC1FX1" tags="nobr" position="350,225" size="100,100">/* Navigation options */
+If you can hear me then you are ready to start.</tw-passagedata><tw-passagedata pid="14" name="SC1FX1" tags="nobr" position="475,225" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX0&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX2&quot;&gt;&gt;
@@ -581,15 +607,16 @@ If you can hear me then you are ready to start.</tw-passagedata><tw-passagedata 
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX1transcript&quot;&gt;&gt;
 /* --- */
 
-&lt;div id=&quot;audioWrapper&quot;&gt;&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioWrapper&quot;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -600,7 +627,7 @@ If you can hear me then you are ready to start.</tw-passagedata><tw-passagedata 
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="SC1FX1transcript" tags="" position="475,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="SC1FX1transcript" tags="" position="600,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
 
 I’m the District Duppy Hunter Controller. 
 
@@ -614,7 +641,7 @@ A walking duppy has been detected in this area. Now soon I will match you with a
 
 Are you ready to help us find the duppy? 
 
-If so look at your phone and let me know and push the button to get going.</tw-passagedata><tw-passagedata pid="15" name="SC1FX2" tags="nobr" position="600,225" size="100,100">/* Navigation options */
+If so look at your phone and let me know and push the button to get going.</tw-passagedata><tw-passagedata pid="16" name="SC1FX2" tags="nobr" position="725,225" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX3&quot;&gt;&gt;
@@ -629,17 +656,17 @@ If so look at your phone and let me know and push the button to get going.</tw-p
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX2transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -652,7 +679,7 @@ If so look at your phone and let me know and push the button to get going.</tw-p
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="SC1FX2transcript" tags="" position="725,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="SC1FX2transcript" tags="" position="850,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
 
 Good. 
 
@@ -660,7 +687,7 @@ Now lemme mek sure you prepared. Phone charged? Water, fish food and salt inna y
 
 From time to time you might have to look at your phone to inform me or the Hunter, so if there is a sound or mi gone quite then check you phone and let me know you alright. 
 
-There might be some choices you have to make so when I ask you to, take out your phone and choose the best option so we don’t lose our way.</tw-passagedata><tw-passagedata pid="17" name="SC1FX3" tags="nobr" position="850,225" size="100,100">/* Navigation options */
+There might be some choices you have to make so when I ask you to, take out your phone and choose the best option so we don’t lose our way.</tw-passagedata><tw-passagedata pid="18" name="SC1FX3" tags="nobr" position="975,225" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX4&quot;&gt;&gt;
@@ -675,17 +702,17 @@ There might be some choices you have to make so when I ask you to, take out your
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX3transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -698,7 +725,7 @@ There might be some choices you have to make so when I ask you to, take out your
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="SC1FX3transcript" tags="" position="975,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="SC1FX3transcript" tags="" position="1100,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
 
 Alright I need to make sure you are mentally and physically ready to Duppy Hunt. 
 
@@ -718,7 +745,7 @@ Louder I am a duppy hunter.
 
 Good – you can’t be timid. Now I’ve matched you with one of our finest duppy hunters. You will be her eyes, ears, hands, and yes that means you will conquer the duppy.  
 
-You ready?</tw-passagedata><tw-passagedata pid="19" name="SC1FX4" tags="nobr" position="1100,225" size="100,100">/* Navigation options */
+You ready?</tw-passagedata><tw-passagedata pid="20" name="SC1FX4" tags="nobr" position="1225,225" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX6&quot;&gt;&gt;
@@ -733,47 +760,55 @@ You ready?</tw-passagedata><tw-passagedata pid="19" name="SC1FX4" tags="nobr" po
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX4transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+/* &lt;div id=&quot;map&quot; class=&quot;map&quot;&gt;&lt;/div&gt; */
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 16s&gt;&gt;
-  &lt;&lt;audio controls &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+
+/* &lt;&lt;timed 16s&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 16.2s&gt;&gt;
    &lt;&lt;replace &quot;#map&quot;&gt;&gt;
-    &lt;img src=&quot;./assets/img/mapss.png&quot;&gt;
+    &lt;img src=&quot;./assets/img/MAP1.jpg&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt; */
+
+&lt;&lt;timed 5s&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;  Walk straight ahead,
+&lt;br/&gt; open the gate to the garden, &lt;br/&gt;walk down the path,&lt;br/&gt; stop and stand on the grass.&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
    &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-
 &lt;&lt;timed 18s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I&#39;m on the grass&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
-   &lt;&lt;/replace&gt;&gt;
+   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="SC1FX4transcript" tags="" position="1225,225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="SC1FX4transcript" tags="" position="100,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 
 Where is it? Where’s the Duppy?  
 
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
 
-It might be in the garden. Walk straight ahead, open the gate to the garden walk down the path stop and stand on the grass.</tw-passagedata><tw-passagedata pid="21" name="SC1FX6" tags="nobr" position="100,350" size="100,100">/* Navigation options */
+It might be in the garden. Walk straight ahead, open the gate to the garden walk down the path stop and stand on the grass.</tw-passagedata><tw-passagedata pid="22" name="SC1FX6" tags="nobr" position="225,350" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX7&quot;&gt;&gt;
@@ -788,16 +823,16 @@ It might be in the garden. Walk straight ahead, open the gate to the garden walk
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX6transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -810,7 +845,7 @@ It might be in the garden. Walk straight ahead, open the gate to the garden walk
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="SC1FX6transcript" tags="" position="225,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="SC1FX6transcript" tags="" position="350,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 
 Alright controller, I’ve got this now.  
 
@@ -818,7 +853,7 @@ Can you see anyone? Anything strange. Take your time look, in every corner.
 
 Scan the trees – you never know some duppy can climb. Behind you! 
 
-Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner – the far corner - to the right at the back of the garden? Take, a look – be careful.</tw-passagedata><tw-passagedata pid="23" name="SC1FX7" tags="nobr" position="350,350" size="100,100">/* Navigation options */
+Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner – the far corner - to the right at the back of the garden? Take, a look – be careful.</tw-passagedata><tw-passagedata pid="24" name="SC1FX7" tags="nobr" position="475,350" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX7&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX8&quot;&gt;&gt;
@@ -833,16 +868,16 @@ Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner �
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX7transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -855,13 +890,13 @@ Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner �
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="SC1FX7transcript" tags="" position="475,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="SC1FX7transcript" tags="" position="600,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 
 Have the salt ready. Throw the salt on the duppy if you find it. 	 
 
 Friend, you going to have be brave. I don’t want the duppy detecting my approach so I will need to stay quiet but don’t worry I’m still here and as long as I’m here it can’t possess you. 
 
-Look around to see if you can see it. If you don&#39;t find anything let me know.</tw-passagedata><tw-passagedata pid="25" name="SC1FX8" tags="nobr" position="600,350" size="100,100">/* Navigation options */
+Look around to see if you can see it. If you don&#39;t find anything let me know.</tw-passagedata><tw-passagedata pid="26" name="SC1FX8" tags="nobr" position="725,350" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX7&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX8&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX9&quot;&gt;&gt;
@@ -876,16 +911,16 @@ Look around to see if you can see it. If you don&#39;t find anything let me know
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX8transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -898,13 +933,13 @@ Look around to see if you can see it. If you don&#39;t find anything let me know
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="SC1FX8transcript" tags="" position="725,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="SC1FX8transcript" tags="" position="850,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 
 Oh I should have known. A low signal just means at - peace-duppy. You can’t see them their on the other side. 
 
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
 
-Turn around and look behind you at the Church. Look at the two towers.</tw-passagedata><tw-passagedata pid="27" name="SC1FX9" tags="nobr" position="850,350" size="100,100">/* Navigation options */
+Turn around and look behind you at the Church. Look at the two towers.</tw-passagedata><tw-passagedata pid="28" name="SC1FX9" tags="nobr" position="975,350" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX8&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX9&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX10&quot;&gt;&gt;
@@ -919,17 +954,17 @@ Turn around and look behind you at the Church. Look at the two towers.</tw-passa
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX9transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -942,7 +977,7 @@ Turn around and look behind you at the Church. Look at the two towers.</tw-passa
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="SC1FX9transcript" tags="" position="975,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="SC1FX9transcript" tags="" position="1100,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 Trinity Hall. Trinity Centre. I knew it looked familiar. The Beast Station the huge red brick station. Beast means police.This is where I first saw them.  I was playing outside among the graves - back then this garden was a graveyard- It was Sunday, 77 or 78, Dad and his friends were inside converting the Church into a community centre.  
 
 I saw them, some sitting, some rocking, some walking back and forth. Couples, friends, together 		and alone.  
@@ -978,7 +1013,7 @@ I’ll be making sure ‘yu have it.’ It’s been a while since you did a hunt
 Sorry friend, can I call you friend? Sorry for the arguments – the Controller is my mother. She’s got issues.  
 
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
-Facety.</tw-passagedata><tw-passagedata pid="29" name="SC1FX10" tags="nobr" position="1100,350" size="100,100">/* Navigation options */
+Facety.</tw-passagedata><tw-passagedata pid="30" name="SC1FX10" tags="nobr" position="1225,350" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX9&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX10&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX_10.1&quot;&gt;&gt;
@@ -993,12 +1028,12 @@ Facety.</tw-passagedata><tw-passagedata pid="29" name="SC1FX10" tags="nobr" posi
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX10transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
@@ -1006,7 +1041,7 @@ Facety.</tw-passagedata><tw-passagedata pid="29" name="SC1FX10" tags="nobr" posi
 &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 
 /* &lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
@@ -1029,7 +1064,7 @@ Facety.</tw-passagedata><tw-passagedata pid="29" name="SC1FX10" tags="nobr" posi
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="SC1FX10transcript" tags="" position="1225,350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="SC1FX10transcript" tags="" position="100,475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
 Ha why they send you?  
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
@@ -1058,13 +1093,14 @@ I going to make them mine and then I can change anytime.
 And no Duppy Hunter can catch me.  
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
-Newfoundland Road? Before the roundabout. I know where that it is.</tw-passagedata><tw-passagedata pid="31" name="SC1FX_10.1" tags="nobr" position="100,475" size="100,100">/* Navigation options */
+Newfoundland Road? Before the roundabout. I know where that it is.</tw-passagedata><tw-passagedata pid="32" name="SC1FX_10.1" tags="nobr" position="225,475" size="100,100">/* SHOWING MAP  */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX10&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX_10.1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1073,22 +1109,30 @@ Newfoundland Road? Before the roundabout. I know where that it is.</tw-passageda
 
 
 /* Transcript options */
-&lt;&lt;set $transcript to true&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $transcriptname to &quot;SC1FX_10.1transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
+&lt;&lt;timed 5s&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP1.jpg&quot; alt=&quot;map from Trinity Centre to Trinity Road&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;timed 48s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I’m walking down trinity road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
@@ -1096,7 +1140,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.</tw-passageda
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="SC1FX_10.1transcript" tags="" position="225,475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;	
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="SC1FX_10.1transcript" tags="" position="350,475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;	
 Josie, Controller will direct. Please. You can’t see properly from a phone and you rusty. 
 
 Walk through the Trinity Centre entrance and turn into Trinity Road, it’ll be on your right. Get a move on.  
@@ -1105,56 +1149,7 @@ Walk through the Trinity Centre entrance and turn into Trinity Road, it’ll be 
 Friend. We have to catch this duppy. St Paul’s means everything to me. It was one of the six wards I watched over. It’s where I was born and raised until I retired. But I had to answer the Controller’s call. I can’t have a duppy walking through my St Paul’s.  
 
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
-When you’ve exited Trinity and turned right – let me know you reached and start walking 		down the road.</tw-passagedata><tw-passagedata pid="33" name="duppyDetector" tags="nobr" position="350,475" size="100,100">&lt;&lt;set $prevpass to &quot;text&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;duppyDetector&quot;&gt;&gt;
-/* &lt;&lt;set $nextpass to &quot;unscramble&quot;&gt;&gt; */
-&lt;&lt;set $showMap to true&gt;&gt;
-&lt;&lt;set $showAudio to false&gt;&gt;
-&lt;&lt;set $showReplay to true&gt;&gt;
-&lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showBackwards to true&gt;&gt;
-&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
-
-
-&lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
-/* TODO CREATE DUPPY DETECTOR  */
-&lt;main&gt;
-&lt;p&gt;Duppy Detector&lt;/p&gt;
-&lt;p&gt;The Duppy Detector appears with an icon of an archaic oil lamp  and is titled on screen. The icon is an oil lamp with a super radiance&lt;/p&gt;
-
-&lt;p&gt;I&#39;m imagining that it&#39;s a button that the player presses which triggers a sound file and visual equivalent for hard-of-hearing audiences; it might be nice if it only played while the button were pressed and stopped/cued another file when released - which is new functionality I&#39;d love to have in the code bank - but also it could be simpler given where we are...&lt;/p&gt;
-
-&lt;p&gt;The duppy detector beep/buzz on high volume when a duppy is near&lt;/p&gt;
-&lt;p&gt;Later it buzzes furiously&lt;/p&gt;
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
-
-&lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
- 
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="unscramble" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;duppyDetector&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;unscramble&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;longaudio&quot;&gt;&gt;
-&lt;&lt;set $showMap to true&gt;&gt;
-&lt;&lt;set $showAudio to false&gt;&gt;
-&lt;&lt;set $showReplay to true&gt;&gt;
-&lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showBackwards to true&gt;&gt;
-&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
-
-/* TODO CREATE UNSCRAMBLE GAME  */
-&lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
-&lt;p&gt;Duppy Detector&lt;/p&gt;
-ETNUHYPPUDAMAI
-
-
-...Of course it’s I am a duppy Hunter.
-
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
- 
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="transcript" tags="" position="600,475" size="100,100">&lt;h2&gt;Transcript Example&lt;/h2&gt;
-
-This is a transcript example</tw-passagedata><tw-passagedata pid="36" name="end" tags="nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;SC1FX_10.1&quot;&gt;&gt;
+When you’ve exited Trinity and turned right – let me know you reached and start walking 		down the road.</tw-passagedata><tw-passagedata pid="34" name="end" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;SC1FX_10.1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;

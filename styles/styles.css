@@ -532,7 +532,7 @@ main.story.captions {
 
 #audioText {
   text-align: center;
-  padding: 2rem;
+  max-width: 70%;
 }
 
 footer > .nav-wrapper.playpause-wrapper {
@@ -600,6 +600,15 @@ main.start {
 }
 
 /* DUPPY DETECTOR  */
+
+.explain {
+  opacity: 0;
+}
+
+.explain > p {
+  text-align: center;
+  font-size: 2rem;
+}
 
 .duppy-img-container {
   max-width: 70%;
