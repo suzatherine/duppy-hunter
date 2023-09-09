@@ -208,12 +208,14 @@ setup.pause = () => {
 setup.checkPlaying = () => {
   console.log("checking if playing")
    const audio = document.getElementById("audio");
-   if (audio && !audio.paused && audio.currentTime > 0 && !audio.ended) {
+   if (audio && !audio.paused) {
       // Audio is currently playing
+      console.log(audio.paused, "audio.paused");
       console.log(audio, "Audio is playing");
       return true
    } else {
       // Audio is not playing
+      console.log(audio.paused, "audio.paused");
       console.log(audio, "Audio is not playing");
       return false
    }
@@ -362,12 +364,12 @@ setup.backFive = () => {
      
 &lt;/footer&gt;
 &lt;&lt;done&gt;&gt;
-  &lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;timed 0.5s&gt;&gt;
   &lt;&lt;set $playToggle to setup.checkPlaying()&gt;&gt;
     &lt;&lt;if $playToggle is true&gt;&gt;
     &lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
     &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
-    &lt;span&gt;[audio playing...]&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;type 50ms&gt;&gt;[audio playing...]&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="footerback" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
@@ -527,7 +529,7 @@ setup.backFive = () => {
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3&quot; &gt;&lt;/audio&gt;&lt;/div&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3&quot; &gt;&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
@@ -583,7 +585,7 @@ If you can hear me then you are ready to start.</tw-passagedata><tw-passagedata 
 &lt;&lt;set $transcriptname to &quot;SC1FX1transcript&quot;&gt;&gt;
 /* --- */
 
-&lt;div id=&quot;audioWrapper&quot;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioWrapper&quot;&gt;&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
@@ -632,7 +634,7 @@ If so look at your phone and let me know and push the button to get going.</tw-p
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
@@ -678,7 +680,7 @@ There might be some choices you have to make so when I ask you to, take out your
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
@@ -736,7 +738,7 @@ You ready?</tw-passagedata><tw-passagedata pid="19" name="SC1FX4" tags="nobr" po
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
@@ -746,7 +748,7 @@ You ready?</tw-passagedata><tw-passagedata pid="19" name="SC1FX4" tags="nobr" po
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;timed 16s&gt;&gt;
-  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;audio controls &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 16.2s&gt;&gt;
    &lt;&lt;replace &quot;#map&quot;&gt;&gt;
@@ -791,7 +793,7 @@ It might be in the garden. Walk straight ahead, open the gate to the garden walk
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
@@ -836,7 +838,7 @@ Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner �
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
@@ -879,7 +881,7 @@ Look around to see if you can see it. If you don&#39;t find anything let me know
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
@@ -922,7 +924,7 @@ Turn around and look behind you at the Church. Look at the two towers.</tw-passa
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
@@ -996,7 +998,7 @@ Facety.</tw-passagedata><tw-passagedata pid="29" name="SC1FX10" tags="nobr" posi
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
@@ -1076,7 +1078,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.</tw-passageda
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio controls id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 

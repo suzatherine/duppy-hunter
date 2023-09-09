@@ -128,12 +128,14 @@ setup.pause = () => {
 setup.checkPlaying = () => {
   console.log("checking if playing")
    const audio = document.getElementById("audio");
-   if (audio && !audio.paused && audio.currentTime > 0 && !audio.ended) {
+   if (audio && !audio.paused) {
       // Audio is currently playing
+      console.log(audio.paused, "audio.paused");
       console.log(audio, "Audio is playing");
       return true
    } else {
       // Audio is not playing
+      console.log(audio.paused, "audio.paused");
       console.log(audio, "Audio is not playing");
       return false
    }
@@ -301,12 +303,12 @@ setup.backFive = () => {
      
 </footer>
 <<done>>
-  <<timed 0.1s>>
+  <<timed 0.5s>>
   <<set $playToggle to setup.checkPlaying()>>
     <<if $playToggle is true>>
     <<addclass "#playpause" "playhighlight">>
     <<replace "#audioText">>
-    <span>[audio playing...]</span><</replace>>
+    <<type 50ms>>[audio playing...]<</type>><</replace>>
     <</if>>
   <</timed>>
 <</done>>
@@ -502,7 +504,7 @@ setup.backFive = () => {
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3" ></audio></div>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX0.mp3" ></audio></div>
 
 <<include "header">><main class="general">
 <div id="mount"></div>
@@ -566,7 +568,7 @@ If you can hear me then you are ready to start.
 <<set $transcriptname to "SC1FX1transcript">>
 /* --- */
 
-<div id="audioWrapper"><audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3"></audio>
+<div id="audioWrapper"><audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX1.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
@@ -622,7 +624,7 @@ If so look at your phone and let me know and push the button to get going.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3"></audio>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX2.mp3"></audio>
 
 </div>
 
@@ -675,7 +677,7 @@ There might be some choices you have to make so when I ask you to, take out your
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3"></audio>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX3.mp3"></audio>
 
 </div>
 
@@ -740,7 +742,7 @@ You ready?
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3"></audio>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX4.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
@@ -750,7 +752,7 @@ You ready?
 <div id="mount"></div>
 
 <<timed 16s>>
-  <<audio "mapappear" "play">>
+  <<audio controls "mapappear" "play">>
 <</timed>>
 <<timed 16.2s>>
    <<replace "#map">>
@@ -802,7 +804,7 @@ It might be in the garden. Walk straight ahead, open the gate to the garden walk
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3"></audio>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX6.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
@@ -855,7 +857,7 @@ Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner �
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3"></audio>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX7.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
@@ -906,7 +908,7 @@ Look around to see if you can see it. If you don't find anything let me know.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3"></audio>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3"></audio>
 </div>
 
 <<include "header">><main class="general">
@@ -957,7 +959,7 @@ Turn around and look behind you at the Church. Look at the two towers. 
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3"></audio>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3"></audio>
 
 </div>
 
@@ -1039,7 +1041,7 @@ Facety.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3"></audio>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.mp3"></audio>
 
 </div>
 
@@ -1127,7 +1129,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3"></audio>
+<audio controls id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX10.1.mp3"></audio>
 
 </div>
 
