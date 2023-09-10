@@ -745,7 +745,8 @@ Louder I am a duppy hunter.
 
 Good – you can’t be timid. Now I’ve matched you with one of our finest duppy hunters. You will be her eyes, ears, hands, and yes that means you will conquer the duppy.  
 
-You ready?</tw-passagedata><tw-passagedata pid="20" name="SC1FX4" tags="nobr" position="1225,225" size="100,100">/* Navigation options */
+You ready?</tw-passagedata><tw-passagedata pid="20" name="SC1FX4" tags="nobr" position="1225,225" size="100,100">/* INSTRUCTIONS  */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX6&quot;&gt;&gt;
@@ -1029,7 +1030,7 @@ Facety.</tw-passagedata><tw-passagedata pid="30" name="SC1FX10" tags="nobr" posi
 
 /* Transcript options */
 &lt;&lt;set $transcript to false&gt;&gt;
-&lt;&lt;set $transcriptname to &quot;SC1FX10transcript&quot;&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC2FX11-1transcript&quot;&gt;&gt;
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
@@ -1158,7 +1159,7 @@ When you’ve exited Trinity and turned right – let me know you reached and st
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX_10.1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC2FX11&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC3FX11-1&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -1254,7 +1255,221 @@ We have bound her here for eternity.She keeps trying but she’ll never become a
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 Turn right onto Stapleton road - pass Nadines and Maliks. 
 
-Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross just yet. Let me know you reached and just wait there for a moment.</tw-passagedata><tw-passagedata pid="36" name="end" tags="nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;SC2FX11&quot;&gt;&gt;
+Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross just yet. Let me know you reached and just wait there for a moment.</tw-passagedata><tw-passagedata pid="36" name="SC3FX11-1" tags="nobr" position="725,475" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC2FX11&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC3FX11-1&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC3FX12&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC3FX11-1transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX11.1.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+
+&lt;br/&gt;
+
+&lt;&lt;timed 24s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;  Look across the street to your left at the green-fronted convenience store. &lt;br/&gt; Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe.&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 41s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Mi see it&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="SC3FX11-1transcript" tags="" position="850,475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Now you can get any kind of Caribbean, African or Asian food in England now, but back then Mum said she had to make do with what she could find. 
+
+Stapleton Road was very different when Mumma first came over.  
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;	
+When you did ask for goat the butcher used to laugh – that’s if them serve you at all.  
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;	
+Look across the street to your left at the green fronted convenience store. Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe. 
+
+Let me know you can see it and just stay there for a moment.</tw-passagedata><tw-passagedata pid="38" name="SC3FX12" tags="nobr" position="975,475" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC3FX11-1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC3FX12&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC3FX13&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC3FX12transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX12.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 40s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;  Now, cross the road carefully&lt;br/&gt; pass the Congregational Centre - 
+&lt;br/&gt;Stapleton Road Chapel.&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 50s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached the Congregational Centre&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="SC3FX12transcript" tags="" position="1100,475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Their jerk chicken is good but mine is excellance. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+You mean scandalous: scandously dry. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+When shops like Malik’s opened up in the 60s it meant West Indian food cafes, and restaurants, became possible. 
+
+It’s not always plain sailing but we try to get along (chuckle)  
+
+ 
+&lt;span class=&quot;char-name&quot;&gt;Stella:&lt;/span&gt;
+Eh you have sal’ fish, gungo, ackee, callaloo, green banana,  
+
+&lt;span class=&quot;char-name&quot;&gt;Iqbal:&lt;/span&gt;
+		Yes yes and I have a new wig for you. Barbie pink?  
+
+&lt;span class=&quot;char-name&quot;&gt;Stella:&lt;/span&gt;
+Eh Iqbal Nuh tell people bout mi wig.  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+When next time your here go to Malik’s see how many fruits you can identify. And buy something don’t just feel up the man’s food. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Now cross the road carefully pass the Congregational Centre- Stapleton road Chapel. 
+
+Let me know once you reach, look both ways dear.</tw-passagedata><tw-passagedata pid="40" name="SC3FX13" tags="nobr" position="1225,475" size="100,100">/* I THINK THERE SHOULD BE A MAP HERE BUT THERE ISNT ONE  */
+/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC3FX12&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC3FX13&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC3FX13transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+
+/* A brief title before the map/instructions arrive */
+&lt;div id=&quot;briefTitle&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;timed 29s&gt;&gt;
+    &lt;&lt;replace &quot;#briefTitle&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+/* - */
+
+/* &lt;&lt;timed 30s&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP3.jpeg&quot; alt=&quot;Map&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt; */
+
+&lt;&lt;timed 30s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Pass the Christian Gospel Centre - the Congregational Centre on Stapleton road.  
+&lt;br/&gt;Now turn left onto Newton Street and stand by the Hall, 
+&lt;br/&gt;the Old School Hall.&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 46s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached the Old School Hall&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="SC3FX13transcript" tags="" position="100,600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
+I remember when the Congregational Church was thriving. The Church and the hall around the corner was filled with activities for children. 
+
+Them turn them back on Jesus. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Say’s the Obeah woman. And anyway, Jesus isn’t the only religion.  
+
+&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
+You don’t have to tell me that. After the all the persecution we Obeah people suffer. 	Black magic mi foot –dem can kiss mi- 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Controller.  
+
+&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
+Ahem 
+
+You should pass the Christian Gospel Centre - the Congregational Centre on Stapleton Road.  
+Now turn left onto Newton Street and stand by the Hall, the Old School Hall.
+
+Let me know when you reached.</tw-passagedata><tw-passagedata pid="42" name="end" tags="nobr" position="225,600" size="100,100">&lt;&lt;set $prevpass to &quot;SC3FX13&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;

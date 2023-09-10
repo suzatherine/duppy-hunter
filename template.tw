@@ -752,7 +752,7 @@ Good – you can’t be timid. Now I’ve matched you with one of our finest dup
 You ready? 
 
 :: SC1FX4 [nobr]
-
+/* INSTRUCTIONS  */
 /* Navigation options */
 <<set $prevpass to "SC1FX3">>
 <<set $passage to "SC1FX4">>
@@ -1076,7 +1076,7 @@ Facety.
 
 /* Transcript options */
 <<set $transcript to false>>
-<<set $transcriptname to "SC1FX10transcript">>
+<<set $transcriptname to "SC2FX11-1transcript">>
 /* --- */
 
 <div id="audioWrapper">
@@ -1220,7 +1220,7 @@ When you’ve exited Trinity and turned right – let me know you reached and st
 /* Navigation options */
 <<set $prevpass to "SC1FX_10.1">>
 <<set $passage to "SC2FX11">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC3FX11-1">>
 
 /* Footer menu options */
 <<set $showMap to true>>
@@ -1323,9 +1323,247 @@ Turn right onto Stapleton road - pass Nadines and Maliks.
 Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross just yet. Let me know you reached and just wait there for a moment.  
 
 
+:: SC3FX11-1 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC2FX11">>
+<<set $passage to "SC3FX11-1">>
+<<set $nextpass to "SC3FX12">>
+
+/* Footer menu options */
+<<set $showMap to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC3FX11-1transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX11.1.mp3"></audio>
+
+</div>
+<<include "header">><main class="general">
+<div id="mount"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+
+<br/>
+
+<<timed 24s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>  Look across the street to your left at the green-fronted convenience store. <br/> Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+<<timed 41s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "Mi see it">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+
+:: SC3FX11-1transcript 
+<span class="char-name">Josie:</span>
+Now you can get any kind of Caribbean, African or Asian food in England now, but back then Mum said she had to make do with what she could find. 
+
+Stapleton Road was very different when Mumma first came over.  
+
+<span class="char-name">MummaD:</span>	
+When you did ask for goat the butcher used to laugh – that’s if them serve you at all.  
+
+<span class="char-name">MummaD:</span>	
+Look across the street to your left at the green fronted convenience store. Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe. 
+
+Let me know you can see it and just stay there for a moment.  
+
+
+:: SC3FX12 [nobr]
+/* Navigation options */
+<<set $prevpass to "SC3FX11-1">>
+<<set $passage to "SC3FX12">>
+<<set $nextpass to "SC3FX13">>
+
+/* Footer menu options */
+<<set $showMap to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC3FX12transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX12.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="mount"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+
+<<timed 40s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>  Now, cross the road carefully<br/> pass the Congregational Centre - 
+<br/>Stapleton Road Chapel.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+<<timed 50s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "Reached the Congregational Centre">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+
+
+:: SC3FX12transcript 
+<span class="char-name">MummaD:</span>
+Their jerk chicken is good but mine is excellance. 
+
+<span class="char-name">Josie:</span>
+You mean scandalous: scandously dry. 
+
+<span class="char-name">MummaD:</span>
+When shops like Malik’s opened up in the 60s it meant West Indian food cafes, and restaurants, became possible. 
+
+It’s not always plain sailing but we try to get along (chuckle)  
+
+ 
+<span class="char-name">Stella:</span>
+Eh you have sal’ fish, gungo, ackee, callaloo, green banana,  
+
+<span class="char-name">Iqbal:</span>
+		Yes yes and I have a new wig for you. Barbie pink?  
+
+<span class="char-name">Stella:</span>
+Eh Iqbal Nuh tell people bout mi wig.  
+
+<span class="char-name">Josie:</span>
+When next time your here go to Malik’s see how many fruits you can identify. And buy something don’t just feel up the man’s food. 
+
+<span class="char-name">MummaD:</span>
+Now cross the road carefully pass the Congregational Centre- Stapleton road Chapel. 
+
+Let me know once you reach, look both ways dear. 
+
+
+:: SC3FX13 [nobr]
+/* I THINK THERE SHOULD BE A MAP HERE BUT THERE ISNT ONE  */
+/* Navigation options */
+<<set $prevpass to "SC3FX12">>
+<<set $passage to "SC3FX13">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $showMap to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC3FX13transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14_TEMP.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="mount"></div>
+<div id="transcript"></div>
+
+/* A brief title before the map/instructions arrive */
+<div id="briefTitle"><<include "duppyTitle">></div>
+<<timed 29s>>
+    <<replace "#briefTitle">>
+      <</replace>>
+  <</timed>>
+/* - */
+
+/* <<timed 30s>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP3.jpeg" alt="Map">
+   <</replace>>
+<</timed>> */
+
+<<timed 30s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Pass the Christian Gospel Centre - the Congregational Centre on Stapleton road.  
+<br/>Now turn left onto Newton Street and stand by the Hall, 
+<br/>the Old School Hall.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+<<timed 46s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "Reached the Old School Hall">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+
+:: SC3FX13transcript 
+ <span class="char-name">Mumma:</span>
+I remember when the Congregational Church was thriving. The Church and the hall around the corner was filled with activities for children. 
+
+Them turn them back on Jesus. 
+
+<span class="char-name">Josie:</span>
+Say’s the Obeah woman. And anyway, Jesus isn’t the only religion.  
+
+<span class="char-name">Mumma:</span>
+You don’t have to tell me that. After the all the persecution we Obeah people suffer. 	Black magic mi foot –dem can kiss mi- 
+
+<span class="char-name">Josie:</span>
+Controller.  
+
+<span class="char-name">Mumma:</span>
+Ahem 
+
+You should pass the Christian Gospel Centre - the Congregational Centre on Stapleton Road.  
+Now turn left onto Newton Street and stand by the Hall, the Old School Hall.
+
+Let me know when you reached. 
 
 :: end [nobr]
-<<set $prevpass to "SC2FX11">>
+<<set $prevpass to "SC3FX13">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $showMap to false>>
