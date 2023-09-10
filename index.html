@@ -282,7 +282,7 @@ setup.backFive = () => {
   &lt;/div&gt;
   &lt;&lt;/if&gt;&gt;
 
-  /* &lt;&lt;if $showMap is true&gt;&gt;
+  /* &lt;&lt;if $passWillShowMapOrInstructions is true&gt;&gt;
     &lt;div class=&quot;nav-wrapper&quot;&gt;
       &lt;div class=&quot;nav-item&quot;&gt;
     &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;
@@ -342,7 +342,7 @@ setup.backFive = () => {
   &lt;&lt;elseif $transcript is true&gt;&gt;
     &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
       /* if the map needs to be shown there is no need for Duppy title */
-      &lt;&lt;if $showMap is false&gt;&gt;
+      &lt;&lt;if $passWillShowMapOrInstructions is false&gt;&gt;
         &lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;
       &lt;&lt;/if&gt;&gt;
       &lt;&lt;/replace&gt;&gt;
@@ -351,7 +351,7 @@ setup.backFive = () => {
       &lt;&lt;set $transcript to false&gt;&gt;
       &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;
          /* if the map needs to be shown there is no need for Duppy title */
-        &lt;&lt;if $showMap is false&gt;&gt;
+        &lt;&lt;if $passWillShowMapOrInstructions is false&gt;&gt;
         &lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;
       &lt;&lt;/if&gt;&gt;
       &lt;&lt;/replace&gt;&gt;
@@ -451,7 +451,7 @@ setup.backFive = () => {
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to false&gt;&gt;
 /* ---- */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 
 &lt;div class=&quot;comp-warning&quot;&gt;Best experienced on a phone&lt;/div&gt;
 &lt;main class=&quot;start&quot; id=&quot;&quot;&gt;
@@ -468,7 +468,7 @@ setup.backFive = () => {
 &lt;/main&gt;</tw-passagedata><tw-passagedata pid="11" name="onboarding" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;start&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX0&quot;&gt;&gt;
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
 &lt;&lt;set $showReplay to false&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -522,7 +522,7 @@ setup.backFive = () => {
 &lt;&lt;set $nextpass to &quot;SC1FX1&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -598,7 +598,7 @@ If you can hear me then you are ready to start.</tw-passagedata><tw-passagedata 
 &lt;&lt;set $nextpass to &quot;SC1FX2&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -647,7 +647,7 @@ If so look at your phone and let me know and push the button to get going.</tw-p
 &lt;&lt;set $nextpass to &quot;SC1FX3&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -693,7 +693,7 @@ There might be some choices you have to make so when I ask you to, take out your
 &lt;&lt;set $nextpass to &quot;SC1FX4&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -752,7 +752,7 @@ You ready?</tw-passagedata><tw-passagedata pid="20" name="SC1FX4" tags="nobr" po
 &lt;&lt;set $nextpass to &quot;SC1FX6&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -815,7 +815,7 @@ It might be in the garden. Walk straight ahead, open the gate to the garden walk
 &lt;&lt;set $nextpass to &quot;SC1FX7&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -860,7 +860,7 @@ Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner �
 &lt;&lt;set $nextpass to &quot;SC1FX8&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -903,7 +903,7 @@ Look around to see if you can see it. If you don&#39;t find anything let me know
 &lt;&lt;set $nextpass to &quot;SC1FX9&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -946,7 +946,7 @@ Turn around and look behind you at the Church. Look at the two towers.</tw-passa
 &lt;&lt;set $nextpass to &quot;SC1FX10&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1020,7 +1020,7 @@ Facety.</tw-passagedata><tw-passagedata pid="30" name="SC1FX10" tags="nobr" posi
 &lt;&lt;set $nextpass to &quot;SC1FX_10.1&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1101,7 +1101,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.</tw-passageda
 &lt;&lt;set $nextpass to &quot;SC2FX11&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to true&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1162,7 +1162,7 @@ When you’ve exited Trinity and turned right – let me know you reached and st
 &lt;&lt;set $nextpass to &quot;SC3FX11-1&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to true&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1261,7 +1261,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 &lt;&lt;set $nextpass to &quot;SC3FX12&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to true&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1318,7 +1318,7 @@ Let me know you can see it and just stay there for a moment.</tw-passagedata><tw
 &lt;&lt;set $nextpass to &quot;SC3FX13&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to true&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1389,10 +1389,10 @@ Let me know once you reach, look both ways dear.</tw-passagedata><tw-passagedata
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC3FX12&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC3FX13&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC4FX15&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1469,10 +1469,157 @@ Ahem
 You should pass the Christian Gospel Centre - the Congregational Centre on Stapleton Road.  
 Now turn left onto Newton Street and stand by the Hall, the Old School Hall.
 
-Let me know when you reached.</tw-passagedata><tw-passagedata pid="42" name="end" tags="nobr" position="225,600" size="100,100">&lt;&lt;set $prevpass to &quot;SC3FX13&quot;&gt;&gt;
+Let me know when you reached.</tw-passagedata><tw-passagedata pid="42" name="SC4FX15" tags="nobr" position="225,600" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC3FX13&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC4FX15&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC4FX16&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC4FX15transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+
+&lt;br/&gt;
+
+&lt;&lt;timed 60s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;  Walk to the end of Newton Street&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 65s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I’m at the end of Newton Street&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="SC4FX15transcript" tags="" position="350,600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Just ignore the detector for now, that noise is only a sign of peaceful duppy.  
+
+//Knees up Mother Brown 
+Knees up Mother Brown 
+Under the table you must go 
+Ee-aye, Ee-aye, Ee-aye-oh. //
+
+&lt;span class=&quot;char-name&quot;&gt;Harry:&lt;/span&gt;
+I don’t mind you lot as long as you behave yourselves. 
+
+//Knees up Mother Brown 
+Knees up Mother Brown 
+Under the table you must go 
+Ee-aye, Ee-aye, Ee-aye-oh. //
+ 
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Oh it’s Harry my old friend. He lived along Newton Street. His duppy is still around.  
+
+&lt;span class=&quot;char-name&quot;&gt;Harry:&lt;/span&gt;
+You could leave your front door open. Kids would play outside, we looked out for each -
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+After the Blitz this area was never the same.  
+
+It wasn’t I think, just the bombing. After what they went through English working class English people wanted more. A better life, so they moved or were moved to Hartcliffe, Knowle, Southmead.  
+
+They were leaving before Mumma and Dad arrived.</tw-passagedata><tw-passagedata pid="44" name="SC4FX16" tags="nobr" position="475,600" size="100,100">/* SHOWING MAP  */
+/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC4FX15&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC4FX16&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC4FX16transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX16.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 5s&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP3.jpeg&quot; alt=&quot;map to Peel Street Green Space&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 20s&gt;&gt;
+
+  &lt;&lt;replace &quot;#audioWrapper&quot;&gt;&gt;
+   &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX17.mp3&quot;&gt;&lt;/audio&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 48s&gt;&gt;
+  &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached the Peel Street Green Space&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached the Peel Street Green Space&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="SC4FX16transcript" tags="" position="600,600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+We need to speed up.  
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;	
+Turn right onto Pennywell Road, turn left, and cross the road into Peel Street in the green space. 
+
+Let me know once you reached and remember to cross safely. 
+
+Remember I need you. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+That will be the children of St Nicolas of Tolentine. The Catholic school. 
+
+Huh from Irish Catholic, West Indian to East African and Muslim in no time. ‘Trusted by all the community’ from the youngest to the eldest and everybody in-between.  
+
+The duppy could step into a child.</tw-passagedata><tw-passagedata pid="46" name="end" tags="nobr" position="725,600" size="100,100">&lt;&lt;set $prevpass to &quot;SC4FX16&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
-&lt;&lt;set $showMap to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
 &lt;&lt;set $showReplay to false&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
