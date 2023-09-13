@@ -2712,7 +2712,7 @@ Another riddle to solve – have a look aroud you -check your phone.
 Another riddle to solve – have a look aroud you -check your phone.  */</tw-passagedata><tw-passagedata pid="85" name="SC6FX35B" tags="nobr" position="600,1100" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC6FX35&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC6FX35B&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC6FX36&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
@@ -2738,7 +2738,7 @@ Another riddle to solve – have a look aroud you -check your phone.  */</tw-pas
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 43s&gt;&gt;
+&lt;&lt;timed 175s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; /*TODO check if a button is wanted here before  multiple choice */
@@ -2748,7 +2748,7 @@ Another riddle to solve – have a look aroud you -check your phone.  */</tw-pas
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="SC6FX35Btranscript" tags="" position="725,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
-We got him.
+We got it.
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 St Nicholas House – the old pub owned by Mr Jim Williams Bristol’s first Black civic Mayor. 
@@ -2820,7 +2820,107 @@ We’ll see.
 Where do you think he means, the green?
 
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
-Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be facing a Green. Walk along the path through the green till you reach the centre.</tw-passagedata><tw-passagedata pid="87" name="end" tags="nobr" position="850,1100" size="100,100">&lt;&lt;set $prevpass to &quot;SC6FX35&quot;&gt;&gt;
+Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be facing a Green. Walk along the path through the green till you reach the centre.</tw-passagedata><tw-passagedata pid="87" name="SC6FX36" tags="nobr" position="850,1100" size="100,100">/* SHOWING MAP  */
+/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC6FX35&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC6FX36&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC6FX37&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC6FX36transcript&quot;&gt;&gt;
+/* --- */
+
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 1s&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP6.jpeg&quot; alt=&quot;map to centre of the green&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 5s&gt;&gt;
+  &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="SC6FX36transcript" tags="" position="975,1100" size="100,100">/* &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+We need to speed up.   */</tw-passagedata><tw-passagedata pid="89" name="SC6FX37" tags="nobr" position="1100,1100" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC6FX36&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC6FX37&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC6FX37transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX37.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 43s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;div class=&quot;menu-wrapper&quot;&gt;
+     &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; /*TODO check if a button is wanted here before  multiple choice */
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="SC6FX37transcript" tags="" position="1225,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Duppy I’m ready to duel. Where are you? 
+
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+Duppy:	Oh you reach. Well look for Sankofa either.
+A) perched in a tree along the green.
+B) the window where the hungry go to fill them belly 
+C) On a wall between glass, wood and concrete
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Why don’t you come out and fight.
+
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+That will be too easy he he.</tw-passagedata><tw-passagedata pid="91" name="end" tags="nobr" position="100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;SC6FX37&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;

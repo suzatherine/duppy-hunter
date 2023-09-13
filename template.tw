@@ -2976,7 +2976,7 @@ Another riddle to solve – have a look aroud you -check your phone.  */
 /* Navigation options */
 <<set $prevpass to "SC6FX35">>
 <<set $passage to "SC6FX35B">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC6FX36">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -3002,7 +3002,7 @@ Another riddle to solve – have a look aroud you -check your phone.  */
 <br/>
 <div id="mount"></div>
 
-<<timed 43s>>
+<<timed 175s>>
   <<replace "#mount">>
     <div class="menu-wrapper">
      <<button "Next">><<goto $nextpass>><</button>> /*TODO check if a button is wanted here before  multiple choice */
@@ -3016,7 +3016,7 @@ Another riddle to solve – have a look aroud you -check your phone.  */
 :: SC6FX35Btranscript 
 
 <span class="char-name">MummaD:</span>
-We got him.
+We got it.
 
 <span class="char-name">Josie:</span>
 St Nicholas House – the old pub owned by Mr Jim Williams Bristol’s first Black civic Mayor. 
@@ -3090,11 +3090,123 @@ Where do you think he means, the green?
 <span class="char-name">MummaD:</span>
 Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be facing a Green. Walk along the path through the green till you reach the centre. 
 
+:: SC6FX36 [nobr]
+/* SHOWING MAP  */
+/* Navigation options */
+<<set $prevpass to "SC6FX35">>
+<<set $passage to "SC6FX36">>
+<<set $nextpass to "SC6FX37">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
 
 
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC6FX36transcript">>
+/* --- */
+
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 1s>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP6.jpeg" alt="map to centre of the green">
+   <</replace>>
+<</timed>>
+
+<<timed 5s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC6FX36transcript 
+/* <span class="char-name">Josie:</span>	
+We need to speed up.   */
+
+
+:: SC6FX37 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC6FX36">>
+<<set $passage to "SC6FX37">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC6FX37transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX37.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 43s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Next">><<goto $nextpass>><</button>> /*TODO check if a button is wanted here before  multiple choice */
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC6FX37transcript 
+
+<span class="char-name">Josie:</span>
+Duppy I’m ready to duel. Where are you? 
+
+<span class="char-name">Duppy:</span>
+Duppy:	Oh you reach. Well look for Sankofa either.
+A) perched in a tree along the green.
+B) the window where the hungry go to fill them belly 
+C) On a wall between glass, wood and concrete
+
+<span class="char-name">Josie:</span>
+Why don’t you come out and fight.
+
+<span class="char-name">Duppy:</span>
+That will be too easy he he. 
 
 :: end [nobr]
-<<set $prevpass to "SC6FX35">>
+<<set $prevpass to "SC6FX37">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
