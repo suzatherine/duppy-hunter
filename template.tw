@@ -2007,6 +2007,8 @@ Yes Mumma.
 <span class="char-name">MummaD:</span>
 Turn right after the bridge and walk onto Newfoundland Road - cross over safely. Let me know when you reach.
 
+/*TODO Map 4 here? */
+
 :: SC5FX23 [nobr]
 
 /* Navigation options */
@@ -2191,10 +2193,10 @@ Alright let’s carry on. Walk towards the underpass straight ahead.
 /* Navigation options */
 <<set $prevpass to "SC5FX24.1">>
 <<set $passage to "SC5FX24.2">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC5FX26">>
 
 /* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
+<<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2209,20 +2211,34 @@ Alright let’s carry on. Walk towards the underpass straight ahead.
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2_TEMP.mp3"></audio>
+/*TODO will need to update this and the timings when song added in */
 
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"><<include "duppyTitle">></div>
+<div id="map"></div>
+<div id="transcript"></div>
 <br/>
 <div id="mount"></div>
 
-<<timed 56s>>
-  <<replace "#mount">>
-    <div class="menu-wrapper">
-     <<button "I'm at the park">><<goto $nextpass>><</button>> 
+<<timed 44s>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP5.jpeg" alt="map to St. Agnes">
+   <</replace>>
+<</timed>>
+
+<<timed 48s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "I'm at the park">><<goto $nextpass>><</button>> 
     </div>
    <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "I'm at the park">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
 <</timed>>
 
 </main>
@@ -2260,12 +2276,521 @@ Amazing grace how sweet the sound
 That saved a wretch like me
 I once was lost, but now I'm found
 Was blind but now I see 
+/*TODO replace this audio file once this song has been added */
 
 <span class="char-name">MummaD</span>
 Keep walking towards the roundabout Underpass ahead, until you come to the entrance to the park, on your left. Turn left through the gate up along the path into St Agnes Park.
 
-:: end [nobr]
+
+:: SC5FX26 [nobr]
+
+/* Navigation options */
 <<set $prevpass to "SC5FX24.2">>
+<<set $passage to "SC5FX26">>
+<<set $nextpass to "SC5FX27">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC5FX26transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX26_TEMP.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 43s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Next">><<goto $nextpass>><</button>> /*TODO check if a button is wanted here before  multiple choice */
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC5FX26transcript 
+
+<span class="char-name">Josie:</span>
+Wait! Can you see the mural ahead, on the corner of Tudor Road, Barbara Dettering. She was so kind to me as a child. Dad told me how she was involved in the Bristol Bus Boycott, the Carnival and so many initiatives.
+I know we’re on a Duppy Hunt but show some respect, yeah? Acknowledge Ms Dettering. Bow, nod, or take off your hat.
+Oh wait. What did the duppy say again?
+
+<span class="char-name">MummaD:</span>
+I’ll bring it up. It’s time to look at your phone and choose the options that are given to you. Look around. Think. Try to get it right. Go on, make a choice.
+
+:: SC5FX27 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX26">>
+<<set $passage to "SC5FX27">>
+<<set $nextpass to "SC5FX27B">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to false>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC5FX27transcript">>
+/* --- */
+
+<<include "header">><main class="general">
+<div id="transcript"></div>
+<br/>
+
+<div class="menu-wrapper">
+<<button "The stone tower overlooking the green">>
+  <<goto $nextpass>>
+<</button>> 
+<<button "The junkyard castle ruled by pickney">>
+  <<timed 1s>>
+  <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_01.mp3"></audio>
+  <</timed>>
+  /*TODO audio file here*/
+<</button>> 
+<<button "In the lodge about to start a machine.">>
+  <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_ThatsNotRight_01.mp3"></audio>
+  
+  /*TODO audio file here */
+<</button>> 
+</div>
+
+
+</main>
+<<include "footer">>
+
+:: SC5FX27B [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX27">>
+<<set $passage to "SC5FX27B">>
+<<set $nextpass to "SC5FX29">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC5FX27Btranscript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX27.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+/*TODO Image of geometric lines */
+
+<<timed 17s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "I see them">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC5FX27Btranscript 
+
+<span class="char-name">MummaD:</span>
+We got it.
+
+<span class="char-name">Duppy:</span>
+Duppy:	Sucks teeth. 
+
+<span class="char-name">MummaD:</span>
+Alright go back to the path into the park through the gate pass the Adventure Playground. Can you see the bright colours and geometric lines?
+
+:: SC5FX29 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX27B">>
+<<set $passage to "SC5FX29">>
+<<set $nextpass to "SC5FX30">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC5FX29transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX29.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+/*TODO Image of geometric lines */
+
+<<timed 54s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Reached St Agnes">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC5FX29transcript 
+
+<span class="char-name">Josie:</span>
+The junkyard for pickney’ the duppy meant the adventure playground.
+The red lodge where classes and meetings are kept
+Of course the shepherd must be a priest outside St Agnes Church – the stone tower.
+
+<span class="char-name">Duppy:</span>
+He he he he. 
+
+<span class="char-name">Josie:</span>
+You laugh now. You won't be laughing when I catch you. 
+
+<span class="char-name">MummaD:</span>
+Walk along the path to the entrance of St Agnes.
+		
+<span class="char-name">Josie:</span>
+Don’t be scared.
+Say ‘I am a duppy hunter.’ If you have anybody with you say it to them too and lock arms. The duppy can’t harm you as long as I’m with you. 
+Where are you Duppy? Friend, have a look round the side, 
+No sign. 
+Nothing from the duppy Detector.
+What if he’s taken the priest.
+
+:: SC5FX30 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX29">>
+<<set $passage to "SC5FX30">>
+<<set $nextpass to "SC5FX31">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC5FX30transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30_TEMP.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"></div>
+<br/>
+<div id="mount"></div>
+
+
+/*We've not been asked to put the duppy detector here but I'll put it here in case that changes */
+/* 
+<div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
+<br/>
+
+  <<timed 2s>>
+    <<addclass "#detector" "pulse">>
+  <</timed>> */
+
+<<timed 14s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Salt ready">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC5FX30transcript 
+
+<span class="char-name">Josie:</span>
+Oh lord do you hear that sound, it must mean that a Duppy is close, quick hit the button on your phone to let us know that your eyes are on alert, ears are alert and you have the salt ready just in case you see it! 
+
+:: SC5FX31 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX30">>
+<<set $passage to "SC5FX31">>
+<<set $nextpass to "SC5FX32">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+<<set $answer to "">>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC5FX31transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX31_TEMP.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 60s>>
+    <<replace "#mount">>
+    <div class="menu-wrapper">
+      RETNUHYPPUDAMAI
+      <<textbox "$answer" "">>
+      <<button "submit">>
+        <<set $capitalanswer to $answer.toUpperCase()>>
+        <<if $capitalanswer is "I AM A DUPPY HUNTER">>
+          <<goto $nextpass>>            
+        <</if>>>
+      <</button>>
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC5FX31transcript 
+
+<span class="char-name">Josie:</span>
+The last time I was here...I. 
+
+<span class="char-name">Father P:</span>
+Never mind Josie.  
+
+<span class="char-name">Josie:</span>
+Father P.  
+
+<span class="char-name">Father P:</span>
+Be yourself here Josie. You're not at school. You are always welcome. Always welcome. 
+Josie, you’ve chosen us for the Christening. Wonderful and what’s his name.
+His name?
+His name? 
+
+<span class="char-name">St Agnes:</span>
+Pure heart. Come to me. Be not troubled. Come, home.
+
+<span class="char-name">Father P:</span>
+His name.
+
+<span class="char-name">St Agnes:</span>
+Come home. Come home. 
+
+/*TODO do we keep audio directions like this in the transcript? */
+/* 
+The sound of grave dirt falling on the coffin becomes louder. In the flashback Josie tries to lead the song but her voice breaks down emotionally and is supported then taken over by Leroy, with Mumma and Hadrian taking over from Leroy as he too breaks. 
+Distorted sounds of the accident, screech and bicycle wheel turning also in the mix.
+*/
+<span class="char-name">Josie:</span>
+No, this is not about me. I, we are on a mission.
+
+<span class="char-name">MummaD:</span>
+Hunter you accepted this mission. Hunter! 
+Josie is trying to get back. She’s scrambled.  It means she’ll come back as code.
+If we can’t work it out the Hunt can’t continue. 
+
+:: SC5FX32 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX31">>
+<<set $passage to "SC5FX32">>
+<<set $nextpass to "SC5FX33">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC5FX32transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX32.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 48s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Finished">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC5FX32transcript 
+
+<span class="char-name">MummaD:</span>
+Of course it’s I am a duppy Hunter.
+
+<span class="char-name">Josie:</span>
+I’m sorry friend. I’m back. I am a duppy hunter.
+
+<span class="char-name">Duppy:</span>
+Huh well while you were gone. I was done with the shepherd now I’ve passed onto a young ram living on Davey Street. 
+
+<span class="char-name">MummaD:</span>
+Walk forward into St Agnes Park, take the gate on the left and walk down the path past the Clifford Drummond Seven Saints of St. Paul's mural.
+
+<span class="char-name">Josie:</span>
+Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you read what it says? He was the owner of the Speedy Bird Cafe, one of the first places where my parents and their friends would meet. Pour out a libation to Mr Drummond, yeah?
+
+<span class="char-name">Mumma:</span>
+Let me know when you have finished.
+
+:: SC5FX33 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX32">>
+<<set $passage to "SC5FX33">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC5FX32transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX32.1_TEMP.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 28s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Reached Davy Street">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC5FX33transcript 
+<span class="char-name">MummaD:</span>
+Return to the path and carry on walking to the exit on your left onto Davy Street.
+
+<span class="char-name">St Agnes:</span>
+Come child.
+
+<span class="char-name">FatherP:</span>
+His name?
+
+<span class="char-name">St Agnes:</span>
+Pure heart
+
+<span class="char-name">FatherP:</span>
+You are always welcome.
+
+<span class="char-name">St Agnes:</span>
+Come to me. 
+
+<span class="char-name">FatherP:</span>
+His name?
+
+<span class="char-name">St Agnes:</span>
+Lay down your burden. 
+
+<span class="char-name">FatherP:</span>
+Welcome.
+
+<span class="char-name">St Agnes:</span>
+St Agnes:	Burden.
+
+<span class="char-name">MummaD:</span>
+Let me know when you reach. 
+
+
+:: end [nobr]
+<<set $prevpass to "SC5FX30">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
@@ -2275,6 +2800,8 @@ Keep walking towards the roundabout Underpass ahead, until you come to the entra
 <<set $showForwards to false>>
 <<set $showTranscriptIcon to false>>
 <<set $transcript to false>>
+
+
 
 
 <main class="end">
