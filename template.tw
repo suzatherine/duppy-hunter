@@ -2656,7 +2656,7 @@ If we can’t work it out the Hunt can’t continue.
 /* Navigation options */
 <<set $prevpass to "SC5FX31">>
 <<set $passage to "SC5FX32">>
-<<set $nextpass to "SC5FX33">>
+<<set $nextpass to "SC5FX32.1">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -2713,12 +2713,12 @@ Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you rea
 <span class="char-name">Mumma:</span>
 Let me know when you have finished.
 
-:: SC5FX33 [nobr]
+:: SC5FX32.1 [nobr]
 
 /* Navigation options */
 <<set $prevpass to "SC5FX32">>
-<<set $passage to "SC5FX33">>
-<<set $nextpass to "end">>
+<<set $passage to "SC5FX32.1">>
+<<set $nextpass to "SC6FX33">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -2731,7 +2731,7 @@ Let me know when you have finished.
 
 /* Transcript options */
 <<set $transcript to false>>
-<<set $transcriptname to "SC5FX32transcript">>
+<<set $transcriptname to "SC5FX32.1transcript">>
 /* --- */
 
 <div id="audioWrapper">
@@ -2755,7 +2755,7 @@ Let me know when you have finished.
 </main>
 <<include "footer">>
 
-:: SC5FX33transcript 
+:: SC5FX32.1transcript 
 <span class="char-name">MummaD:</span>
 Return to the path and carry on walking to the exit on your left onto Davy Street.
 
@@ -2789,9 +2789,312 @@ St Agnes:	Burden.
 <span class="char-name">MummaD:</span>
 Let me know when you reach. 
 
+:: SC6FX33 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX32.1">>
+<<set $passage to "SC6FX33">>
+<<set $nextpass to "SC6FX34">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC6FX33transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX33.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 138s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Reached St Nicholas Street">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC6FX33transcript 
+<span class="char-name">Josie:</span>
+Davey Street. Where I grew up. Rice and peas on Sunday mornings church women with wide starched dresses and stiff hats, matching 
+Is that a banana tree – that’s new.
+I called it sweetie Street because of the pastel-colored houses. Summer playing out in the street, chalks, jumping rope, biking round Paul's. My first crush lives along here somewhere. Big Afro. Back then.
+Last Carnival As it Is TV – a Soundsystem played along here- I’m told. 
+Did you go, friend? I didn’t. Haven’t been for years – always some thing comes up. 
+
+<span class="char-name">Duppy:</span>
+I like these clothes these young people wear. What you call it 
+A-di-rass? He he. 
+
+<span class="char-name">Josie:</span>
+When I ketch you. 
+
+<span class="char-name">Duppy:</span>
+I met a young ram on Davey who’s fast like Donovan Bailey
+We are off to meet his sweetheart. Mi want her for new start.  
+I’ll be over at a place on St Nicholas Street. 
+I’ll hanging either by
+
+The Falafel Palais
+The Big Palm Tree
+Good Jim’s Magnolia Inn
+
+<span class="char-name">Josie:</span>
+What? Is this thing working? The Duppy Detector. How come he’s sneaking up on us. 
+
+<span class="char-name">Mumma:</span>
+He might have some kind of Duppy Detector blocker. You can’t concern yourself with that. You have to find him. We don’t know what craziness he’s caused when he was inside the priest, now 		he’s inside the young man and about to cause more damage. We have to find him before he get’s 		to the woman.
+Walk down Davey Street, until you are standing on the corner of St Nicholas Street. Let me 	know when you reach. 
+
+<span class="char-name">Josie:</span>
+St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mrs Wynter a small, light big spirit loving woman. Tinker Man. Fix anything for nothing. 
+
+:: SC6FX34 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX33">>
+<<set $passage to "SC6FX34">>
+<<set $nextpass to "SC6FX35">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC6FX34transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX34.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 8s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Ready">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC6FX34transcript 
+<span class="char-name">MummmaD:</span>
+Another riddle to solve – have a look aroud you -check your phone. 
+
+/*TODO where's the riddle? */
+
+:: SC6FX35 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC5FX34">>
+<<set $passage to "SC6FX35">>
+<<set $nextpass to "SC6FX35B">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC6FX35transcript">>
+/* --- */
+
+<div id="audioWrapper">
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"></div>
+<br/>
+<div id="mount"></div>
+
+
+<<button "a) Good Jim’s Magnolia Inn ">>
+<<goto $nextpass>>
+<</button>> 
+<<button "b) Falafel Palais ">>
+  <<audio "mummano" "play">>
+  <<timed 2s>>
+   <<audio "duppyno" "play">>>
+  <</timed>>
+<</button>> 
+<<button "c) The Big Palm Tree">>
+  <<audio "mummano" "play">>
+    <<timed 2s>>
+      <<audio "duppyno" "play">>>
+    <</timed>>
+<</button>> 
+ 
+
+
+
+</main>
+<<include "footer">>
+
+:: SC6FX35transcript 
+/* <span class="char-name">MummmaD:</span>
+Another riddle to solve – have a look aroud you -check your phone.  */
+
+:: SC6FX35B [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC6FX35">>
+<<set $passage to "SC6FX35B">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC6FX35Btranscript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX35.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 43s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Next">><<goto $nextpass>><</button>> /*TODO check if a button is wanted here before  multiple choice */
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC6FX35Btranscript 
+
+<span class="char-name">MummaD:</span>
+We got him.
+
+<span class="char-name">Josie:</span>
+St Nicholas House – the old pub owned by Mr Jim Williams Bristol’s first Black civic Mayor. 
+Be careful. Salt ready. 
+Look outside is there anyone there? Look around the side. Nobody.
+
+
+<span class="char-name">MummaD:</span>
+The duppy detector is just picking up the sounds of peaceful duppies. But just hit that button to let us know that you are still alert, eyes and ears wide for that Duppy! 
+￼
+<span class="char-name">Josie:</span>
+Not what we’re after.
+Hmm  
+Is it still open? No definitely not. It was Mr Williams pub. Jim Williams. The first Black civic Mayor. Dad’s favorite drinking spot after he finished working at Trinity. I’d slip inside and take it all in. 
+
+<span class="char-name">Hadrian:</span>
+Hadrian:	‘Tek dat yu brute.’ 
+
+<span class="char-name">Josie:</span>
+When I wanted more pocket money I would visit Dad in the pub. 
+All his friend’s would give me change as well. Rum and whiskey made them generous. 
+
+<span class="char-name">Duppy:</span>
+Duppy where yu dey?
+
+<span class="char-name">Josie:</span>
+Wey you dey?
+
+<span class="char-name">Duppy:</span>
+You took so long I moved on. That boy’s sweetheart is a real outlaw he he. 
+
+<span class="char-name">Josie:</span>
+Leave her be you dutty duppy. 
+
+<span class="char-name">Duppy:</span>
+You want to stop me? Let’s duel like old days for the young lady. 
+By the green where St Nicholas and Grosvenor Road meet.
+Find the Sankofa bird and you find me. 
+
+<span class="char-name">Josie:</span>
+The Sankofa bird – the bird that looks forward and back in time. In Sr Paul’s. 
+
+<span class="char-name">Duppy:</span>
+Why not. Stranger things have happened. 
+
+<span class="char-name">Josie:</span>
+No think. It’s a trick. 
+
+<span class="char-name">Duppy:</span>
+While you disagree its more time for me to get into a new body.
+Now where could tweety tweety Sankofa be. 
+
+<span class="char-name">MummaD:</span>
+It’s that time again, remember to choose the right one. You are almost there. 
+
+<span class="char-name">Duppy:</span>
+The Sankofa bird facing where the doves once danced
+In front of the Elderly
+Who draws first a soul will keep. Want to know where I’ll be 
+Better rush cause dis duppy nah sleep
+  
+<span class="char-name">Josie:</span>
+Deal. You’re going back to shadow. 
+ 
+<span class="char-name">Duppy:</span>
+We’ll see. 
+ 
+<span class="char-name">Josie:</span>
+Where do you think he means, the green?
+
+<span class="char-name">MummaD:</span>
+Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be facing a Green. Walk along the path through the green till you reach the centre. 
+
+
+
 
 :: end [nobr]
-<<set $prevpass to "SC5FX30">>
+<<set $prevpass to "SC6FX35">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
