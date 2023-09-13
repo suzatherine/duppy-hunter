@@ -249,6 +249,9 @@ setup.backFive = () => {
   audio.currentTime = timeHolder -5;
   }</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;mapappear&quot; &quot;assets/audio/DuppyHunter_FX_Generic_MapAppear.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;mapdisappear&quot; &quot;assets/audio/DuppyHunter_FX_Generic_MapDisappear.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;mummano&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_ThatsNotRight_01.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;duppyno&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_01.mp3&quot;&gt;&gt;
+
 
 &lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="225,100" size="100,100">&lt;header class=&quot;story&quot;&gt;
 &lt;&lt;if $showBackwards is true&gt;&gt;
@@ -2172,13 +2175,11 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
   &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/button&gt;&gt; 
 &lt;&lt;button &quot;The junkyard castle ruled by pickney&quot;&gt;&gt;
-  &lt;&lt;timed 1s&gt;&gt;
-  &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_01.mp3&quot;&gt;&lt;/audio&gt;
-  &lt;&lt;/timed&gt;&gt;
+ &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
   /*TODO audio file here*/
 &lt;&lt;/button&gt;&gt; 
 &lt;&lt;button &quot;In the lodge about to start a machine.&quot;&gt;&gt;
-  &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_ThatsNotRight_01.mp3&quot;&gt;&lt;/audio&gt;
+  &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
   
   /*TODO audio file here */
 &lt;&lt;/button&gt;&gt; 
