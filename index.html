@@ -3243,7 +3243,7 @@ Duppy! Hmm well we know he’s on Frontline. Frontline isn’t a street it’s a
 Safely cross over Grosvenor road and turn right down Grosvenor Road until you reach Grosvenor Road triangle park on your left. You know it, let me know once you reach.</tw-passagedata><tw-passagedata pid="99" name="SC9FX42" tags="nobr" position="1100,1225" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC7FX40&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC9FX42&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC9FX44&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
@@ -3304,7 +3304,224 @@ But the Beast Master never liked rebels.
 It would not leave us alone. Neither me nor Mum could stop them. Not all of them.
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
-Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.</tw-passagedata><tw-passagedata pid="101" name="end" tags="nobr" position="100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;SC9FX42&quot;&gt;&gt;
+Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.</tw-passagedata><tw-passagedata pid="101" name="SC9FX44" tags="nobr" position="100,1350" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC8FX42&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC9FX44&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC9FX45&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC9FX44transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX44.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+
+
+&lt;&lt;timed 25s&gt;&gt;
+      &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+        &lt;&lt;button &quot;a) Tough as steel&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+    &lt;&lt;button &quot;b) Tough as wood&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+     &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+    &lt;&lt;button &quot;c) Tough as stone&quot;&gt;&gt;
+         &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 2s&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+        &lt;/div&gt;
+      &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="102" name="SC9FX44transcript" tags="" position="225,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Where is this full-of-story-person? 
+
+Find them I don’t like it here. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Josie, be patient.
+
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+If you know the substance of this man he’s easy to see. See him and you’ll find me. He could be tough as:
+
+a) tree
+b) stone.
+c) steel</tw-passagedata><tw-passagedata pid="103" name="SC9FX45" tags="nobr" position="350,1350" size="100,100">/* SHOWING MAP  */
+
+/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC9FX44&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC9FX45&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC9FX46&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC9FX45transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX45.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 14s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Just wait by the statue. 
+&lt;br/&gt;I’ll be able to tell. &lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I&#39;m by the statue&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="SC9FX45transcript" tags="" position="475,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+Standing in centre space? 
+Close by the Frontline
+His eye catches all, 
+He can never turn away 
+And has nothing to say?
+The statue. 
+
+Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata pid="105" name="SC9FX46" tags="nobr" position="600,1350" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC9FX45&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC9FX46&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC9FX47&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC9FX46transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX46.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+
+&lt;br/&gt;
+
+
+&lt;&lt;timed 47s&gt;&gt;
+   &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;&lt;type 400ms&gt;&gt;&lt;h2 class=&quot;word-us&quot;&gt;EIOJS&lt;/h2&gt;&lt;&lt;/type&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 50s&gt;&gt;
+   
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+
+&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+/% CODEWORD FEEDBACK %/
+&lt;div id=&quot;resultbutton&quot;&gt;
+/% CODEWORD INPUT %/
+&lt;div class=&quot;code-input&quot;&gt;
+&lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;button &quot;Enter&quot;&gt;&gt;
+&lt;/div&gt;
+/% STANDARDISE INPUT %/
+&lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+/% CODEWORD CORRECT %/
+&lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;JOSIE&quot;&gt;&gt;
+&lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct&lt;&lt;/replace&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+  /% CODEWORD INCORRECT %/
+  &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;JOSIE&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#result&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="SC9FX46transcript" tags="" position="725,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+A playwright one of the first from the Caribbean. Alfred lived in St Paul’s. He was one of Dad’s 	friends. 	Alfred moved to London but had a heart attack and died when he was out jogging. When the beasts found 	him, they thought he was a vagrant and gave him a pauper’s funeral until friend’s realised, he’d gone missing and gave him a proper burial. 
+
+To see a great man buried like he was nothing. On the street. 
+
+Dad said You were like Alfred. The way you dreamed out loud. 
+Why here? Why has the Duppy brought me here. No Duppy wants to enter a statute.
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt; 
+Josie is about to disappear. Look at your phone -  Riddle .....
+
+She’s trying to return. She’s trying but she’s been scrambled. What can you see. The letters are an anagram...
+
+EIOJS
+
+If we can’t work it out the Hunt can’t continue.</tw-passagedata><tw-passagedata pid="107" name="end" tags="nobr" position="850,1350" size="100,100">&lt;&lt;set $prevpass to &quot;SC9FX42&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;

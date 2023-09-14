@@ -625,3 +625,36 @@ main.start {
 .duppy-img-container > img {
   border-radius: 40%;
 }
+
+/* SCRAMBLE  */
+
+h2.word-us {
+  text-align: center;
+  width: 100%;
+  font-size: 5rem;
+}
+
+.code-input {
+  display: flex;
+}
+.code-input > input {
+  border: solid 2px black;
+  margin: auto;
+  margin-block-end: 3rem;
+  border-radius: 10px;
+  height: 6rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: black;
+}
+
+.code-input > input:focus {
+  color: white;
+}
+
+#resultbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

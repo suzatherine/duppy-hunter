@@ -3567,7 +3567,7 @@ Safely cross over Grosvenor road and turn right down Grosvenor Road until you re
 /* Navigation options */
 <<set $prevpass to "SC7FX40">>
 <<set $passage to "SC9FX42">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC9FX44">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
@@ -3633,6 +3633,246 @@ It would not leave us alone. Neither me nor Mum could stop them. Not all of them
 
 <span class="char-name">Josie:</span> 
 Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.
+
+:: SC9FX44 [nobr]
+/* Navigation options */
+<<set $prevpass to "SC8FX42">>
+<<set $passage to "SC9FX44">>
+<<set $nextpass to "SC9FX45">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC9FX44transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX44.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="mount"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+
+
+<<timed 25s>>
+      <<replace "#transcript">><</replace>>
+      <<replace "#mount">>
+        <div id="result"></div>
+        <div class="menu-wrapper">
+        <<button "a) Tough as steel">>
+        <<replace "#result">>That's not right.<</replace>>
+        <<audio "mummano" "play">>
+      <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
+    <</button>> 
+    <<button "b) Tough as wood">>
+      <<replace "#result">>That's not right.<</replace>>
+      <<audio "mummano" "play">>
+     <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
+    <</button>> 
+    <<button "c) Tough as stone">>
+         <<replace "#result">>Correct.<</replace>>
+        <<timed 2s>>
+            <<goto $nextpass>>
+        <</timed>>
+    <</button>> 
+        </div>
+      <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC9FX44transcript 
+
+<span class="char-name">Josie:</span>
+Where is this full-of-story-person? 
+
+Find them I don’t like it here. 
+
+<span class="char-name">MummaD:</span>
+Josie, be patient.
+
+<span class="char-name">Duppy:</span>
+If you know the substance of this man he’s easy to see. See him and you’ll find me. He could be tough as:
+
+a) tree
+b) stone.
+c) steel 
+
+:: SC9FX45 [nobr]
+/* SHOWING MAP  */
+
+/* Navigation options */
+<<set $prevpass to "SC9FX44">>
+<<set $passage to "SC9FX45">>
+<<set $nextpass to "SC9FX46">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC9FX45transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX45.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 14s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Just wait by the statue. 
+<br/>I’ll be able to tell. </p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+<<timed 18s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "I'm by the statue">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC9FX45transcript 
+<span class="char-name">Josie:</span>	
+Standing in centre space? 
+Close by the Frontline
+His eye catches all, 
+He can never turn away 
+And has nothing to say?
+The statue. 
+
+Just wait by the statue. I’ll be able to tell. 
+
+
+:: SC9FX46 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC9FX45">>
+<<set $passage to "SC9FX46">>
+<<set $nextpass to "SC9FX47">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC9FX46transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX46.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+
+<div id="mount"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+
+<br/>
+
+
+<<timed 47s>>
+   <<replace "#transcript">><</replace>>
+  <<replace "#mount">>
+    <<type 400ms>><h2 class="word-us">EIOJS</h2><</type>>
+    <</replace>>
+  <</timed>>
+<<timed 50s>>
+   
+  <<append "#mount">>
+
+<div id="result"></div>
+/% CODEWORD FEEDBACK %/
+<div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$codeword" "">></div>
+<<button "Enter">>
+</div>
+/% STANDARDISE INPUT %/
+<<set $codeword to $codeword.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $codeword isnot "" and $codeword is "JOSIE">>
+<<replace "#result">>Correct<</replace>>
+<<timed 3s>><<goto $nextpass>><</timed>>
+<</if>>
+  /% CODEWORD INCORRECT %/
+  <<if $codeword isnot "" and $codeword is not "JOSIE">>
+  <<replace "#result">>Thats not right.<</replace>>
+  <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
+  <</if>><</button>>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC9FX46transcript 
+
+<span class="char-name">Josie:</span> 
+A playwright one of the first from the Caribbean. Alfred lived in St Paul’s. He was one of Dad’s 	friends. 	Alfred moved to London but had a heart attack and died when he was out jogging. When the beasts found 	him, they thought he was a vagrant and gave him a pauper’s funeral until friend’s realised, he’d gone missing and gave him a proper burial. 
+
+To see a great man buried like he was nothing. On the street. 
+
+Dad said You were like Alfred. The way you dreamed out loud. 
+Why here? Why has the Duppy brought me here. No Duppy wants to enter a statute.
+
+<span class="char-name">MummaD:</span> 
+Josie is about to disappear. Look at your phone -  Riddle .....
+
+She’s trying to return. She’s trying but she’s been scrambled. What can you see. The letters are an anagram...
+
+EIOJS
+
+If we can’t work it out the Hunt can’t continue.
+
 
 
 
