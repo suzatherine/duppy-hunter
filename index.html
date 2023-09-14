@@ -2978,20 +2978,30 @@ That will be too easy he he.</tw-passagedata><tw-passagedata pid="91" name="SC7F
 &lt;&lt;timed 11s&gt;&gt;
       &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
         &lt;&lt;button &quot;a) Perched in a tree along the green&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
         &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
       &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/button&gt;&gt; 
     &lt;&lt;button &quot;b) The window where the hungry go to fill them belly&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
       &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
-      &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;&gt;
+     &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/button&gt;&gt; 
     &lt;&lt;button &quot;c) On a wall between, glass, wood and concrete&quot;&gt;&gt;
+         &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 2s&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
@@ -3006,7 +3016,7 @@ Where is the Sankofa bird?
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;	
 What did the duppy say again. Let’s make and choice and find out where him is.  Look at your phone.</tw-passagedata><tw-passagedata pid="93" name="SC7FX39" tags="nobr" position="350,1225" size="100,100">/* Navigation options */
-&lt;&lt;set $prevpass to &quot;SC6FX38&quot;&gt;&gt;
+&lt;&lt;set $prevpass to &quot;SC7FX38&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC7FX39&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC7FX40&quot;&gt;&gt;
 
@@ -3066,9 +3076,9 @@ You’ll just have to wait. Turn around and walk to the benches behind you in fr
  
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 How good is your salt throwing skills? Well, we’ll find out.</tw-passagedata><tw-passagedata pid="95" name="SC7FX40" tags="nobr" position="600,1225" size="100,100">/* Navigation options */
-&lt;&lt;set $prevpass to &quot;SC6FX39&quot;&gt;&gt;
+&lt;&lt;set $prevpass to &quot;SC7FX39&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC7FX40&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC8FX41&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
@@ -3125,7 +3135,176 @@ Now you have everybody jerking chicken, even them Turtle people.
 Your just jealous your duppy dumplin never take off. 
  
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt; 
-Not yet. There’s still time.</tw-passagedata><tw-passagedata pid="97" name="end" tags="nobr" position="850,1225" size="100,100">&lt;&lt;set $prevpass to &quot;SC7FX38&quot;&gt;&gt;
+Not yet. There’s still time.</tw-passagedata><tw-passagedata pid="97" name="SC8FX41" tags="nobr" position="850,1225" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC7FX40&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC8FX41&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC9FX42&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC8FX41transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene8_FX41.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+
+&lt;&lt;timed 160s&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP9.jpg&quot; alt=&quot;map&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 167s&gt;&gt;
+  &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="98" name="SC8FX41transcript" tags="" position="975,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+From here you could smell Carnival happening. The Afrikan Caribbean Carnival. 
+When I was younger it was all about Sound System- Bastian, Tarzan, Wild Bunch, Maasai Warrior every street vibrating with bass. Hip hop, dub, dancehall, reggae, Soca.
+ 
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Not enough soca and too much slackness. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+You still here. 
+This Green was the main stage, - Jonny Osbourne, Black Roots, Talisman local and outer-	national bands. Can’t rave at Carnival the same way once you have kids- their not catching me whining up in batty riders. I’d hang out with other big People once they got older.
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+ 
+Toy Boy sounds on the corner of St Nick’s street.
+  
+Carnival was our Black Pride moment. Every shade every kind of us together.
+ 
+I felt safe here in St Paul’s. Step outside – Centre, South Bristol, Horfield, even as kids you could be spat at, called names.‘Sambo, nig nog, the N word.’ Chased by men older than your 	Father. Madness.
+
+They wouldn’t come into our streets and say that. They wouldn’t dare.
+
+But the Beasts would. They would come in their Beast wagons, prey on people like vultures.
+
+Duppy attack. Can you see where that came from. Get the salt ready.
+
+I thought you said it was a duel.
+ 
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
+Doesn’t mean I’m going to tell you I’m coming.
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+Come out. 
+
+Player get the salt ready. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
+Too late duel done, I’ve won and gone. 
+Now the young lady sharpshooter has a friend,
+Full up a story but he can’t talk to anybody.  
+He’s not moved since him was a baby
+All him eat and drink come from the nature 
+Him so stiff Samson can’t shift him
+All him do is watch and listen
+What a ting if I could have him walking and talking.
+Right now he’s living on the Frontline. 
+
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
+By Frontline you’ll find this watcher of reality. He he. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+Duppy! Hmm well we know he’s on Frontline. Frontline isn’t a street it’s a reality, a way of life, where all roads meet. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt; 
+Safely cross over Grosvenor road and turn right down Grosvenor Road until you reach Grosvenor Road triangle park on your left. You know it, let me know once you reach.</tw-passagedata><tw-passagedata pid="99" name="SC9FX42" tags="nobr" position="1100,1225" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC7FX40&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC9FX42&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC9FX42transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX42.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 56s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP10.jpg&quot; alt=&quot;map&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 73s&gt;&gt;
+  &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I’m here&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I’m here&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="100" name="SC9FX42transcript" tags="" position="1225,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+This time of day there would be all kinds of people passing by on their way here and there.
+
+St Paul’s was our Black Bristol capital and Grosvenor Road, was the heart.
+
+Butchers, tailors, the Motor Bike shop, I remember the Lloyds, where Mumma used to go to deposit 	her duppy hunting savings, the Post Office. It was where you did you’re shopping -food, 	hair, curtains 	where you saw the latest fashions, long skirt, short skirt, red, gold and green tams leather jackets. 	It was 	the first time I saw a Rasta. A cool tall dread in a khaki suit, leaning up against a wall smoking. A rebel. 
+ 
+But the Beast Master never liked rebels. 
+ 
+It would not leave us alone. Neither me nor Mum could stop them. Not all of them.
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.</tw-passagedata><tw-passagedata pid="101" name="end" tags="nobr" position="100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;SC9FX42&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;

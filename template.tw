@@ -3266,20 +3266,30 @@ That will be too easy he he.
 <<timed 11s>>
       <<replace "#transcript">><</replace>>
       <<replace "#mount">>
+        <div id="result"></div>
         <div class="menu-wrapper">
         <<button "a) Perched in a tree along the green">>
+        <<replace "#result">>That's not right.<</replace>>
         <<audio "mummano" "play">>
       <<timed 2s>>
-      <<audio "duppyno" "play">>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
       <</timed>>
     <</button>> 
     <<button "b) The window where the hungry go to fill them belly">>
+      <<replace "#result">>That's not right.<</replace>>
       <<audio "mummano" "play">>
-      <<timed 2s>>
-      <<audio "duppyno" "play">>>
+     <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
       <</timed>>
     <</button>> 
     <<button "c) On a wall between, glass, wood and concrete">>
+         <<replace "#result">>Correct.<</replace>>
         <<timed 2s>>
             <<goto $nextpass>>
         <</timed>>
@@ -3303,7 +3313,7 @@ What did the duppy say again. Let’s make and choice and find out where him is.
 :: SC7FX39 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC6FX38">>
+<<set $prevpass to "SC7FX38">>
 <<set $passage to "SC7FX39">>
 <<set $nextpass to "SC7FX40">>
 
@@ -3372,9 +3382,9 @@ How good is your salt throwing skills? Well, we’ll find out.
 :: SC7FX40 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC6FX39">>
+<<set $prevpass to "SC7FX39">>
 <<set $passage to "SC7FX40">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC8FX41">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -3438,9 +3448,196 @@ Your just jealous your duppy dumplin never take off.
 Not yet. There’s still time. 
 
 
+:: SC8FX41 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC7FX40">>
+<<set $passage to "SC8FX41">>
+<<set $nextpass to "SC9FX42">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC8FX41transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene8_FX41.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"></div>
+<br/>
+<div id="mount"></div>
+
+
+<<timed 160s>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP9.jpg" alt="map">
+   <</replace>>
+<</timed>>
+
+<<timed 167s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC8FX41transcript 
+
+<span class="char-name">Josie:</span> 
+From here you could smell Carnival happening. The Afrikan Caribbean Carnival. 
+When I was younger it was all about Sound System- Bastian, Tarzan, Wild Bunch, Maasai Warrior every street vibrating with bass. Hip hop, dub, dancehall, reggae, Soca.
+ 
+<span class="char-name">MummaD:</span>
+Not enough soca and too much slackness. 
+ 
+<span class="char-name">Josie:</span> 
+You still here. 
+This Green was the main stage, - Jonny Osbourne, Black Roots, Talisman local and outer-	national bands. Can’t rave at Carnival the same way once you have kids- their not catching me whining up in batty riders. I’d hang out with other big People once they got older.
+
+<span class="char-name">Josie:</span> 
+ 
+Toy Boy sounds on the corner of St Nick’s street.
+  
+Carnival was our Black Pride moment. Every shade every kind of us together.
+ 
+I felt safe here in St Paul’s. Step outside – Centre, South Bristol, Horfield, even as kids you could be spat at, called names.‘Sambo, nig nog, the N word.’ Chased by men older than your 	Father. Madness.
+
+They wouldn’t come into our streets and say that. They wouldn’t dare.
+
+But the Beasts would. They would come in their Beast wagons, prey on people like vultures.
+
+Duppy attack. Can you see where that came from. Get the salt ready.
+
+I thought you said it was a duel.
+ 
+<span class="char-name">Duppy:</span> 
+Doesn’t mean I’m going to tell you I’m coming.
+ 
+<span class="char-name">Josie:</span> 
+Come out. 
+
+Player get the salt ready. 
+ 
+<span class="char-name">Duppy:</span> 
+Too late duel done, I’ve won and gone. 
+Now the young lady sharpshooter has a friend,
+Full up a story but he can’t talk to anybody.  
+He’s not moved since him was a baby
+All him eat and drink come from the nature 
+Him so stiff Samson can’t shift him
+All him do is watch and listen
+What a ting if I could have him walking and talking.
+Right now he’s living on the Frontline. 
+
+<span class="char-name">Duppy:</span> 
+By Frontline you’ll find this watcher of reality. He he. 
+
+<span class="char-name">Josie:</span> 
+Duppy! Hmm well we know he’s on Frontline. Frontline isn’t a street it’s a reality, a way of life, where all roads meet. 
+
+<span class="char-name">MummaD:</span> 
+Safely cross over Grosvenor road and turn right down Grosvenor Road until you reach Grosvenor Road triangle park on your left. You know it, let me know once you reach.
+
+
+:: SC9FX42 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC7FX40">>
+<<set $passage to "SC9FX42">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC9FX42transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX42.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 56s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP10.jpg" alt="map">
+   <</replace>>
+<</timed>>
+
+<<timed 73s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "I’m here">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "I’m here">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC9FX42transcript 
+
+<span class="char-name">Josie:</span> 
+This time of day there would be all kinds of people passing by on their way here and there.
+
+St Paul’s was our Black Bristol capital and Grosvenor Road, was the heart.
+
+Butchers, tailors, the Motor Bike shop, I remember the Lloyds, where Mumma used to go to deposit 	her duppy hunting savings, the Post Office. It was where you did you’re shopping -food, 	hair, curtains 	where you saw the latest fashions, long skirt, short skirt, red, gold and green tams leather jackets. 	It was 	the first time I saw a Rasta. A cool tall dread in a khaki suit, leaning up against a wall smoking. A rebel. 
+ 
+But the Beast Master never liked rebels. 
+ 
+It would not leave us alone. Neither me nor Mum could stop them. Not all of them.
+
+<span class="char-name">Josie:</span> 
+Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.
+
+
 
 :: end [nobr]
-<<set $prevpass to "SC7FX38">>
+<<set $prevpass to "SC9FX42">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>

@@ -53,7 +53,7 @@ button,
 
 button:hover {
   background-color: var(--accent-color-third);
-  border: black 1px solid;
+  border: black 2px solid;
   color: black;
 }
 
@@ -215,7 +215,13 @@ nav {
 
 .menu-wrapper > button {
   margin-inline-end: 10px;
-  margin-block-end: 10px;
+  margin-block-end: 25px;
+}
+
+#result {
+  margin-block-end: 3rem;
+  font-size: 3rem;
+  text-align: center;
 }
 
 textarea {
