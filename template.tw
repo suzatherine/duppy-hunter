@@ -1878,10 +1878,15 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 <span class="char-name">Josie:</span>
 Got it. 
 Sprinkle it in the water and say ‘Thank you Mama Frome.’ 
-If you really want a blessing, you have to say it out loud. A whisper deserves a whimper. 
+
+If you really want a blessing, you have to say it out loud. 
+
+A whisper deserves a whimper. 
 
 <span class="char-name">MummaD:</span>
-When you have paid respects press .When you done let’s move on.  
+When you have paid respects press.
+
+When you done let’s move on.  
 
 
 :: SC5FX21 [nobr]
@@ -1934,19 +1939,27 @@ Right back on the path now and walk through the park towards the M32 bridge.
 
 <span class="char-name">Josie:</span>
 This is where I would meet my friends. 
+
 Crossing the Danny, a rite of passage. Not for me but for the friends who either didn’t live in Paul’s or who’s parents didn’t like Paul’s. They thought it was full of crime. But I grew up in St Paul’s, it was a village with every walk of life.
-This is Riverside Park, this green between the motor way bridge and the Peel Street but where’s the assault course? There were bars and climbing frames. A wire. It’s gone. I slipped and fell and broke my arm on the ropes one year.
+
+This is Riverside Park, this green between the motor way bridge and the Peel Street. 
+
+But where’s the assault course? 
+
+There were bars and climbing frames. A wire. It’s gone. I slipped and fell and broke my arm on the ropes one year.
 
 <span class="char-name">Hadrian:</span>
 ‘You're young: you’ll heal.’ 
 
 <span class="char-name">Josie:</span>
 That’s what my Puppa, I mean my Dad, Hadrian, would say. He didn’t believe in tears. 
+
 We’re here now. One moment. 
+
 It’s been a while since I came back. 
 
 <span class="char-name">MummaD:</span>
-Walk across M32 Bridge
+Walk across M32 Bridge.
 
 :: SC5FX22 [nobr]
 
@@ -2113,7 +2126,9 @@ Go right after the bridge. Cross carefully and continue down Newfoundland Road t
 
 <span class="char-name">Josie:</span>
 Newfoundland Road. I remember there were offices on the corner. Community organizations. After the Uprising. A choir. Empty.
+
 Last time I come to Newfoundland was to cut a new set of keys at the DIY shop. 
+
 The shop should be here. Blue and brown. 
 
 :: SC5FX24.1 [nobr]
@@ -2165,9 +2180,13 @@ Let’s give her a moment just settle here for a minute till she ready to move o
 
 <span class="char-name">Josie:</span>
 I know we are on a hunt but let’s take a moment at this spot. 
+
 I loved coming here with Puppa, the smell of wood, shelves, boxes and the grumpy old man duppy who would just sit at the back and drink his tea.
+
 The boys were always losing their keys but Leroy, should have known better.
-Alright, let’s move on
+
+Alright, let’s move on.
+
 And the launderette: Mrs Stevens and Mumma gossiping they spoke so fast when they were together 
 
 <span class="char-name">Mumma:</span>
@@ -2189,7 +2208,9 @@ Eh eh.
 Her husband was a jealous man  He wouldn’t let Ms Steven’s go anywhere until Mumma put a stay-in- you- yard- spell- on him.
 
 <span class="char-name">Mumma:</span>
-Alright let’s carry on. Walk towards the underpass straight ahead.
+Alright let’s carry on. 
+
+Walk towards the underpass straight ahead.
 
 :: SC5FX24.2 [nobr]
 
@@ -2537,13 +2558,13 @@ What if he’s taken the priest.
 
 
 /*We've not been asked to put the duppy detector here but I'll put it here in case that changes */
-/* 
+
 <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
 <br/>
 
   <<timed 2s>>
     <<addclass "#detector" "pulse">>
-  <</timed>> */
+  <</timed>>
 
 <<timed 14s>>
   <<replace "#mount">>
@@ -2559,7 +2580,9 @@ What if he’s taken the priest.
 :: SC5FX30transcript 
 
 <span class="char-name">Josie:</span>
-Oh lord do you hear that sound, it must mean that a Duppy is close, quick hit the button on your phone to let us know that your eyes are on alert, ears are alert and you have the salt ready just in case you see it! 
+Oh lord do you hear that sound? 
+
+It must mean that a Duppy is close, quick hit the button on your phone to let us know that your eyes are on alert, ears are alert and you have the salt ready, just in case you see it! 
 
 :: SC5FX31 [nobr]
 
@@ -2569,7 +2592,7 @@ Oh lord do you hear that sound, it must mean that a Duppy is close, quick hit th
 <<set $nextpass to "SC5FX32">>
 
 /* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
+<<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2590,11 +2613,12 @@ Oh lord do you hear that sound, it must mean that a Duppy is close, quick hit th
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
-
+/* TODO STYLING  */
 <<timed 60s>>
+    <<replace "transcript">><</replace>>
     <<replace "#mount">>
     <div class="menu-wrapper">
       RETNUHYPPUDAMAI
@@ -3092,8 +3116,9 @@ Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be fa
 
 :: SC6FX36 [nobr]
 /* SHOWING MAP  */
+/* Todo this map just appears with no explaination  */
 /* Navigation options */
-<<set $prevpass to "SC6FX35">>
+<<set $prevpass to "SC6FX35B">>
 <<set $passage to "SC6FX36">>
 <<set $nextpass to "SC6FX37">>
 
@@ -3151,7 +3176,7 @@ We need to speed up.   */
 /* Navigation options */
 <<set $prevpass to "SC6FX36">>
 <<set $passage to "SC6FX37">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC7FX38">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -3177,7 +3202,7 @@ We need to speed up.   */
 <br/>
 <div id="mount"></div>
 
-<<timed 43s>>
+<<timed 40s>>
   <<replace "#mount">>
     <div class="menu-wrapper">
      <<button "Next">><<goto $nextpass>><</button>> /*TODO check if a button is wanted here before  multiple choice */
@@ -3200,13 +3225,222 @@ B) the window where the hungry go to fill them belly
 C) On a wall between glass, wood and concrete
 
 <span class="char-name">Josie:</span>
-Why don’t you come out and fight.
+Why don’t you come out and fight?
 
 <span class="char-name">Duppy:</span>
 That will be too easy he he. 
 
-:: end [nobr]
+
+:: SC7FX38 [nobr]
+
+/* Navigation options */
 <<set $prevpass to "SC6FX37">>
+<<set $passage to "SC7FX38">>
+<<set $nextpass to "SC7FX39">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC7FX38transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene7_FX38.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="mount"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+
+
+<<timed 11s>>
+      <<replace "#transcript">><</replace>>
+      <<replace "#mount">>
+        <div class="menu-wrapper">
+        <<button "a) Perched in a tree along the green">>
+        <<audio "mummano" "play">>
+      <<timed 2s>>
+      <<audio "duppyno" "play">>>
+      <</timed>>
+    <</button>> 
+    <<button "b) The window where the hungry go to fill them belly">>
+      <<audio "mummano" "play">>
+      <<timed 2s>>
+      <<audio "duppyno" "play">>>
+      <</timed>>
+    <</button>> 
+    <<button "c) On a wall between, glass, wood and concrete">>
+        <<timed 2s>>
+            <<goto $nextpass>>
+        <</timed>>
+    <</button>> 
+        </div>
+      <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC7FX38transcript 
+
+<span class="char-name">Josie:</span>
+Where is the Sankofa bird? 
+
+<span class="char-name">Mumma:</span>	
+What did the duppy say again. Let’s make and choice and find out where him is.  Look at your phone.  
+
+
+:: SC7FX39 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC6FX38">>
+<<set $passage to "SC7FX39">>
+<<set $nextpass to "SC7FX40">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC7FX39transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene7_FX39.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="mount"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+
+
+<<timed 26s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Turn around and walk to the benches behind you 
+<br/>in front of the cafe. </p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+<<timed 37s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "I'm at the benches">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC7FX39transcript 
+
+<span class="char-name">Josie:</span>
+Yes, on the wall between glass, wood and concrete the Learning Centre.Can you see the image of the bird inset on the wall above the glass window. 
+ 
+And the window where the hungry fill dem belly must be Glen’s Caribbean restaurant. 
+            
+Great but where is this duppy?
+
+Come out duppy...
+ 
+<span class="char-name">MummaD:</span>	
+You’ll just have to wait. Turn around and walk to the benches behind you in front of the cafe. 
+ 
+<span class="char-name">Josie:</span>
+How good is your salt throwing skills? Well, we’ll find out. 
+
+
+:: SC7FX40 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC6FX39">>
+<<set $passage to "SC7FX40">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC7FX40transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene7_FX40.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+
+<div id="transcript"><<include "duppyTitle">></div>
+<div id="mount"></div>
+<br/>
+
+
+
+<<timed 112s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "Next">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC7FX40transcript 
+
+<span class="char-name">Josie:</span> 
+St Nicholas Street, Grosvenor Road, I haven’t walked around here for years. St Nick’s is where I met the Father of the boys. I was at this night called La Boom. Very popular. Me and the night. African, soul, reggae, everything. He came over big teet smiling and funky, short, dreads and started making fun of my dancing I could have slapped him but he made me laugh. 
+ 
+After La Boom we went to Crystal Dove. 
+ 
+Look straight ahead. It used to be in front of us on the green. Like a scout hut. Smaller. No bigger than a living room. Packed on weekends. We couldn’t move. Didn’t want to. Boy he could whine. If it wasn’t for that whine.
+
+Friend, you ever lose you head cause of a good whine?
+Of course - the dove in front of the elderly Crystal Dove was opposite, roughly, the day centre 	set up by Olive Osborne. Boy that was just one of the things she did, sewing classes, youth 	groups, community organisations a real Woman King. 
+ 
+The window where the hungry fill their belly -Glen’s the singing chef. His new place. He’s a  pioneer of Caribbean food.
+ 
+<span class="char-name">MummaD:</span> 
+Now you have everybody jerking chicken, even them Turtle people.  
+ 
+<span class="char-name">Josie:</span> 
+Your just jealous your duppy dumplin never take off. 
+ 
+<span class="char-name">MummaD:</span> 
+Not yet. There’s still time. 
+
+
+
+:: end [nobr]
+<<set $prevpass to "SC7FX38">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
