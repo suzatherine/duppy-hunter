@@ -4227,7 +4227,7 @@ I can’t use Power to protect all the time and boys they get to an age where th
 Cross at the lights. Wait.</tw-passagedata><tw-passagedata pid="125" name="SC11FX54" tags="nobr" position="600,1600" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC11FX53&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC11FX54&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC12FX55&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
@@ -4287,7 +4287,173 @@ I hope murals aren’t going to be all that’s left of us.
 As long as Carnival still comes through this street, we’ll be a living force here. 
  
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;  
-Cross when the lights are green.  Walk along ... and let me know when you have reached.</tw-passagedata><tw-passagedata pid="127" name="end" tags="nobr" position="850,1600" size="100,100">&lt;&lt;set $prevpass to &quot;SC11FX54&quot;&gt;&gt;
+Cross when the lights are green.  Walk along ... and let me know when you have reached.</tw-passagedata><tw-passagedata pid="127" name="SC12FX55" tags="nobr" position="850,1600" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC11FX54&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC12FX55&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC12FX55-M&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC12FX55transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene12_FX55.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 153s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Walk down the street and take the second left.Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. &lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 169s&gt;&gt;
+  &lt;&lt;goto $nextpass&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="SC12FX55transcript" tags="" position="975,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+Can you hear the echo of Old St Paul’s. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Rag &amp; Bone Man:&lt;/span&gt;  
+Any old rag and bone. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Mother:&lt;/span&gt; 
+Get inside you daft lot. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+The echo of old St Paul’s. 
+A bridge that covers no water.
+A land where sea meets industry,
+That serves the years in-between.
+Facing Wesley
+To make music from joy and pain
+Look for landmarks?
+The Wesleyan Holiness Church on the corner 
+ 
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt; 
+Docklands. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+Docklands we called it but it’s proper name is the St Paul’s Settlement. Been here since 1927 but built in 1953. Generations of young people came here – they still do. I came here as a child. I was good at netball when I wasn’t distracted by some duppy wondering past. My boys would come here to meet their friends even after we moved. The youth center entrance is around the side.
+ 
+
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
+Say his name. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt; 
+MummaD:		Josie. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+I’m here. I’m not going. 		
+ 
+Nothing you can do will stop me from conquering you. 
+I am a duppy hunter. 
+Say it with me. 
+I am a duppy hunter.
+ 
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
+Say his name.
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+I am a duppy hunter. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
+Ready for a song:
+I’m going to meet a giantess 
+Who is alone and all bereft
+Her bonny boy is no more.
+And her love is forever sorched 
+
+She holds the key to my heart
+She holds the key to my heart. 
+She holds the key to my heart 
+She holds the key she holds the key. 
+
+
+You’ll find her and me on a street named before naming 
+Or an Irish playwright goaled. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+This duppy is tormenting me. 
+Sorry, friend. “Josie” pull yourself together. 
+What is before taming? Friend.
+An Irish poet goaled? 
+
+
+&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
+Clue Before something is tamed – wild. 
+An Irish playwright goaled – Oscar Wilde
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+Wilder Street
+Walk down the street and take the second left. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt; 
+Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left.</tw-passagedata><tw-passagedata pid="129" name="SC12FX55-M" tags="nobr" position="1100,1600" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC12FX55&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC12FX55-M &quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC12FX55-Mtranscript&quot;&gt;&gt;
+/* --- */
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+
+&lt;&lt;timed 1s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+    &lt;&lt;button &quot;Reached&quot;&gt;&gt;
+      &lt;&lt;goto $nextpass&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP14.jpeg&quot; alt=&quot;map&quot;&gt;
+     &lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Walk down the street and take the second left.Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. &lt;/p&gt;&lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="SC12FX55-Mtranscript" tags="" position="1225,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+Walk down the street and take the second left.
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt; 
+Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left.</tw-passagedata><tw-passagedata pid="131" name="end" tags="nobr" position="100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;SC12FX55-M&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;

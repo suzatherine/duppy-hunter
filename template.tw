@@ -4660,7 +4660,7 @@ Cross at the lights. Wait.
 /* Navigation options */
 <<set $prevpass to "SC11FX53">>
 <<set $passage to "SC11FX54">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC12FX55">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
@@ -4726,10 +4726,190 @@ As long as Carnival still comes through this street, we’ll be a living force h
 <span class="char-name">MummaD:</span>  
 Cross when the lights are green.  Walk along ... and let me know when you have reached.
 
+:: SC12FX55 [nobr]
 
+/* Navigation options */
+<<set $prevpass to "SC11FX54">>
+<<set $passage to "SC12FX55">>
+<<set $nextpass to "SC12FX55-M">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC12FX55transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene12_FX55.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 153s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Walk down the street and take the second left.Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. </p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+<<timed 169s>>
+  <<goto $nextpass>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC12FX55transcript 
+
+<span class="char-name">Josie:</span> 
+Can you hear the echo of Old St Paul’s. 
+ 
+<span class="char-name">Rag & Bone Man:</span>  
+Any old rag and bone. 
+ 
+<span class="char-name">Mother:</span> 
+Get inside you daft lot. 
+ 
+<span class="char-name">Josie:</span> 
+The echo of old St Paul’s. 
+A bridge that covers no water.
+A land where sea meets industry,
+That serves the years in-between.
+Facing Wesley
+To make music from joy and pain
+Look for landmarks?
+The Wesleyan Holiness Church on the corner 
+ 
+<span class="char-name">MummaD:</span> 
+Docklands. 
+ 
+<span class="char-name">Josie:</span> 
+Docklands we called it but it’s proper name is the St Paul’s Settlement. Been here since 1927 but built in 1953. Generations of young people came here – they still do. I came here as a child. I was good at netball when I wasn’t distracted by some duppy wondering past. My boys would come here to meet their friends even after we moved. The youth center entrance is around the side.
+ 
+
+<span class="char-name">Duppy:</span> 
+Say his name. 
+
+<span class="char-name">MummaD:</span> 
+MummaD:		Josie. 
+
+<span class="char-name">Josie:</span> 
+I’m here. I’m not going. 		
+ 
+Nothing you can do will stop me from conquering you. 
+I am a duppy hunter. 
+Say it with me. 
+I am a duppy hunter.
+ 
+<span class="char-name">Duppy:</span> 
+Say his name.
+ 
+<span class="char-name">Josie:</span> 
+I am a duppy hunter. 
+ 
+<span class="char-name">Duppy:</span> 
+Ready for a song:
+I’m going to meet a giantess 
+Who is alone and all bereft
+Her bonny boy is no more.
+And her love is forever sorched 
+
+She holds the key to my heart
+She holds the key to my heart. 
+She holds the key to my heart 
+She holds the key she holds the key. 
+
+
+You’ll find her and me on a street named before naming 
+Or an Irish playwright goaled. 
+
+<span class="char-name">Josie:</span> 
+This duppy is tormenting me. 
+Sorry, friend. “Josie” pull yourself together. 
+What is before taming? Friend.
+An Irish poet goaled? 
+
+
+<span class="char-name">Mumma:</span> 
+Clue Before something is tamed – wild. 
+An Irish playwright goaled – Oscar Wilde
+ 
+<span class="char-name">Josie:</span> 
+Wilder Street
+Walk down the street and take the second left. 
+
+<span class="char-name">MummaD:</span> 
+Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. 
+
+:: SC12FX55-M [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC12FX55">>
+<<set $passage to "SC12FX55-M ">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC12FX55-Mtranscript">>
+/* --- */
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+
+<<timed 1s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+    <<button "Reached">>
+      <<goto $nextpass>>
+    <</button>>
+     <img src="./../assets/img/MAP14.jpeg" alt="map">
+     <div class="explain appear"><p>Walk down the street and take the second left.Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. </p></div>
+   <</replace>>
+<</timed>>
+
+
+
+</main>
+<<include "footer">>
+
+:: SC12FX55-Mtranscript 
+
+<span class="char-name">Josie:</span> 
+Walk down the street and take the second left.
+
+<span class="char-name">MummaD:</span> 
+Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. 
 
 :: end [nobr]
-<<set $prevpass to "SC11FX54">>
+<<set $prevpass to "SC12FX55-M">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
