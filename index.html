@@ -1781,9 +1781,16 @@ When you done let’s move on.</tw-passagedata><tw-passagedata pid="52" name="SC
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 3s&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Back on the path now and &lt;br/&gt;walk through the park, towards the M32 bridge.&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 73s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
@@ -1826,7 +1833,7 @@ Walk across M32 Bridge.</tw-passagedata><tw-passagedata pid="54" name="SC5FX22" 
 &lt;&lt;set $nextpass to &quot;SC5FX23&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1845,16 +1852,31 @@ Walk across M32 Bridge.</tw-passagedata><tw-passagedata pid="54" name="SC5FX22" 
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
+&lt;&lt;timed 18s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP4.jpeg&quot; alt=&quot;map&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;timed 27s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;div class=&quot;menu-wrapper&quot;&gt;
-     &lt;&lt;button &quot;Reached Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+ 
+   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
@@ -1874,15 +1896,13 @@ The motorway scattered and divided the living and the duppy community. It caused
 Yes Mumma. 
 
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
-Turn right after the bridge and walk onto Newfoundland Road - cross over safely. Let me know when you reach.
-
-/*TODO Map 4 here? */</tw-passagedata><tw-passagedata pid="56" name="SC5FX23" tags="nobr" position="725,725" size="100,100">/* Navigation options */
+Turn right after the bridge and walk onto Newfoundland Road - cross over safely. Let me know when you reach.</tw-passagedata><tw-passagedata pid="56" name="SC5FX23" tags="nobr" position="725,725" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC5FX22&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC5FX23&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC5FX24&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1901,16 +1921,30 @@ Turn right after the bridge and walk onto Newfoundland Road - cross over safely.
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
+  &lt;&lt;timed 5s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP5.jpeg&quot; alt=&quot;map&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;timed 22s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;div class=&quot;menu-wrapper&quot;&gt;
-     &lt;&lt;button &quot;I&#39;m walking down Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I&#39;m walking down Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I&#39;m walking down Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
@@ -1995,12 +2029,20 @@ The shop should be here. Blue and brown.</tw-passagedata><tw-passagedata pid="60
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
+&lt;&lt;timed 63s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Walk towards the underpass straight ahead.&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;timed 72s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;Let&#39;s go&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
-   &lt;&lt;/replace&gt;&gt;
+   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
@@ -2066,11 +2108,12 @@ Walk towards the underpass straight ahead.</tw-passagedata><tw-passagedata pid="
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;timed 44s&gt;&gt;
+    &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
   &lt;&lt;replace &quot;#map&quot;&gt;&gt;
      &lt;img src=&quot;./../assets/img/MAP5.jpeg&quot; alt=&quot;map to St. Agnes&quot;&gt;
@@ -2683,7 +2726,9 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="SC6FX34transcript" tags="" position="225,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummmaD:&lt;/span&gt;
 Another riddle to solve – have a look aroud you -check your phone. 
 
-/*TODO where&#39;s the riddle? */</tw-passagedata><tw-passagedata pid="83" name="SC6FX35" tags="nobr" position="350,1100" size="100,100">/* Navigation options */
+/*TODO where&#39;s the riddle? */</tw-passagedata><tw-passagedata pid="83" name="SC6FX35" tags="nobr" position="350,1100" size="100,100">/* MULTICHOICE OPTIONS */
+/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC5FX34&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC6FX35&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC6FX35B&quot;&gt;&gt;
@@ -2712,22 +2757,41 @@ Another riddle to solve – have a look aroud you -check your phone.
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 
-&lt;&lt;button &quot;a) Good Jim’s Magnolia Inn &quot;&gt;&gt;
-&lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/button&gt;&gt; 
-&lt;&lt;button &quot;b) Falafel Palais &quot;&gt;&gt;
-  &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
-  &lt;&lt;timed 2s&gt;&gt;
-   &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/button&gt;&gt; 
-&lt;&lt;button &quot;c) The Big Palm Tree&quot;&gt;&gt;
-  &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
-    &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/button&gt;&gt; 
  
+ &lt;&lt;timed 1s&gt;&gt;
+      &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+        &lt;&lt;button &quot;a) Good Jim’s Magnolia Inn&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 2s&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+    &lt;&lt;button &quot;b) Falafel Palais&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+     &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+    &lt;&lt;button &quot;c) The Big Palm Tree&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+     &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+        &lt;/div&gt;
+      &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
 
 
@@ -3161,12 +3225,13 @@ Not yet. There’s still time.</tw-passagedata><tw-passagedata pid="97" name="SC
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 
 &lt;&lt;timed 160s&gt;&gt;
+    &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
   &lt;&lt;replace &quot;#map&quot;&gt;&gt;
      &lt;img src=&quot;./../assets/img/MAP9.jpg&quot; alt=&quot;map&quot;&gt;
@@ -3304,7 +3369,8 @@ But the Beast Master never liked rebels.
 It would not leave us alone. Neither me nor Mum could stop them. Not all of them.
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
-Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.</tw-passagedata><tw-passagedata pid="101" name="SC9FX44" tags="nobr" position="100,1350" size="100,100">/* Navigation options */
+Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.</tw-passagedata><tw-passagedata pid="101" name="SC9FX44" tags="nobr" position="100,1350" size="100,100">/* MULTICHOICE OPTIONS */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC8FX42&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC9FX44&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC9FX45&quot;&gt;&gt;
@@ -3521,7 +3587,260 @@ She’s trying to return. She’s trying but she’s been scrambled. What can yo
 
 EIOJS
 
-If we can’t work it out the Hunt can’t continue.</tw-passagedata><tw-passagedata pid="107" name="end" tags="nobr" position="850,1350" size="100,100">&lt;&lt;set $prevpass to &quot;SC9FX42&quot;&gt;&gt;
+If we can’t work it out the Hunt can’t continue.</tw-passagedata><tw-passagedata pid="107" name="SC9FX47" tags="nobr" position="850,1350" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC9FX46&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC9FX47&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC9FX48&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC9FX47transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX47.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 110s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP11.jpg&quot; alt=&quot;map&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 126s&gt;&gt;
+
+   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I see Owen&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;I see Owen&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="108" name="SC9FX47transcript" tags="" position="975,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Oh of course Josie.
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+No, I have to stay. I have to listen. 
+It began with the café on the Black and White Café. I don’t know the details. I just remember seeing 	the the Beasts, tight faces and grimacing. Joining in. Feeling mad and high. 
+Bricks flying, Fire, twisted faces on both sides. All of us on fire. 
+ 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Something was set free that night. Duppies came, the worst kind, the wicked in life. They took advantage of the anger. A curtain, a bottle of rum, a shirt, they tainted whatever they could with their energy. The people that were tricked became hosts and the duppies pushed their rage. The duppies did the same to the officers - filled them with anger and shame.  They’d been humiliated by people they their master had told them were scum. 
+ 
+Mumma went out to conquer as many duppies as she could but there were too many spreading 			between the Beasts and our community.
+ 
+The Beasts came back years later. They wanted revenge. Some of us were ready.
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+I went home as the Barclays went up in flames.  
+There was nothing I could do.
+ 
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+You abandoned your people. You’re as bad as the Beast Master.
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Who are you? 
+
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+At the centre of Ashley Road there is an X where every voice can be heard. This X believed in self-defence, while his brother preached non-violence.  
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Who is the leader who preached self-defence while his brother preached non-violence? 
+
+Do you know? 
+
+Well at least we know this X is on Ashley Road. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+At the statue, turn right and follow the path back to Ashley Road. 
+Turn left and continue down Ashley Road past the Owen Henry mural. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+When you see Owen make you raise your water. He was a true champion for the community.</tw-passagedata><tw-passagedata pid="109" name="SC9FX48" tags="nobr" position="1100,1350" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC9FX47&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC9FX48&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC9FX48transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX48.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 34s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Turn your head to the left.&lt;br/&gt; See the bath stone building? &lt;br/&gt;There’s a car park.&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 73s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Take a left and walk into the carpark &lt;br/&gt; and face the entrance.&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 180s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#map&quot;&gt;&gt;
+     &lt;img src=&quot;./../assets/img/MAP12.jpg&quot; alt=&quot;map&quot;&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 185s&gt;&gt;
+     &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Let&#39;s go&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#map&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Let&#39;s go&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="110" name="SC9FX48transcript" tags="" position="1225,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+That’s Mr Duncan’s playing from his window. His mood – blue or sunshine- was in his music. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+The sisters?
+She’s stuck. A duppy. Not one we’re hunting. She must have passed over in pain. 
+Turn your head to the left. See the bath stone building. There’s a car park. Oh yes, look ‘The Sisters of the Church.’ 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Malcom X:&lt;/span&gt;
+Who taught you to hate the color of your skin? Who taught you to hate the texture of your hair?? Who taught you to hate yourself from the top of your head to the soles of your feet. Why your skin is like gold. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Public Meeting&lt;/span&gt;
+We don’t want you’re charity, this place is not fit for purpose. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Young Speaker&lt;/span&gt;
+Stop the violence. Stop the violence. 
+(weeping) 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Refugee&lt;/span&gt;
+Greetings in Arabic.
+ 
+&lt;span class=&quot;char-name&quot;&gt;Voices&lt;/span&gt;
+Black Lives Matter. Black Lives Matter.
+ 
+&lt;span class=&quot;char-name&quot;&gt;Malcom X:&lt;/span&gt;
+Who taught you to hate. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Resident&lt;/span&gt;
+You’re destroying our community event. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Socialist worker&lt;/span&gt;	
+Black and White unite and fight. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Malcom X:&lt;/span&gt;
+The shape of your nose the shape of our lips.
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+It’s alright the duppies here are at peace. 
+
+The X where all voices meet:  Malcolm X Centre. It used to be the old St Barnabas school and then after the riot they turned it into a community center. 
+
+Take a left and walk into the carpark entrance and face the entrance. I just want to see the space again. 
+It&#39;s where the committees I sat on used to meet even after we moved out.
+
+It’s where the boys’ Dad used to play chess.
+
+It took a while for it to be used, as many of us were unhappy with the building, it wasn’t 	what 	we planned. But still it became one of our most loved places in the end. 
+
+I was involved in so many committees. I think I felt guilty for moving out. Duppy hunting 	by night committees by day. 
+
+
+“I’ve been watching you for so long it’s a shame.’
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Oh baby. 
+Every time I hear your name
+Oh the pain. 
+Oh how it hurts me inside- 
+ 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Bangy was murdered after a dance. He was a true care-taker, taking care of everyone he knew. Our good heart, our Samaritan. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+Which day is the Sabbath Josie? Saturday? Sunday?
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+What are you after?
+ 
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
+Oh I do love the 7th Day, the true 7th day. Such wonderful God-fearing women. I think I might just pay them a visit. Never know I might meet one of your old friends. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+My old friend...Is this revenge. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
+Along Ashley Road you’ll find the door to the 7th Day. 
+ 
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+Controller, I think this mission is tainted. We’ve had no evidence of crimes comitted by anyone possessed by the duppy. I think it’s true purpose is just to torment me. 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Hunter we can’t be sure. Carry on with the mission. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+I- 
+
+&lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
+Carry on. 
+
+&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+The door to the 7th Day is on Ashley Road.</tw-passagedata><tw-passagedata pid="111" name="end" tags="nobr" position="100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;SC9FX48&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;

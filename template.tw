@@ -1916,9 +1916,16 @@ When you done let’s move on.
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"><<include "duppyTitle">></div>
+<div id="transcript"></div>
 <br/>
 <div id="mount"></div>
+
+<<timed 3s>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Back on the path now and <br/>walk through the park, towards the M32 bridge.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
 
 <<timed 73s>>
   <<replace "#mount">>
@@ -1969,7 +1976,7 @@ Walk across M32 Bridge.
 <<set $nextpass to "SC5FX23">>
 
 /* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
+<<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1988,16 +1995,31 @@ Walk across M32 Bridge.
 </div>
 
 <<include "header">><main class="general">
+<div id="map"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
+<<timed 18s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP4.jpeg" alt="map">
+   <</replace>>
+  <</timed>>
+
 <<timed 27s>>
-  <<replace "#mount">>
-    <div class="menu-wrapper">
-     <<button "Reached Newfoundland Road">><<goto $nextpass>><</button>> 
+ 
+   <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached Newfoundland Road">><<goto $nextpass>><</button>> 
     </div>
    <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "Reached Newfoundland Road">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
 <</timed>>
 
 </main>
@@ -2023,7 +2045,7 @@ Yes Mumma.
 <span class="char-name">MummaD:</span>
 Turn right after the bridge and walk onto Newfoundland Road - cross over safely. Let me know when you reach.
 
-/*TODO Map 4 here? */
+
 
 :: SC5FX23 [nobr]
 
@@ -2033,7 +2055,7 @@ Turn right after the bridge and walk onto Newfoundland Road - cross over safely.
 <<set $nextpass to "SC5FX24">>
 
 /* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
+<<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2052,16 +2074,30 @@ Turn right after the bridge and walk onto Newfoundland Road - cross over safely.
 </div>
 
 <<include "header">><main class="general">
+<div id="map"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
+  <<timed 5s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP5.jpeg" alt="map">
+   <</replace>>
+  <</timed>>
+
 <<timed 22s>>
-  <<replace "#mount">>
-    <div class="menu-wrapper">
-     <<button "I'm walking down Newfoundland Road">><<goto $nextpass>><</button>> 
+   <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "I'm walking down Newfoundland Road">><<goto $nextpass>><</button>> 
     </div>
    <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "I'm walking down Newfoundland Road">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
 <</timed>>
 
 </main>
@@ -2162,12 +2198,20 @@ The shop should be here. Blue and brown.
 <br/>
 <div id="mount"></div>
 
+<<timed 63s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Walk towards the underpass straight ahead.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
 <<timed 72s>>
-  <<replace "#mount">>
+  <<append "#mount">>
     <div class="menu-wrapper">
      <<button "Let's go">><<goto $nextpass>><</button>> 
     </div>
-   <</replace>>
+   <</append>>
 <</timed>>
 
 </main>
@@ -2241,11 +2285,12 @@ Walk towards the underpass straight ahead.
 
 <<include "header">><main class="general">
 <div id="map"></div>
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
 <<timed 44s>>
+    <<replace "#transcript">><</replace>>
   <<audio "mapappear" "play">>
   <<replace "#map">>
      <img src="./../assets/img/MAP5.jpeg" alt="map to St. Agnes">
@@ -2939,7 +2984,8 @@ Another riddle to solve – have a look aroud you -check your phone.
 /*TODO where's the riddle? */
 
 :: SC6FX35 [nobr]
-
+/* MULTICHOICE OPTIONS */
+/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
 /* Navigation options */
 <<set $prevpass to "SC5FX34">>
 <<set $passage to "SC6FX35">>
@@ -2969,22 +3015,41 @@ Another riddle to solve – have a look aroud you -check your phone.
 <div id="mount"></div>
 
 
-<<button "a) Good Jim’s Magnolia Inn ">>
-<<goto $nextpass>>
-<</button>> 
-<<button "b) Falafel Palais ">>
-  <<audio "mummano" "play">>
-  <<timed 2s>>
-   <<audio "duppyno" "play">>>
-  <</timed>>
-<</button>> 
-<<button "c) The Big Palm Tree">>
-  <<audio "mummano" "play">>
-    <<timed 2s>>
-      <<audio "duppyno" "play">>>
-    <</timed>>
-<</button>> 
  
+ <<timed 1s>>
+      <<replace "#transcript">><</replace>>
+      <<replace "#mount">>
+        <div id="result"></div>
+        <div class="menu-wrapper">
+        <<button "a) Good Jim’s Magnolia Inn">>
+        <<replace "#result">>Correct.<</replace>>
+        <<timed 2s>>
+            <<goto $nextpass>>
+        <</timed>>
+    <</button>> 
+    <<button "b) Falafel Palais">>
+      <<replace "#result">>That's not right.<</replace>>
+      <<audio "mummano" "play">>
+     <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
+    <</button>> 
+    <<button "c) The Big Palm Tree">>
+        <<replace "#result">>That's not right.<</replace>>
+      <<audio "mummano" "play">>
+     <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
+    <</button>> 
+        </div>
+      <</replace>>
+<</timed>>
 
 
 
@@ -3476,12 +3541,13 @@ Not yet. There’s still time.
 
 <<include "header">><main class="general">
 <div id="map"></div>
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
 
 <<timed 160s>>
+    <<replace "#transcript">><</replace>>
   <<audio "mapappear" "play">>
   <<replace "#map">>
      <img src="./../assets/img/MAP9.jpg" alt="map">
@@ -3635,6 +3701,7 @@ It would not leave us alone. Neither me nor Mum could stop them. Not all of them
 Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.
 
 :: SC9FX44 [nobr]
+/* MULTICHOICE OPTIONS */
 /* Navigation options */
 <<set $prevpass to "SC8FX42">>
 <<set $passage to "SC9FX44">>
@@ -3874,10 +3941,280 @@ EIOJS
 If we can’t work it out the Hunt can’t continue.
 
 
+:: SC9FX47 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC9FX46">>
+<<set $passage to "SC9FX47">>
+<<set $nextpass to "SC9FX48">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC9FX47transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX47.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 110s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP11.jpg" alt="map">
+   <</replace>>
+<</timed>>
+
+<<timed 126s>>
+
+   <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "I see Owen">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "I see Owen">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC9FX47transcript 
+
+<span class="char-name">MummaD:</span>
+Oh of course Josie.
+ 
+<span class="char-name">Josie:</span>
+No, I have to stay. I have to listen. 
+It began with the café on the Black and White Café. I don’t know the details. I just remember seeing 	the the Beasts, tight faces and grimacing. Joining in. Feeling mad and high. 
+Bricks flying, Fire, twisted faces on both sides. All of us on fire. 
+ 
+
+<span class="char-name">Josie:</span>
+Something was set free that night. Duppies came, the worst kind, the wicked in life. They took advantage of the anger. A curtain, a bottle of rum, a shirt, they tainted whatever they could with their energy. The people that were tricked became hosts and the duppies pushed their rage. The duppies did the same to the officers - filled them with anger and shame.  They’d been humiliated by people they their master had told them were scum. 
+ 
+Mumma went out to conquer as many duppies as she could but there were too many spreading 			between the Beasts and our community.
+ 
+The Beasts came back years later. They wanted revenge. Some of us were ready.
+
+<span class="char-name">Josie:</span>
+I went home as the Barclays went up in flames.  
+There was nothing I could do.
+ 
+<span class="char-name">Duppy:</span>
+You abandoned your people. You’re as bad as the Beast Master.
+ 
+<span class="char-name">Josie:</span>
+Who are you? 
+
+<span class="char-name">Duppy:</span>
+At the centre of Ashley Road there is an X where every voice can be heard. This X believed in self-defence, while his brother preached non-violence.  
+
+<span class="char-name">Josie:</span>
+Who is the leader who preached self-defence while his brother preached non-violence? 
+
+Do you know? 
+
+Well at least we know this X is on Ashley Road. 
+
+<span class="char-name">MummaD:</span>
+At the statue, turn right and follow the path back to Ashley Road. 
+Turn left and continue down Ashley Road past the Owen Henry mural. 
+
+<span class="char-name">Josie:</span>
+When you see Owen make you raise your water. He was a true champion for the community.
+
+
+:: SC9FX48 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC9FX47">>
+<<set $passage to "SC9FX48">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC9FX48transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX48.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 34s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Turn your head to the left.<br/> See the bath stone building? <br/>There’s a car park.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+  <<timed 73s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Take a left and walk into the carpark <br/> and face the entrance.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+<<timed 180s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+     <img src="./../assets/img/MAP12.jpg" alt="map">
+   <</replace>>
+<</timed>>
+
+<<timed 185s>>
+     <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Let's go">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "Let's go">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC9FX48transcript 
+
+<span class="char-name">Josie:</span>
+That’s Mr Duncan’s playing from his window. His mood – blue or sunshine- was in his music. 
+
+<span class="char-name">Josie:</span>
+The sisters?
+She’s stuck. A duppy. Not one we’re hunting. She must have passed over in pain. 
+Turn your head to the left. See the bath stone building. There’s a car park. Oh yes, look ‘The Sisters of the Church.’ 
+ 
+<span class="char-name">Malcom X:</span>
+Who taught you to hate the color of your skin? Who taught you to hate the texture of your hair?? Who taught you to hate yourself from the top of your head to the soles of your feet. Why your skin is like gold. 
+ 
+<span class="char-name">Public Meeting</span>
+We don’t want you’re charity, this place is not fit for purpose. 
+ 
+<span class="char-name">Young Speaker</span>
+Stop the violence. Stop the violence. 
+(weeping) 
+ 
+<span class="char-name">Refugee</span>
+Greetings in Arabic.
+ 
+<span class="char-name">Voices</span>
+Black Lives Matter. Black Lives Matter.
+ 
+<span class="char-name">Malcom X:</span>
+Who taught you to hate. 
+ 
+<span class="char-name">Resident</span>
+You’re destroying our community event. 
+ 
+<span class="char-name">Socialist worker</span>	
+Black and White unite and fight. 
+ 
+<span class="char-name">Malcom X:</span>
+The shape of your nose the shape of our lips.
+
+<span class="char-name">Josie:</span>
+It’s alright the duppies here are at peace. 
+
+The X where all voices meet:  Malcolm X Centre. It used to be the old St Barnabas school and then after the riot they turned it into a community center. 
+
+Take a left and walk into the carpark entrance and face the entrance. I just want to see the space again. 
+It's where the committees I sat on used to meet even after we moved out.
+
+It’s where the boys’ Dad used to play chess.
+
+It took a while for it to be used, as many of us were unhappy with the building, it wasn’t 	what 	we planned. But still it became one of our most loved places in the end. 
+
+I was involved in so many committees. I think I felt guilty for moving out. Duppy hunting 	by night committees by day. 
+
+
+“I’ve been watching you for so long it’s a shame.’
+
+<span class="char-name">MummaD:</span>
+Oh baby. 
+Every time I hear your name
+Oh the pain. 
+Oh how it hurts me inside- 
+ 
+ 
+<span class="char-name">Josie:</span>
+Bangy was murdered after a dance. He was a true care-taker, taking care of everyone he knew. Our good heart, our Samaritan. 
+ 
+<span class="char-name">Duppy:</span>
+Which day is the Sabbath Josie? Saturday? Sunday?
+ 
+<span class="char-name">Josie:</span>
+What are you after?
+ 
+<span class="char-name">Duppy:</span> 
+Oh I do love the 7th Day, the true 7th day. Such wonderful God-fearing women. I think I might just pay them a visit. Never know I might meet one of your old friends. 
+ 
+<span class="char-name">Josie:</span>
+My old friend...Is this revenge. 
+ 
+<span class="char-name">Duppy:</span>
+Along Ashley Road you’ll find the door to the 7th Day. 
+ 
+<span class="char-name">Josie:</span>
+Controller, I think this mission is tainted. We’ve had no evidence of crimes comitted by anyone possessed by the duppy. I think it’s true purpose is just to torment me. 
+
+<span class="char-name">MummaD:</span>
+Hunter we can’t be sure. Carry on with the mission. 
+
+<span class="char-name">Josie:</span>
+I- 
+
+<span class="char-name">MummaD:</span>
+Carry on. 
+
+<span class="char-name">Josie:</span>
+The door to the 7th Day is on Ashley Road. 
+
 
 
 :: end [nobr]
-<<set $prevpass to "SC9FX42">>
+<<set $prevpass to "SC9FX48">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
