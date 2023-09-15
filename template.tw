@@ -4049,7 +4049,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 /* Navigation options */
 <<set $prevpass to "SC9FX47">>
 <<set $passage to "SC9FX48">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC10FX49">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -4211,10 +4211,386 @@ Carry on.
 <span class="char-name">Josie:</span>
 The door to the 7th Day is on Ashley Road. 
 
+:: SC10FX49 [nobr]
 
+/* Navigation options */
+<<set $prevpass to "SC9FX48">>
+<<set $passage to "SC10FX49">>
+<<set $nextpass to "SC10FX49-M">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC10FX49transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX49.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 1s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Exit Malcolm X onto Ashley Road Continue down Ashley Road towards the first traffic lights.
+Cross the road at the first traffic light continue walking down Ashley Road. </p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+  <<timed 29s>>
+    <<goto $nextpass>>
+    <</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC10FX49transcript 
+
+<span class="char-name">MummaD:</span>
+Exit Malcolm X onto Ashley Road Continue down Ashley Road towards the first traffic lights.  Friend, Owen Henry our Saint remember what to do. Cross the road at the first traffic light continue walking down Ashley Road. 
+
+<span class="char-name">MummaD:</span>
+I’m still here, friend. I was thinking of Bangy. 
+Look out for the sign that has the words 7th Day.
+
+<span class="char-name">MummaD:</span>
+Let me know once you’ve reached. 
+
+:: SC10FX49-M [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC10FX49">>
+<<set $passage to "SC10FX49-M">>
+<<set $nextpass to "SC10FX51">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC10FX49-Mtranscript">>
+/* --- */
+
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+
+<<timed 1s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+    <<button "Reached">>
+      <<goto $nextpass>>
+    <</button>>
+     <img src="./../assets/img/MAP12.jpg" alt="map">
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC10FX49transcript-M
+
+<span class="char-name">Josie:</span>
+
+
+:: SC10FX51 [nobr]
+/* SHOWING MAP  */
+
+/* Navigation options */
+<<set $prevpass to "SC10FX49-M">>
+<<set $passage to "SC10FX51">>
+<<set $nextpass to "SC10FX51.1">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC10FX51transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX51_TEMP.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 55s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Cross at the lights and let know when you’ve reached.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+<<timed 60s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC10FX51transcript 
+
+<span class="char-name">Pastor:</span>	
+Amazing Grace 
+How sweet the sound
+
+<span class="char-name">Josie:</span>	
+Ajax see the shop front mural. Ajax in broad lettering.
+The church on your right, The 7th Day Adventists. 
+One of my best friends was a 7th Day. A poet, he helped me to talk to Leroy after the…
+
+<span class="char-name">Pastor:</span>	
+Lord we pray that you will guide them out of our Churches. Lord, we ask that you deliver us from these heathens. 
+
+<span class="char-name">Josie:</span>	
+This Church has been on a journey. Poet was told he couldn’t preach or lead because of his dread locks years ago. It’s different now. The Black people are now the one’s welcoming new people, new White people from Europe. Refugees.
+Poet might be inside. Leave my people out of this. 
+
+<span class="char-name">Duppy:</span>	
+(sucks teeth) Look across the road.
+
+<span class="char-name">Josie:</span>	
+The duppy must be inside.
+
+<span class="char-name">MummaD:</span>	
+Cross at the lights and let know when you’ve reached.
+
+:: SC10FX51.1 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC10FX51">>
+<<set $passage to "SC10FX51.1">>
+<<set $nextpass to "SC10FX52">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC10FX51.1transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX51.1.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+
+<div id="transcript"><<include "duppyTitle">></div>
+<div id="mount"></div>
+<br/>
+
+
+
+<<timed 129s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "Next">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC10FX51.1transcript 
+
+<span class="char-name">Josie:</span> 
+It’s closed. Locked up. 
+Ajax was named after it’s owner. Businessman, hard man, entertainer, Don Juan, – a pied piper of pleasure. A café, Shady Grove, on one side and a shebeen we say shubs, below. Different from blues parties. A permanent venueEvery one went no questions, no judgment, - teenagers, office people, some white people, hippies, prostitutes, bad man, big people, everybody. Duppies loved it. Every duppy could find their reflection in someone there.
+Samaritan, Bangy, was a wake up call. Strangers coming into Paul’s like kings. It could never 	happen 	before. It wasn’t just outsiders. Hustling the poppy, the pipe- took them into the Beast Master’s pit. They saw opportunity in innocence. 
+You couldn’t keep Blues, you couldn’t keep Shubs anymore you didn’t know who was coming through. 
+Ajax’s was the last shubs. The shubs that felt safe. 
+
+<span class="char-name">Duppy:</span> 
+Do you know the hummingbird can fly backwards?
+
+<span class="char-name">Josie:</span> 
+No I did not. 
+
+<span class="char-name">Duppy:</span> 
+You should cause you and the hummingbird have that in common. Time for you to stop. Run. 
+ 
+<span class="char-name">Josie:</span> 
+I’ve had enough. 
+ 
+<span class="char-name">Mumma:</span> 
+No. 
+ 
+<span class="char-name">Duppy:</span> 
+What is a land that sits. 
+On a corner of a bridge
+A bridge that covers no water.
+A land where sea meets industry
+That serves the years in-between.
+To make music from joy and pain
+Try the porter’s entrance or the door facing Wesley
+Big C or little c -not for me to say.  
+Come find me. 
+
+<span class="char-name">Mumma:</span> 
+Just wait a moment. The Duppy Hunter will decode this one. This time. 
+ 
+:: SC10FX52 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC10FX51.1">>
+<<set $passage to "SC10FX52">>
+<<set $nextpass to "SC10FX52-M">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC10FX52transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX52.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 6s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street. </p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+<<timed 16s>>
+  <<goto $nextpass>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC10FX52transcript 
+
+<span class="char-name">Duppy:</span> 
+Clue: Brigstocke
+ 
+<span class="char-name">Josie:</span> 
+Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street. 
+
+
+:: SC10FX52-M [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC10FX52">>
+<<set $passage to "SC10FX52-M ">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC10FX52transcript-M">>
+/* --- */
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+
+<<timed 1s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+    <<button "Reached">>
+      <<goto $nextpass>>
+    <</button>>
+     <img src="./../assets/img/MAP13.jpg" alt="map">
+     <div class="explain appear"><p>Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street. </p></div>
+   <</replace>>
+<</timed>>
+
+
+
+</main>
+<<include "footer">>
+
+:: SC10FX52-Mtranscript 
+
+<span class="char-name">Duppy:</span> 
+Clue: Brigstocke
+ 
+<span class="char-name">Josie:</span> 
+Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street. 
 
 :: end [nobr]
-<<set $prevpass to "SC9FX48">>
+<<set $prevpass to "SC10FX52-M">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
