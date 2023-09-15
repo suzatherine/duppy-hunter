@@ -4502,7 +4502,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX52.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene11_FX53.mp3"></audio>
 
 </div>
 
@@ -4541,7 +4541,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 /* Navigation options */
 <<set $prevpass to "SC10FX52">>
 <<set $passage to "SC10FX52-M ">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC11FX53">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
@@ -4554,7 +4554,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 
 /* Transcript options */
 <<set $transcript to false>>
-<<set $transcriptname to "SC10FX52transcript-M">>
+<<set $transcriptname to "SC10FX53transcript-M">>
 /* --- */
 
 <<include "header">><main class="general">
@@ -4589,8 +4589,147 @@ Clue: Brigstocke
 <span class="char-name">Josie:</span> 
 Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street. 
 
-:: end [nobr]
+
+:: SC11FX53 [nobr]
+
+/* Navigation options */
 <<set $prevpass to "SC10FX52-M">>
+<<set $passage to "SC11FX53">>
+<<set $nextpass to "SC11FX54">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC11FX53transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene11_FX53.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 53s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Cross over safely. </p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+<<timed 55s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "I've crossed">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+
+</main>
+<<include "footer">>
+
+:: SC11FX53transcript 
+
+<span class="char-name">Josie:</span> 
+I didn’t abandon St Paul’s. I just wanted to keep the boys safe growing up. Times had changed. The Beast Master just didn’t care about our children, our elders. The Beast 	Master was dropping every soul in St Paul’s. So, we brought the house in Fishponds. but I should have nown better. I did all the paperwork; all he did was sign his name. Except 	we didn’t I did. The boy Father Simon kept coming down here. Not like me, visiting, 	committees, shopping. He 	
+couldn’t leave. His head was here, with his old friends. It could have been different if he had worked with me to build a different life for the boys 	
+instead, they followed him. I couldn’t forgive im. 
+I can’t use Power to protect all the time and boys they get to an age where they don’t listen.
+ 
+<span class="char-name">MummaD:</span> 
+Cross at the lights. Wait. 
+
+
+
+:: SC11FX54 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC11FX53">>
+<<set $passage to "SC11FX54">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC11FX54transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene11_FX54.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 73s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Cross when the lights are green.  Walk along ... and let me know when you have reached.</p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+<<timed 82s>>
+  <<append "#mount">>
+        <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+
+</main>
+<<include "footer">>
+
+:: SC11FX54transcript 
+
+<span class="char-name">Josie:</span> 
+City Road. Quiet now. Families I knew along here. This is where Mumma and Dad first lived when they came to Bristol. 10 to a room Dad said when they first came here in the 50s. 
+ 
+<span class="char-name">Mumma:</span>  
+No Blacks, Dogs and Irish and she took down her sign till I use obeah to turn her. 
+ 
+<span class="char-name">Josie:</span> 
+Even with that. They said it was adventurous, They were young, they had hope, they had style. The old ways were still here though. Mumma said she and friends would keep up a kumina, that’s an African blessing, in one of the houses. 
+What’s that? On the wall. Look to your left. Can you see it – is that on the corner of Denbigh Street, on the end of terrace wall. The green and stars of Jamaica. The giant grey ship, passengers reading. The Windrush.
+‘Colonization in reverse’ Mumma said borrowing from her favorite poet Louise Bennett. 
+I hope murals aren’t going to be all that’s left of us.
+ 
+As long as Carnival still comes through this street, we’ll be a living force here. 
+ 
+<span class="char-name">MummaD:</span>  
+Cross when the lights are green.  Walk along ... and let me know when you have reached.
+
+
+
+:: end [nobr]
+<<set $prevpass to "SC11FX54">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
