@@ -4913,7 +4913,7 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 /* Navigation options */
 <<set $prevpass to "SC12FX55-M">>
 <<set $passage to "SC12FX56">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC13FX57">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -4962,9 +4962,260 @@ The street’s so different now. There was a garage, where Dad would get his car
 That’s Argyle Road on the left. Dad said there were parties on Argyle going back to the 60s. Carnival time the sound system would play some of the best reggae and dub. 
 You skank? Do you know what skanking is? (sucks teeth)  
 
+:: SC13FX57 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC12FX56">>
+<<set $passage to "SC13FX57">>
+<<set $nextpass to "SC13FX58">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC13FX57transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene13_FX57.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 102s>>
+  <<goto $nextpass>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+
+:: SC13FX57transcript 
+
+<span class="char-name">Josie:</span> 
+Wilder Street like Grosvenor was thriving. Working, hanging, hustling, living. It’s so quiet. 
+Wilder Street tells you want you need to know about how the Beast Master treats St Paul’s - raids then regeneration. New funds, new faces. Some worked, some withered, some stalled. 
+So where is this giantess. 
+The charities do the best they can. See opposite - the carpark -that’s the night shelter. Mumma would always pass by the shelter on her midnight round. She said the people in the shelter were easy pickings for wicked duppies. 
+ 
+<span class="char-name">Mumma:</span> 
+Scatter Duppies scatter. 
+ 
+<span class="char-name">Josie:</span> 
+I wish I had Mumma’s strength. I had to go. I had to. I can conquer duppies but the Beast Master is the real problem. I don’t have the Power to conquer him. 
+Where is this giantess?
+
+
+<span class="char-name">Duppy:</span> 
+She holds the key to my heart. 
+She holds the key to my heart
+Keys.
+Now look up and down the street carefully
+Where could she be.		
+A) Inside the carpark waiting for charity
+B) Sitting in a garden shop window among the leaves
+C) Looking down from above One Love....
+
+Open you eyes and see. 	
+
+<span class="char-name">Mumma:</span> 
+Another riddle to solve –  look aroud you -check your phone and choose the right one. Remember I’m with you.
+
+:: SC13FX58 [nobr]
+/* MULTICHOICE OPTIONS */
+/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
+/* Navigation options */
+<<set $prevpass to "SC13FX57">>
+<<set $passage to "SC13FX58">>
+<<set $nextpass to "SC13FX58B">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC13FX58transcript">>
+/* --- */
+
+<div id="audioWrapper">
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 1s>>
+  <<replace "#transcript">><</replace>>
+    <<replace "#mount">>
+      <div id="result"></div>
+      <div class="menu-wrapper">
+      <<button "A) Sitting in a garden shop window among the leaves">>
+        <<replace "#result">>That's not right.<</replace>>
+        <<audio "mummano" "play">>
+        <<timed 2s>>
+          <<audio "duppyno" "play">>
+        <</timed>>
+        <<timed 4s>>
+          <<replace "#result">><</replace>>
+        <</timed>>
+      <</button>> 
+      <<button "b)  Inside the carpark">>
+        <<replace "#result">>Oh that's not right.<</replace>>
+        <<audio "mummano" "play">>
+        <<timed 2s>>
+          <<audio "duppyno" "play">>
+        <</timed>>
+        <<timed 4s>>
+          <<replace "#result">><</replace>>
+        <</timed>>
+    <</button>> 
+    <<button "c) Looking down from above One Love...">>
+      <<replace "#result">>Correct.<</replace>>
+      <<timed 2s>>
+        <<goto $nextpass>>
+      <</timed>>
+    <</button>> 
+        </div>
+  <</replace>>
+<</timed>>
+
+
+
+</main>
+<<include "footer">>
+
+:: SC13FX58transcript 
+/* <span class="char-name">MummmaD:</span>
+Another riddle to solve – have a look aroud you -check your phone.  */
+
+:: SC13FX58B [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC13FX58">>
+<<set $passage to "SC13FX58B">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC13FX58Btranscript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene13_FX58.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 24s>>
+   <<replace "#mount">>
+    <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
+    <br/>
+  <</replace>>
+  <<timed 2s>>
+    <<addclass "#detector" "pulse">>
+    <</timed>>
+<</timed>>
+
+<<timed 48s>>
+  <<replace "#mount">><</replace>>
+<</timed>>
+
+<<timed 64s>>
+  <<goto $nextpass>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+
+:: SC13FX58Btranscript 
+
+<span class="char-name">Mumma:</span> 
+You have it.
+
+<span class="char-name">Duppy:</span> 
+My job nearly done.. 
+
+<span class="char-name">Josie:</span> 
+Is that now offices above the One Love Jam mural. No apartments? 
+The mural- is that the giantess. 
+She looks..exactly like her. Teresa. Exactly.
+ 
+<span class="char-name">Duppy:</span> 
+Wylde girl me hear say dem call her. 
+
+<span class="char-name">Josie:</span> 
+I’m stopping this hunt. 
+ 
+<span class="char-name">Mumma:</span> 
+Josie you can’t stop. 
+ 
+<span class="char-name">Josie:</span> 
+He’s not after souls he just wants me to suffer. 
+ 
+<span class="char-name">Mumma:</span> 
+As controller I order you to continue. 
+ 
+<span class="char-name">Josie:</span> 
+As Hunter I have the right to reject this hunt.
+ 
+<span class="char-name">Mumma:</span> 
+It’s an order. 
+ 
+<span class="char-name">Josie:</span> 
+Your my mother.. 
+ 
+<span class="char-name">Hadrian:</span> 
+Please dawta.
+ 
+<span class="char-name">Josie:</span> 
+Dad? 
+No I can’t.
+
+<span class="char-name">Duppy:</span> 
+Let your friend decide. After they’ve done all this work, I’m sure they want to know.
+
+<span class="char-name">Mumma:</span> 
+We can’t force her. Perhaps this was too much for her. 
+
+<span class="char-name">MummaD:</span> 
+Josie is trying to get back. She’s scrambled but she’s trying. I knew she would. Come on daughter.  				
+
 
 :: end [nobr]
-<<set $prevpass to "SC12FX56">>
+<<set $prevpass to "SC13FX58B">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
@@ -4974,7 +5225,6 @@ You skank? Do you know what skanking is? (sucks teeth)
 <<set $showForwards to false>>
 <<set $showTranscriptIcon to false>>
 <<set $transcript to false>>
-
 
 
 
