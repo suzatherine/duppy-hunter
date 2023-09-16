@@ -214,6 +214,7 @@ setup.backFive = () => {
 
 :: footer [nobr]{"position":"100,375","size":"100,100"}
 <footer>
+<p style="color:white">$passage</p>
 <<if $showAudio is true>>
   <div class="nav-wrapper">
     <div class="nav-item controls">
@@ -431,7 +432,7 @@ setup.backFive = () => {
 
 <span>BY EDSON BURTON & ST PAUL’S PEOPLE </span>
 
-<h2>FOR THE PEOPLE </h2>
+<<type 100ms>><h2>FOR THE PEOPLE </h2><</type>>
 <br/>
     <<button "Start">><<goto $nextpass>><</button>>
 
@@ -1001,7 +1002,7 @@ Turn around and look behind you at the Church. Look at the two towers. 
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9.mp3"></audio>
 
 </div>
 
@@ -1496,7 +1497,7 @@ Let me know once you reach, look both ways dear.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14.mp3"></audio>
 
 </div>
 
@@ -1588,7 +1589,7 @@ Let me know when you reached.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15.mp3"></audio>
 
 </div>
 <<include "header">><main class="general">
@@ -1782,7 +1783,7 @@ Walk forward – you will head towards Peel Street Bridge. Go ahead and wait in 
 :: SC5FX19 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC4FX18">>
+<<set $prevpass to "SC5FX18">>
 <<set $passage to "SC5FX19">>
 <<set $nextpass to "SC5FX20">>
 
@@ -2278,7 +2279,7 @@ Walk towards the underpass straight ahead.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2.mp3"></audio>
 /*TODO will need to update this and the timings when song added in */
 
 </div>
@@ -2356,7 +2357,7 @@ Keep walking towards the roundabout Underpass ahead, until you come to the entra
 /* Navigation options */
 <<set $prevpass to "SC5FX24.2">>
 <<set $passage to "SC5FX26">>
-<<set $nextpass to "SC5FX27">>
+<<set $nextpass to "SC5FX27B">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -2373,21 +2374,59 @@ Keep walking towards the roundabout Underpass ahead, until you come to the entra
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX26_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX26.mp3"></audio>
 
 </div>
 
 <<include "header">><main class="general">
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
+
 <div id="mount"></div>
 
-<<timed 43s>>
-  <<replace "#mount">>
-    <div class="menu-wrapper">
-     <<button "Next">><<goto $nextpass>><</button>> /*TODO check if a button is wanted here before  multiple choice */
+<<timed 38s>>
+
+      <<replace "#transcript">><</replace>>
+      <<replace "#mount">>
+        <div class="explain appear" >
+      <p>What did the duppy say again?</p>
     </div>
-   <</replace>>
+    <</replace>>
+    <<timed 3s>>
+      <<append "#mount">>
+            <div id="result"></div>
+            <div class="menu-wrapper">
+            <<button "The stone tower overlooking the green">>
+            <<replace "#result">>Correct.<</replace>>
+            <<timed 2s>>
+                <<goto $nextpass>>
+            <</timed>>
+        <</button>> 
+        <<button "The junkyard castle ruled by pickney">>
+          <<replace "#result">>That's not right.<</replace>>
+          <<audio "mummano" "play">>
+        <<timed 2s>>
+          <<audio "duppyno" "play">>
+          <</timed>>
+          <<timed 4s>>
+            <<replace "#result">><</replace>>
+          <</timed>>
+        <</button>> 
+        <<button "In the lodge about to start a machine.">>
+            <<replace "#result">>That's not right.<</replace>>
+          <<audio "mummano" "play">>
+        <<timed 2s>>
+          <<audio "duppyno" "play">>
+          <</timed>>
+          <<timed 4s>>
+            <<replace "#result">><</replace>>
+          <</timed>>
+        <</button>> 
+            </div>
+        <</append>>
+        <</timed>>
+
+
 <</timed>>
 
 </main>
@@ -2427,21 +2466,42 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 <<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
+<div id="mount"></div>
 
-<div class="menu-wrapper">
-<<button "The stone tower overlooking the green">>
-  <<goto $nextpass>>
-<</button>> 
-<<button "The junkyard castle ruled by pickney">>
- <<audio "mummano" "play">>
-  /*TODO audio file here*/
-<</button>> 
-<<button "In the lodge about to start a machine.">>
-  <<audio "duppyno" "play">>
-  
-  /*TODO audio file here */
-<</button>> 
-</div>
+<<timed 1s>>
+      <<replace "#transcript">><</replace>>
+      <<replace "#mount">>
+        <div id="result"></div>
+        <div class="menu-wrapper">
+        <<button "The stone tower overlooking the green">>
+        <<replace "#result">>Correct.<</replace>>
+        <<timed 2s>>
+            <<goto $nextpass>>
+        <</timed>>
+    <</button>> 
+    <<button "The junkyard castle ruled by pickney">>
+      <<replace "#result">>That's not right.<</replace>>
+      <<audio "mummano" "play">>
+     <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
+    <</button>> 
+    <<button "In the lodge about to start a machine.">>
+        <<replace "#result">>That's not right.<</replace>>
+      <<audio "mummano" "play">>
+     <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
+    <</button>> 
+        </div>
+      <</replace>>
+<</timed>>
 
 
 </main>
@@ -2450,7 +2510,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 :: SC5FX27B [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC5FX27">>
+<<set $prevpass to "SC5FX26">>
 <<set $passage to "SC5FX27B">>
 <<set $nextpass to "SC5FX29">>
 
@@ -2592,7 +2652,7 @@ What if he’s taken the priest.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3"></audio>
 
 </div>
 
@@ -2653,30 +2713,49 @@ It must mean that a Duppy is close, quick hit the button on your phone to let us
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX31_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX31.mp3"></audio>
 
 </div>
 
 <<include "header">><main class="general">
+
+<div id="mount"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
-<div id="mount"></div>
-/* TODO STYLING  */
+
+
 <<timed 60s>>
-    <<replace "transcript">><</replace>>
-    <<replace "#mount">>
-    <div class="menu-wrapper">
-      RETNUHYPPUDAMAI
-      <<textbox "$answer" "">>
-      <<button "submit">>
-        <<set $capitalanswer to $answer.toUpperCase()>>
-        <<if $capitalanswer is "I AM A DUPPY HUNTER">>
-          <<goto $nextpass>>            
-        <</if>>>
-      <</button>>
+   <<replace "#transcript">><</replace>>
+  <<replace "#mount">>
+    <<type 400ms>><h2 class="word-us">RETNUHYPPUDAMAI</h2><</type>>
+    <</replace>>
+  <</timed>>
+
+<<timed 65s>>
+<<append "#mount">>
+    <div id="result"></div>
+    /% CODEWORD FEEDBACK %/
+    <div id="resultbutton">
+    /% CODEWORD INPUT %/
+    <div class="code-input">
+    <<textbox "$codeword" "">></div>
+    <<button "Enter">>
     </div>
-   <</replace>>
+    /% STANDARDISE INPUT %/
+    <<set $codeword to $codeword.toUpperCase()>>
+    /% CODEWORD CORRECT %/
+    <<if $codeword isnot "" and $codeword is "I AM A DUPPY HUNTER">>
+    <<replace "#result">>Correct<</replace>>
+    <<timed 3s>><<goto $nextpass>><</timed>>
+    <</if>>
+      /% CODEWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "I AM A DUPPY HUNTER">>
+      <<replace "#result">>Thats not right.<</replace>>
+      <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
+      <</if>><</button>>
+   <</append>>
 <</timed>>
+
 
 </main>
 <<include "footer">>
@@ -2804,7 +2883,7 @@ Let me know when you have finished.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX32.1_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX32.1.mp3"></audio>
 
 </div>
 
@@ -2930,7 +3009,7 @@ What? Is this thing working? The Duppy Detector. How come he’s sneaking up on 
 
 <span class="char-name">Mumma:</span>
 He might have some kind of Duppy Detector blocker. You can’t concern yourself with that. You have to find him. We don’t know what craziness he’s caused when he was inside the priest, now 		he’s inside the young man and about to cause more damage. We have to find him before he get’s 		to the woman.
-Walk down Davey Street, until you are standing on the corner of St Nicholas Street. Let me 	know when you reach. 
+Walk down Davey Street, until you are standing on the corner of St Nicholas Street. Let me know when you reach. 
 
 <span class="char-name">Josie:</span>
 St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mrs Wynter a small, light big spirit loving woman. Tinker Man. Fix anything for nothing. 
@@ -2938,9 +3017,9 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 :: SC6FX34 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC5FX33">>
+<<set $prevpass to "SC6FX33">>
 <<set $passage to "SC6FX34">>
-<<set $nextpass to "SC6FX35">>
+<<set $nextpass to "SC6FX35B">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -2966,59 +3045,16 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 <br/>
 <div id="mount"></div>
 
-<<timed 8s>>
-  <<replace "#mount">>
-    <div class="menu-wrapper">
-     <<button "Ready">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-<</timed>>
 
-</main>
-<<include "footer">>
-
-:: SC6FX34transcript 
-<span class="char-name">MummmaD:</span>
-Another riddle to solve – have a look aroud you -check your phone. 
-
-/*TODO where's the riddle? */
-
-:: SC6FX35 [nobr]
-/* MULTICHOICE OPTIONS */
-/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
-/* Navigation options */
-<<set $prevpass to "SC5FX34">>
-<<set $passage to "SC6FX35">>
-<<set $nextpass to "SC6FX35B">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-
-
-/* Transcript options */
-<<set $transcript to false>>
-<<set $transcriptname to "SC6FX35transcript">>
-/* --- */
-
-<div id="audioWrapper">
-
-</div>
-
-<<include "header">><main class="general">
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
- 
  <<timed 1s>>
-      <<replace "#transcript">><</replace>>
+ <<replace "#transcript">><</replace>>
       <<replace "#mount">>
+        <div class="explain appear" >
+      /*TODO <p> What is this riddle?</p> */
+    </div>
+    <</replace>>
+     <<timed 3s>>
+      <<append "#mount">>
         <div id="result"></div>
         <div class="menu-wrapper">
         <<button "a) Good Jim’s Magnolia Inn">>
@@ -3048,7 +3084,93 @@ Another riddle to solve – have a look aroud you -check your phone.
       <</timed>>
     <</button>> 
         </div>
-      <</replace>>
+      <</append>>
+        <</timed>>
+<</timed>>
+
+
+</main>
+<<include "footer">>
+
+:: SC6FX34transcript 
+<span class="char-name">MummmaD:</span>
+Another riddle to solve – have a look aroud you -check your phone. 
+
+/*TODO where's the riddle? */
+
+:: SC6FX35 [nobr]
+/* MULTICHOICE OPTIONS */
+/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
+/* Navigation options */
+<<set $prevpass to "SC6FX34">>
+<<set $passage to "SC6FX35">>
+<<set $nextpass to "SC6FX35B">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC6FX35transcript">>
+/* --- */
+
+<div id="audioWrapper">
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"></div>
+<br/>
+<div id="mount"></div>
+
+
+ 
+ <<timed 1s>>
+ <<replace "#transcript">><</replace>>
+      <<replace "#mount">>
+        <div class="explain appear" >
+      /* <p>What is this riddle?</p> */
+    </div>
+    <</replace>>
+     <<timed 3s>>
+      <<append "#mount">>
+        <div id="result"></div>
+        <div class="menu-wrapper">
+        <<button "a) Good Jim’s Magnolia Inn">>
+        <<replace "#result">>Correct.<</replace>>
+        <<timed 2s>>
+            <<goto $nextpass>>
+        <</timed>>
+    <</button>> 
+    <<button "b) Falafel Palais">>
+      <<replace "#result">>That's not right.<</replace>>
+      <<audio "mummano" "play">>
+     <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
+    <</button>> 
+    <<button "c) The Big Palm Tree">>
+        <<replace "#result">>That's not right.<</replace>>
+      <<audio "mummano" "play">>
+     <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
+    <</button>> 
+        </div>
+      <</append>>
+        <</timed>>
 <</timed>>
 
 
@@ -3703,7 +3825,7 @@ Continue to the end of Grosvenor Road until it meets with Ashley Road. On the co
 :: SC9FX44 [nobr]
 /* MULTICHOICE OPTIONS */
 /* Navigation options */
-<<set $prevpass to "SC8FX42">>
+<<set $prevpass to "SC9FX42">>
 <<set $passage to "SC9FX44">>
 <<set $nextpass to "SC9FX45">>
 
@@ -5064,11 +5186,13 @@ You skank? Do you know what skanking is?
 <<include "header">><main class="general">
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
+
 <div id="mount"></div>
-<h2>Where is this giantess?</h2>
+
 <<timed 102s>>
   <<replace "#transcript">><</replace>>
     <<replace "#mount">>
+      <p>Where is this giantess?</p>
       <div id="result"></div>
       <div class="menu-wrapper">
       <<button "A) Sitting in a garden shop window among the leaves">>

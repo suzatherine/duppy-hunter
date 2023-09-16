@@ -275,6 +275,7 @@ setup.backFive = () => {
 &lt;&lt;/if&gt;&gt;
 
 &lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
+&lt;p style=&quot;color:white&quot;&gt;$passage&lt;/p&gt;
 &lt;&lt;if $showAudio is true&gt;&gt;
   &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item controls&quot;&gt;
@@ -462,7 +463,7 @@ setup.backFive = () => {
 
 &lt;span&gt;BY EDSON BURTON &amp; ST PAUL’S PEOPLE &lt;/span&gt;
 
-&lt;h2&gt;FOR THE PEOPLE &lt;/h2&gt;
+&lt;&lt;type 100ms&gt;&gt;&lt;h2&gt;FOR THE PEOPLE &lt;/h2&gt;&lt;&lt;/type&gt;&gt;
 &lt;br/&gt;
     &lt;&lt;button &quot;Start&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 
@@ -963,7 +964,7 @@ Turn around and look behind you at the Church. Look at the two towers.</tw-passa
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
@@ -1409,7 +1410,7 @@ Let me know once you reach, look both ways dear.</tw-passagedata><tw-passagedata
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
@@ -1492,7 +1493,7 @@ Let me know when you reached.</tw-passagedata><tw-passagedata pid="42" name="SC4
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
@@ -1662,7 +1663,7 @@ Wow. Look on the wall to your left of the industrial estate and on the wall on t
 
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt;
 Walk forward – you will head towards Peel Street Bridge. Go ahead and wait in the middle of the bridge.</tw-passagedata><tw-passagedata pid="48" name="SC5FX19" tags="nobr" position="975,600" size="100,100">/* Navigation options */
-&lt;&lt;set $prevpass to &quot;SC4FX18&quot;&gt;&gt;
+&lt;&lt;set $prevpass to &quot;SC5FX18&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC5FX19&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC5FX20&quot;&gt;&gt;
 
@@ -2101,7 +2102,7 @@ Walk towards the underpass straight ahead.</tw-passagedata><tw-passagedata pid="
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2.mp3&quot;&gt;&lt;/audio&gt;
 /*TODO will need to update this and the timings when song added in */
 
 &lt;/div&gt;
@@ -2170,7 +2171,7 @@ Was blind but now I see
 Keep walking towards the roundabout Underpass ahead, until you come to the entrance to the park, on your left. Turn left through the gate up along the path into St Agnes Park.</tw-passagedata><tw-passagedata pid="64" name="SC5FX26" tags="nobr" position="475,850" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC5FX24.2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC5FX26&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;SC5FX27&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC5FX27B&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
@@ -2187,21 +2188,59 @@ Keep walking towards the roundabout Underpass ahead, until you come to the entra
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX26_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX26.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
+
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 43s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;div class=&quot;menu-wrapper&quot;&gt;
-     &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; /*TODO check if a button is wanted here before  multiple choice */
+&lt;&lt;timed 38s&gt;&gt;
+
+      &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;explain appear&quot; &gt;
+      &lt;p&gt;What did the duppy say again?&lt;/p&gt;
     &lt;/div&gt;
-   &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;timed 3s&gt;&gt;
+      &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+            &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;menu-wrapper&quot;&gt;
+            &lt;&lt;button &quot;The stone tower overlooking the green&quot;&gt;&gt;
+            &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;timed 2s&gt;&gt;
+                &lt;&lt;goto $nextpass&gt;&gt;
+            &lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/button&gt;&gt; 
+        &lt;&lt;button &quot;The junkyard castle ruled by pickney&quot;&gt;&gt;
+          &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+          &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+        &lt;&lt;timed 2s&gt;&gt;
+          &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;/timed&gt;&gt;
+          &lt;&lt;timed 4s&gt;&gt;
+            &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+          &lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/button&gt;&gt; 
+        &lt;&lt;button &quot;In the lodge about to start a machine.&quot;&gt;&gt;
+            &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+          &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+        &lt;&lt;timed 2s&gt;&gt;
+          &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;/timed&gt;&gt;
+          &lt;&lt;timed 4s&gt;&gt;
+            &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+          &lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/button&gt;&gt; 
+            &lt;/div&gt;
+        &lt;&lt;/append&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+
+
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
@@ -2233,26 +2272,47 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;div class=&quot;menu-wrapper&quot;&gt;
-&lt;&lt;button &quot;The stone tower overlooking the green&quot;&gt;&gt;
-  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/button&gt;&gt; 
-&lt;&lt;button &quot;The junkyard castle ruled by pickney&quot;&gt;&gt;
- &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
-  /*TODO audio file here*/
-&lt;&lt;/button&gt;&gt; 
-&lt;&lt;button &quot;In the lodge about to start a machine.&quot;&gt;&gt;
-  &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
-  
-  /*TODO audio file here */
-&lt;&lt;/button&gt;&gt; 
-&lt;/div&gt;
+&lt;&lt;timed 1s&gt;&gt;
+      &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+        &lt;&lt;button &quot;The stone tower overlooking the green&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 2s&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+    &lt;&lt;button &quot;The junkyard castle ruled by pickney&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+     &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+    &lt;&lt;button &quot;In the lodge about to start a machine.&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+     &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+        &lt;/div&gt;
+      &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="67" name="SC5FX27B" tags="nobr" position="850,850" size="100,100">/* Navigation options */
-&lt;&lt;set $prevpass to &quot;SC5FX27&quot;&gt;&gt;
+&lt;&lt;set $prevpass to &quot;SC5FX26&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC5FX27B&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC5FX29&quot;&gt;&gt;
 
@@ -2378,7 +2438,7 @@ What if he’s taken the priest.</tw-passagedata><tw-passagedata pid="71" name="
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
@@ -2431,30 +2491,49 @@ It must mean that a Duppy is close, quick hit the button on your phone to let us
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX31_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX31.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-/* TODO STYLING  */
+
+
 &lt;&lt;timed 60s&gt;&gt;
-    &lt;&lt;replace &quot;transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;div class=&quot;menu-wrapper&quot;&gt;
-      RETNUHYPPUDAMAI
-      &lt;&lt;textbox &quot;$answer&quot; &quot;&quot;&gt;&gt;
-      &lt;&lt;button &quot;submit&quot;&gt;&gt;
-        &lt;&lt;set $capitalanswer to $answer.toUpperCase()&gt;&gt;
-        &lt;&lt;if $capitalanswer is &quot;I AM A DUPPY HUNTER&quot;&gt;&gt;
-          &lt;&lt;goto $nextpass&gt;&gt;            
-        &lt;&lt;/if&gt;&gt;&gt;
-      &lt;&lt;/button&gt;&gt;
+   &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;&lt;type 400ms&gt;&gt;&lt;h2 class=&quot;word-us&quot;&gt;RETNUHYPPUDAMAI&lt;/h2&gt;&lt;&lt;/type&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 65s&gt;&gt;
+&lt;&lt;append &quot;#mount&quot;&gt;&gt;
+    &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+    /% CODEWORD FEEDBACK %/
+    &lt;div id=&quot;resultbutton&quot;&gt;
+    /% CODEWORD INPUT %/
+    &lt;div class=&quot;code-input&quot;&gt;
+    &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;&lt;/div&gt;
+    &lt;&lt;button &quot;Enter&quot;&gt;&gt;
     &lt;/div&gt;
-   &lt;&lt;/replace&gt;&gt;
+    /% STANDARDISE INPUT %/
+    &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+    /% CODEWORD CORRECT %/
+    &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;I AM A DUPPY HUNTER&quot;&gt;&gt;
+    &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+      /% CODEWORD INCORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;I AM A DUPPY HUNTER&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#result&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt;
+   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
+
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="SC5FX31transcript" tags="" position="475,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
@@ -2566,7 +2645,7 @@ Let me know when you have finished.</tw-passagedata><tw-passagedata pid="77" nam
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX32.1_TEMP.mp3&quot;&gt;&lt;/audio&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX32.1.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
 
@@ -2682,13 +2761,13 @@ What? Is this thing working? The Duppy Detector. How come he’s sneaking up on 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
 He might have some kind of Duppy Detector blocker. You can’t concern yourself with that. You have to find him. We don’t know what craziness he’s caused when he was inside the priest, now 		he’s inside the young man and about to cause more damage. We have to find him before he get’s 		to the woman.
-Walk down Davey Street, until you are standing on the corner of St Nicholas Street. Let me 	know when you reach. 
+Walk down Davey Street, until you are standing on the corner of St Nicholas Street. Let me know when you reach. 
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mrs Wynter a small, light big spirit loving woman. Tinker Man. Fix anything for nothing.</tw-passagedata><tw-passagedata pid="81" name="SC6FX34" tags="nobr" position="100,1100" size="100,100">/* Navigation options */
-&lt;&lt;set $prevpass to &quot;SC5FX33&quot;&gt;&gt;
+&lt;&lt;set $prevpass to &quot;SC6FX33&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC6FX34&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;SC6FX35&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC6FX35B&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
@@ -2714,53 +2793,16 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 8s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;div class=&quot;menu-wrapper&quot;&gt;
-     &lt;&lt;button &quot;Ready&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
-    &lt;/div&gt;
-   &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
 
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="SC6FX34transcript" tags="" position="225,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummmaD:&lt;/span&gt;
-Another riddle to solve – have a look aroud you -check your phone. 
-
-/*TODO where&#39;s the riddle? */</tw-passagedata><tw-passagedata pid="83" name="SC6FX35" tags="nobr" position="350,1100" size="100,100">/* MULTICHOICE OPTIONS */
-/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
-/* Navigation options */
-&lt;&lt;set $prevpass to &quot;SC5FX34&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;SC6FX35&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;SC6FX35B&quot;&gt;&gt;
-
-/* Footer menu options */
-&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
-&lt;&lt;set $showReplay to true&gt;&gt;
-&lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showBackwards to true&gt;&gt;
-&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
-
-
-/* Transcript options */
-&lt;&lt;set $transcript to false&gt;&gt;
-&lt;&lt;set $transcriptname to &quot;SC6FX35transcript&quot;&gt;&gt;
-/* --- */
-
-&lt;div id=&quot;audioWrapper&quot;&gt;
-
-&lt;/div&gt;
-
-&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-
-
- 
  &lt;&lt;timed 1s&gt;&gt;
-      &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+ &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;explain appear&quot; &gt;
+      /*TODO &lt;p&gt; What is this riddle?&lt;/p&gt; */
+    &lt;/div&gt;
+    &lt;&lt;/replace&gt;&gt;
+     &lt;&lt;timed 3s&gt;&gt;
+      &lt;&lt;append &quot;#mount&quot;&gt;&gt;
         &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
         &lt;&lt;button &quot;a) Good Jim’s Magnolia Inn&quot;&gt;&gt;
@@ -2790,7 +2832,87 @@ Another riddle to solve – have a look aroud you -check your phone.
       &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/button&gt;&gt; 
         &lt;/div&gt;
-      &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/append&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="SC6FX34transcript" tags="" position="225,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummmaD:&lt;/span&gt;
+Another riddle to solve – have a look aroud you -check your phone. 
+
+/*TODO where&#39;s the riddle? */</tw-passagedata><tw-passagedata pid="83" name="SC6FX35" tags="nobr" position="350,1100" size="100,100">/* MULTICHOICE OPTIONS */
+/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
+/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC6FX34&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC6FX35&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC6FX35B&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC6FX35transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+
+ 
+ &lt;&lt;timed 1s&gt;&gt;
+ &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;div class=&quot;explain appear&quot; &gt;
+      /* &lt;p&gt;What is this riddle?&lt;/p&gt; */
+    &lt;/div&gt;
+    &lt;&lt;/replace&gt;&gt;
+     &lt;&lt;timed 3s&gt;&gt;
+      &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+        &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;menu-wrapper&quot;&gt;
+        &lt;&lt;button &quot;a) Good Jim’s Magnolia Inn&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 2s&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+    &lt;&lt;button &quot;b) Falafel Palais&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+     &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+    &lt;&lt;button &quot;c) The Big Palm Tree&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+     &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/button&gt;&gt; 
+        &lt;/div&gt;
+      &lt;&lt;/append&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
@@ -3371,7 +3493,7 @@ It would not leave us alone. Neither me nor Mum could stop them. Not all of them
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.</tw-passagedata><tw-passagedata pid="101" name="SC9FX44" tags="nobr" position="100,1350" size="100,100">/* MULTICHOICE OPTIONS */
 /* Navigation options */
-&lt;&lt;set $prevpass to &quot;SC8FX42&quot;&gt;&gt;
+&lt;&lt;set $prevpass to &quot;SC9FX42&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC9FX44&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC9FX45&quot;&gt;&gt;
 
@@ -4598,11 +4720,13 @@ You skank? Do you know what skanking is?</tw-passagedata><tw-passagedata pid="13
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
+
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;h2&gt;Where is this giantess?&lt;/h2&gt;
+
 &lt;&lt;timed 102s&gt;&gt;
   &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+      &lt;p&gt;Where is this giantess?&lt;/p&gt;
       &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
       &lt;&lt;button &quot;A) Sitting in a garden shop window among the leaves&quot;&gt;&gt;
