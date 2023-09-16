@@ -3050,7 +3050,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
  <<replace "#transcript">><</replace>>
       <<replace "#mount">>
         <div class="explain appear" >
-      /*TODO <p> What is this riddle?</p> */
+   <p> Where was the Duppy?</p>
     </div>
     <</replace>>
      <<timed 3s>>
