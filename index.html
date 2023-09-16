@@ -4331,10 +4331,10 @@ Cross when the lights are green.  Walk along ... and let me know when you have r
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="SC12FX55transcript" tags="" position="975,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
-Can you hear the echo of Old St Paul’s. 
+Can you hear the echo of Old St Paul’s? 
  
 &lt;span class=&quot;char-name&quot;&gt;Rag &amp; Bone Man:&lt;/span&gt;  
-Any old rag and bone. 
+Any old rag and bone. Any old rag and bone. 
  
 &lt;span class=&quot;char-name&quot;&gt;Mother:&lt;/span&gt; 
 Get inside you daft lot. 
@@ -4410,8 +4410,8 @@ Walk down the street and take the second left.
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt; 
 Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left.</tw-passagedata><tw-passagedata pid="129" name="SC12FX55-M" tags="nobr" position="1100,1600" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC12FX55&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;SC12FX55-M &quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC12FX55-M&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC12FX56&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
@@ -4453,7 +4453,52 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 Walk down the street and take the second left.
 
 &lt;span class=&quot;char-name&quot;&gt;MummaD:&lt;/span&gt; 
-Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left.</tw-passagedata><tw-passagedata pid="131" name="end" tags="nobr" position="100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;SC12FX55-M&quot;&gt;&gt;
+Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left.</tw-passagedata><tw-passagedata pid="131" name="SC12FX56" tags="nobr" position="100,1725" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC12FX55-M&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;SC12FX56&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
+
+/* Footer menu options */
+&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showReplay to true&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+
+/* Transcript options */
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $transcriptname to &quot;SC12FX56transcript&quot;&gt;&gt;
+/* --- */
+
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene12_FX56.mp3&quot;&gt;&lt;/audio&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 48s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;div class=&quot;menu-wrapper&quot;&gt;
+     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="132" name="SC12FX56transcript" tags="" position="225,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+Focus – Josie. I am a Duppy Hunter. 
+A new barbershop. On your left. 
+We would sit for hours and wait as Mr Trim would cut hair. 
+I can’t even remember what was here before. 
+The street’s so different now. There was a garage, where Dad would get his car fixed,the motor	bike shop. The flats opposite look like they landed from out of space. Sealed in. 
+That’s Argyle Road on the left. Dad said there were parties on Argyle going back to the 60s. Carnival time the sound system would play some of the best reggae and dub. 
+You skank? Do you know what skanking is? (sucks teeth)</tw-passagedata><tw-passagedata pid="133" name="end" tags="nobr" position="350,1725" size="100,100">&lt;&lt;set $prevpass to &quot;SC12FX56&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
