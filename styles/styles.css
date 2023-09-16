@@ -634,6 +634,10 @@ h2.word-us {
   font-size: 5rem;
 }
 
+h2.word-us.smaller {
+  font-size: 3rem;
+}
+
 .code-input {
   display: flex;
 }

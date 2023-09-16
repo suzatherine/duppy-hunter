@@ -4239,7 +4239,7 @@ The door to the 7th Day is on Ashley Road.
 
 <<include "header">><main class="general">
 <div id="map"></div>
-<div id="transcript"><<include "duppyTitle">></div>
+<div id="transcript"></div>
 <br/>
 <div id="mount"></div>
 
@@ -4247,12 +4247,29 @@ The door to the 7th Day is on Ashley Road.
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
 <div class="explain appear"><p>Exit Malcolm X onto Ashley Road Continue down Ashley Road towards the first traffic lights.
-Cross the road at the first traffic light continue walking down Ashley Road. </p></div>
-<br/>
+<br/></p></div>
    <</replace>>
   <</timed>>
 
-  <<timed 29s>>
+  <<timed 11s>>
+   <<append "#mount">>
+    <div class="explain appear"><p>Cross the road at the first traffic light. <br/>
+Continue down Ashley Road.
+<br/></p></div>
+/* <p>Cross the road at the first traffic light. <br/>
+Continue walking down Ashley Road. </p>
+<br/> */
+   <</append>>
+  <</timed>>
+    <<timed 20s>>
+   <<append "#mount">>
+    <div class="explain appear"><p>Look out for the sign that has the words 7th Day.
+<br/></p></div>
+
+   <</append>>
+  <</timed>>
+
+  <<timed 31s>>
     <<goto $nextpass>>
     <</timed>>
 
@@ -4295,7 +4312,7 @@ Let me know once you’ve reached.
 
 <<include "header">><main class="general">
 <div id="map"></div>
-<div id="transcript"><<include "duppyTitle">></div>
+<div id="transcript"></div>
 <br/>
 <div id="mount"></div>
 
@@ -4304,11 +4321,23 @@ Let me know once you’ve reached.
   <<replace "#transcript">><</replace>>
   <<audio "mapappear" "play">>
   <<replace "#map">>
-    <<button "Reached">>
-      <<goto $nextpass>>
-    <</button>>
+  
      <img src="./../assets/img/MAP12.jpg" alt="map">
    <</replace>>
+  
+<</timed>>
+
+<<timed 3s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
 <</timed>>
 
 </main>
@@ -4342,7 +4371,7 @@ Let me know once you’ve reached.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX51_TEMP.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX51.mp3"></audio>
 
 </div>
 
@@ -4389,7 +4418,7 @@ This Church has been on a journey. Poet was told he couldn’t preach or lead be
 Poet might be inside. Leave my people out of this. 
 
 <span class="char-name">Duppy:</span>	
-(sucks teeth) Look across the road.
+Look across the road.
 
 <span class="char-name">Josie:</span>	
 The duppy must be inside.
@@ -4446,9 +4475,13 @@ Cross at the lights and let know when you’ve reached.
 
 <span class="char-name">Josie:</span> 
 It’s closed. Locked up. 
+
 Ajax was named after it’s owner. Businessman, hard man, entertainer, Don Juan, – a pied piper of pleasure. A café, Shady Grove, on one side and a shebeen we say shubs, below. Different from blues parties. A permanent venueEvery one went no questions, no judgment, - teenagers, office people, some white people, hippies, prostitutes, bad man, big people, everybody. Duppies loved it. Every duppy could find their reflection in someone there.
+
 Samaritan, Bangy, was a wake up call. Strangers coming into Paul’s like kings. It could never 	happen 	before. It wasn’t just outsiders. Hustling the poppy, the pipe- took them into the Beast Master’s pit. They saw opportunity in innocence. 
+
 You couldn’t keep Blues, you couldn’t keep Shubs anymore you didn’t know who was coming through. 
+
 Ajax’s was the last shubs. The shubs that felt safe. 
 
 <span class="char-name">Duppy:</span> 
@@ -4502,7 +4535,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene11_FX53.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX52.mp3"></audio>
 
 </div>
 
@@ -4549,7 +4582,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
+<<set $showTranscriptIcon to false>>
 
 
 /* Transcript options */
@@ -4559,7 +4592,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 
 <<include "header">><main class="general">
 <div id="map"></div>
-<div id="transcript"><<include "duppyTitle">></div>
+<div id="transcript"></div>
 <br/>
 <div id="mount"></div>
 
@@ -4568,15 +4601,26 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
   <<replace "#transcript">><</replace>>
   <<audio "mapappear" "play">>
   <<replace "#map">>
-    <<button "Reached">>
-      <<goto $nextpass>>
-    <</button>>
+    
      <img src="./../assets/img/MAP13.jpg" alt="map">
-     <div class="explain appear"><p>Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street. </p></div>
+     <br/>
+     <br/>
+     <div class="explain appear"><p>Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City Road onto Brighton Street. </p></div>
    <</replace>>
 <</timed>>
 
-
+<<timed 3s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
 
 </main>
 <<include "footer">>
@@ -4622,7 +4666,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 <br/>
 <div id="mount"></div>
 
-<<timed 53s>>
+<<timed 55s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
 <div class="explain appear"><p>Cross over safely. </p></div>
@@ -4630,7 +4674,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
    <</replace>>
 <</timed>>
 
-<<timed 55s>>
+<<timed 58s>>
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "I've crossed">><<goto $nextpass>><</button>> 
@@ -4645,13 +4689,16 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 :: SC11FX53transcript 
 
 <span class="char-name">Josie:</span> 
-I didn’t abandon St Paul’s. I just wanted to keep the boys safe growing up. Times had changed. The Beast Master just didn’t care about our children, our elders. The Beast 	Master was dropping every soul in St Paul’s. So, we brought the house in Fishponds. but I should have nown better. I did all the paperwork; all he did was sign his name. Except 	we didn’t I did. The boy Father Simon kept coming down here. Not like me, visiting, 	committees, shopping. He 	
-couldn’t leave. His head was here, with his old friends. It could have been different if he had worked with me to build a different life for the boys 	
-instead, they followed him. I couldn’t forgive im. 
+I didn’t abandon St Paul’s. 
+
+I just wanted to keep the boys safe growing up. Times had changed. The Beast Master just didn’t care about our children, our elders. The Beast Master was dropping every soul in St Paul’s. 
+
+So, we brought the house in Fishponds. but I should have nown better. I did all the paperwork; all he did was sign his name. Except we didn’t... I did. The boy Father Simon kept coming down here. Not like me, visiting, committees, shopping. He couldn’t leave. His head was here, with his old friends. It could have been different if he had worked with me to build a different life for the boys instead, they followed him. I couldn’t forgive im. 
+
 I can’t use Power to protect all the time and boys they get to an age where they don’t listen.
  
 <span class="char-name">MummaD:</span> 
-Cross at the lights. Wait. 
+Cross over safely.
 
 
 
@@ -4690,7 +4737,7 @@ Cross at the lights. Wait.
 <<timed 73s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p>Cross when the lights are green.  Walk along ... and let me know when you have reached.</p></div>
+<div class="explain appear"><p>Cross when the lights are green.  Walk along... and let me know when you have reached.</p></div>
 <br/>
    <</replace>>
 <</timed>>
@@ -4717,8 +4764,11 @@ No Blacks, Dogs and Irish and she took down her sign till I use obeah to turn he
  
 <span class="char-name">Josie:</span> 
 Even with that. They said it was adventurous, They were young, they had hope, they had style. The old ways were still here though. Mumma said she and friends would keep up a kumina, that’s an African blessing, in one of the houses. 
+
 What’s that? On the wall. Look to your left. Can you see it – is that on the corner of Denbigh Street, on the end of terrace wall. The green and stars of Jamaica. The giant grey ship, passengers reading. The Windrush.
+
 ‘Colonization in reverse’ Mumma said borrowing from her favorite poet Louise Bennett. 
+
 I hope murals aren’t going to be all that’s left of us.
  
 As long as Carnival still comes through this street, we’ll be a living force here. 
@@ -4761,7 +4811,9 @@ Cross when the lights are green.  Walk along ... and let me know when you have r
 <<timed 153s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p>Walk down the street and take the second left.Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. </p></div>
+<div class="explain appear"><p>Walk down the street and take the second left.
+<br/>Continue walking down Brighton Street until you get to Wilder Street. 
+<br/>You will see Inkerman across the road to the left. </p></div>
 <br/>
    <</replace>>
 <</timed>>
@@ -4868,7 +4920,7 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
+<<set $showTranscriptIcon to false>>
 
 
 /* Transcript options */
@@ -4878,7 +4930,7 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 
 <<include "header">><main class="general">
 <div id="map"></div>
-<div id="transcript"><<include "duppyTitle">></div>
+<div id="transcript"></div>
 <br/>
 <div id="mount"></div>
 
@@ -4887,14 +4939,30 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
   <<replace "#transcript">><</replace>>
   <<audio "mapappear" "play">>
   <<replace "#map">>
-    <<button "Reached">>
-      <<goto $nextpass>>
-    <</button>>
+  
      <img src="./../assets/img/MAP14.jpeg" alt="map">
-     <div class="explain appear"><p>Walk down the street and take the second left.Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. </p></div>
+     <br/>
+     <br/>
+     <div class="explain appear"><p>Walk down the street and take the second left. 
+       <br/>
+       Continue walking down Brighton Street until you get to Wilder Street
+         <br/>
+         You will see Inkerman across the road to the left. </p></div>
    <</replace>>
 <</timed>>
 
+<<timed 4s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
 
 
 </main>
@@ -4942,7 +5010,7 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 <<timed 48s>>
   <<replace "#mount">>
     <div class="menu-wrapper">
-     <<button "Reached">><<goto $nextpass>><</button>> 
+     <<button "Next">><<goto $nextpass>><</button>> 
     </div>
    <</replace>>
 <</timed>>
@@ -4955,12 +5023,17 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 
 <span class="char-name">Josie:</span> 
 Focus – Josie. I am a Duppy Hunter. 
+
 A new barbershop. On your left. 
+
 We would sit for hours and wait as Mr Trim would cut hair. 
 I can’t even remember what was here before. 
+
 The street’s so different now. There was a garage, where Dad would get his car fixed,the motor	bike shop. The flats opposite look like they landed from out of space. Sealed in. 
+
 That’s Argyle Road on the left. Dad said there were parties on Argyle going back to the 60s. Carnival time the sound system would play some of the best reggae and dub. 
-You skank? Do you know what skanking is? (sucks teeth)  
+
+You skank? Do you know what skanking is? 
 
 :: SC13FX57 [nobr]
 
@@ -4992,9 +5065,40 @@ You skank? Do you know what skanking is? (sucks teeth)
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
-
+<h2>Where is this giantess?</h2>
 <<timed 102s>>
-  <<goto $nextpass>>
+  <<replace "#transcript">><</replace>>
+    <<replace "#mount">>
+      <div id="result"></div>
+      <div class="menu-wrapper">
+      <<button "A) Sitting in a garden shop window among the leaves">>
+        <<replace "#result">>That's not right.<</replace>>
+        <<audio "mummano" "play">>
+        <<timed 2s>>
+          <<audio "duppyno" "play">>
+        <</timed>>
+        <<timed 4s>>
+          <<replace "#result">><</replace>>
+        <</timed>>
+      <</button>> 
+      <<button "b)  Inside the carpark">>
+        <<replace "#result">>That's not right.<</replace>>
+        <<audio "mummano" "play">>
+        <<timed 2s>>
+          <<audio "duppyno" "play">>
+        <</timed>>
+        <<timed 4s>>
+          <<replace "#result">><</replace>>
+        <</timed>>
+    <</button>> 
+    <<button "c) Looking down from above One Love...">>
+      <<replace "#result">>Correct.<</replace>>
+      <<timed 2s>>
+        <<goto $nextpass>>
+      <</timed>>
+    <</button>> 
+        </div>
+  <</replace>>
 <</timed>>
 
 </main>
@@ -5022,7 +5126,7 @@ She holds the key to my heart.
 She holds the key to my heart
 Keys.
 Now look up and down the street carefully
-Where could she be.		
+Where could she be?
 A) Inside the carpark waiting for charity
 B) Sitting in a garden shop window among the leaves
 C) Looking down from above One Love....
@@ -5032,16 +5136,17 @@ Open you eyes and see.
 <span class="char-name">Mumma:</span> 
 Another riddle to solve –  look aroud you -check your phone and choose the right one. Remember I’m with you.
 
+
+
 :: SC13FX58 [nobr]
-/* MULTICHOICE OPTIONS */
-/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
+
 /* Navigation options */
 <<set $prevpass to "SC13FX57">>
 <<set $passage to "SC13FX58">>
 <<set $nextpass to "SC13FX58B">>
 
 /* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
+<<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -5055,90 +5160,18 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 /* --- */
 
 <div id="audioWrapper">
-
-</div>
-
-<<include "header">><main class="general">
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-    <<replace "#mount">>
-      <div id="result"></div>
-      <div class="menu-wrapper">
-      <<button "A) Sitting in a garden shop window among the leaves">>
-        <<replace "#result">>That's not right.<</replace>>
-        <<audio "mummano" "play">>
-        <<timed 2s>>
-          <<audio "duppyno" "play">>
-        <</timed>>
-        <<timed 4s>>
-          <<replace "#result">><</replace>>
-        <</timed>>
-      <</button>> 
-      <<button "b)  Inside the carpark">>
-        <<replace "#result">>Oh that's not right.<</replace>>
-        <<audio "mummano" "play">>
-        <<timed 2s>>
-          <<audio "duppyno" "play">>
-        <</timed>>
-        <<timed 4s>>
-          <<replace "#result">><</replace>>
-        <</timed>>
-    <</button>> 
-    <<button "c) Looking down from above One Love...">>
-      <<replace "#result">>Correct.<</replace>>
-      <<timed 2s>>
-        <<goto $nextpass>>
-      <</timed>>
-    <</button>> 
-        </div>
-  <</replace>>
-<</timed>>
-
-
-
-</main>
-<<include "footer">>
-
-:: SC13FX58transcript 
-/* <span class="char-name">MummmaD:</span>
-Another riddle to solve – have a look aroud you -check your phone.  */
-
-:: SC13FX58B [nobr]
-
-/* Navigation options */
-<<set $prevpass to "SC13FX58">>
-<<set $passage to "SC13FX58B">>
-<<set $nextpass to "end">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-
-
-/* Transcript options */
-<<set $transcript to false>>
-<<set $transcriptname to "SC13FX58Btranscript">>
-/* --- */
-
-<div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene13_FX58.mp3"></audio>
 
 </div>
 
 <<include "header">><main class="general">
+<div id="mount"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
-<div id="mount"></div>
+
 
 <<timed 24s>>
+    <<replace "#transcript">><</replace>>
    <<replace "#mount">>
     <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
     <br/>
@@ -5150,17 +5183,47 @@ Another riddle to solve – have a look aroud you -check your phone.  */
 
 <<timed 48s>>
   <<replace "#mount">><</replace>>
+   
 <</timed>>
 
 <<timed 64s>>
-  <<goto $nextpass>>
+   <<replace "#transcript">><</replace>>
+  <<replace "#mount">>
+    <<type 400ms>><h2 class="word-us smaller">CLAARTSIAMMUYM</h2><</type>>
+    <</replace>>
+  <</timed>>
+<<timed 68s>>
+  <<append "#mount">>
+      <div id="result"></div>
+      /% CODEWORD FEEDBACK %/
+      <div id="resultbutton">
+      /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">></div>
+      <<button "Enter">>
+      </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "MY MUMMA IS A CLAART">>
+      <<replace "#result">>Correct<</replace>>
+      <<timed 3s>><<goto $nextpass>><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "MY MUMMA IS A CLAART">>
+        <<replace "#result">>Thats not right.<</replace>>
+        <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
+        <</if>><</button>>
+   <</append>>
 <</timed>>
+
+
 
 </main>
 <<include "footer">>
 
 
-:: SC13FX58Btranscript 
+:: SC13FX58transcript 
 
 <span class="char-name">Mumma:</span> 
 You have it.
@@ -5195,7 +5258,7 @@ As Hunter I have the right to reject this hunt.
 It’s an order. 
  
 <span class="char-name">Josie:</span> 
-Your my mother.. 
+You're my mother.. 
  
 <span class="char-name">Hadrian:</span> 
 Please dawta.
@@ -5213,9 +5276,600 @@ We can’t force her. Perhaps this was too much for her.
 <span class="char-name">MummaD:</span> 
 Josie is trying to get back. She’s scrambled but she’s trying. I knew she would. Come on daughter.  				
 
+:: SC13FX58B [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC13FX58">>
+<<set $passage to "SC13FX58B">>
+<<set $nextpass to "SC13FX58B-M">>
+/* <<set $nextpass to "SC14FX60">> */
+
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC13FX58Btranscript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene13_FX58.1.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 33s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Turn left along Wilder Street. 
+<br/>Cross over to Bishop Street.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+  <<timed 53s>>
+  <<replace "#transcript">><<include "duppyTitle">><</replace>>
+   <<replace "#mount">><</replace>>
+  <</timed>>
+
+<<timed 70s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Follow the road around and you’ll see a path ahead.
+<br/>Walk through the path to the park and stay on the path,
+<br/> passing the Church until we are on Portland Square. </p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+/* <<timed 87s>>
+  <<goto $nextpass>>
+<</timed>> */
+
+<<timed 87s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "I'm here">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+<</timed>>
+</main>
+<<include "footer">>
+
+
+:: SC13FX58Btranscript 
+<span class="char-name">Mumma:</span> 
+Can you work out what’s she’s saying. Let me know. 
+Oh I can read it. My Mumma is a claart. Facety girl. 
+
+<span class="char-name">Josie:</span> 
+You wont defeat me. I will see this through.
+ 
+<span class="char-name">Dupppy:</span>
+I am not here to torment you. 
+ 
+<span class="char-name">Mumma:</span> 
+We’re here. Aren’t we friend. 
+
+<span class="char-name">Josie:</span>
+Then what is it duppy?
+ 
+<span class="char-name">Duppy:</span>
+Follow the lane to the circle, 
+In the center of a square 
+Where cellars are leisure
+And runaways in temples 
+Fly through the air,
+The story lies in Portland Square.
+ 
+<span class="char-name">Mumma:</span> 
+Turn left along Wilder Street cross over to Bishop Street.  
+
+ 
+<span class="char-name">Josie:</span>
+Captain Jamaica. Leroy used to pass on his comics to Him. They were both so excited when Black Panther came out. I made us all go as a family
+ 
+<span class="char-name">Josie:</span>
+The Inkerman’s gone. That used to be the Britannia, one of the first pubs Dad said, where Black people could drink in Bristol. It became popular with the Jamaicans the one’s that came over in the 90s. Hard working people, people with swag. 
+ 
+They could grind all week and then go out dressed like Minaj. 
+ 
+<span class="char-name">Mumma:</span> 
+Follow the road around and you’ll see a path ahead walk through the path to the park and stay on the path, passing the Church until we are on Portland Square.
+
+:: SC13FX58B-M [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC13FX58B">>
+<<set $passage to "SC13FX58B-M">>
+<<set $nextpass to "SC14FX60">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to false>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC12FX55-Mtranscript">>
+/* --- */
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"></div>
+<br/>
+<div id="mount"></div>
+
+
+<<timed 1s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+  
+     <img src="./../assets/img/MAP15.jpg" alt="map">
+     <br/>
+     <br/>
+   <div class="explain appear"><p>Follow the road around and you’ll see a path ahead.
+<br/>Walk through the path to the park and stay on the path,
+<br/> passing the Church until we are on Portland Square. </p></div>
+   <</replace>>
+<</timed>>
+
+<<timed 4s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "I'm here">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "I'm here">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+
+</main>
+<<include "footer">>
+
+:: SC14FX60 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC13FX58B-M">>
+<<set $passage to "SC14FX60">>
+<<set $nextpass to "SC14FX60-M">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC14FX60transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene14_FX60.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 40s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Cross the road safely please and <br/>
+walk around the outside of the green in the centre of the square. 
+<br/>
+Cross the road when you are facing Cosies. 
+<br/>When you get outside get your bottle of water out and  pour some water for libation. </p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+<<timed 68s>>
+  <<goto $nextpass>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC14FX60transcript 
+
+<span class="char-name">Josie:</span> 
+This is all new. We never had a park like this when we were growing up. We had the old bomb site, the street.
+
+This is what Leroy must have meant when he said his brother had gone to the park. 
+
+I got this. 
+
+St Paul’s Church. Mumma said they weren’t very welcoming to West Indians who wanted to join. 
+ 
+<span class="char-name">Mumma:</span> 
+Yes, they would rather die off than have us with them. 
+ 
+<span class="char-name">Josie:</span> 
+Where runaways fly through the air. Trapeze. It’s now the home of the Circus School. The boys loved Circus. 
+ 
+He passed through here on his bike.   
+ 
+<span class="char-name">Mumma:</span> 
+Cross the road safely please and walk around the outside of the green in the centre of the square. Cross the road when you are facing Cosies. When you get outside  get  your  bottle of water out and  pour some water for libation. 
+
+:: SC14FX60-M [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC14FX60">>
+<<set $passage to "SC14FX60-M">>
+<<set $nextpass to "SC14FX61">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to false>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC14FX60-Mtranscript">>
+/* --- */
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"></div>
+<br/>
+<div id="mount"></div>
+
+
+<<timed 1s>>
+  <<replace "#transcript">><</replace>>
+  <<audio "mapappear" "play">>
+  <<replace "#map">>
+  
+     <img src="./../assets/img/MAP15.jpg" alt="map">
+     <br/>
+     <br/>
+   <div class="explain appear"><p>Cross the road safely. <br/>
+Walk around the outside of the green in the centre of the square. 
+<br/>
+Cross the road when you are facing Cosies. 
+<br/>When you get outside get your bottle of water out and  pour some water for libation. </p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+<<timed 4s>>
+  <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#map">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+
+</main>
+<<include "footer">>
+
+:: SC14FX61 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC14FX60">>
+<<set $passage to "SC14FX61">>
+<<set $nextpass to "SC14FX61B">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC14FX61transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene14_FX61.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 60s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Turn around and cross over the green for me. </p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+<<timed 68s>>
+  <<replace "#mount">>
+    <div class="menu-wrapper">
+     <<button "Next">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC14FX61transcript 
+
+<span class="char-name">Josie:</span> 
+Leroy used to like to have a drink here after working at Docklands. When he moved on, he still came and met his friends here especially Samson – the host. 
+
+Samson made everyone welcome – Black, White, straight, gay, young, student not student.
+
+I can see why Leroy liked to hang out with him. Always He’s an institution like the place itself I was away. I’m sorry Leroy. He stopped off at Cosie’s to borrow the spare keys. He stopped here to meet his brother. He was always forgetting his keys. Leroy thought he was in trouble –but no. He just wanted to get home. He had a tune he wanted to get home and finish. Leroy told him to slow down. 
+ 
+Turn around and cross over the green for me.
+
+:: SC14FX61B [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC14FX61">>
+<<set $passage to "SC14FX61B">>
+<<set $nextpass to "SC15FX62">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC14FX61Btranscript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene14_FX61.1.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 45s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Let’s walk through to the centre of the path on the green. </p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+<<timed 60s>>
+  <<replace "#transcript">><<include "duppyTitle">><</replace>>
+   <<replace "#mount">><</replace>>
+<</timed>>
+
+
+<<timed 190s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Walk out of the square using the exit facing Circomedia.
+<br/>Now turn left and walk towards the end of the street. 
+<br/>But look out for the blue plaque on the wall. 
+<br/>
+Look at your phone. Press reached when you have found it.</p></div>
+<br/>
+   <</replace>>
+<</timed>>
+
+<<timed 197s>>
+  <<append "#mount">>
+    <div class="menu-wrapper">
+     <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+<</timed>>
+
+
+</main>
+<<include "footer">>
+
+:: SC14FX61Btranscript 
+
+<span class="char-name">Josie:</span> 
+Wait. I don’t know if I can. 
+ 
+<span class="char-name">Mumma:</span> 
+Go on darling. 
+
+Friend join me. Tell her -  
+
+You are a duppy hunter. 
+
+<span class="char-name">Josie:</span> 
+What is it there is a duppy. We’ve found it. 
+ 
+<span class="char-name">Mumma:</span> No it’s not what you think.
+ 
+<span class="char-name">Duppy:</span> 
+Sometimes the duppy you conquer are your own. 
+ 
+<span class="char-name">Josie:</span> 
+Who are you? 
+ 
+<span class="char-name">Duppy:</span> 
+I have eight legs. I spin webs. I was born in Africa, and moved to Europe and the Americas. 
+ 
+<span class="char-name">Josie:</span> 
+Anansi. 
+ 
+<span class="char-name">Anansi:</span> 
+Yes. The duppy you have been chasing is your own fear. 
+ 
+<span class="char-name">Mumma:</span> 
+Come through duppy Hunter. 
+
+<span class="char-name">Mumma:</span> 
+Let’s walk through to the center of the path on the green. 
+
+<span class="char-name">Josie:</span> 
+It all makes sense now: why we started at Trinity, the key shop, St Agnes, 7th Day, Docklands.
+
+Jericho is my youngest. Is still my youngest. 
+
+He was in St Paul’s. Finishing a new song with his friend at Docklands. He was in a rush to get home and play it to his girl friend. He left his keys behind and he knew I was at a meeting, son he went to borrow the spare set from his brother Leroy. Jericho was always rushing. He just jumped on the bike.
+ 
+Jericho was always moving so fast– he jumped on his bike and went tearing through the exit towards town he went through the lights at the junction. It wasn’t the drivers fault.
+ 
+<span class="char-name">Leroy:</span>
+Flashback Jericho.
+ 
+<span class="char-name">Josie:</span> 
+When Leroy heard the siren, he just knew. He ran to the scene. 
+ 
+<span class="char-name">Leroy:</span>
+Flashback Stay with me bro. Stay with me. 
+ 
+<span class="char-name">Josie:</span> 
+He saw his brother Jericho and kept talking to him just so he didn’t pass over alone. 
+I couldn’t come back after that. I couldn’t. 
+We had the funeral at St Agnes. Fada P presiding. 
+All that went through my head is if only Leroy wasn’t in, if Simon never liked coming to St Paul’s. Most of all I blamed me. Duppy hunting, committee sitting but can’t protect my own. 
+
+But he was made for adventure. Always flying.
+A head full of dreams.I couldn’t protect him. 
+
+Friend, open the salt and pour it over the green. This
+memory is my duppy to conquer.
+
+Jericho, I let you go. 
+ 
+Stay with me a moment. 
+Can you say this for me. 
+Leroy, your mother loves you. 
+ 
+<span class="char-name">Anansi:</span> 
+It was the only way we could get you to face up to what happened. Duppy Hunting needs you, Josie. You need you. 
+
+<span class="char-name">MummaD:</span> 
+Walk out of the square using the exit facing Circomedia now turn left and walk towards the end of the street. But look out for the blue plaque on the wall. 
+Look at your phone. Press reached when you have found it.
+
+
+:: SC15FX62 [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC14FX61B">>
+<<set $passage to "SC15FX62">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to true>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "SC15FX62transcript">>
+/* --- */
+
+<div id="audioWrapper">
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene15_FX62.mp3"></audio>
+
+</div>
+
+<<include "header">><main class="general">
+<div id="map"></div>
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 60s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Thank you Anansi.</p>
+<p>If you don’t see him text him on the phone or call him and leave a message.</p>
+<p>Here’s his number: </p>
+<p><a href="tel:+4733378901">+47 333 78 901</a></p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+</main>
+<<include "footer">>
+
+:: SC15FX62transcript 
+
+<span class="char-name">Josie:</span> 
+Here’s where it all began. Where Mumma met Dad inside the Bamboo club. It was the first establishment where West Indians could go. You saw the most amazing acts there before they became famous ‘Bob Marley’ Jimmy Clif.’ But Dad said it was special because it was the place where he met the only person he wanted to meet in life. 
+
+Owned by a White Jewish man Tony Bullimore married to a Jamaican – it was a sign of hope. We’ll see. 
+ 
+A venue. Back then you couldn’t just go into town, you weren’t wanted. It was easy with the 	boys - no trainers, no hats, - but they still found excuses for us girls. We didn’t like the music anyway. Not back then. It made us have to be a community. It made us come together. 
+ 
+Thank you Anansi.
+ 
+If you don’t see him text him on the phone or call him and leave a message.
+
+Here’s his number.
+
+<span class="char-name">Mumma:</span> 
+I’m signing you out Hunter. 
+
+<span class="char-name">Josie:</span> 
+Tell next time Mumma- I mean Controller.
+
+<span class="char-name">Mumma:</span> 
+10, 9, 8, 7, 6, 5, 4, 3, 2, 1.
+
+
 
 :: end [nobr]
-<<set $prevpass to "SC13FX58B">>
+<<set $prevpass to "SC14FX61B">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $passWillShowMapOrInstructions to false>>
