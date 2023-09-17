@@ -1182,11 +1182,24 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 <br/>
 <div id="mount"></div>
 
-<<timed 5s>>
+<<timed 8s>>
   <<audio "mapappear" "play">>
   <<replace "#map">>
-     <img src="./../assets/img/MAP1.jpg" alt="map from Trinity Centre to Trinity Road">
+    
+   <div class="explain appear"><p>Walk through the Trinity Centre entrance and turn right into Trinity Road.
+   <br/>
+   It’ll be on your right.</p></div>
    <</replace>>
+<</timed>>
+
+<<timed 18s>>
+  <<audio "mapappear" "play">>
+  <<prepend "#map">>
+     <img src="./../assets/img/MAP1.jpg" alt="map from Trinity Centre to Trinity Road">
+       <br/>
+     <br/>
+
+   <</prepend>>
 <</timed>>
 
 <<timed 48s>>
@@ -1681,11 +1694,22 @@ They were leaving before Mumma and Dad arrived.
 <br/>
 <div id="mount"></div>
 
-<<timed 5s>>
-  <<audio "mapappear" "play">>
+<<timed 4s>>
   <<replace "#map">>
-     <img src="./../assets/img/MAP3.jpeg" alt="map to Peel Street Green Space">
+    
+   <div class="explain appear"><p>Turn right onto Pennywell Road.
+   <br/>
+   Turn left, and cross the road into Peel Street in the green space. </p></div>
    <</replace>>
+<</timed>>
+
+
+<<timed 14s>>
+  <<audio "mapappear" "play">>
+  <<prepend "#map">>
+     <img src="./../assets/img/MAP3.jpeg" alt="map to Peel Street Green Space">
+     <br/><br/>
+   <</prepend>>
 <</timed>>
 
 <<timed 20s>>
@@ -2002,14 +2026,22 @@ Walk across M32 Bridge.
 <div id="mount"></div>
 
 <<timed 18s>>
-  <<replace "#transcript">><</replace>>
+    <<replace "#transcript">><</replace>>
+  <<replace "#map">>
+   <div class="explain appear"><p>Turn right after the bridge and walk onto Newfoundland Road.
+   <br/><br/>Cross over safely.</p></div>
+   <</replace>>
+<</timed>>
+
+<<timed 29s>>
+
   <<audio "mapappear" "play">>
   <<replace "#map">>
      <img src="./../assets/img/MAP4.jpeg" alt="map">
    <</replace>>
   <</timed>>
 
-<<timed 27s>>
+<<timed 35s>>
  
    <<replace "#audioText">>
       <div class="menu-wrapper">
@@ -2295,6 +2327,11 @@ Walk towards the underpass straight ahead.
   <<audio "mapappear" "play">>
   <<replace "#map">>
      <img src="./../assets/img/MAP5.jpeg" alt="map to St. Agnes">
+<br/>
+     <br/>
+       <div class="explain appear"><p>Keep walking towards the roundabout Underpass ahead,
+       <br/>until you come to the entrance to the park, on your left.
+       <br/> Turn left through the gate up along the path into St Agnes Park.</p></div>
    <</replace>>
 <</timed>>
 
@@ -3334,6 +3371,9 @@ Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be fa
   <<audio "mapappear" "play">>
   <<replace "#map">>
      <img src="./../assets/img/MAP6.jpeg" alt="map to centre of the green">
+      <br/>
+     <br/>
+      <div class="explain appear"><p>Walk straight St Nicholas Street. <br/>Carefully cross Ludlow Road and you will be facing a Green. <br/>Walk along the path through the green till you reach the centre. </p></div>
    <</replace>>
 <</timed>>
 
@@ -3673,6 +3713,9 @@ Not yet. There’s still time.
   <<audio "mapappear" "play">>
   <<replace "#map">>
      <img src="./../assets/img/MAP9.jpg" alt="map">
+      <br/>
+     <br/>
+      <div class="explain appear"><p>Safely cross over Grosvenor road <br/>and turn right down Grosvenor Road until you reach <br/>Grosvenor Road triangle park on your left.</p></div>
    <</replace>>
 <</timed>>
 
@@ -3787,6 +3830,9 @@ Safely cross over Grosvenor road and turn right down Grosvenor Road until you re
   <<audio "mapappear" "play">>
   <<replace "#map">>
      <img src="./../assets/img/MAP10.jpg" alt="map">
+      <br/>
+     <br/>
+      <div class="explain appear"><p>Continue to the end of Grosvenor Road until it meets with Ashley Road.<br/> On the corner of the triangle turn left back<br/> onto Ashley Road walking down the side of the triangle.<br/> At the entrance to the triangle head down the path.</p></div>
    <</replace>>
 <</timed>>
 
