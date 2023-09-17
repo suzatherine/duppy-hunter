@@ -214,7 +214,7 @@ setup.backFive = () => {
 
 :: footer [nobr]{"position":"100,375","size":"100,100"}
 <footer>
-<p style="color:white">$passage</p>
+/* <p style="color:white">$passage</p> */
 <<if $showAudio is true>>
   <div class="nav-wrapper">
     <div class="nav-item controls">
