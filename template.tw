@@ -212,9 +212,37 @@ setup.backFive = () => {
 
 
 
+
+:: headerchoice [nobr]
+
+<header class="story">
+<<if $showBackwards is true>>
+  <div class="nav-wrapper">
+    <div class="nav-item">
+        [img[Back|assets/img/back-b.png][$prevpass]]
+    </div>
+  </div>
+  <</if>>
+
+<div id="audioText"></div>
+
+<<if $showForwards is true>>
+ 
+    <div class="nav-wrapper" id="forIcon">
+    /* <div class="nav-item " >
+         [img[Forward|assets/img/forw-b.png][$nextpass]]
+    </div> */
+  </div>
+
+<</if>>
+
+</header>
+
+
+
 :: footer [nobr]{"position":"100,375","size":"100,100"}
 <footer>
-/* <p style="color:white">$passage</p> */
+<p style="color:white">$passage</p>
 <<if $showAudio is true>>
   <div class="nav-wrapper">
     <div class="nav-item controls">
@@ -2415,7 +2443,7 @@ Keep walking towards the roundabout Underpass ahead, until you come to the entra
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 
@@ -2500,7 +2528,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 <<set $transcriptname to "SC5FX27transcript">>
 /* --- */
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -2754,7 +2782,7 @@ It must mean that a Duppy is close, quick hit the button on your phone to let us
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 
 <div id="mount"></div>
 <div id="transcript"><<include "duppyTitle">></div>
@@ -2764,7 +2792,7 @@ It must mean that a Duppy is close, quick hit the button on your phone to let us
 <<timed 60s>>
    <<replace "#transcript">><</replace>>
   <<replace "#mount">>
-    <<type 400ms>><h2 class="word-us">RETNUHYPPUDAMAI</h2><</type>>
+    <<type 400ms>><h2 class="word-us smaller">RETNUHYPPUDAMAI</h2><</type>>
     <</replace>>
   <</timed>>
 
@@ -3077,7 +3105,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
@@ -3161,7 +3189,7 @@ Another riddle to solve – have a look aroud you -check your phone.
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -3484,7 +3512,7 @@ That will be too easy he he.
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 <div id="mount"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -3894,7 +3922,7 @@ Continue to the end of Grosvenor Road until it meets with Ashley Road. On the co
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 <div id="mount"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -4045,7 +4073,7 @@ Just wait by the statue. I’ll be able to tell.
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 
 <div id="mount"></div>
 <div id="transcript"><<include "duppyTitle">></div>
@@ -5229,7 +5257,7 @@ You skank? Do you know what skanking is?
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 
@@ -5334,7 +5362,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 <div id="mount"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -5992,7 +6020,7 @@ Look at your phone. Press reached when you have found it.
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headerchoice">><main class="general">
 <div id="map"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
