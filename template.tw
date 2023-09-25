@@ -7,7 +7,7 @@ Ends & Tales
 	"ifid": "F9E39354-F641-4070-8B45-C337A3FDC8C9",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "start",
+	"start": "SC13FX58",
 	"zoom": 0.6
 }
 
@@ -176,6 +176,7 @@ setup.backFive = () => {
 <<cacheaudio "mapdisappear" "assets/audio/DuppyHunter_FX_Generic_MapDisappear.mp3">>
 <<cacheaudio "mummano" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_ThatsNotRight_01.mp3">>
 <<cacheaudio "duppyno" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_01.mp3">>
+<<cacheaudio "correct" "assets/audio/uploadcomplete.mp3">>
 
 
 <<waitforaudio>>
@@ -196,7 +197,10 @@ setup.backFive = () => {
   </div>
   <</if>>
 
-<div id="audioText"></div>
+<div class="titleWrapper" id="titleWrapper">
+  <h2>Scene name</h2>
+  <div id="audioText"></div>
+</div>
 
 <<if $showForwards is true>>
  
@@ -224,8 +228,10 @@ setup.backFive = () => {
   </div>
   <</if>>
 
-<div id="audioText"></div>
-
+<div class="titleWrapper" id="titleWrapper">
+  <h2>Scene name</h2>
+  <div id="audioText"></div>
+</div>
 <<if $showForwards is true>>
  
     <div class="nav-wrapper" id="forIcon">
@@ -275,7 +281,8 @@ setup.backFive = () => {
           <<set $playToggle to true>>
            /* Add the CSS highlight */
           <<addclass "#playpause" "playhighlight">>
-          <<replace "#audioText">><span>[audio playing...]</span><</replace>>
+          /* Maybe we don't need audio playing  */
+          /* <<replace "#audioText">><<type 50ms>><span>[audio playing...]</span><</type>><</replace>> */
        <<elseif $playToggle is true>>
          /* If audio is playing  */
           <<set $fn to setup.pause()>>
@@ -302,6 +309,7 @@ setup.backFive = () => {
     </div>
     <</if>>
  <<if $showTranscriptIcon is true>>
+    
     <div class="nav-wrapper">
       <div class="nav-item">
   <<link [img[assets/img/transcript.png]]>>
@@ -342,12 +350,18 @@ setup.backFive = () => {
      <</if>>
 </footer>
 <<done>>
+   <<if $transcript is true>>
+      <<replace "#transcript">>
+        <<include $transcriptname>>
+      <</replace>>
+      <</if>>
   <<timed 0.5s>>
   <<set $playToggle to setup.checkPlaying()>>
     <<if $playToggle is true>>
     <<addclass "#playpause" "playhighlight">>
-    <<replace "#audioText">>
-    <<type 50ms>>[audio playing...]<</type>><</replace>>
+     /* Maybe we don't need audio playing  */
+          /* <<replace "#audioText">><<type 50ms>><span>[audio playing...]</span><</type>><</replace>> */
+    
     <</if>>
   <</timed>>
 <</done>>
@@ -523,7 +537,45 @@ setup.backFive = () => {
 </main>
 <<include "footerfor">>
 
+:: generalTemplate [nobr]
+/* Navigation options */
+<<set $prevpass to "">>
+<<set $passage to "">>
+<<set $nextpass to "">>
 
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to true>>
+
+
+/* Transcript options */
+<<set $transcript to false>>
+<<set $transcriptname to "">>
+/* --- */
+
+<div id="audioWrapper"><audio id="audio" autoplay src=""></audio>
+</div>
+
+<<include "header">><main class="general">
+
+<div id="transcript"><<include "duppyTitle">></div>
+<br/>
+<div id="mount"></div>
+
+<<timed 5s>>
+  <<replace "#mount">>
+     <div class="menu-wrapper">
+    <<button "Next">><<goto $nextpass>><</button>> 
+        </div>
+   <</replace>>
+<</timed>>
+
+</main>
+<<include "footer">>
 
 :: SC1FX0 [nobr]
 
@@ -551,37 +603,14 @@ setup.backFive = () => {
 
 <<include "header">><main class="general">
 <div id="mount"></div>
-<div id="transcript"></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 
-<<timed 1s>>
-   <<replace "#mount">>
-    <div class="explain appear" >
-      <p >A ghost or restless spirit is known as a 'Duppy' in Jamaica, or a Jumbie in many smaller Caribbean islands.</p>
-    </div>
-  <</replace>>
-<</timed>>
 
-<<timed 4s>>
-  /* <<removeclass ".explain" "appear">> */
-  <<addclass ".explain" "dissolve">>
-  <</timed>>
 
-<<timed 6s>>
-   <<replace "#mount">>
-    <div class="explain appear">
-      <p> Traditionally, a good duppy is usually a deceased family member or friend who 'dreams you' – meaning they appear in your dreams and give you advice or information.</p>
-    </div>
-  <</replace>>
- 
-<</timed>>
-
-<<timed 11s>>
-  /* <<removeclass ".explain" "appear">> */
-  <<addclass ".explain" "dissolve">>
-  <</timed>>
 
 <<timed 13s>>
+    <<replace "#transcript">><</replace>>
    <<replace "#mount">>
     <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
     <br/>
@@ -603,7 +632,7 @@ setup.backFive = () => {
 
 
 :: SC1FX0transcript 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 
 You, we are heading into an exciting adventure but before we begin, let me just check that you can hear me loud and clear, if not turn up the volume on your phone will ya, done? 
 
@@ -641,7 +670,9 @@ If you can hear me then you are ready to start.
 
 <<timed 45s>>
   <<replace "#mount">>
+      <div class="menu-wrapper">
     <<button "Let's do this">><<goto $nextpass>><</button>> 
+    </div>
    <</replace>>
 <</timed>>
 
@@ -649,7 +680,7 @@ If you can hear me then you are ready to start.
 <<include "footer">>
 
 :: SC1FX1transcript 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 
 I’m the District Duppy Hunter Controller. 
 
@@ -682,7 +713,7 @@ If so look at your phone and let me know and push the button to get going.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC1FX2transcript">>
 /* --- */
 
@@ -708,7 +739,7 @@ If so look at your phone and let me know and push the button to get going.
 <<include "footer">>
 
 :: SC1FX2transcript 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 
 Good. 
 
@@ -735,7 +766,7 @@ There might be some choices you have to make so when I ask you to, take out your
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC1FX3transcript">>
 /* --- */
 
@@ -761,7 +792,7 @@ There might be some choices you have to make so when I ask you to, take out your
 <<include "footer">>
 
 :: SC1FX3transcript 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 
 Alright I need to make sure you are mentally and physically ready to Duppy Hunt. 
 
@@ -791,7 +822,7 @@ You ready?
 <<set $nextpass to "SC1FX6">>
 
 /* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
+<<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -800,7 +831,7 @@ You ready?
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC1FX4transcript">>
 /* --- */
 
@@ -849,7 +880,7 @@ You ready?
 
 Where is it? Where’s the Duppy?  
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 
 It might be in the garden. Walk straight ahead, open the gate to the garden walk down the path stop and stand on the grass.  
 
@@ -870,7 +901,7 @@ It might be in the garden. Walk straight ahead, open the gate to the garden walk
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC1FX6transcript">>
 /* --- */
 
@@ -923,7 +954,7 @@ Hmm that’s not a strong signal maybe it’s sleeping. What’s in the corner �
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC1FX7transcript">>
 /* --- */
 
@@ -974,7 +1005,7 @@ Look around to see if you can see it. If you don't find anything let me know.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC1FX8transcript">>
 /* --- */
 
@@ -1003,7 +1034,7 @@ Look around to see if you can see it. If you don't find anything let me know.
 
 Oh I should have known. A low signal just means at - peace-duppy. You can’t see them their on the other side. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 
 Turn around and look behind you at the Church. Look at the two towers. 
 
@@ -1025,7 +1056,7 @@ Turn around and look behind you at the Church. Look at the two towers. 
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC1FX9transcript">>
 /* --- */
 
@@ -1068,25 +1099,25 @@ One of the last songs sung here before it closed in 76.
 
 I was so scared but Mumma let me into a secret. I was a obeah woman from a long line of obeah woman born with the power to-  
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 to see and conquer duppies.  
 
 <span class="char-name">Josie:</span>
 I was going to say that. Controller why are you still here? 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 (Sucks teeth). Cause your rusty.  
 
 <span class="char-name">Josie:</span>
 Not as much as you. You so rusty you spirit smell like iron. I’ve got this. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 I’ll be making sure ‘yu have it.’ It’s been a while since you did a hunt after-all.  
 
 <span class="char-name">Josie:</span>
 Sorry friend, can I call you friend? Sorry for the arguments – the Controller is my mother. She’s got issues.  
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Facety. 
 
 
@@ -1107,8 +1138,8 @@ Facety.
 
 
 /* Transcript options */
-<<set $transcript to false>>
-<<set $transcriptname to "SC2FX11-1transcript">>
+/* <<set $transcript to false>> */
+<<set $transcriptname to "SC1FX10transcript">>
 /* --- */
 
 <div id="audioWrapper">
@@ -1117,22 +1148,9 @@ Facety.
 </div>
 
 <<include "header">><main class="general">
-<div id="result"></div>
-<div id="mount"></div>
-<br/>
 <div id="transcript"><<include "duppyTitle">></div>
-
-/* <<timed 2s>>
-  <<append "#mount">>
-    <div class="menu-wrapper">
-    <<button "The stone tower">><<goto $nextpass>><</button>> 
-     <<button "The junkyard castle">><<goto $nextpass>><</button>> 
-      <<button "In the lodge">><<goto $nextpass>><</button>> 
-
-    </div>
-   <</append>>
-<</timed>> */
-
+<br/>
+<div id="mount"></div>
 
 <<timed 69s>>
   <<append "#mount">>
@@ -1195,7 +1213,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC1FX_10.1transcript">>
 /* --- */
 
@@ -1211,7 +1229,6 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 <div id="mount"></div>
 
 <<timed 8s>>
-  <<audio "mapappear" "play">>
   <<replace "#map">>
     
    <div class="explain appear"><p>Walk through the Trinity Centre entrance and turn right into Trinity Road.
@@ -1247,7 +1264,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 <<include "footer">>
 
 :: SC1FX_10.1transcript 
-<span class="char-name">MummaD:</span>	
+<span class="char-name">Mumma:</span>	
 Josie, Controller will direct. Please. You can’t see properly from a phone and you rusty. 
 
 Walk through the Trinity Centre entrance and turn into Trinity Road, it’ll be on your right. Get a move on.  
@@ -1255,8 +1272,8 @@ Walk through the Trinity Centre entrance and turn into Trinity Road, it’ll be 
 <span class="char-name">Josie:</span>	
 Friend. We have to catch this duppy. St Paul’s means everything to me. It was one of the six wards I watched over. It’s where I was born and raised until I retired. But I had to answer the Controller’s call. I can’t have a duppy walking through my St Paul’s.  
 
-<span class="char-name">MummaD:</span>
-When you’ve exited Trinity and turned right – let me know you reached and start walking 		down the road.  
+<span class="char-name">Mumma:</span>
+When you’ve exited Trinity and turned right – let me know you reached and start walking down the road.  
 
 
 
@@ -1277,12 +1294,12 @@ When you’ve exited Trinity and turned right – let me know you reached and st
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC2FX11transcript">>
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene2_FX11Low.mp3"></audio>
+<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene2_FX11.mp3"></audio>
 
 </div>
 
@@ -1339,7 +1356,7 @@ He smiled – perfect white teeth - opened his hand and in his palm was a ghost 
 
 I was about to take it until I looked into his eyes, like a wolf eating prey. I screamed and called for Mumma.  
 
-<span class="char-name">MummaD:</span>	
+<span class="char-name">Mumma:</span>	
 “Never take anything them offer you”
 
 You understand. Never. 
@@ -1385,7 +1402,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC3FX11-1transcript">>
 /* --- */
 
@@ -1425,10 +1442,10 @@ Now you can get any kind of Caribbean, African or Asian food in England now, but
 
 Stapleton Road was very different when Mumma first came over.  
 
-<span class="char-name">MummaD:</span>	
+<span class="char-name">Mumma:</span>	
 When you did ask for goat the butcher used to laugh – that’s if them serve you at all.  
 
-<span class="char-name">MummaD:</span>	
+<span class="char-name">Mumma:</span>	
 Look across the street to your left at the green fronted convenience store. Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe. 
 
 Let me know you can see it and just stay there for a moment.  
@@ -1450,7 +1467,7 @@ Let me know you can see it and just stay there for a moment.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC3FX12transcript">>
 /* --- */
 
@@ -1486,13 +1503,13 @@ Let me know you can see it and just stay there for a moment.
 
 
 :: SC3FX12transcript 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Their jerk chicken is good but mine is excellance. 
 
 <span class="char-name">Josie:</span>
 You mean scandalous: scandously dry. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 When shops like Malik’s opened up in the 60s it meant West Indian food cafes, and restaurants, became possible. 
 
 It’s not always plain sailing but we try to get along (chuckle)  
@@ -1510,7 +1527,7 @@ Eh Iqbal Nuh tell people bout mi wig.
 <span class="char-name">Josie:</span>
 When next time your here go to Malik’s see how many fruits you can identify. And buy something don’t just feel up the man’s food. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Now cross the road carefully pass the Congregational Centre- Stapleton road Chapel. 
 
 Let me know once you reach, look both ways dear. 
@@ -1533,7 +1550,7 @@ Let me know once you reach, look both ways dear.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC3FX13transcript">>
 /* --- */
 
@@ -1625,7 +1642,7 @@ Let me know when you reached.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC4FX15transcript">>
 /* --- */
 
@@ -1676,7 +1693,7 @@ Knees up Mother Brown
 Under the table you must go 
 Ee-aye, Ee-aye, Ee-aye-oh. //
  
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Oh it’s Harry my old friend. He lived along Newton Street. His duppy is still around.  
 
 <span class="char-name">Harry:</span>
@@ -1707,7 +1724,7 @@ They were leaving before Mumma and Dad arrived.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC4FX16transcript">>
 /* --- */
 
@@ -1767,7 +1784,7 @@ They were leaving before Mumma and Dad arrived.
 <span class="char-name">Josie:</span>	
 We need to speed up.  
 
-<span class="char-name">MummaD:</span>	
+<span class="char-name">Mumma:</span>	
 Turn right onto Pennywell Road, turn left, and cross the road into Peel Street in the green space. 
 
 Let me know once you reached and remember to cross safely. 
@@ -1799,7 +1816,7 @@ The duppy could step into a child.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX18transcript">>
 /* --- */
 
@@ -1828,7 +1845,7 @@ The duppy could step into a child.
 <span class="char-name">Josie:</span>
 Wow. Look on the wall to your left of the industrial estate and on the wall on the right. I grew up with reggae then overnight in the 80s hip hop was everywhere, bright, bold letters on dead concrete,popping, breaking, rapping, tracksuits and nothing beats the smell of new trainers.
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Walk forward – you will head towards Peel Street Bridge. Go ahead and wait in the middle of the bridge. 
 
 
@@ -1849,7 +1866,7 @@ Walk forward – you will head towards Peel Street Bridge. Go ahead and wait in 
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX19transcript">>
 /* --- */
 
@@ -1875,14 +1892,14 @@ Walk forward – you will head towards Peel Street Bridge. Go ahead and wait in 
 <<include "footer">>
 
 :: SC5FX19transcript 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 We should offer thanks. You shouldn’t enter the land of the Elder Power – the 				Rivers, the Trees, - without honoring them.
 
 <span class="char-name">Josie:</span>
 That’s what I told the boys. 
 Look over the side of the bridge. We’re crossing the Danny that’s what we call her, the river,but we should honor her original Celtic name – Frome. She’s been buried, dragged, shut and 	sent from one part of the city to the other but still she flows.
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 It’s time to dig into those pockets and get the fish food. Let her know once you got it ready in your hand. 
 
 :: SC5FX20 [nobr]
@@ -1902,7 +1919,7 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX20transcript">>
 /* --- */
 
@@ -1936,7 +1953,7 @@ If you really want a blessing, you have to say it out loud.
 
 A whisper deserves a whimper. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 When you have paid respects press.
 
 When you done let’s move on.  
@@ -1959,7 +1976,7 @@ When you done let’s move on.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX21transcript">>
 /* --- */
 
@@ -1993,7 +2010,7 @@ When you done let’s move on.
 
 :: SC5FX21transcript 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Done? 
 Right back on the path now and walk through the park towards the M32 bridge.  
 
@@ -2018,7 +2035,7 @@ We’re here now. One moment.
 
 It’s been a while since I came back. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Walk across M32 Bridge.
 
 :: SC5FX22 [nobr]
@@ -2038,7 +2055,7 @@ Walk across M32 Bridge.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX22transcript">>
 /* --- */
 
@@ -2103,7 +2120,7 @@ The motorway scattered and divided the living and the duppy community. It caused
 <span class="char-name">Josie:</span>
 Yes Mumma. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Turn right after the bridge and walk onto Newfoundland Road - cross over safely. Let me know when you reach.
 
 
@@ -2125,7 +2142,7 @@ Turn right after the bridge and walk onto Newfoundland Road - cross over safely.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX23transcript">>
 /* --- */
 
@@ -2174,7 +2191,7 @@ Looking for me?
 Hurry up Hunter. 
 I’m hungry
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Go right after the bridge. Cross carefully and continue down Newfoundland Road towards the M32 roundabout.
 
 :: SC5FX24 [nobr]
@@ -2194,7 +2211,7 @@ Go right after the bridge. Cross carefully and continue down Newfoundland Road t
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX24transcript">>
 /* --- */
 
@@ -2245,7 +2262,7 @@ The shop should be here. Blue and brown.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX24.1transcript">>
 /* --- */
 
@@ -2280,7 +2297,7 @@ The shop should be here. Blue and brown.
 
 :: SC5FX24.1transcript 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Let’s give her a moment just settle here for a minute till she ready to move on. 
 
 <span class="char-name">Josie:</span>
@@ -2334,7 +2351,7 @@ Walk towards the underpass straight ahead.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX24.2transcript">>
 /* --- */
 
@@ -2413,12 +2430,12 @@ I once was lost, but now I'm found
 Was blind but now I see 
 /*TODO replace this audio file once this song has been added */
 
-<span class="char-name">MummaD</span>
+<span class="char-name">Mumma</span>
 Keep walking towards the roundabout Underpass ahead, until you come to the entrance to the park, on your left. Turn left through the gate up along the path into St Agnes Park.
 
 
 :: SC5FX26 [nobr]
-
+/* MULTICHOICE OPTIONS */
 /* Navigation options */
 <<set $prevpass to "SC5FX24.2">>
 <<set $passage to "SC5FX26">>
@@ -2434,7 +2451,7 @@ Keep walking towards the roundabout Underpass ahead, until you come to the entra
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX26transcript">>
 /* --- */
 
@@ -2454,7 +2471,7 @@ Keep walking towards the roundabout Underpass ahead, until you come to the entra
       <<replace "#transcript">><</replace>>
       <<replace "#mount">>
         <div class="explain appear" >
-      <p>What did the duppy say again?</p>
+      <p>What did the Duppy say again?</p>
     </div>
     <</replace>>
     <<timed 3s>>
@@ -2462,6 +2479,7 @@ Keep walking towards the roundabout Underpass ahead, until you come to the entra
             <div id="result"></div>
             <div class="menu-wrapper">
             <<button "The stone tower overlooking the green">>
+              <<audio "correct" "play">>
             <<replace "#result">>Correct.<</replace>>
             <<timed 2s>>
                 <<goto $nextpass>>
@@ -2504,11 +2522,11 @@ Wait! Can you see the mural ahead, on the corner of Tudor Road, Barbara Detterin
 I know we’re on a Duppy Hunt but show some respect, yeah? Acknowledge Ms Dettering. Bow, nod, or take off your hat.
 Oh wait. What did the duppy say again?
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 I’ll bring it up. It’s time to look at your phone and choose the options that are given to you. Look around. Think. Try to get it right. Go on, make a choice.
 
 :: SC5FX27 [nobr]
-
+/* MULTICHOICE OPTIONS */
 /* Navigation options */
 <<set $prevpass to "SC5FX26">>
 <<set $passage to "SC5FX27">>
@@ -2524,7 +2542,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX27transcript">>
 /* --- */
 
@@ -2536,9 +2554,13 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 <<timed 1s>>
       <<replace "#transcript">><</replace>>
       <<replace "#mount">>
+         <div class="explain appear" >
+      <p>Where was the Duppy?</p>
+    </div>
         <div id="result"></div>
         <div class="menu-wrapper">
         <<button "The stone tower overlooking the green">>
+          <<audio "correct" "play">>
         <<replace "#result">>Correct.<</replace>>
         <<timed 2s>>
             <<goto $nextpass>>
@@ -2589,7 +2611,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX27Btranscript">>
 /* --- */
 
@@ -2618,13 +2640,13 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 
 :: SC5FX27Btranscript 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 We got it.
 
 <span class="char-name">Duppy:</span>
 Duppy:	Sucks teeth. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Alright go back to the path into the park through the gate pass the Adventure Playground. Can you see the bright colours and geometric lines?
 
 :: SC5FX29 [nobr]
@@ -2644,7 +2666,7 @@ Alright go back to the path into the park through the gate pass the Adventure Pl
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX29transcript">>
 /* --- */
 
@@ -2684,7 +2706,7 @@ He he he he.
 <span class="char-name">Josie:</span>
 You laugh now. You won't be laughing when I catch you. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Walk along the path to the entrance of St Agnes.
 		
 <span class="char-name">Josie:</span>
@@ -2703,7 +2725,7 @@ What if he’s taken the priest.
 <<set $nextpass to "SC5FX31">>
 
 /* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
+<<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2712,7 +2734,7 @@ What if he’s taken the priest.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX30transcript">>
 /* --- */
 
@@ -2724,14 +2746,9 @@ What if he’s taken the priest.
 <<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
-<div id="mount"></div>
-
-
-/*We've not been asked to put the duppy detector here but I'll put it here in case that changes */
-
 <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
 <br/>
-
+<div id="mount"></div>
   <<timed 2s>>
     <<addclass "#detector" "pulse">>
   <</timed>>
@@ -2755,7 +2772,7 @@ Oh lord do you hear that sound?
 It must mean that a Duppy is close, quick hit the button on your phone to let us know that your eyes are on alert, ears are alert and you have the salt ready, just in case you see it! 
 
 :: SC5FX31 [nobr]
-
+/* INPUT */
 /* Navigation options */
 <<set $prevpass to "SC5FX30">>
 <<set $passage to "SC5FX31">>
@@ -2773,7 +2790,7 @@ It must mean that a Duppy is close, quick hit the button on your phone to let us
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX31transcript">>
 /* --- */
 
@@ -2859,7 +2876,7 @@ Distorted sounds of the accident, screech and bicycle wheel turning also in the 
 <span class="char-name">Josie:</span>
 No, this is not about me. I, we are on a mission.
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Hunter you accepted this mission. Hunter! 
 Josie is trying to get back. She’s scrambled.  It means she’ll come back as code.
 If we can’t work it out the Hunt can’t continue. 
@@ -2881,7 +2898,7 @@ If we can’t work it out the Hunt can’t continue.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX32transcript">>
 /* --- */
 
@@ -2908,7 +2925,7 @@ If we can’t work it out the Hunt can’t continue.
 
 :: SC5FX32transcript 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Of course it’s I am a duppy Hunter.
 
 <span class="char-name">Josie:</span>
@@ -2917,7 +2934,7 @@ I’m sorry friend. I’m back. I am a duppy hunter.
 <span class="char-name">Duppy:</span>
 Huh well while you were gone. I was done with the shepherd now I’ve passed onto a young ram living on Davey Street. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Walk forward into St Agnes Park, take the gate on the left and walk down the path past the Clifford Drummond Seven Saints of St. Paul's mural.
 
 <span class="char-name">Josie:</span>
@@ -2943,7 +2960,7 @@ Let me know when you have finished.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX32.1transcript">>
 /* --- */
 
@@ -2969,7 +2986,7 @@ Let me know when you have finished.
 <<include "footer">>
 
 :: SC5FX32.1transcript 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Return to the path and carry on walking to the exit on your left onto Davy Street.
 
 <span class="char-name">St Agnes:</span>
@@ -2997,9 +3014,9 @@ Lay down your burden.
 Welcome.
 
 <span class="char-name">St Agnes:</span>
-St Agnes:	Burden.
+Burden.
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Let me know when you reach. 
 
 :: SC6FX33 [nobr]
@@ -3019,7 +3036,7 @@ Let me know when you reach.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC6FX33transcript">>
 /* --- */
 
@@ -3080,7 +3097,7 @@ Walk down Davey Street, until you are standing on the corner of St Nicholas Stre
 St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mrs Wynter a small, light big spirit loving woman. Tinker Man. Fix anything for nothing. 
 
 :: SC6FX34 [nobr]
-
+/* MULTICHOICE OPTIONS */
 /* Navigation options */
 <<set $prevpass to "SC6FX33">>
 <<set $passage to "SC6FX34">>
@@ -3096,7 +3113,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC6FX34transcript">>
 /* --- */
 
@@ -3123,6 +3140,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
         <div id="result"></div>
         <div class="menu-wrapper">
         <<button "a) Good Jim’s Magnolia Inn">>
+          <<audio "correct" "play">>
         <<replace "#result">>Correct.<</replace>>
         <<timed 2s>>
             <<goto $nextpass>>
@@ -3181,7 +3199,7 @@ Another riddle to solve – have a look aroud you -check your phone.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC6FX35transcript">>
 /* --- */
 
@@ -3200,7 +3218,7 @@ Another riddle to solve – have a look aroud you -check your phone.
  <<replace "#transcript">><</replace>>
       <<replace "#mount">>
         <div class="explain appear" >
-      /* <p>What is this riddle?</p> */
+   <p> Where was the Duppy?</p>
     </div>
     <</replace>>
      <<timed 3s>>
@@ -3208,6 +3226,7 @@ Another riddle to solve – have a look aroud you -check your phone.
         <div id="result"></div>
         <div class="menu-wrapper">
         <<button "a) Good Jim’s Magnolia Inn">>
+          <<audio "correct" "play">>
         <<replace "#result">>Correct.<</replace>>
         <<timed 2s>>
             <<goto $nextpass>>
@@ -3264,7 +3283,7 @@ Another riddle to solve – have a look aroud you -check your phone.  */
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC6FX35Btranscript">>
 /* --- */
 
@@ -3291,7 +3310,7 @@ Another riddle to solve – have a look aroud you -check your phone.  */
 
 :: SC6FX35Btranscript 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 We got it.
 
 <span class="char-name">Josie:</span>
@@ -3300,7 +3319,7 @@ Be careful. Salt ready.
 Look outside is there anyone there? Look around the side. Nobody.
 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 The duppy detector is just picking up the sounds of peaceful duppies. But just hit that button to let us know that you are still alert, eyes and ears wide for that Duppy! 
 ￼
 <span class="char-name">Josie:</span>
@@ -3345,7 +3364,7 @@ No think. It’s a trick.
 While you disagree its more time for me to get into a new body.
 Now where could tweety tweety Sankofa be. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 It’s that time again, remember to choose the right one. You are almost there. 
 
 <span class="char-name">Duppy:</span>
@@ -3363,7 +3382,7 @@ We’ll see.
 <span class="char-name">Josie:</span>
 Where do you think he means, the green?
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be facing a Green. Walk along the path through the green till you reach the centre. 
 
 :: SC6FX36 [nobr]
@@ -3384,7 +3403,7 @@ Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be fa
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC6FX36transcript">>
 /* --- */
 
@@ -3443,7 +3462,7 @@ We need to speed up.   */
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC6FX37transcript">>
 /* --- */
 
@@ -3487,7 +3506,7 @@ That will be too easy he he.
 
 
 :: SC7FX38 [nobr]
-
+/* MULTICHOICE OPTIONS */
 /* Navigation options */
 <<set $prevpass to "SC6FX37">>
 <<set $passage to "SC7FX38">>
@@ -3503,7 +3522,7 @@ That will be too easy he he.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC7FX38transcript">>
 /* --- */
 
@@ -3521,6 +3540,9 @@ That will be too easy he he.
 <<timed 11s>>
       <<replace "#transcript">><</replace>>
       <<replace "#mount">>
+         <div class="explain appear" >
+   <p>Where is the Sankofa bird? </p>
+    </div>
         <div id="result"></div>
         <div class="menu-wrapper">
         <<button "a) Perched in a tree along the green">>
@@ -3544,6 +3566,7 @@ That will be too easy he he.
       <</timed>>
     <</button>> 
     <<button "c) On a wall between, glass, wood and concrete">>
+      <<audio "correct" "play">>
          <<replace "#result">>Correct.<</replace>>
         <<timed 2s>>
             <<goto $nextpass>>
@@ -3582,7 +3605,7 @@ What did the duppy say again. Let’s make and choice and find out where him is.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC7FX39transcript">>
 /* --- */
 
@@ -3627,7 +3650,7 @@ Great but where is this duppy?
 
 Come out duppy...
  
-<span class="char-name">MummaD:</span>	
+<span class="char-name">Mumma:</span>	
 You’ll just have to wait. Turn around and walk to the benches behind you in front of the cafe. 
  
 <span class="char-name">Josie:</span>
@@ -3651,7 +3674,7 @@ How good is your salt throwing skills? Well, we’ll find out.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC7FX40transcript">>
 /* --- */
 
@@ -3693,13 +3716,13 @@ Of course - the dove in front of the elderly Crystal Dove was opposite, roughly,
  
 The window where the hungry fill their belly -Glen’s the singing chef. His new place. He’s a  pioneer of Caribbean food.
  
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Now you have everybody jerking chicken, even them Turtle people.  
  
 <span class="char-name">Josie:</span> 
 Your just jealous your duppy dumplin never take off. 
  
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Not yet. There’s still time. 
 
 
@@ -3720,7 +3743,7 @@ Not yet. There’s still time.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC8FX41transcript">>
 /* --- */
 
@@ -3769,7 +3792,7 @@ Not yet. There’s still time.
 From here you could smell Carnival happening. The Afrikan Caribbean Carnival. 
 When I was younger it was all about Sound System- Bastian, Tarzan, Wild Bunch, Maasai Warrior every street vibrating with bass. Hip hop, dub, dancehall, reggae, Soca.
  
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Not enough soca and too much slackness. 
  
 <span class="char-name">Josie:</span> 
@@ -3817,7 +3840,7 @@ By Frontline you’ll find this watcher of reality. He he.
 <span class="char-name">Josie:</span> 
 Duppy! Hmm well we know he’s on Frontline. Frontline isn’t a street it’s a reality, a way of life, where all roads meet. 
 
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Safely cross over Grosvenor road and turn right down Grosvenor Road until you reach Grosvenor Road triangle park on your left. You know it, let me know once you reach.
 
 
@@ -3838,7 +3861,7 @@ Safely cross over Grosvenor road and turn right down Grosvenor Road until you re
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX42transcript">>
 /* --- */
 
@@ -3913,7 +3936,7 @@ Continue to the end of Grosvenor Road until it meets with Ashley Road. On the co
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX44transcript">>
 /* --- */
 
@@ -3927,21 +3950,24 @@ Continue to the end of Grosvenor Road until it meets with Ashley Road. On the co
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 
-
+<<timed 23s>>
+  <<replace "#transcript">><</replace>>
+      <<replace "#mount">>
+        <div class="explain appear" >
+      <p>He could be tough as:</p>
+    </div>
+    <</replace>>
+  <</timed>>
 <<timed 25s>>
-      <<replace "#transcript">><</replace>>
       <<replace "#mount">>
         <div id="result"></div>
         <div class="menu-wrapper">
         <<button "a) Tough as steel">>
-        <<replace "#result">>That's not right.<</replace>>
-        <<audio "mummano" "play">>
-      <<timed 2s>>
-      <<audio "duppyno" "play">>
-      <</timed>>
-       <<timed 4s>>
-        <<replace "#result">><</replace>>
-      <</timed>>
+            <<audio "correct" "play">>
+         <<replace "#result">>Correct.<</replace>>
+        <<timed 2s>>
+            <<goto $nextpass>>
+        <</timed>>
     <</button>> 
     <<button "b) Tough as wood">>
       <<replace "#result">>That's not right.<</replace>>
@@ -3954,10 +3980,14 @@ Continue to the end of Grosvenor Road until it meets with Ashley Road. On the co
       <</timed>>
     <</button>> 
     <<button "c) Tough as stone">>
-         <<replace "#result">>Correct.<</replace>>
-        <<timed 2s>>
-            <<goto $nextpass>>
-        <</timed>>
+        <<replace "#result">>That's not right.<</replace>>
+      <<audio "mummano" "play">>
+     <<timed 2s>>
+      <<audio "duppyno" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
     <</button>> 
         </div>
       <</replace>>
@@ -3973,7 +4003,7 @@ Where is this full-of-story-person?
 
 Find them I don’t like it here. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Josie, be patient.
 
 <span class="char-name">Duppy:</span>
@@ -4001,7 +4031,7 @@ c) steel
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX45transcript">>
 /* --- */
 
@@ -4048,7 +4078,7 @@ Just wait by the statue. I’ll be able to tell.
 
 
 :: SC9FX46 [nobr]
-
+/* INPUT */
 /* Navigation options */
 <<set $prevpass to "SC9FX45">>
 <<set $passage to "SC9FX46">>
@@ -4064,7 +4094,7 @@ Just wait by the statue. I’ll be able to tell.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX46transcript">>
 /* --- */
 
@@ -4127,7 +4157,7 @@ To see a great man buried like he was nothing. On the street.
 Dad said You were like Alfred. The way you dreamed out loud. 
 Why here? Why has the Duppy brought me here. No Duppy wants to enter a statute.
 
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Josie is about to disappear. Look at your phone -  Riddle .....
 
 She’s trying to return. She’s trying but she’s been scrambled. What can you see. The letters are an anagram...
@@ -4154,7 +4184,7 @@ If we can’t work it out the Hunt can’t continue.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX47transcript">>
 /* --- */
 
@@ -4196,7 +4226,7 @@ If we can’t work it out the Hunt can’t continue.
 
 :: SC9FX47transcript 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Oh of course Josie.
  
 <span class="char-name">Josie:</span>
@@ -4232,7 +4262,7 @@ Do you know?
 
 Well at least we know this X is on Ashley Road. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 At the statue, turn right and follow the path back to Ashley Road. 
 Turn left and continue down Ashley Road past the Owen Henry mural. 
 
@@ -4257,7 +4287,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX48transcript">>
 /* --- */
 
@@ -4367,7 +4397,7 @@ I was involved in so many committees. I think I felt guilty for moving out. Dupp
 
 “I’ve been watching you for so long it’s a shame.’
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Oh baby. 
 Every time I hear your name
 Oh the pain. 
@@ -4395,13 +4425,13 @@ Along Ashley Road you’ll find the door to the 7th Day.
 <span class="char-name">Josie:</span>
 Controller, I think this mission is tainted. We’ve had no evidence of crimes comitted by anyone possessed by the duppy. I think it’s true purpose is just to torment me. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Hunter we can’t be sure. Carry on with the mission. 
 
 <span class="char-name">Josie:</span>
 I- 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Carry on. 
 
 <span class="char-name">Josie:</span>
@@ -4424,7 +4454,7 @@ The door to the 7th Day is on Ashley Road.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC10FX49transcript">>
 /* --- */
 
@@ -4474,14 +4504,14 @@ Continue walking down Ashley Road. </p>
 
 :: SC10FX49transcript 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Exit Malcolm X onto Ashley Road Continue down Ashley Road towards the first traffic lights.  Friend, Owen Henry our Saint remember what to do. Cross the road at the first traffic light continue walking down Ashley Road. 
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 I’m still here, friend. I was thinking of Bangy. 
 Look out for the sign that has the words 7th Day.
 
-<span class="char-name">MummaD:</span>
+<span class="char-name">Mumma:</span>
 Let me know once you’ve reached. 
 
 :: SC10FX49-M [nobr]
@@ -4501,7 +4531,7 @@ Let me know once you’ve reached.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC10FX49-Mtranscript">>
 /* --- */
 
@@ -4562,7 +4592,7 @@ Let me know once you’ve reached.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC10FX51transcript">>
 /* --- */
 
@@ -4619,7 +4649,7 @@ Look across the road.
 <span class="char-name">Josie:</span>	
 The duppy must be inside.
 
-<span class="char-name">MummaD:</span>	
+<span class="char-name">Mumma:</span>	
 Cross at the lights and let know when you’ve reached.
 
 :: SC10FX51.1 [nobr]
@@ -4639,7 +4669,7 @@ Cross at the lights and let know when you’ve reached.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC10FX51.1transcript">>
 /* --- */
 
@@ -4726,7 +4756,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC10FX52transcript">>
 /* --- */
 
@@ -4782,7 +4812,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC10FX53transcript-M">>
 /* --- */
 
@@ -4847,7 +4877,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC11FX53transcript">>
 /* --- */
 
@@ -4893,7 +4923,7 @@ So, we brought the house in Fishponds. but I should have nown better. I did all 
 
 I can’t use Power to protect all the time and boys they get to an age where they don’t listen.
  
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Cross over safely.
 
 
@@ -4915,7 +4945,7 @@ Cross over safely.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC11FX54transcript">>
 /* --- */
 
@@ -4969,7 +4999,7 @@ I hope murals aren’t going to be all that’s left of us.
  
 As long as Carnival still comes through this street, we’ll be a living force here. 
  
-<span class="char-name">MummaD:</span>  
+<span class="char-name">Mumma:</span>  
 Cross when the lights are green.  Walk along ... and let me know when you have reached.
 
 :: SC12FX55 [nobr]
@@ -4989,7 +5019,7 @@ Cross when the lights are green.  Walk along ... and let me know when you have r
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC12FX55transcript">>
 /* --- */
 
@@ -5042,7 +5072,7 @@ To make music from joy and pain
 Look for landmarks?
 The Wesleyan Holiness Church on the corner 
  
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Docklands. 
  
 <span class="char-name">Josie:</span> 
@@ -5052,8 +5082,8 @@ Docklands we called it but it’s proper name is the St Paul’s Settlement. Bee
 <span class="char-name">Duppy:</span> 
 Say his name. 
 
-<span class="char-name">MummaD:</span> 
-MummaD:		Josie. 
+<span class="char-name">Mumma:</span> 
+Mumma:		Josie. 
 
 <span class="char-name">Josie:</span> 
 I’m here. I’m not going. 		
@@ -5100,7 +5130,7 @@ An Irish playwright goaled – Oscar Wilde
 Wilder Street
 Walk down the street and take the second left. 
 
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. 
 
 :: SC12FX55-M [nobr]
@@ -5120,7 +5150,7 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC12FX55-Mtranscript">>
 /* --- */
 
@@ -5169,7 +5199,7 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 <span class="char-name">Josie:</span> 
 Walk down the street and take the second left.
 
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left. 
 
 :: SC12FX56 [nobr]
@@ -5189,7 +5219,7 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC12FX56transcript">>
 /* --- */
 
@@ -5232,7 +5262,7 @@ That’s Argyle Road on the left. Dad said there were parties on Argyle going ba
 You skank? Do you know what skanking is? 
 
 :: SC13FX57 [nobr]
-
+/* MULTICHOICE OPTIONS */
 /* Navigation options */
 <<set $prevpass to "SC12FX56">>
 <<set $passage to "SC13FX57">>
@@ -5248,7 +5278,7 @@ You skank? Do you know what skanking is?
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC13FX57transcript">>
 /* --- */
 
@@ -5290,6 +5320,7 @@ You skank? Do you know what skanking is?
         <</timed>>
     <</button>> 
     <<button "c) Looking down from above One Love...">>
+        <<audio "correct" "play">>
       <<replace "#result">>Correct.<</replace>>
       <<timed 2s>>
         <<goto $nextpass>>
@@ -5337,7 +5368,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 
 
 :: SC13FX58 [nobr]
-
+/* INPUT */
 /* Navigation options */
 <<set $prevpass to "SC13FX57">>
 <<set $passage to "SC13FX58">>
@@ -5353,7 +5384,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC13FX58transcript">>
 /* --- */
 
@@ -5379,6 +5410,12 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
     <</timed>>
 <</timed>>
 
+<<timed 42s>>
+    <<removeclass "#detector" "pulse">>
+    <<addclass "#detector" "dissolve">>
+   
+<</timed>>
+
 <<timed 48s>>
   <<replace "#mount">><</replace>>
    
@@ -5387,6 +5424,11 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 <<timed 64s>>
    <<replace "#transcript">><</replace>>
   <<replace "#mount">>
+ 
+        <div class="explain appear" >
+      <p>Can you work out what’s she’s saying? </p>
+    </div>
+
     <<type 400ms>><h2 class="word-us smaller">CLAARTSIAMMUYM</h2><</type>>
     <</replace>>
   <</timed>>
@@ -5471,7 +5513,7 @@ Let your friend decide. After they’ve done all this work, I’m sure they want
 <span class="char-name">Mumma:</span> 
 We can’t force her. Perhaps this was too much for her. 
 
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Josie is trying to get back. She’s scrambled but she’s trying. I knew she would. Come on daughter.  				
 
 :: SC13FX58B [nobr]
@@ -5493,7 +5535,7 @@ Josie is trying to get back. She’s scrambled but she’s trying. I knew she wo
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC13FX58Btranscript">>
 /* --- */
 
@@ -5603,7 +5645,7 @@ Follow the road around and you’ll see a path ahead walk through the path to th
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC12FX55-Mtranscript">>
 /* --- */
 
@@ -5662,7 +5704,7 @@ Follow the road around and you’ll see a path ahead walk through the path to th
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC14FX60transcript">>
 /* --- */
 
@@ -5735,7 +5777,7 @@ Cross the road safely please and walk around the outside of the green in the cen
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC14FX60-Mtranscript">>
 /* --- */
 
@@ -5797,7 +5839,7 @@ Cross the road when you are facing Cosies.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC14FX61transcript">>
 /* --- */
 
@@ -5859,7 +5901,7 @@ Turn around and cross over the green for me.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC14FX61Btranscript">>
 /* --- */
 
@@ -5989,7 +6031,7 @@ Leroy, your mother loves you.
 <span class="char-name">Anansi:</span> 
 It was the only way we could get you to face up to what happened. Duppy Hunting needs you, Josie. You need you. 
 
-<span class="char-name">MummaD:</span> 
+<span class="char-name">Mumma:</span> 
 Walk out of the square using the exit facing Circomedia now turn left and walk towards the end of the street. But look out for the blue plaque on the wall. 
 Look at your phone. Press reached when you have found it.
 
@@ -6011,7 +6053,7 @@ Look at your phone. Press reached when you have found it.
 
 
 /* Transcript options */
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 <<set $transcriptname to "SC15FX62transcript">>
 /* --- */
 
@@ -6076,7 +6118,7 @@ Tell next time Mumma- I mean Controller.
 <<set $showBackwards to true>>
 <<set $showForwards to false>>
 <<set $showTranscriptIcon to false>>
-<<set $transcript to false>>
+/* <<set $transcript to false>> */
 
 
 

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@300;400;500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 
 /* CONSTANTS  */
 :root {
@@ -16,7 +17,7 @@
   --color-red: #b4242b;
   --background-image: "./../assets/img/textureLow.png";
   background-size: contain;
-  --font-headings: "Anton", sans-serif;
+  --font-headings: "Staatliches", sans-serif;
   --font-body: "Rubik", sans-serif;
   --font-body-color: black;
   --padding: 1.5rem;
@@ -133,7 +134,7 @@ header {
 
 main {
   padding: var(--padding);
-  min-height: 80vh;
+  min-height: 70vh;
   margin-block-end: 10rem !important;
   display: flex;
   justify-content: center;
@@ -222,6 +223,9 @@ nav {
   margin-block-end: 3rem;
   font-size: 3rem;
   text-align: center;
+  background-color: var(--accent-color-secondary);
+  color: white;
+  padding: 1rem;
 }
 
 textarea {
@@ -496,9 +500,11 @@ footer.ar > .nav-wrapper > .nav-item > #mount > span {
 /* LONG AUDIO / STORY  */
 
 header.story {
+  background-image: var(--background-image);
   position: sticky;
   top: 0;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 header > #headerinstmount > p.comment {
@@ -534,11 +540,26 @@ main.story.captions {
   justify-content: center;
 }
 
-/* PLAY / PAUSE FOOTER  */
+/* PLAY / PAUSE FOOTER  & HEADER */
+
+header > .titleWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
 
 #audioText {
   text-align: center;
   max-width: 70%;
+}
+
+#audioText > .macro-type > span {
+  background-color: var(--accent-color-secondary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 footer > .nav-wrapper.playpause-wrapper {
@@ -635,7 +656,7 @@ h2.word-us {
 }
 
 h2.word-us.smaller {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 .code-input {
