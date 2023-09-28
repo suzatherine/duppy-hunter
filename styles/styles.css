@@ -223,9 +223,6 @@ nav {
   margin-block-end: 3rem;
   font-size: 3rem;
   text-align: center;
-  background-color: var(--accent-color-secondary);
-  color: white;
-  padding: 1rem;
 }
 
 textarea {
