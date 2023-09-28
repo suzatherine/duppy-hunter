@@ -2949,11 +2949,13 @@ Let me know the salt is in yer hand ready!
     <<set $codeword to $codeword.toUpperCase()>>
     /% CODEWORD CORRECT %/
     <<if $codeword isnot "" and $codeword is "I AM A DUPPY HUNTER">>
+       <<audio "correct" "play">>
     <<replace "#result">>Correct<</replace>>
     <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
       /% CODEWORD INCORRECT %/
       <<if $codeword isnot "" and $codeword is not "I AM A DUPPY HUNTER">>
+        <<audio "duppyno3" "play">>
       <<replace "#result">>Thats not right.<</replace>>
       <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
       <</if>><</button>>
@@ -2964,7 +2966,7 @@ Let me know the salt is in yer hand ready!
 
   <<append "#mount">>
     <br/> <br/><br/>
-    <<type 40ms>><p>Clue:<br/> Who are you? Remember we said this at the start of the experience outside Trinity.</p><</type>>
+    <<type 40ms>><p class="clue"><strong>Clue:</strong><br/> Who are you? Remember we said this at the start of the experience outside Trinity.</p><</type>>
     <</append>>
   <</timed>>
 
@@ -3012,7 +3014,7 @@ Clue: who are you? Remember we said this at the start of the experience outside 
 If you can't work it out, the hunt can't continue.
 
 :: SC5FX32 [nobr]
-/* TODO UP TO HERE  */
+
 /* Navigation options */
 <<set $prevpass to "SC5FX31">>
 <<set $passage to "SC5FX32">>
@@ -3042,7 +3044,16 @@ If you can't work it out, the hunt can't continue.
 <br/>
 <div id="mount"></div>
 
-<<timed 48s>>
+<<timed 20s>>
+    <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p> Walk back into the park <br/> and walk straight ahead until you see <br/>the Mr Drummond Mural on the left. <br/>Wait there and let me know when you reach.
+</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+<<timed 46s>>
   <<replace "#mount">>
     <div class="menu-wrapper">
      <<button "Finished">><<goto $nextpass>><</button>> 
@@ -3056,22 +3067,21 @@ If you can't work it out, the hunt can't continue.
 :: SC5FX32transcript 
 
 <span class="char-name">Mumma:</span>
-Of course it’s I am a duppy Hunter.
+Of course it’s "I am a duppy hunter".
 
 <span class="char-name">Josie:</span>
 I’m sorry friend. I’m back. I am a duppy hunter.
 
 <span class="char-name">Duppy:</span>
-Huh well while you were gone. I was done with the shepherd now I’ve passed onto a young ram living on Davey Street. 
+Huh well while you were gone... I was done with the shepherd now I’ve passed onto a young ram living on Davey Street. 
 
 <span class="char-name">Mumma:</span>
-Walk forward into St Agnes Park, take the gate on the left and walk down the path past the Clifford Drummond Seven Saints of St. Paul's mural.
+Walk back into the park and walk straight ahead until you see the Mr Drummond Mural on the left, wait there and let me know when you reach.
 
 <span class="char-name">Josie:</span>
 Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you read what it says? He was the owner of the Speedy Bird Cafe, one of the first places where my parents and their friends would meet. Pour out a libation to Mr Drummond, yeah?
 
-<span class="char-name">Mumma:</span>
-Let me know when you have finished.
+
 
 :: SC5FX32.1 [nobr]
 
@@ -3081,12 +3091,15 @@ Let me know when you have finished.
 <<set $nextpass to "SC6FX33">>
 
 /* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
+<<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to true>>
+
+/* Scene name  */
+<<set $sceneName to " Pennywell Green">>
 
 
 /* Transcript options */
@@ -3100,16 +3113,29 @@ Let me know when you have finished.
 </div>
 
 <<include "header">><main class="general">
-<div id="transcript"><<include "duppyTitle">></div>
+<div id="transcript"></div>
 <br/>
 <div id="mount"></div>
 
-<<timed 28s>>
-  <<replace "#mount">>
+<<timed 1s>>
+    <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p> Walk to the end of the park and exit on your left, onto Davey street and
+walk to the bottom. <br/>Let me know when you reach.
+<br/><br/>
+You should see a big magnolia house on the corner 
+<br/>across the street, number 19. <br/>Just wait there.
+</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+<<timed 14s>>
+  <<append "#mount">>
     <div class="menu-wrapper">
      <<button "Reached Davy Street">><<goto $nextpass>><</button>> 
     </div>
-   <</replace>>
+   <</append>>
 <</timed>>
 
 </main>
@@ -3117,7 +3143,13 @@ Let me know when you have finished.
 
 :: SC5FX32.1transcript 
 <span class="char-name">Mumma:</span>
-Return to the path and carry on walking to the exit on your left onto Davy Street.
+Walk to the end of the park and exit on your left, onto Davey street and walk to the bottom. 
+
+Let me know when you reach.
+
+You should see a big magnolia house on the corner across the street, number 19.
+
+Just wait there.
 
 <span class="char-name">St Agnes:</span>
 Come child.
@@ -3146,8 +3178,6 @@ Welcome.
 <span class="char-name">St Agnes:</span>
 Burden.
 
-<span class="char-name">Mumma:</span>
-Let me know when you reach. 
 
 :: SC6FX33 [nobr]
 
@@ -3165,6 +3195,9 @@ Let me know when you reach.
 <<set $showTranscriptIcon to true>>
 
 
+/* Scene name  */
+<<set $sceneName to " Davey & St Nicholas Street ">>
+
 /* Transcript options */
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC6FX33transcript">>
@@ -3180,12 +3213,8 @@ Let me know when you reach.
 <br/>
 <div id="mount"></div>
 
-<<timed 138s>>
-  <<replace "#mount">>
-    <div class="menu-wrapper">
-     <<button "Reached St Nicholas Street">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
+<<timed 125s>>
+  <<goto $nextpass>>
 <</timed>>
 
 </main>
@@ -3193,10 +3222,16 @@ Let me know when you reach.
 
 :: SC6FX33transcript 
 <span class="char-name">Josie:</span>
-Davey Street. Where I grew up. Rice and peas on Sunday mornings church women with wide starched dresses and stiff hats, matching 
-Is that a banana tree – that’s new.
-I called it sweetie Street because of the pastel-colored houses. Summer playing out in the street, chalks, jumping rope, biking round Paul's. My first crush lives along here somewhere. Big Afro. Back then.
+Davey Street. Where I grew up. Rice and peas on Sunday mornings church women with wide starched dresses and stiff hats, matching...
+
+Is that a banana tree? That’s new.
+
+I called it Sweetie Street because of the pastel-colored houses. Summer playing out in the street, chalks, jumping rope, biking round Paul's. 
+
+My first crush lives along here somewhere. Big Afro. Back then.
+
 Last Carnival As it Is TV – a Soundsystem played along here- I’m told. 
+
 Did you go, friend? I didn’t. Haven’t been for years – always some thing comes up. 
 
 <span class="char-name">Duppy:</span>
@@ -3220,11 +3255,12 @@ Good Jim’s Magnolia Inn
 What? Is this thing working? The Duppy Detector. How come he’s sneaking up on us. 
 
 <span class="char-name">Mumma:</span>
-He might have some kind of Duppy Detector blocker. You can’t concern yourself with that. You have to find him. We don’t know what craziness he’s caused when he was inside the priest, now 		he’s inside the young man and about to cause more damage. We have to find him before he get’s 		to the woman.
-Walk down Davey Street, until you are standing on the corner of St Nicholas Street. Let me know when you reach. 
+He might have some kind of Duppy Detector blocker. You can’t concern yourself with that. You have to find him. We don’t know what craziness he’s caused when he was inside the priest, now he’s inside the young man and about to cause more damage. We have to find him before he gets 		to the woman.
 
 <span class="char-name">Josie:</span>
 St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mrs Wynter a small, light big spirit loving woman. Tinker Man. Fix anything for nothing. 
+
+
 
 :: SC6FX34 [nobr]
 /* MULTICHOICE OPTIONS */
@@ -3280,7 +3316,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
       <<replace "#result">>That's not right.<</replace>>
       <<audio "mummano" "play">>
      <<timed 2s>>
-      <<audio "duppyno" "play">>
+      <<audio "duppyno2" "play">>
       <</timed>>
        <<timed 4s>>
         <<replace "#result">><</replace>>
@@ -3309,99 +3345,14 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 <span class="char-name">MummmaD:</span>
 Another riddle to solve – have a look aroud you -check your phone. 
 
-/*TODO where's the riddle? */
 
-:: SC6FX35 [nobr]
-/* MULTICHOICE OPTIONS */
-/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
-/* Navigation options */
-<<set $prevpass to "SC6FX34">>
-<<set $passage to "SC6FX35">>
-<<set $nextpass to "SC6FX35B">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "SC6FX35transcript">>
-/* --- */
-
-<div id="audioWrapper">
-
-</div>
-
-<<include "headerchoice">><main class="general">
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
- 
- <<timed 1s>>
- <<replace "#transcript">><</replace>>
-      <<replace "#mount">>
-        <div class="explain appear" >
-   <p> Where was the Duppy?</p>
-    </div>
-    <</replace>>
-     <<timed 3s>>
-      <<append "#mount">>
-        <div id="result"></div>
-        <div class="menu-wrapper">
-        <<button "a) Good Jim’s Magnolia Inn">>
-          <<audio "correct" "play">>
-        <<replace "#result">>Correct.<</replace>>
-        <<timed 2s>>
-            <<goto $nextpass>>
-        <</timed>>
-    <</button>> 
-    <<button "b) Falafel Palais">>
-      <<replace "#result">>That's not right.<</replace>>
-      <<audio "mummano" "play">>
-     <<timed 2s>>
-      <<audio "duppyno" "play">>
-      <</timed>>
-       <<timed 4s>>
-        <<replace "#result">><</replace>>
-      <</timed>>
-    <</button>> 
-    <<button "c) The Big Palm Tree">>
-        <<replace "#result">>That's not right.<</replace>>
-      <<audio "mummano" "play">>
-     <<timed 2s>>
-      <<audio "duppyno" "play">>
-      <</timed>>
-       <<timed 4s>>
-        <<replace "#result">><</replace>>
-      <</timed>>
-    <</button>> 
-        </div>
-      <</append>>
-        <</timed>>
-<</timed>>
-
-
-
-</main>
-<<include "footer">>
-
-:: SC6FX35transcript 
-/* <span class="char-name">MummmaD:</span>
-Another riddle to solve – have a look aroud you -check your phone.  */
 
 :: SC6FX35B [nobr]
 
 /* Navigation options */
 <<set $prevpass to "SC6FX35">>
 <<set $passage to "SC6FX35B">>
-<<set $nextpass to "SC6FX36">>
+<<set $nextpass to "SC6FX37">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
@@ -3427,12 +3378,20 @@ Another riddle to solve – have a look aroud you -check your phone.  */
 <br/>
 <div id="mount"></div>
 
-<<timed 175s>>
-  <<replace "#mount">>
-    <div class="menu-wrapper">
-     <<button "Next">><<goto $nextpass>><</button>> /*TODO check if a button is wanted here before  multiple choice */
-    </div>
+<<timed 132s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>Turn right and cross over the road,<br/> turn right again and pass Ludlow close. <br/>You will be facing a Green space.<br/> <br/>Walk along the path through the green until you reach the Learning Centre.<br/><br/> Let me know when you reach,<br/> and find a spot to sit down m’dear</p></div>
+<br/>
    <</replace>>
+<</timed>>
+
+<<timed 140s>>
+    <<append "#mount">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
 <</timed>>
 
 </main>
@@ -3458,7 +3417,7 @@ Hmm
 Is it still open? No definitely not. It was Mr Williams pub. Jim Williams. The first Black civic Mayor. Dad’s favorite drinking spot after he finished working at Trinity. I’d slip inside and take it all in. 
 
 <span class="char-name">Hadrian:</span>
-Hadrian:	‘Tek dat yu brute.’ 
+‘Tek dat yu brute.’ 
 
 <span class="char-name">Josie:</span>
 When I wanted more pocket money I would visit Dad in the pub. 
@@ -3513,11 +3472,11 @@ We’ll see.
 Where do you think he means, the green?
 
 <span class="char-name">Mumma:</span>
-Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be facing a Green. Walk along the path through the green till you reach the centre. 
+Turn right and cross over the road, turn right again and pass Ludlow close and you will be facing a Green space, walk along the path through the green until you reach the Learning Centre, let me know when you reach, and find a spot to sit down m’dear.
 
 :: SC6FX36 [nobr]
 /* SHOWING MAP  */
-/* Todo this map just appears with no explaination  */
+/* GETTING RID OF THIS MAP */
 /* Navigation options */
 <<set $prevpass to "SC6FX35B">>
 <<set $passage to "SC6FX36">>
@@ -3550,7 +3509,7 @@ Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be fa
      <img src="./../assets/img/MAP6.jpeg" alt="map to centre of the green">
       <br/>
      <br/>
-      <div class="explain appear"><p>Walk straight St Nicholas Street. <br/>Carefully cross Ludlow Road and you will be facing a Green. <br/>Walk along the path through the green till you reach the centre. </p></div>
+      <div class="explain appear"></div>
    <</replace>>
 <</timed>>
 
@@ -3578,7 +3537,7 @@ We need to speed up.   */
 :: SC6FX37 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC6FX36">>
+<<set $prevpass to "SC6FX35B">>
 <<set $passage to "SC6FX37">>
 <<set $nextpass to "SC7FX38">>
 
@@ -3637,6 +3596,7 @@ That will be too easy he he.
 
 :: SC7FX38 [nobr]
 /* MULTICHOICE OPTIONS */
+/* TODO UP TO HERE  */
 /* Navigation options */
 <<set $prevpass to "SC6FX37">>
 <<set $passage to "SC7FX38">>

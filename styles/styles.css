@@ -547,6 +547,11 @@ header > .titleWrapper {
   align-items: center;
 }
 
+header > .titleWrapper > h2 {
+  text-align: center;
+  max-width: 80%;
+}
+
 #audioText {
   text-align: center;
   max-width: 70%;
@@ -679,4 +684,9 @@ h2.word-us.smaller {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+p.clue {
+  color: var(--accent-color-secondary);
+  text-align: center;
 }

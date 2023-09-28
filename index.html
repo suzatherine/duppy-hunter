@@ -2710,11 +2710,13 @@ Let me know the salt is in yer hand ready!</tw-passagedata><tw-passagedata pid="
     &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
     /% CODEWORD CORRECT %/
     &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;I AM A DUPPY HUNTER&quot;&gt;&gt;
+       &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
     &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct&lt;&lt;/replace&gt;&gt;
     &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
       /% CODEWORD INCORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;I AM A DUPPY HUNTER&quot;&gt;&gt;
+        &lt;&lt;audio &quot;duppyno3&quot; &quot;play&quot;&gt;&gt;
       &lt;&lt;replace &quot;#result&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
       &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -2725,7 +2727,7 @@ Let me know the salt is in yer hand ready!</tw-passagedata><tw-passagedata pid="
 
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;br/&gt; &lt;br/&gt;&lt;br/&gt;
-    &lt;&lt;type 40ms&gt;&gt;&lt;p&gt;Clue:&lt;br/&gt; Who are you? Remember we said this at the start of the experience outside Trinity.&lt;/p&gt;&lt;&lt;/type&gt;&gt;
+    &lt;&lt;type 40ms&gt;&gt;&lt;p class=&quot;clue&quot;&gt;&lt;strong&gt;Clue:&lt;/strong&gt;&lt;br/&gt; Who are you? Remember we said this at the start of the experience outside Trinity.&lt;/p&gt;&lt;&lt;/type&gt;&gt;
     &lt;&lt;/append&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
 
@@ -2766,8 +2768,7 @@ You have three chances to get it right.
 
 Clue: who are you? Remember we said this at the start of the experience outside Trinity.
 
-If you can&#39;t work it out, the hunt can&#39;t continue.</tw-passagedata><tw-passagedata pid="79" name="SC5FX32" tags="nobr" position="1100,975" size="100,100">/* TODO UP TO HERE  */
-/* Navigation options */
+If you can&#39;t work it out, the hunt can&#39;t continue.</tw-passagedata><tw-passagedata pid="79" name="SC5FX32" tags="nobr" position="1100,975" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC5FX31&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC5FX32&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC5FX32.1&quot;&gt;&gt;
@@ -2796,7 +2797,16 @@ If you can&#39;t work it out, the hunt can&#39;t continue.</tw-passagedata><tw-p
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 48s&gt;&gt;
+&lt;&lt;timed 20s&gt;&gt;
+    &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt; Walk back into the park &lt;br/&gt; and walk straight ahead until you see &lt;br/&gt;the Mr Drummond Mural on the left. &lt;br/&gt;Wait there and let me know when you reach.
+&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 46s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;Finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -2806,33 +2816,33 @@ If you can&#39;t work it out, the hunt can&#39;t continue.</tw-passagedata><tw-p
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="80" name="SC5FX32transcript" tags="" position="1225,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-Of course it’s I am a duppy Hunter.
+Of course it’s &quot;I am a duppy hunter&quot;.
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 I’m sorry friend. I’m back. I am a duppy hunter.
 
 &lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
-Huh well while you were gone. I was done with the shepherd now I’ve passed onto a young ram living on Davey Street. 
+Huh well while you were gone... I was done with the shepherd now I’ve passed onto a young ram living on Davey Street. 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-Walk forward into St Agnes Park, take the gate on the left and walk down the path past the Clifford Drummond Seven Saints of St. Paul&#39;s mural.
+Walk back into the park and walk straight ahead until you see the Mr Drummond Mural on the left, wait there and let me know when you reach.
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
-Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you read what it says? He was the owner of the Speedy Bird Cafe, one of the first places where my parents and their friends would meet. Pour out a libation to Mr Drummond, yeah?
-
-&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-Let me know when you have finished.</tw-passagedata><tw-passagedata pid="81" name="SC5FX32.1" tags="nobr" position="100,1100" size="100,100">/* Navigation options */
+Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you read what it says? He was the owner of the Speedy Bird Cafe, one of the first places where my parents and their friends would meet. Pour out a libation to Mr Drummond, yeah?</tw-passagedata><tw-passagedata pid="81" name="SC5FX32.1" tags="nobr" position="100,1100" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC5FX32&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC5FX32.1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC6FX33&quot;&gt;&gt;
 
 /* Footer menu options */
-&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
+&lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
 &lt;&lt;set $showAudio to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showTranscriptIcon to true&gt;&gt;
+
+/* Scene name  */
+&lt;&lt;set $sceneName to &quot; Pennywell Green&quot;&gt;&gt;
 
 
 /* Transcript options */
@@ -2846,21 +2856,40 @@ Let me know when you have finished.</tw-passagedata><tw-passagedata pid="81" nam
 &lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 28s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;&lt;timed 1s&gt;&gt;
+    &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt; Walk to the end of the park and exit on your left, onto Davey street and
+walk to the bottom. &lt;br/&gt;Let me know when you reach.
+&lt;br/&gt;&lt;br/&gt;
+You should see a big magnolia house on the corner 
+&lt;br/&gt;across the street, number 19. &lt;br/&gt;Just wait there.
+&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 14s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;Reached Davy Street&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
-   &lt;&lt;/replace&gt;&gt;
+   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="SC5FX32.1transcript" tags="" position="225,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-Return to the path and carry on walking to the exit on your left onto Davy Street.
+Walk to the end of the park and exit on your left, onto Davey street and walk to the bottom. 
+
+Let me know when you reach.
+
+You should see a big magnolia house on the corner across the street, number 19.
+
+Just wait there.
 
 &lt;span class=&quot;char-name&quot;&gt;St Agnes:&lt;/span&gt;
 Come child.
@@ -2887,10 +2916,7 @@ Lay down your burden.
 Welcome.
 
 &lt;span class=&quot;char-name&quot;&gt;St Agnes:&lt;/span&gt;
-Burden.
-
-&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-Let me know when you reach.</tw-passagedata><tw-passagedata pid="83" name="SC6FX33" tags="nobr" position="350,1100" size="100,100">/* Navigation options */
+Burden.</tw-passagedata><tw-passagedata pid="83" name="SC6FX33" tags="nobr" position="350,1100" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC5FX32.1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC6FX33&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC6FX34&quot;&gt;&gt;
@@ -2903,6 +2929,9 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="83" name="SC6FX
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showTranscriptIcon to true&gt;&gt;
 
+
+/* Scene name  */
+&lt;&lt;set $sceneName to &quot; Davey &amp; St Nicholas Street &quot;&gt;&gt;
 
 /* Transcript options */
 /* &lt;&lt;set $transcript to false&gt;&gt; */
@@ -2919,20 +2948,22 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="83" name="SC6FX
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 138s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;div class=&quot;menu-wrapper&quot;&gt;
-     &lt;&lt;button &quot;Reached St Nicholas Street&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
-    &lt;/div&gt;
-   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;timed 125s&gt;&gt;
+  &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="SC6FX33transcript" tags="" position="475,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
-Davey Street. Where I grew up. Rice and peas on Sunday mornings church women with wide starched dresses and stiff hats, matching 
-Is that a banana tree – that’s new.
-I called it sweetie Street because of the pastel-colored houses. Summer playing out in the street, chalks, jumping rope, biking round Paul&#39;s. My first crush lives along here somewhere. Big Afro. Back then.
+Davey Street. Where I grew up. Rice and peas on Sunday mornings church women with wide starched dresses and stiff hats, matching...
+
+Is that a banana tree? That’s new.
+
+I called it Sweetie Street because of the pastel-colored houses. Summer playing out in the street, chalks, jumping rope, biking round Paul&#39;s. 
+
+My first crush lives along here somewhere. Big Afro. Back then.
+
 Last Carnival As it Is TV – a Soundsystem played along here- I’m told. 
+
 Did you go, friend? I didn’t. Haven’t been for years – always some thing comes up. 
 
 &lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
@@ -2956,8 +2987,7 @@ Good Jim’s Magnolia Inn
 What? Is this thing working? The Duppy Detector. How come he’s sneaking up on us. 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-He might have some kind of Duppy Detector blocker. You can’t concern yourself with that. You have to find him. We don’t know what craziness he’s caused when he was inside the priest, now 		he’s inside the young man and about to cause more damage. We have to find him before he get’s 		to the woman.
-Walk down Davey Street, until you are standing on the corner of St Nicholas Street. Let me know when you reach. 
+He might have some kind of Duppy Detector blocker. You can’t concern yourself with that. You have to find him. We don’t know what craziness he’s caused when he was inside the priest, now he’s inside the young man and about to cause more damage. We have to find him before he gets 		to the woman.
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mrs Wynter a small, light big spirit loving woman. Tinker Man. Fix anything for nothing.</tw-passagedata><tw-passagedata pid="85" name="SC6FX34" tags="nobr" position="600,1100" size="100,100">/* MULTICHOICE OPTIONS */
@@ -3013,7 +3043,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
       &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
       &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
      &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;duppyno2&quot; &quot;play&quot;&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 4s&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -3037,91 +3067,10 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="SC6FX34transcript" tags="" position="725,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;MummmaD:&lt;/span&gt;
-Another riddle to solve – have a look aroud you -check your phone. 
-
-/*TODO where&#39;s the riddle? */</tw-passagedata><tw-passagedata pid="87" name="SC6FX35" tags="nobr" position="850,1100" size="100,100">/* MULTICHOICE OPTIONS */
-/* TODO MOVE THESE OPTIONS UP TO PREV PASSAGE  */
-/* Navigation options */
-&lt;&lt;set $prevpass to &quot;SC6FX34&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;SC6FX35&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;SC6FX35B&quot;&gt;&gt;
-
-/* Footer menu options */
-&lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
-&lt;&lt;set $showReplay to true&gt;&gt;
-&lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showBackwards to true&gt;&gt;
-&lt;&lt;set $showTranscriptIcon to true&gt;&gt;
-
-
-/* Transcript options */
-/* &lt;&lt;set $transcript to false&gt;&gt; */
-&lt;&lt;set $transcriptname to &quot;SC6FX35transcript&quot;&gt;&gt;
-/* --- */
-
-&lt;div id=&quot;audioWrapper&quot;&gt;
-
-&lt;/div&gt;
-
-&lt;&lt;include &quot;headerchoice&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-
-
- 
- &lt;&lt;timed 1s&gt;&gt;
- &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-        &lt;div class=&quot;explain appear&quot; &gt;
-   &lt;p&gt; Where was the Duppy?&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;&lt;/replace&gt;&gt;
-     &lt;&lt;timed 3s&gt;&gt;
-      &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-        &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;menu-wrapper&quot;&gt;
-        &lt;&lt;button &quot;a) Good Jim’s Magnolia Inn&quot;&gt;&gt;
-          &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 2s&gt;&gt;
-            &lt;&lt;goto $nextpass&gt;&gt;
-        &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;/button&gt;&gt; 
-    &lt;&lt;button &quot;b) Falafel Palais&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
-     &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
-      &lt;&lt;/timed&gt;&gt;
-       &lt;&lt;timed 4s&gt;&gt;
-        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;/button&gt;&gt; 
-    &lt;&lt;button &quot;c) The Big Palm Tree&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
-     &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
-      &lt;&lt;/timed&gt;&gt;
-       &lt;&lt;timed 4s&gt;&gt;
-        &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;/button&gt;&gt; 
-        &lt;/div&gt;
-      &lt;&lt;/append&gt;&gt;
-        &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-
-
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="SC6FX35transcript" tags="" position="975,1100" size="100,100">/* &lt;span class=&quot;char-name&quot;&gt;MummmaD:&lt;/span&gt;
-Another riddle to solve – have a look aroud you -check your phone.  */</tw-passagedata><tw-passagedata pid="89" name="SC6FX35B" tags="nobr" position="1100,1100" size="100,100">/* Navigation options */
+Another riddle to solve – have a look aroud you -check your phone.</tw-passagedata><tw-passagedata pid="87" name="SC6FX35B" tags="nobr" position="850,1100" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC6FX35&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC6FX35B&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;SC6FX36&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;SC6FX37&quot;&gt;&gt;
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
@@ -3147,16 +3096,24 @@ Another riddle to solve – have a look aroud you -check your phone.  */</tw-pas
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 175s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;div class=&quot;menu-wrapper&quot;&gt;
-     &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; /*TODO check if a button is wanted here before  multiple choice */
-    &lt;/div&gt;
+&lt;&lt;timed 132s&gt;&gt;
+  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Turn right and cross over the road,&lt;br/&gt; turn right again and pass Ludlow close. &lt;br/&gt;You will be facing a Green space.&lt;br/&gt; &lt;br/&gt;Walk along the path through the green until you reach the Learning Centre.&lt;br/&gt;&lt;br/&gt; Let me know when you reach,&lt;br/&gt; and find a spot to sit down m’dear&lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
    &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 140s&gt;&gt;
+    &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper&quot;&gt;
+    &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="SC6FX35Btranscript" tags="" position="1225,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="SC6FX35Btranscript" tags="" position="975,1100" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
 We got it.
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
@@ -3174,7 +3131,7 @@ Hmm
 Is it still open? No definitely not. It was Mr Williams pub. Jim Williams. The first Black civic Mayor. Dad’s favorite drinking spot after he finished working at Trinity. I’d slip inside and take it all in. 
 
 &lt;span class=&quot;char-name&quot;&gt;Hadrian:&lt;/span&gt;
-Hadrian:	‘Tek dat yu brute.’ 
+‘Tek dat yu brute.’ 
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 When I wanted more pocket money I would visit Dad in the pub. 
@@ -3229,8 +3186,8 @@ We’ll see.
 Where do you think he means, the green?
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be facing a Green. Walk along the path through the green till you reach the centre.</tw-passagedata><tw-passagedata pid="91" name="SC6FX36" tags="nobr" position="100,1225" size="100,100">/* SHOWING MAP  */
-/* Todo this map just appears with no explaination  */
+Turn right and cross over the road, turn right again and pass Ludlow close and you will be facing a Green space, walk along the path through the green until you reach the Learning Centre, let me know when you reach, and find a spot to sit down m’dear.</tw-passagedata><tw-passagedata pid="89" name="SC6FX36" tags="nobr" position="1100,1100" size="100,100">/* SHOWING MAP  */
+/* GETTING RID OF THIS MAP */
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC6FX35B&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC6FX36&quot;&gt;&gt;
@@ -3263,7 +3220,7 @@ Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be fa
      &lt;img src=&quot;./../assets/img/MAP6.jpeg&quot; alt=&quot;map to centre of the green&quot;&gt;
       &lt;br/&gt;
      &lt;br/&gt;
-      &lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Walk straight St Nicholas Street. &lt;br/&gt;Carefully cross Ludlow Road and you will be facing a Green. &lt;br/&gt;Walk along the path through the green till you reach the centre. &lt;/p&gt;&lt;/div&gt;
+      &lt;div class=&quot;explain appear&quot;&gt;&lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
@@ -3281,9 +3238,9 @@ Walk straight St Nicholas Street. Carefully cross Ludlow Road and you will be fa
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="92" name="SC6FX36transcript" tags="" position="225,1225" size="100,100">/* &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
-We need to speed up.   */</tw-passagedata><tw-passagedata pid="93" name="SC6FX37" tags="nobr" position="350,1225" size="100,100">/* Navigation options */
-&lt;&lt;set $prevpass to &quot;SC6FX36&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="SC6FX36transcript" tags="" position="1225,1100" size="100,100">/* &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+We need to speed up.   */</tw-passagedata><tw-passagedata pid="91" name="SC6FX37" tags="nobr" position="100,1225" size="100,100">/* Navigation options */
+&lt;&lt;set $prevpass to &quot;SC6FX35B&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC6FX37&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC7FX38&quot;&gt;&gt;
 
@@ -3320,7 +3277,7 @@ We need to speed up.   */</tw-passagedata><tw-passagedata pid="93" name="SC6FX37
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="94" name="SC6FX37transcript" tags="" position="475,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="92" name="SC6FX37transcript" tags="" position="225,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 Duppy I’m ready to duel. Where are you? 
 
 &lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
@@ -3333,7 +3290,8 @@ C) On a wall between glass, wood and concrete
 Why don’t you come out and fight?
 
 &lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt;
-That will be too easy he he.</tw-passagedata><tw-passagedata pid="95" name="SC7FX38" tags="nobr" position="600,1225" size="100,100">/* MULTICHOICE OPTIONS */
+That will be too easy he he.</tw-passagedata><tw-passagedata pid="93" name="SC7FX38" tags="nobr" position="350,1225" size="100,100">/* MULTICHOICE OPTIONS */
+/* TODO UP TO HERE  */
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC6FX37&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC7FX38&quot;&gt;&gt;
@@ -3404,11 +3362,11 @@ That will be too easy he he.</tw-passagedata><tw-passagedata pid="95" name="SC7F
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="96" name="SC7FX38transcript" tags="" position="725,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="94" name="SC7FX38transcript" tags="" position="475,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 Where is the Sankofa bird? 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;	
-What did the duppy say again. Let’s make and choice and find out where him is.  Look at your phone.</tw-passagedata><tw-passagedata pid="97" name="SC7FX39" tags="nobr" position="850,1225" size="100,100">/* Navigation options */
+What did the duppy say again. Let’s make and choice and find out where him is.  Look at your phone.</tw-passagedata><tw-passagedata pid="95" name="SC7FX39" tags="nobr" position="600,1225" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC7FX38&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC7FX39&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC7FX40&quot;&gt;&gt;
@@ -3455,7 +3413,7 @@ What did the duppy say again. Let’s make and choice and find out where him is.
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="98" name="SC7FX39transcript" tags="" position="975,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="96" name="SC7FX39transcript" tags="" position="725,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 Yes, on the wall between glass, wood and concrete the Learning Centre.Can you see the image of the bird inset on the wall above the glass window. 
  
 And the window where the hungry fill dem belly must be Glen’s Caribbean restaurant. 
@@ -3468,7 +3426,7 @@ Come out duppy...
 You’ll just have to wait. Turn around and walk to the benches behind you in front of the cafe. 
  
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
-How good is your salt throwing skills? Well, we’ll find out.</tw-passagedata><tw-passagedata pid="99" name="SC7FX40" tags="nobr" position="1100,1225" size="100,100">/* Navigation options */
+How good is your salt throwing skills? Well, we’ll find out.</tw-passagedata><tw-passagedata pid="97" name="SC7FX40" tags="nobr" position="850,1225" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC7FX39&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC7FX40&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC8FX41&quot;&gt;&gt;
@@ -3509,7 +3467,7 @@ How good is your salt throwing skills? Well, we’ll find out.</tw-passagedata><
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="100" name="SC7FX40transcript" tags="" position="1225,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="98" name="SC7FX40transcript" tags="" position="975,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 St Nicholas Street, Grosvenor Road, I haven’t walked around here for years. St Nick’s is where I met the Father of the boys. I was at this night called La Boom. Very popular. Me and the night. African, soul, reggae, everything. He came over big teet smiling and funky, short, dreads and started making fun of my dancing I could have slapped him but he made me laugh. 
  
 After La Boom we went to Crystal Dove. 
@@ -3528,7 +3486,7 @@ Now you have everybody jerking chicken, even them Turtle people.
 Your just jealous your duppy dumplin never take off. 
  
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Not yet. There’s still time.</tw-passagedata><tw-passagedata pid="101" name="SC8FX41" tags="nobr" position="100,1350" size="100,100">/* Navigation options */
+Not yet. There’s still time.</tw-passagedata><tw-passagedata pid="99" name="SC8FX41" tags="nobr" position="1100,1225" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC7FX40&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC8FX41&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC9FX42&quot;&gt;&gt;
@@ -3584,7 +3542,7 @@ Not yet. There’s still time.</tw-passagedata><tw-passagedata pid="101" name="S
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="102" name="SC8FX41transcript" tags="" position="225,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="100" name="SC8FX41transcript" tags="" position="1225,1225" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 From here you could smell Carnival happening. The Afrikan Caribbean Carnival. 
 When I was younger it was all about Sound System- Bastian, Tarzan, Wild Bunch, Maasai Warrior every street vibrating with bass. Hip hop, dub, dancehall, reggae, Soca.
  
@@ -3637,7 +3595,7 @@ By Frontline you’ll find this watcher of reality. He he.
 Duppy! Hmm well we know he’s on Frontline. Frontline isn’t a street it’s a reality, a way of life, where all roads meet. 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Safely cross over Grosvenor road and turn right down Grosvenor Road until you reach Grosvenor Road triangle park on your left. You know it, let me know once you reach.</tw-passagedata><tw-passagedata pid="103" name="SC9FX42" tags="nobr" position="350,1350" size="100,100">/* Navigation options */
+Safely cross over Grosvenor road and turn right down Grosvenor Road until you reach Grosvenor Road triangle park on your left. You know it, let me know once you reach.</tw-passagedata><tw-passagedata pid="101" name="SC9FX42" tags="nobr" position="100,1350" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC7FX40&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC9FX42&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC9FX44&quot;&gt;&gt;
@@ -3692,7 +3650,7 @@ Safely cross over Grosvenor road and turn right down Grosvenor Road until you re
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="SC9FX42transcript" tags="" position="475,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="102" name="SC9FX42transcript" tags="" position="225,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 This time of day there would be all kinds of people passing by on their way here and there.
 
 St Paul’s was our Black Bristol capital and Grosvenor Road, was the heart.
@@ -3704,7 +3662,7 @@ But the Beast Master never liked rebels.
 It would not leave us alone. Neither me nor Mum could stop them. Not all of them.
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
-Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.</tw-passagedata><tw-passagedata pid="105" name="SC9FX44" tags="nobr" position="600,1350" size="100,100">/* MULTICHOICE OPTIONS */
+Continue to the end of Grosvenor Road until it meets with Ashley Road. On the corner of the triangle turn left back onto Ashley Road walking down the side of the triangle. At the entrance to the triangle head down the path.</tw-passagedata><tw-passagedata pid="103" name="SC9FX44" tags="nobr" position="350,1350" size="100,100">/* MULTICHOICE OPTIONS */
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC9FX42&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC9FX44&quot;&gt;&gt;
@@ -3778,7 +3736,7 @@ Continue to the end of Grosvenor Road until it meets with Ashley Road. On the co
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="SC9FX44transcript" tags="" position="725,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="SC9FX44transcript" tags="" position="475,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 Where is this full-of-story-person? 
 
 Find them I don’t like it here. 
@@ -3791,7 +3749,7 @@ If you know the substance of this man he’s easy to see. See him and you’ll f
 
 a) tree
 b) stone.
-c) steel</tw-passagedata><tw-passagedata pid="107" name="SC9FX45" tags="nobr" position="850,1350" size="100,100">/* SHOWING MAP  */
+c) steel</tw-passagedata><tw-passagedata pid="105" name="SC9FX45" tags="nobr" position="600,1350" size="100,100">/* SHOWING MAP  */
 
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC9FX44&quot;&gt;&gt;
@@ -3840,7 +3798,7 @@ c) steel</tw-passagedata><tw-passagedata pid="107" name="SC9FX45" tags="nobr" po
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="108" name="SC9FX45transcript" tags="" position="975,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="SC9FX45transcript" tags="" position="725,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;	
 Standing in centre space? 
 Close by the Frontline
 His eye catches all, 
@@ -3848,7 +3806,7 @@ He can never turn away
 And has nothing to say?
 The statue. 
 
-Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata pid="109" name="SC9FX46" tags="nobr" position="1100,1350" size="100,100">/* INPUT */
+Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata pid="107" name="SC9FX46" tags="nobr" position="850,1350" size="100,100">/* INPUT */
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC9FX45&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC9FX46&quot;&gt;&gt;
@@ -3915,7 +3873,7 @@ Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="110" name="SC9FX46transcript" tags="" position="1225,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="108" name="SC9FX46transcript" tags="" position="975,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 A playwright one of the first from the Caribbean. Alfred lived in St Paul’s. He was one of Dad’s 	friends. 	Alfred moved to London but had a heart attack and died when he was out jogging. When the beasts found 	him, they thought he was a vagrant and gave him a pauper’s funeral until friend’s realised, he’d gone missing and gave him a proper burial. 
 
 To see a great man buried like he was nothing. On the street. 
@@ -3930,7 +3888,7 @@ She’s trying to return. She’s trying but she’s been scrambled. What can yo
 
 EIOJS
 
-If we can’t work it out the Hunt can’t continue.</tw-passagedata><tw-passagedata pid="111" name="SC9FX47" tags="nobr" position="100,1475" size="100,100">/* Navigation options */
+If we can’t work it out the Hunt can’t continue.</tw-passagedata><tw-passagedata pid="109" name="SC9FX47" tags="nobr" position="1100,1350" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC9FX46&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC9FX47&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC9FX48&quot;&gt;&gt;
@@ -3983,7 +3941,7 @@ If we can’t work it out the Hunt can’t continue.</tw-passagedata><tw-passage
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="112" name="SC9FX47transcript" tags="" position="225,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="110" name="SC9FX47transcript" tags="" position="1225,1350" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
 Oh of course Josie.
  
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
@@ -4024,7 +3982,7 @@ At the statue, turn right and follow the path back to Ashley Road.
 Turn left and continue down Ashley Road past the Owen Henry mural. 
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
-When you see Owen make you raise your water. He was a true champion for the community.</tw-passagedata><tw-passagedata pid="113" name="SC9FX48" tags="nobr" position="350,1475" size="100,100">/* Navigation options */
+When you see Owen make you raise your water. He was a true champion for the community.</tw-passagedata><tw-passagedata pid="111" name="SC9FX48" tags="nobr" position="100,1475" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC9FX47&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC9FX48&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC10FX49&quot;&gt;&gt;
@@ -4092,7 +4050,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="114" name="SC9FX48transcript" tags="" position="475,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="112" name="SC9FX48transcript" tags="" position="225,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 That’s Mr Duncan’s playing from his window. His mood – blue or sunshine- was in his music. 
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
@@ -4183,7 +4141,7 @@ I-
 Carry on. 
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
-The door to the 7th Day is on Ashley Road.</tw-passagedata><tw-passagedata pid="115" name="SC10FX49" tags="nobr" position="600,1475" size="100,100">/* Navigation options */
+The door to the 7th Day is on Ashley Road.</tw-passagedata><tw-passagedata pid="113" name="SC10FX49" tags="nobr" position="350,1475" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC9FX48&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC10FX49&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC10FX49-M&quot;&gt;&gt;
@@ -4244,7 +4202,7 @@ Continue walking down Ashley Road. &lt;/p&gt;
     &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="116" name="SC10FX49transcript" tags="" position="725,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="114" name="SC10FX49transcript" tags="" position="475,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
 Exit Malcolm X onto Ashley Road Continue down Ashley Road towards the first traffic lights.  Friend, Owen Henry our Saint remember what to do. Cross the road at the first traffic light continue walking down Ashley Road. 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
@@ -4252,7 +4210,7 @@ I’m still here, friend. I was thinking of Bangy.
 Look out for the sign that has the words 7th Day.
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-Let me know once you’ve reached.</tw-passagedata><tw-passagedata pid="117" name="SC10FX49-M" tags="nobr" position="850,1475" size="100,100">/* Navigation options */
+Let me know once you’ve reached.</tw-passagedata><tw-passagedata pid="115" name="SC10FX49-M" tags="nobr" position="600,1475" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC10FX49&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC10FX49-M&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC10FX51&quot;&gt;&gt;
@@ -4303,7 +4261,7 @@ Let me know once you’ve reached.</tw-passagedata><tw-passagedata pid="117" nam
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="118" name="SC10FX49transcript-M" tags="" position="975,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;</tw-passagedata><tw-passagedata pid="119" name="SC10FX51" tags="nobr" position="1100,1475" size="100,100">/* SHOWING MAP  */
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="116" name="SC10FX49transcript-M" tags="" position="725,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;</tw-passagedata><tw-passagedata pid="117" name="SC10FX51" tags="nobr" position="850,1475" size="100,100">/* SHOWING MAP  */
 
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC10FX49-M&quot;&gt;&gt;
@@ -4351,7 +4309,7 @@ Let me know once you’ve reached.</tw-passagedata><tw-passagedata pid="117" nam
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="120" name="SC10FX51transcript" tags="" position="1225,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Pastor:&lt;/span&gt;	
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="118" name="SC10FX51transcript" tags="" position="975,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Pastor:&lt;/span&gt;	
 Amazing Grace 
 How sweet the sound
 
@@ -4374,7 +4332,7 @@ Look across the road.
 The duppy must be inside.
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;	
-Cross at the lights and let know when you’ve reached.</tw-passagedata><tw-passagedata pid="121" name="SC10FX51.1" tags="nobr" position="100,1600" size="100,100">/* Navigation options */
+Cross at the lights and let know when you’ve reached.</tw-passagedata><tw-passagedata pid="119" name="SC10FX51.1" tags="nobr" position="1100,1475" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC10FX51&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC10FX51.1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC10FX52&quot;&gt;&gt;
@@ -4415,7 +4373,7 @@ Cross at the lights and let know when you’ve reached.</tw-passagedata><tw-pass
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="SC10FX51.1transcript" tags="" position="225,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="120" name="SC10FX51.1transcript" tags="" position="1225,1475" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 It’s closed. Locked up. 
 
 Ajax was named after it’s owner. Businessman, hard man, entertainer, Don Juan, – a pied piper of pleasure. A café, Shady Grove, on one side and a shebeen we say shubs, below. Different from blues parties. A permanent venueEvery one went no questions, no judgment, - teenagers, office people, some white people, hippies, prostitutes, bad man, big people, everybody. Duppies loved it. Every duppy could find their reflection in someone there.
@@ -4453,7 +4411,7 @@ Big C or little c -not for me to say.
 Come find me. 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Just wait a moment. The Duppy Hunter will decode this one. This time.</tw-passagedata><tw-passagedata pid="123" name="SC10FX52" tags="nobr" position="350,1600" size="100,100">/* Navigation options */
+Just wait a moment. The Duppy Hunter will decode this one. This time.</tw-passagedata><tw-passagedata pid="121" name="SC10FX52" tags="nobr" position="100,1600" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC10FX51.1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC10FX52&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC10FX52-M&quot;&gt;&gt;
@@ -4496,11 +4454,11 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.</tw-passag
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="124" name="SC10FX52transcript" tags="" position="475,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="SC10FX52transcript" tags="" position="225,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
 Clue: Brigstocke
  
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
-Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street.</tw-passagedata><tw-passagedata pid="125" name="SC10FX52-M" tags="nobr" position="600,1600" size="100,100">/* Navigation options */
+Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street.</tw-passagedata><tw-passagedata pid="123" name="SC10FX52-M" tags="nobr" position="350,1600" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC10FX52&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC10FX52-M &quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC11FX53&quot;&gt;&gt;
@@ -4552,11 +4510,11 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="126" name="SC10FX52-Mtranscript" tags="" position="725,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="124" name="SC10FX52-Mtranscript" tags="" position="475,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
 Clue: Brigstocke
  
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
-Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street.</tw-passagedata><tw-passagedata pid="127" name="SC11FX53" tags="nobr" position="850,1600" size="100,100">/* Navigation options */
+Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street.</tw-passagedata><tw-passagedata pid="125" name="SC11FX53" tags="nobr" position="600,1600" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC10FX52-M&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC11FX53&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC11FX54&quot;&gt;&gt;
@@ -4604,7 +4562,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="SC11FX53transcript" tags="" position="975,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="126" name="SC11FX53transcript" tags="" position="725,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 I didn’t abandon St Paul’s. 
 
 I just wanted to keep the boys safe growing up. Times had changed. The Beast Master just didn’t care about our children, our elders. The Beast Master was dropping every soul in St Paul’s. 
@@ -4614,7 +4572,7 @@ So, we brought the house in Fishponds. but I should have nown better. I did all 
 I can’t use Power to protect all the time and boys they get to an age where they don’t listen.
  
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Cross over safely.</tw-passagedata><tw-passagedata pid="129" name="SC11FX54" tags="nobr" position="1100,1600" size="100,100">/* Navigation options */
+Cross over safely.</tw-passagedata><tw-passagedata pid="127" name="SC11FX54" tags="nobr" position="850,1600" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC11FX53&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC11FX54&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC12FX55&quot;&gt;&gt;
@@ -4662,7 +4620,7 @@ Cross over safely.</tw-passagedata><tw-passagedata pid="129" name="SC11FX54" tag
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="SC11FX54transcript" tags="" position="1225,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="SC11FX54transcript" tags="" position="975,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 City Road. Quiet now. Families I knew along here. This is where Mumma and Dad first lived when they came to Bristol. 10 to a room Dad said when they first came here in the 50s. 
  
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;  
@@ -4680,7 +4638,7 @@ I hope murals aren’t going to be all that’s left of us.
 As long as Carnival still comes through this street, we’ll be a living force here. 
  
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;  
-Cross when the lights are green.  Walk along ... and let me know when you have reached.</tw-passagedata><tw-passagedata pid="131" name="SC12FX55" tags="nobr" position="100,1725" size="100,100">/* Navigation options */
+Cross when the lights are green.  Walk along ... and let me know when you have reached.</tw-passagedata><tw-passagedata pid="129" name="SC12FX55" tags="nobr" position="1100,1600" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC11FX54&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC12FX55&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC12FX55-M&quot;&gt;&gt;
@@ -4725,7 +4683,7 @@ Cross when the lights are green.  Walk along ... and let me know when you have r
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="132" name="SC12FX55transcript" tags="" position="225,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="SC12FX55transcript" tags="" position="1225,1600" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 Can you hear the echo of Old St Paul’s? 
  
 &lt;span class=&quot;char-name&quot;&gt;Rag &amp; Bone Man:&lt;/span&gt;  
@@ -4803,7 +4761,7 @@ Wilder Street
 Walk down the street and take the second left. 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left.</tw-passagedata><tw-passagedata pid="133" name="SC12FX55-M" tags="nobr" position="350,1725" size="100,100">/* Navigation options */
+Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left.</tw-passagedata><tw-passagedata pid="131" name="SC12FX55-M" tags="nobr" position="100,1725" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC12FX55&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC12FX55-M&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC12FX56&quot;&gt;&gt;
@@ -4860,11 +4818,11 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="134" name="SC12FX55-Mtranscript" tags="" position="475,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="132" name="SC12FX55-Mtranscript" tags="" position="225,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 Walk down the street and take the second left.
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left.</tw-passagedata><tw-passagedata pid="135" name="SC12FX56" tags="nobr" position="600,1725" size="100,100">/* Navigation options */
+Continue walking down Brighton Street until you get to Wilder Street- you will see Inkerman across the road to the left.</tw-passagedata><tw-passagedata pid="133" name="SC12FX56" tags="nobr" position="350,1725" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC12FX55-M&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC12FX56&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC13FX57&quot;&gt;&gt;
@@ -4902,7 +4860,7 @@ Continue walking down Brighton Street until you get to Wilder Street- you will s
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="136" name="SC12FX56transcript" tags="" position="725,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="134" name="SC12FX56transcript" tags="" position="475,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 Focus – Josie. I am a Duppy Hunter. 
 
 A new barbershop. On your left. 
@@ -4914,7 +4872,7 @@ The street’s so different now. There was a garage, where Dad would get his car
 
 That’s Argyle Road on the left. Dad said there were parties on Argyle going back to the 60s. Carnival time the sound system would play some of the best reggae and dub. 
 
-You skank? Do you know what skanking is?</tw-passagedata><tw-passagedata pid="137" name="SC13FX57" tags="nobr" position="850,1725" size="100,100">/* MULTICHOICE OPTIONS */
+You skank? Do you know what skanking is?</tw-passagedata><tw-passagedata pid="135" name="SC13FX57" tags="nobr" position="600,1725" size="100,100">/* MULTICHOICE OPTIONS */
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC12FX56&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC13FX57&quot;&gt;&gt;
@@ -4983,7 +4941,7 @@ You skank? Do you know what skanking is?</tw-passagedata><tw-passagedata pid="13
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="138" name="SC13FX57transcript" tags="" position="975,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="136" name="SC13FX57transcript" tags="" position="725,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 Wilder Street like Grosvenor was thriving. Working, hanging, hustling, living. It’s so quiet. 
 Wilder Street tells you want you need to know about how the Beast Master treats St Paul’s - raids then regeneration. New funds, new faces. Some worked, some withered, some stalled. 
 So where is this giantess. 
@@ -5010,7 +4968,7 @@ C) Looking down from above One Love....
 Open you eyes and see. 	
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Another riddle to solve –  look aroud you -check your phone and choose the right one. Remember I’m with you.</tw-passagedata><tw-passagedata pid="139" name="SC13FX58" tags="nobr" position="1100,1725" size="100,100">/* INPUT */
+Another riddle to solve –  look aroud you -check your phone and choose the right one. Remember I’m with you.</tw-passagedata><tw-passagedata pid="137" name="SC13FX58" tags="nobr" position="850,1725" size="100,100">/* INPUT */
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC13FX57&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC13FX58&quot;&gt;&gt;
@@ -5102,7 +5060,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="140" name="SC13FX58transcript" tags="" position="1225,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="138" name="SC13FX58transcript" tags="" position="975,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
 You have it.
 
 &lt;span class=&quot;char-name&quot;&gt;Duppy:&lt;/span&gt; 
@@ -5151,7 +5109,7 @@ Let your friend decide. After they’ve done all this work, I’m sure they want
 We can’t force her. Perhaps this was too much for her. 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Josie is trying to get back. She’s scrambled but she’s trying. I knew she would. Come on daughter.</tw-passagedata><tw-passagedata pid="141" name="SC13FX58B" tags="nobr" position="100,1850" size="100,100">/* Navigation options */
+Josie is trying to get back. She’s scrambled but she’s trying. I knew she would. Come on daughter.</tw-passagedata><tw-passagedata pid="139" name="SC13FX58B" tags="nobr" position="1100,1725" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC13FX58&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC13FX58B&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC13FX58B-M&quot;&gt;&gt;
@@ -5218,7 +5176,7 @@ Josie is trying to get back. She’s scrambled but she’s trying. I knew she wo
    &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="142" name="SC13FX58Btranscript" tags="" position="225,1850" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="140" name="SC13FX58Btranscript" tags="" position="1225,1725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
 Can you work out what’s she’s saying. Let me know. 
 Oh I can read it. My Mumma is a claart. Facety girl. 
 
@@ -5255,7 +5213,7 @@ The Inkerman’s gone. That used to be the Britannia, one of the first pubs Dad 
 They could grind all week and then go out dressed like Minaj. 
  
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Follow the road around and you’ll see a path ahead walk through the path to the park and stay on the path, passing the Church until we are on Portland Square.</tw-passagedata><tw-passagedata pid="143" name="SC13FX58B-M" tags="nobr" position="350,1850" size="100,100">/* Navigation options */
+Follow the road around and you’ll see a path ahead walk through the path to the park and stay on the path, passing the Church until we are on Portland Square.</tw-passagedata><tw-passagedata pid="141" name="SC13FX58B-M" tags="nobr" position="100,1850" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC13FX58B&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC13FX58B-M&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC14FX60&quot;&gt;&gt;
@@ -5310,7 +5268,7 @@ Follow the road around and you’ll see a path ahead walk through the path to th
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="144" name="SC14FX60" tags="nobr" position="475,1850" size="100,100">/* Navigation options */
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="142" name="SC14FX60" tags="nobr" position="225,1850" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC13FX58B-M&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC14FX60&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC14FX60-M&quot;&gt;&gt;
@@ -5357,7 +5315,7 @@ Cross the road when you are facing Cosies.
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="145" name="SC14FX60transcript" tags="" position="600,1850" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="143" name="SC14FX60transcript" tags="" position="350,1850" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 This is all new. We never had a park like this when we were growing up. We had the old bomb site, the street.
 
 This is what Leroy must have meant when he said his brother had gone to the park. 
@@ -5375,7 +5333,7 @@ Where runaways fly through the air. Trapeze. It’s now the home of the Circus S
 He passed through here on his bike.   
  
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-Cross the road safely please and walk around the outside of the green in the centre of the square. Cross the road when you are facing Cosies. When you get outside  get  your  bottle of water out and  pour some water for libation.</tw-passagedata><tw-passagedata pid="146" name="SC14FX60-M" tags="nobr" position="725,1850" size="100,100">/* Navigation options */
+Cross the road safely please and walk around the outside of the green in the centre of the square. Cross the road when you are facing Cosies. When you get outside  get  your  bottle of water out and  pour some water for libation.</tw-passagedata><tw-passagedata pid="144" name="SC14FX60-M" tags="nobr" position="475,1850" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC14FX60&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC14FX60-M&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC14FX61&quot;&gt;&gt;
@@ -5433,7 +5391,7 @@ Cross the road when you are facing Cosies.
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="147" name="SC14FX61" tags="nobr" position="850,1850" size="100,100">/* Navigation options */
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="145" name="SC14FX61" tags="nobr" position="600,1850" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC14FX60&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC14FX61&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC14FX61B&quot;&gt;&gt;
@@ -5480,14 +5438,14 @@ Cross the road when you are facing Cosies.
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="148" name="SC14FX61transcript" tags="" position="975,1850" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="146" name="SC14FX61transcript" tags="" position="725,1850" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 Leroy used to like to have a drink here after working at Docklands. When he moved on, he still came and met his friends here especially Samson – the host. 
 
 Samson made everyone welcome – Black, White, straight, gay, young, student not student.
 
 I can see why Leroy liked to hang out with him. Always He’s an institution like the place itself I was away. I’m sorry Leroy. He stopped off at Cosie’s to borrow the spare keys. He stopped here to meet his brother. He was always forgetting his keys. Leroy thought he was in trouble –but no. He just wanted to get home. He had a tune he wanted to get home and finish. Leroy told him to slow down. 
  
-Turn around and cross over the green for me.</tw-passagedata><tw-passagedata pid="149" name="SC14FX61B" tags="nobr" position="1100,1850" size="100,100">/* Navigation options */
+Turn around and cross over the green for me.</tw-passagedata><tw-passagedata pid="147" name="SC14FX61B" tags="nobr" position="850,1850" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC14FX61&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC14FX61B&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC15FX62&quot;&gt;&gt;
@@ -5553,7 +5511,7 @@ Look at your phone. Press reached when you have found it.&lt;/p&gt;&lt;/div&gt;
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="150" name="SC14FX61Btranscript" tags="" position="1225,1850" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="148" name="SC14FX61Btranscript" tags="" position="975,1850" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 Wait. I don’t know if I can. 
  
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
@@ -5630,7 +5588,7 @@ It was the only way we could get you to face up to what happened. Duppy Hunting 
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
 Walk out of the square using the exit facing Circomedia now turn left and walk towards the end of the street. But look out for the blue plaque on the wall. 
-Look at your phone. Press reached when you have found it.</tw-passagedata><tw-passagedata pid="151" name="SC15FX62" tags="nobr" position="100,1975" size="100,100">/* Navigation options */
+Look at your phone. Press reached when you have found it.</tw-passagedata><tw-passagedata pid="149" name="SC15FX62" tags="nobr" position="1100,1850" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC14FX61B&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC15FX62&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
@@ -5672,7 +5630,7 @@ Look at your phone. Press reached when you have found it.</tw-passagedata><tw-pa
   &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="SC15FX62transcript" tags="" position="225,1975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="150" name="SC15FX62transcript" tags="" position="1225,1850" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt; 
 Here’s where it all began. Where Mumma met Dad inside the Bamboo club. It was the first establishment where West Indians could go. You saw the most amazing acts there before they became famous ‘Bob Marley’ Jimmy Clif.’ But Dad said it was special because it was the place where he met the only person he wanted to meet in life. 
 
 Owned by a White Jewish man Tony Bullimore married to a Jamaican – it was a sign of hope. We’ll see. 
@@ -5692,7 +5650,7 @@ I’m signing you out Hunter.
 Tell next time Mumma- I mean Controller.
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt; 
-10, 9, 8, 7, 6, 5, 4, 3, 2, 1.</tw-passagedata><tw-passagedata pid="153" name="end" tags="nobr" position="350,1975" size="100,100">&lt;&lt;set $prevpass to &quot;SC15FX62&quot;&gt;&gt;
+10, 9, 8, 7, 6, 5, 4, 3, 2, 1.</tw-passagedata><tw-passagedata pid="151" name="end" tags="nobr" position="100,1975" size="100,100">&lt;&lt;set $prevpass to &quot;SC15FX62&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
