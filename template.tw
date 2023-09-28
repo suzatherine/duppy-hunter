@@ -2909,7 +2909,7 @@ Let me know the salt is in yer hand ready!
 <<set $showTranscriptIcon to true>>
 
 <<set $answer to "">>
-
+<<set $attempts to 0>>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
@@ -2948,17 +2948,22 @@ Let me know the salt is in yer hand ready!
     /% STANDARDISE INPUT %/
     <<set $codeword to $codeword.toUpperCase()>>
     /% CODEWORD CORRECT %/
-    <<if $codeword isnot "" and $codeword is "I AM A DUPPY HUNTER">>
+    <<if $codeword isnot "" and $codeword is "I AM A DUPPY HUNTER" or $attempts is 2>>
        <<audio "correct" "play">>
+    <<replace ".code-input">> 
+        <<textbox "$codeword" "I AM A DUPPY HUNTER">>
+    <</replace>>   
     <<replace "#result">>Correct<</replace>>
     <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
       /% CODEWORD INCORRECT %/
-      <<if $codeword isnot "" and $codeword is not "I AM A DUPPY HUNTER">>
-        <<audio "duppyno3" "play">>
+      <<if $codeword isnot "" and $codeword is not "I AM A DUPPY HUNTER" and $attempts lt 2>>
+      <<audio "duppyno3" "play">>
       <<replace "#result">>Thats not right.<</replace>>
+      <<set $attempts += 1 >>
       <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
-      <</if>><</button>>
+      <</if>>
+    <</button>>
    <</append>>
 <</timed>>
 

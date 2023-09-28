@@ -2670,7 +2670,7 @@ Let me know the salt is in yer hand ready!</tw-passagedata><tw-passagedata pid="
 &lt;&lt;set $showTranscriptIcon to true&gt;&gt;
 
 &lt;&lt;set $answer to &quot;&quot;&gt;&gt;
-
+&lt;&lt;set $attempts to 0&gt;&gt;
 
 /* Transcript options */
 /* &lt;&lt;set $transcript to false&gt;&gt; */
@@ -2709,17 +2709,22 @@ Let me know the salt is in yer hand ready!</tw-passagedata><tw-passagedata pid="
     /% STANDARDISE INPUT %/
     &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
     /% CODEWORD CORRECT %/
-    &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;I AM A DUPPY HUNTER&quot;&gt;&gt;
+    &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;I AM A DUPPY HUNTER&quot; or $attempts is 2&gt;&gt;
        &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+    &lt;&lt;replace &quot;.code-input&quot;&gt;&gt; 
+        &lt;&lt;textbox &quot;$codeword&quot; &quot;I AM A DUPPY HUNTER&quot;&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;   
     &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct&lt;&lt;/replace&gt;&gt;
     &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
       /% CODEWORD INCORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;I AM A DUPPY HUNTER&quot;&gt;&gt;
-        &lt;&lt;audio &quot;duppyno3&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;I AM A DUPPY HUNTER&quot; and $attempts lt 2&gt;&gt;
+      &lt;&lt;audio &quot;duppyno3&quot; &quot;play&quot;&gt;&gt;
       &lt;&lt;replace &quot;#result&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;set $attempts += 1 &gt;&gt;
       &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
