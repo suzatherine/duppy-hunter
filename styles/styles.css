@@ -550,6 +550,7 @@ header > .titleWrapper {
 header > .titleWrapper > h2 {
   text-align: center;
   max-width: 80%;
+  line-height: 3.3rem;
 }
 
 #audioText {
@@ -655,10 +656,12 @@ h2.word-us {
   text-align: center;
   width: 100%;
   font-size: 5rem;
+  color: var(--accent-color-secondary);
 }
 
 h2.word-us.smaller {
   font-size: 3.5rem;
+  color: var(--accent-color-secondary);
 }
 
 .code-input {
