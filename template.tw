@@ -4219,6 +4219,8 @@ Just wait by the statue. I’ll be able to tell.
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to true>>
 
+<<set $answer to "">>
+<<set $attempts to 0>>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
@@ -4259,8 +4261,11 @@ Just wait by the statue. I’ll be able to tell.
 /% STANDARDISE INPUT %/
 <<set $codeword to $codeword.toUpperCase()>>
 /% CODEWORD CORRECT %/
-<<if $codeword isnot "" and $codeword is "JOSIE">>
+<<if $codeword isnot "" and $codeword is "JOSIE" or $attempts is 2>>
    <<audio "correct" "play">>
+    <<replace ".code-input">> 
+        <<textbox "$codeword" "JOSIE">>
+    <</replace>>   
 <<replace "#result">>Correct<</replace>>
 <<timed 3s>><<goto $nextpass>><</timed>>
 <</if>>
@@ -4268,6 +4273,7 @@ Just wait by the statue. I’ll be able to tell.
   <<if $codeword isnot "" and $codeword is not "JOSIE">>
     <<audio "duppyno2" "play">>
   <<replace "#result">>Thats not right.<</replace>>
+   <<set $attempts += 1 >>
   <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
   <</if>><</button>>
    <</append>>
@@ -5492,6 +5498,9 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 /* Scene name  */
 <<set $sceneName to "Wilder Street ">>
 
+<<set $answer to "">>
+<<set $attempts to 0>>
+
 /* Transcript options */
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC13FX58transcript">>
@@ -5554,8 +5563,11 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
       /% STANDARDISE INPUT %/
       <<set $codeword to $codeword.toUpperCase()>>
       /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "MY MUMMA IS A CLAART">>
+      <<if $codeword isnot "" and $codeword is "MY MUMMA IS A CLAART" or $attempts is 2>>
         <<audio "correct" "play">>
+         <<replace ".code-input">> 
+        <<textbox "$codeword" "MY MUMMA IS A CLAART">>
+    <</replace>>   
       <<replace "#result">>Correct<</replace>>
       <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
@@ -5563,6 +5575,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
         <<if $codeword isnot "" and $codeword is not "MY MUMMA IS A CLAART">>
           <<audio "duppyno2" "play">>
         <<replace "#result">>Thats not right.<</replace>>
+         <<set $attempts += 1 >>
         <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
         <</if>><</button>>
    <</append>>

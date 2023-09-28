@@ -3851,6 +3851,8 @@ Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showTranscriptIcon to true&gt;&gt;
 
+&lt;&lt;set $answer to &quot;&quot;&gt;&gt;
+&lt;&lt;set $attempts to 0&gt;&gt;
 
 /* Transcript options */
 /* &lt;&lt;set $transcript to false&gt;&gt; */
@@ -3891,8 +3893,11 @@ Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata
 /% STANDARDISE INPUT %/
 &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
 /% CODEWORD CORRECT %/
-&lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;JOSIE&quot;&gt;&gt;
+&lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;JOSIE&quot; or $attempts is 2&gt;&gt;
    &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+    &lt;&lt;replace &quot;.code-input&quot;&gt;&gt; 
+        &lt;&lt;textbox &quot;$codeword&quot; &quot;JOSIE&quot;&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;   
 &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct&lt;&lt;/replace&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -3900,6 +3905,7 @@ Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;JOSIE&quot;&gt;&gt;
     &lt;&lt;audio &quot;duppyno2&quot; &quot;play&quot;&gt;&gt;
   &lt;&lt;replace &quot;#result&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;set $attempts += 1 &gt;&gt;
   &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt;
    &lt;&lt;/append&gt;&gt;
@@ -5005,6 +5011,9 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 /* Scene name  */
 &lt;&lt;set $sceneName to &quot;Wilder Street &quot;&gt;&gt;
 
+&lt;&lt;set $answer to &quot;&quot;&gt;&gt;
+&lt;&lt;set $attempts to 0&gt;&gt;
+
 /* Transcript options */
 /* &lt;&lt;set $transcript to false&gt;&gt; */
 &lt;&lt;set $transcriptname to &quot;SC13FX58transcript&quot;&gt;&gt;
@@ -5067,8 +5076,11 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
       /% STANDARDISE INPUT %/
       &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
       /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;MY MUMMA IS A CLAART&quot;&gt;&gt;
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;MY MUMMA IS A CLAART&quot; or $attempts is 2&gt;&gt;
         &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+         &lt;&lt;replace &quot;.code-input&quot;&gt;&gt; 
+        &lt;&lt;textbox &quot;$codeword&quot; &quot;MY MUMMA IS A CLAART&quot;&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;   
       &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct&lt;&lt;/replace&gt;&gt;
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
@@ -5076,6 +5088,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;MY MUMMA IS A CLAART&quot;&gt;&gt;
           &lt;&lt;audio &quot;duppyno2&quot; &quot;play&quot;&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
+         &lt;&lt;set $attempts += 1 &gt;&gt;
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt;
    &lt;&lt;/append&gt;&gt;
