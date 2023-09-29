@@ -179,7 +179,10 @@ setup.backFive = () => {
 <<cacheaudio "duppyno2" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_02.mp3">>
 <<cacheaudio "duppyno3" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_03.mp3">>
 <<cacheaudio "correct" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Correct.mp3">>
-
+<<cacheaudio "letme" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3">>
+<<cacheaudio "carry" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_Let'sCarryOn.mp3">>
+<<cacheaudio "next" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_PushNext.mp3">>
+<<cacheaudio "onb" "https://www.youhavefoundconey.net/DC/Audio/onboarding.mp3">>
 
 <<waitforaudio>>
 
@@ -296,7 +299,7 @@ setup.backFive = () => {
 
 :: footer [nobr]{"position":"100,375","size":"100,100"}
 <footer>
-<p style="color:white">$passage</p>
+/* <p style="color:white">$passage</p> */
 <<if $showAudio is true>>
   <div class="nav-wrapper">
     <div class="nav-item controls">
@@ -553,7 +556,7 @@ setup.backFive = () => {
 
 <main class="instructions">
 <h2>Onboarding</h2>
-<div id="map" class="hide">$map</div>
+
 <div id="mount"></div>
 <<timed 0.1s>>
   <<replace "#mount">>
@@ -584,7 +587,7 @@ setup.backFive = () => {
 <</timed>>
 <<timed 8s>>
   <<append "#mount">>
-    <p>When a map is available, a button like this will appear <<button "Show Map">><</button>></p>
+    <p>When a map is available, this icon will show [img[Map|assets/img/map-b.png][$passage]]</p>
   <</append>>
 <</timed>>
 
@@ -1233,7 +1236,7 @@ Facety. Let’s carry on, push next on your phone.
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to true>>
-
+<<audio ":all" "stop" >>
 /* Scene name  */
 <<set $sceneName to "Trinity">>
 
@@ -1328,6 +1331,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 <<include "headersimple">><main class="general">
 <div id="map" class="hide"><img src="./../assets/img/MAP1.jpg" alt="map from Trinity Centre to Trinity Road"></div>
+<br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
@@ -1356,6 +1360,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 
 <<timed 52s>>
+  <<audio "onb" "play" >>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Next">><<goto $nextpass>><</button>> 
@@ -1403,6 +1408,7 @@ When you’ve exited Trinity and turned right – let me know you are walking do
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC2FX11transcript">>
 /* --- */
+<<audio ":all" "stop" >>
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene2_FX11.mp3"></audio>
@@ -1411,6 +1417,7 @@ When you’ve exited Trinity and turned right – let me know you are walking do
 
 <<include "headersimple">><main class="general">
 <div id="map" class="hide"><img src="./../assets/img/MAP2.jpeg" alt="map from Trinity Centre to Trinity Road"></div>
+<br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
@@ -1429,6 +1436,8 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 
 
 <<timed 135s>>
+  <<audio ":all" "stop" >>
+  <<audio "onb" "play" >>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached Stapleton Road">><<goto $nextpass>><</button>> 
@@ -1498,61 +1507,6 @@ Turn right onto Stapleton road - pass Nadines and Maliks.
 Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross just yet. Let me know you reached and just wait there for a moment.
 
 
-:: SC2FX11-M [nobr]
-
-/* Navigation options */
-<<set $prevpass to "SC2FX11">>
-<<set $passage to "SC2FX11-M">>
-<<set $nextpass to "SC3FX11-1">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to false>>
-
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "">>
-/* --- */
-
-
-<<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
-  <<replace "#map">>
-  
-     <img src="./../assets/img/MAP2.jpeg" alt="map from Trinity Centre to Trinity Road">
-   <</replace>>
-  
-<</timed>>
-
-<<timed 3s>>
-  <<replace "#audioText">>
-      <div class="menu-wrapper">
-    <<button "Reached Stapleton Road">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-    <<append "#map">>
-      <div class="menu-wrapper">
-    <<button "Reached Stapleton Road">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-</main>
-<<include "footer">>
 
 :: SC3FX11-1 [nobr]
 
@@ -1577,6 +1531,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC3FX11-1transcript">>
 /* --- */
+  <<audio ":all" "stop" >>
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX11.1.mp3"></audio>
@@ -1654,6 +1609,7 @@ Let me know you can see it and just stay there for a moment.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC3FX12transcript">>
 /* --- */
+  <<audio ":all" "stop" >>
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX12.mp3"></audio>
@@ -1674,6 +1630,8 @@ Let me know you can see it and just stay there for a moment.
   <</timed>>
 
 <<timed 50s>>
+
+  <<audio "onb" "play" >>
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "Reached the Congregational Centre">><<goto $nextpass>><</button>> 
@@ -1740,6 +1698,9 @@ Let me know when you reached. Look both ways dear.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC3FX13transcript">>
 /* --- */
+
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14.mp3"></audio>
@@ -1896,9 +1857,11 @@ They were leaving before Mumma and Dad arrived.
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX16.mp3"></audio>
 
 </div>
+   <<audio ":all" "stop" >>
 
 <<include "headersimple">><main class="general">
 <div id="map" class="hide"><img src="./../assets/img/MAP3.jpeg" alt="map "></div>
+<br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
@@ -1916,6 +1879,7 @@ They were leaving before Mumma and Dad arrived.
 
 
 <<timed 16s>>
+  <<audio "onb" "play" >>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached the Peel Street Green Space">><<goto $nextpass>><</button>> 
@@ -1978,8 +1942,9 @@ Remember I need you.
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
-
+   <<audio ":all" "stop" >>
 <<timed 33s>>
+  <<audio "onb" "play" >>
   <<replace "#mount">>
     <div class="menu-wrapper">
      <<button "I'm on the bridge">><<goto $nextpass>><</button>> 
@@ -2025,7 +1990,7 @@ Let me know when you reach.
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX19.mp3"></audio>
 
 </div>
-
+   <<audio ":all" "stop" >>
 <<include "header">><main class="general">
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -2068,6 +2033,7 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to true>>
+   <<audio ":all" "stop" >>
 
 
 /* Transcript options */
@@ -2132,6 +2098,7 @@ When you done, let’s move on.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX21transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX21.mp3"></audio>
@@ -2158,6 +2125,8 @@ When you done, let’s move on.
   <</timed>>
 
 <<timed 73s>>
+
+  <<audio "onb" "play" >>
   <<append "#mount">>
     <div class="menu-wrapper">
      <<button "I'm at the end of the bridge">><<goto $nextpass>><</button>> 
@@ -2203,16 +2172,17 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.
 /* Navigation options */
 <<set $prevpass to "SC5FX21">>
 <<set $passage to "SC5FX22">>
-<<set $nextpass to "SC5FX22-M">>
+<<set $nextpass to "SC5FX23">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
-<<set $showMap to false>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to true>>
+   <<audio ":all" "stop" >>
 
 
 /* Transcript options */
@@ -2225,27 +2195,35 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.
 
 </div>
 
-<<include "header">><main class="general">
-<div id="map"></div>
+<<include "headersimple">><main class="general">
+<div id="map" class="hide"><img src="./../assets/img/MAP4.jpeg" alt="map "></div>
+<br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
 <<timed 18s>>
     <<replace "#transcript">><</replace>>
-  <<replace "#map">>
+  <<replace "#mount">>
    <div class="explain appear"><p>Turn right after the bridge and you will be on Newfoundland Road.
    <br/><br/>Cross over safely.</p></div>
    <</replace>>
 <</timed>>
 
-<<timed 22s>>
+<<timed 24s>>
 
- <<append "#map">>
+  <<audio "onb" "play" >>
+  <<replace "#audioText">>
       <div class="menu-wrapper">
-    <<button "Show Map">><<goto $nextpass>><</button>> 
+    <<button "Reached Newfoundland Road">><<goto $nextpass>><</button>> 
     </div>
-<</append>>
+   <</replace>>
+    <<append "#mount">>
+      <div class="menu-wrapper">
+    <<button "Reached Newfoundland Road">><<goto $nextpass>><</button>> 
+    </div>
+   <</append>>
+
   <</timed>>
 
 
@@ -2273,66 +2251,12 @@ Yes Mumma.
 Turn right after the bridge and you will be on Newfoundland Road - cross over safely. Let me know when you reach.
 
 
-:: SC5FX22-M [nobr]
 
-/* Navigation options */
-<<set $prevpass to "SC5FX22">>
-<<set $passage to "SC5FX22-M">>
-<<set $nextpass to "SC5FX23">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "">>
-/* --- */
-
-
-<<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
-  <<replace "#map">>
-  
-     <img src="./../assets/img/MAP4.jpeg" alt="map">
-   <</replace>>
-  
-<</timed>>
-
-<<timed 3s>>
-  <<replace "#audioText">>
-      <div class="menu-wrapper">
-    <<button "Reached Newfoundland Road">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-    <<append "#map">>
-      <div class="menu-wrapper">
-    <<button "Reached Newfoundland Road">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-</main>
-<<include "footer">>
 
 :: SC5FX23 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC5FX22-M">>
+<<set $prevpass to "SC5FX22">>
 <<set $passage to "SC5FX23">>
 <<set $nextpass to "SC5FX24">>
 
@@ -2350,6 +2274,7 @@ Turn right after the bridge and you will be on Newfoundland Road - cross over sa
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX23transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX23.mp3"></audio>
@@ -2370,7 +2295,7 @@ Turn right after the bridge and you will be on Newfoundland Road - cross over sa
    <</replace>>
 <</timed>>
 
-<<timed 26s>>
+<<timed 24s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -2461,6 +2386,7 @@ Let me know you can see the DIY shop.
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to true>>
 
+   <<audio ":all" "stop" >>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
@@ -2485,7 +2411,7 @@ Let me know you can see the DIY shop.
    <</replace>>
   <</timed>>
 
-<<timed 67s>>
+<<timed 70s>>
   <<append "#mount">>
     <div class="menu-wrapper">
      <<button "Let's go">><<goto $nextpass>><</button>> 
@@ -2542,12 +2468,12 @@ You are now walking past some houses, which was where the the Empire Gym used to
 /* Navigation options */
 <<set $prevpass to "SC5FX24.1">>
 <<set $passage to "SC5FX24.2">>
-<<set $nextpass to "SC5FX24.2-M">>
+<<set $nextpass to "SC5FX26">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
-<<set $showMap to false>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2561,12 +2487,12 @@ You are now walking past some houses, which was where the the Empire Gym used to
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2.mp3"></audio>
-/*TODO will need to update this and the timings when song added in */
 
 </div>
 
-<<include "header">><main class="general">
-<div id="map"></div>
+<<include "headersimple">><main class="general">
+<div id="map" class="hide"><img src="./../assets/img/MAP5.jpeg" alt="map "></div>
+<br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
@@ -2574,7 +2500,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
 <<timed 44s>>
     <<replace "#transcript">><</replace>>
 
-  <<replace "#map">>
+  <<replace "#mount">>
  
        <div class="explain appear"><p>Keep walking towards the roundabout underpass ahead,
        <br/>until you come to the entrance to the park, on your left.
@@ -2583,10 +2509,17 @@ You are now walking past some houses, which was where the the Empire Gym used to
    <</replace>>
 <</timed>>
 
-<<timed 48s>>
-<<append "#map">>
+<<timed 56s>>
+  <<audio "onb" "play" >>
+<<audio "letme" "play">>
+   <<replace "#audioText">>
       <div class="menu-wrapper">
-    <<button "Show Map">><<goto $nextpass>><</button>> 
+    <<button "I'm at the park">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#mount">>
+      <div class="menu-wrapper">
+    <<button "I'm at the park">><<goto $nextpass>><</button>> 
     </div>
    <</append>>
 <</timed>>
@@ -2601,8 +2534,7 @@ Empire? On your left. Empire gym?
 
 Look closely for me. They’ve all been converted into homes. 
 
-Precious McKenzie the weightlifting champion. Samson,  
-Shango the Nigerian & Mr Burrows, Dad’s old friends. Flying through iron. 
+Precious McKenzie the weightlifting champion. Samson, Shango the Nigerian & Mr Burrows, Dad’s old friends. Flying through iron. 
 
 The smell, the sounds - leather, sweat, fear, thrill, blood, iron. It was magical. My boxing classes. 
 
@@ -2611,6 +2543,8 @@ I took the boys, but it wasn’t really their thing: they were both into their m
 
 <span class="char-name">Mumma</span>
 Keep walking towards the roundabout underpass ahead, until you come to the entrance to the park, on your left. Turn left through the gate up along the path into St Agnes Park.
+
+Let me know when you reach.
 
 
 :: SC5FX24.2-M [nobr]
@@ -2634,6 +2568,7 @@ Keep walking towards the roundabout underpass ahead, until you come to the entra
 /* <<set $transcript to false>> */
 <<set $transcriptname to "">>
 /* --- */
+   <<audio ":all" "stop" >>
 
 
 <<include "headersimple">><main class="general">
@@ -2660,6 +2595,7 @@ Keep walking towards the roundabout underpass ahead, until you come to the entra
 <</timed>>
 
 <<timed 2s>>
+  <<audio "onb" "play" >>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "I'm at the park">><<goto $nextpass>><</button>> 
@@ -2679,7 +2615,7 @@ Keep walking towards the roundabout underpass ahead, until you come to the entra
 :: SC5FX26 [nobr]
 /* MULTICHOICE OPTIONS */
 /* Navigation options */
-<<set $prevpass to "SC5FX24.2-M">>
+<<set $prevpass to "SC5FX24.2">>
 <<set $passage to "SC5FX26">>
 <<set $nextpass to "SC5FX29">>
 
@@ -2694,6 +2630,7 @@ Keep walking towards the roundabout underpass ahead, until you come to the entra
 
 /* TODO THIRD WRONG ANSWER ADVANCES */
 
+   <<audio ":all" "stop" >>
 
 
 /* Transcript options */
@@ -2719,7 +2656,7 @@ Keep walking towards the roundabout underpass ahead, until you come to the entra
       <<replace "#transcript">><</replace>>
       <<replace "#mount">>
         <div class="explain appear" >
-      <p>What did the Duppy say again?</p>
+      <p>Where did the Duppy say he will be?</p>
     </div>
     <</replace>>
     <<timed 5s>>
@@ -2729,7 +2666,7 @@ Keep walking towards the roundabout underpass ahead, until you come to the entra
             <<button "The stone tower overlooking the green">>
               <<audio "correct" "play">>
             <<replace "#result">>Correct.<</replace>>
-            <<timed 2s>>
+            <<timed 0.1s>>
                 <<goto $nextpass>>
             <</timed>>
         <</button>> 
@@ -2814,12 +2751,12 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 <<timed 28s>>
     <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p> Walk along the path to the entrance of St Agnes.</p></div>
+<div class="explain appear"><p> Walk back to the entrance of St Agnes.</p></div>
 <br/>
    <</replace>>
   <</timed>>
 
-<<timed 60s>>
+<<timed 59s>>
   <<goto $nextpass>>
 <</timed>>
 
@@ -2926,6 +2863,7 @@ Let me know the salt is in yer hand ready!
 
 <<set $answer to "">>
 <<set $attempts to 0>>
+   <<audio ":all" "stop" >>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
@@ -2970,7 +2908,7 @@ Let me know the salt is in yer hand ready!
         <<textbox "$codeword" "I AM A DUPPY HUNTER">>
     <</replace>>   
     <<replace "#result">>Correct<</replace>>
-    <<timed 3s>><<goto $nextpass>><</timed>>
+    <<timed 0.4s>><<goto $nextpass>><</timed>>
     <</if>>
       /% CODEWORD INCORRECT %/
       <<if $codeword isnot "" and $codeword is not "I AM A DUPPY HUNTER" and $attempts lt 2>>
@@ -3076,11 +3014,14 @@ If you can't work it out, the hunt can't continue.
   <</timed>>
 
 <<timed 46s>>
-  <<replace "#mount">>
+
+  <<audio "onb" "play" >>
+  <<audio "carry" "play">>
+  <<append "#mount">>
     <div class="menu-wrapper">
      <<button "Finished">><<goto $nextpass>><</button>> 
     </div>
-   <</replace>>
+   <</append>>
 <</timed>>
 
 </main>
@@ -3123,6 +3064,7 @@ Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you rea
 
 /* Scene name  */
 <<set $sceneName to " Pennywell Green">>
+   <<audio ":all" "stop" >>
 
 
 /* Transcript options */
@@ -3153,12 +3095,8 @@ You should see a big magnolia house on the corner
    <</replace>>
   <</timed>>
 
-<<timed 14s>>
-  <<append "#mount">>
-    <div class="menu-wrapper">
-     <<button "Reached Davy Street">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
+<<timed 30s>>
+ <<goto $nextpass>>
 <</timed>>
 
 </main>
@@ -3237,7 +3175,7 @@ Burden.
 <br/>
 <div id="mount"></div>
 
-<<timed 125s>>
+<<timed 126s>>
   <<goto $nextpass>>
 <</timed>>
 
@@ -3302,6 +3240,9 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to true>>
 
+   <<audio ":all" "stop" >>
+
+
 /* Scene name  */
 <<set $sceneName to " Davey & St Nicholas Street ">>
 
@@ -3335,7 +3276,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
         <<button "a) Good Jim’s Magnolia Inn">>
           <<audio "correct" "play">>
         <<replace "#result">>Correct.<</replace>>
-        <<timed 2s>>
+        <<timed 0.1s>>
             <<goto $nextpass>>
         <</timed>>
     <</button>> 
@@ -3417,6 +3358,8 @@ Another riddle to solve – have a look aroud you -check your phone.
 <</timed>>
 
 <<timed 140s>>
+
+  <<audio "onb" "play" >>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -3526,6 +3469,7 @@ Turn right and cross over the road, turn right again and pass Ludlow close and y
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC6FX36transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
 
 
 <<include "header">><main class="general">
@@ -3752,7 +3696,7 @@ What did the duppy say again. Let’s make and choice and find out where him is.
 <br/>
 
 
-<<timed 32s>>
+<<timed 30s>>
   <<goto $nextpass>>
 <</timed>>
 
@@ -3800,6 +3744,8 @@ How good is your salt throwing skills? Well, we’ll find out...
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC7FX40transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene7_FX40.mp3"></audio>
@@ -3816,6 +3762,7 @@ How good is your salt throwing skills? Well, we’ll find out...
 
 
 <<timed 108s>>
+  <<audio "next" "play">>
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "Next">><<goto $nextpass>><</button>> 
@@ -3874,6 +3821,8 @@ Not yet. There’s still time.
 <<set $transcriptname to "SC8FX41transcript">>
 /* --- */
 
+   <<audio ":all" "stop" >>
+
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene8_FX41.mp3"></audio>
 
@@ -3902,6 +3851,7 @@ Stop there and let me know when you reach.</p></div>
 
 <<timed 176s>>
 
+  <<audio "onb" "play" >>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -3997,6 +3947,8 @@ Stop there and let me know when you reach.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX42transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX42.mp3"></audio>
@@ -4014,7 +3966,7 @@ Stop there and let me know when you reach.
   <<audio "mapappear" "play">>
   <<replace "#mount">>
    
-      <div class="explain appear"><p>You should be at the top of the park.Face towards it and go down the path. 
+      <div class="explain appear"><p>You should be at the top of the park. Face towards it and go down the path. 
 <br/> <br/> 
 On your right there should be an entrance into the park. 
 <br/> Head towards the Statue in the middle of the park and wait there. 
@@ -4024,7 +3976,8 @@ On your right there should be an entrance into the park.
 <</timed>>
 
 <<timed 70s>>
- 
+
+  <<audio "onb" "play" >>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "I’m here">><<goto $nextpass>><</button>> 
@@ -4079,6 +4032,7 @@ Let me know when you reach.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX44transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX44.mp3"></audio>
@@ -4102,14 +4056,17 @@ Let me know when you reach.
       <<append "#mount">>
         <div id="result"></div>
         <div class="menu-wrapper">
-        <<button "a) Steel">>
-            <<audio "correct" "play">>
-         <<replace "#result">>Correct.<</replace>>
-        <<timed 2s>>
-            <<goto $nextpass>>
-        <</timed>>
+        <<button "a) Tree">>
+           <<replace "#result">>That's not right.<</replace>>
+      <<audio "mummano" "play">>
+     <<timed 2s>>
+      <<audio "duppyno2" "play">>
+      <</timed>>
+       <<timed 4s>>
+        <<replace "#result">><</replace>>
+      <</timed>>
     <</button>> 
-    <<button "b) Wood">>
+    <<button "b) Stone">>
       <<replace "#result">>That's not right.<</replace>>
       <<audio "mummano" "play">>
      <<timed 2s>>
@@ -4119,15 +4076,14 @@ Let me know when you reach.
         <<replace "#result">><</replace>>
       <</timed>>
     <</button>> 
-    <<button "c) Stone">>
-        <<replace "#result">>That's not right.<</replace>>
-      <<audio "mummano" "play">>
-     <<timed 2s>>
-      <<audio "duppyno2" "play">>
-      <</timed>>
-       <<timed 4s>>
-        <<replace "#result">><</replace>>
-      <</timed>>
+    <<button "c) Steel">>
+
+       <<audio "correct" "play">>
+         <<replace "#result">>Correct.<</replace>>
+        <<timed 0.1s>>
+            <<goto $nextpass>>
+        <</timed>>
+        
     <</button>> 
         </div>
       <</append>>
@@ -4232,6 +4188,7 @@ Just wait by the statue. I’ll be able to tell.
 
 <<set $answer to "">>
 <<set $attempts to 0>>
+   <<audio ":all" "stop" >>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
@@ -4278,7 +4235,7 @@ Just wait by the statue. I’ll be able to tell.
         <<textbox "$codeword" "JOSIE">>
     <</replace>>   
 <<replace "#result">>Correct<</replace>>
-<<timed 3s>><<goto $nextpass>><</timed>>
+<<timed 0.4s>><<goto $nextpass>><</timed>>
 <</if>>
   /% CODEWORD INCORRECT %/
   <<if $codeword isnot "" and $codeword is not "JOSIE">>
@@ -4318,12 +4275,12 @@ If we can’t work it out, the Hunt can’t continue.
 /* Navigation options */
 <<set $prevpass to "SC9FX46">>
 <<set $passage to "SC9FX47">>
-<<set $nextpass to "SC9FX47-M">>
+<<set $nextpass to "SC9FX48">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
-<<set $showMap to false>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4336,14 +4293,17 @@ If we can’t work it out, the Hunt can’t continue.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX47transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX47.mp3"></audio>
 
 </div>
 
-<<include "header">><main class="general">
-<div id="map"></div>
+<<include "headersimple">><main class="general">
+<div id="map" class="hide"><img src="./../assets/img/MAP11.jpg" alt="map "></div>
+<br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
@@ -4361,10 +4321,17 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
    <</replace>>
   <</timed>>
 
-  <<timed 115s>>
+  <<timed 136s>>
+
+  <<audio "onb" "play" >>
+    <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
     <<append "#mount">>
       <div class="menu-wrapper">
-    <<button "Show Map">><<goto $nextpass>><</button>> 
+    <<button "Reached">><<goto $nextpass>><</button>> 
     </div>
    <</append>>
 <</timed>>
@@ -4422,78 +4389,12 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
 When you see Owen make you raise your water. He was a true champion for the community.
 
 
-:: SC9FX47-M [nobr]
 
-/* Navigation options */
-<<set $prevpass to "SC9FX47">>
-<<set $passage to "SC9FX47-M">>
-<<set $nextpass to "SC9FX48">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to false>>
-
-/* Scene name  */
-<<set $sceneName to "Grosvenor Road Frontline ">>
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "">>
-/* --- */
-
-
-<<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
-  <<replace "#map">>
-  
-     <img src="./../assets/img/MAP11.jpg" alt="map from Trinity Centre to Trinity Road">
-<br/>
-<br/>
-     <div class="explain appear"><p>Stand in front of the statue facing it, turn to your right up along the path exiting the park. <br/><br/>Turn left out of the park and walk down Ashley Road until you see a mural of iconic black leader Owen Henry. 
-<br/><br/>
-Walk past and head towards the zebra crossing. Cross over safely.
-<br/><br/>
-Go right to the top of the road and walk down Ashley Road. Let me know when you reach.
-</p></div>
-<br/>
-   <</replace>>
-  
-<</timed>>
-
-<<timed 3s>>
-
-   <<replace "#audioText">>
-      <div class="menu-wrapper">
-    <<button "Reached">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-    <<append "#map">>
-      <div class="menu-wrapper">
-    <<button "Reached">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-</main>
-<<include "footer">>
 
 :: SC9FX48 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC9FX47-M">>
+<<set $prevpass to "SC9FX47">>
 <<set $passage to "SC9FX48">>
 <<set $nextpass to "SC10FX49">>
 
@@ -4507,12 +4408,15 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
 <<set $showTranscriptIcon to true>>
 
 /* Scene name  */
-<<set $sceneName to "Grosvenor Road Frontline ">>
+<<set $sceneName to "Grosvenor Road Frontline">>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC9FX48transcript">>
 /* --- */
+
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene9_FX48.mp3"></audio>
@@ -4534,11 +4438,8 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
   <</timed>>
 
 <<timed 42s>>
-  <<replace "#transcript">><</replace>>
-   <<replace "#mount">>
-<div class="explain appear"><p>Turn your head to the left.<br/> See the bath stone building? <br/>There’s a car park.</p></div>
-<br/>
-   <</replace>>
+  <<replace "#transcript">><<include "duppyTitle">><</replace>>
+   <<replace "#mount">><</replace>>
   <</timed>>
 
   <<timed 82s>>
@@ -4563,6 +4464,8 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
   <</timed>>
 
 <<timed 200s>>
+
+  <<audio "onb" "play" >>
     <<replace "#transcript">><</replace>>
     <<append "#mount">>
       <div class="menu-wrapper">
@@ -4680,12 +4583,12 @@ Push next on your phone to carry on.
 /* Navigation options */
 <<set $prevpass to "SC9FX48">>
 <<set $passage to "SC10FX49">>
-<<set $nextpass to "SC10FX49-M">>
+<<set $nextpass to "SC10FX51">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
-<<set $showMap to false>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4698,14 +4601,17 @@ Push next on your phone to carry on.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC10FX49transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX49.mp3"></audio>
 
 </div>
 
-<<include "header">><main class="general">
-<div id="map"></div>
+<<include "headersimple">><main class="general">
+<div id="map" class="hide"><img src="./../assets/img/MAP12.jpg" alt="map "></div>
+<br/>
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -4725,9 +4631,16 @@ Past the traffic lights, you will see the lock up Ajaxx shop front.
 
 
     <<timed 19s>>
-  <<append "#mount">>
+
+  <<audio "onb" "play" >>
+ <<replace "#audioText">>
       <div class="menu-wrapper">
-    <<button "Show Map">><<goto $nextpass>><</button>> 
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#mount">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
     </div>
    <</append>>
   <</timed>>
@@ -4747,69 +4660,12 @@ Look out for the sign that has the words 7th Day.
 
 
 
-:: SC10FX49-M [nobr]
-
-/* Navigation options */
-<<set $prevpass to "SC10FX49">>
-<<set $passage to "SC10FX49-M">>
-<<set $nextpass to "SC10FX51">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-
-/* Scene name  */
-<<set $sceneName to "Ashley Road Ajax & the 7th Day Adventist Church">>
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "">>
-/* --- */
-
-
-<<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
-  <<replace "#map">>
-  
-     <img src="./../assets/img/MAP12.jpg" alt="map">
-   <</replace>>
-  
-<</timed>>
-
-<<timed 3s>>
-  <<replace "#audioText">>
-      <div class="menu-wrapper">
-    <<button "Reached">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-    <<append "#map">>
-      <div class="menu-wrapper">
-    <<button "Reached">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-</main>
-<<include "footer">>
 
 
 :: SC10FX51 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC10FX49-M">>
+<<set $prevpass to "SC10FX49">>
 <<set $passage to "SC10FX51">>
 <<set $nextpass to "SC10FX51.1">>
 
@@ -4830,6 +4686,8 @@ Look out for the sign that has the words 7th Day.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC10FX51transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene10_FX51.mp3"></audio>
@@ -4844,7 +4702,7 @@ Look out for the sign that has the words 7th Day.
 
 
 
-<<timed 129s>>
+<<timed 126s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -4906,12 +4764,12 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 /* Navigation options */
 <<set $prevpass to "SC10FX51">>
 <<set $passage to "SC10FX51.1">>
-<<set $nextpass to "SC10FX52-M">>
+<<set $nextpass to "SC11FX53">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
-<<set $showMap to false>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4930,8 +4788,9 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 
 </div>
 
-<<include "header">><main class="general">
-
+<<include "headersimple">><main class="general">
+<div id="map" class="hide"><img src="./../assets/img/MAP13.jpeg" alt="map "></div>
+<br/>
 <div id="transcript"></div>
 <br/>
 <div id="mount"></div>
@@ -4947,14 +4806,21 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 <<timed 65s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p>Let’s move on. Walk ahead until you reach Brigstock Road, the first left and walk down it and stop when you see St Paul’s Settlement in front of you across the road.<br/><br/> Let me know when you reach.</p></div>
+<div class="explain appear"><p>Let’s move on. Walk ahead until you reach Brigstocke Road, the first left and walk down it and stop when you see St Paul’s Settlement in front of you across the road.<br/><br/> This is City Road. Let me know when you reach.</p></div>
 <br/>
    <</replace>>
   <</timed>>
 <<timed 68s>>
+
+  <<audio "onb" "play" >>
+     <<replace "#audioText">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
     <<append "#mount">>
       <div class="menu-wrapper">
-    <<button "Show Map">><<goto $nextpass>><</button>> 
+    <<button "Reached">><<goto $nextpass>><</button>> 
     </div>
    <</append>>
 <</timed>>
@@ -4989,83 +4855,16 @@ Look across the road.
 The duppy must be inside.
 
 <span class="char-name">Mumma:</span>	
-Let’s move on, walk ahead until you reach Brigstock road, the first left and walk down it and stop when you see St Paul’s Settlement in front of you across the road. Let me know when you reach.
-
-
- 
+Let’s move on, walk ahead until you reach Brigstocke road, the first left and walk down it and stop when you see St Paul’s Settlement in front of you across the road. Let me know when you reach.
 
 
 
-:: SC10FX52-M [nobr]
-
-/* Navigation options */
-<<set $prevpass to "SC10FX51.1">>
-<<set $passage to "SC10FX52-M ">>
-<<set $nextpass to "SC11FX53">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to false>>
-
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "SC10FX53transcript-M">>
-/* --- */
-
-<<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
-  <<replace "#map">>
-    
-     <img src="./../assets/img/MAP13.jpg" alt="map">
-     <br/>
-     <br/>
-     <div class="explain appear"><p>Walk ahead until you reach Brigstock road, the first left and walk down it and stop when you see St Paul’s Settlement in front of you across the road. </p></div>
-   <</replace>>
-<</timed>>
-
-<<timed 3s>>
-  <<replace "#audioText">>
-      <div class="menu-wrapper">
-    <<button "Reached">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-    <<append "#map">>
-      <div class="menu-wrapper">
-    <<button "Reached">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-</main>
-<<include "footer">>
-
-:: SC10FX52-Mtranscript 
-
-<span class="char-name">Duppy:</span> 
-Clue: Brigstocke
- 
-<span class="char-name">Josie:</span> 
-Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. Safely cross over City road onto Brighton Street. 
 
 
 :: SC11FX53 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC10FX52-M">>
+<<set $prevpass to "SC10FX51.1">>
 <<set $passage to "SC11FX53">>
 <<set $nextpass to "SC11FX54">>
 
@@ -5079,12 +4878,14 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 <<set $showTranscriptIcon to true>>
 
 /* Scene name  */
-<<set $sceneName to "Brigstock Road to City Road Traffic Light">>
+<<set $sceneName to "Brigstocke Road">>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC11FX53transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene11_FX53.mp3"></audio>
@@ -5100,12 +4901,14 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 <<timed 53s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p>Now cross over the road safely and continue walking down Brigstock Road</p></div>
+<div class="explain appear"><p>Now cross over the road safely and continue walking down Brigstocke Road</p></div>
 <br/>
    <</replace>>
 <</timed>>
 
 <<timed 60s>>
+
+  <<audio "onb" "play" >>
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "I've crossed">><<goto $nextpass>><</button>> 
@@ -5150,12 +4953,14 @@ Cross over safely.
 <<set $showTranscriptIcon to true>>
 
 /* Scene name  */
-<<set $sceneName to "Brigstock Road to City Road Traffic Light">>
+<<set $sceneName to "">>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC11FX54transcript">>
 /* --- */
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene11_FX54.mp3"></audio>
@@ -5171,7 +4976,7 @@ Cross over safely.
 <<timed 1s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p>Keep walking down Brigstock Road until you get to Wilder Street. <br/><br/>Let me know when you reach. You should see a barbers on the corner. Wait there.</p></div>
+<div class="explain appear"><p>Keep walking down Brigstocke Road until you get to Wilder Street. <br/><br/>Let me know when you reach. You should see a barbers on the corner. Wait there.</p></div>
 <br/>
    <</replace>>
 <</timed>>
@@ -5193,7 +4998,7 @@ Cross over safely.
 
 :: SC11FX54transcript 
 <span class="char-name">Mumma:</span>  
-Keep walking down Brigstock Road until you get to Wilder Street. Let me know when you reach. You should see a barbers on the corner. Wait there.
+Keep walking down Brigstocke Road until you get to Wilder Street. Let me know when you reach. You should see a barbers on the corner. Wait there.
 
 <span class="char-name">Josie:</span> 
 City Road. Quiet now. Families I knew along here. This is where Mumma and Dad first lived when they came to Bristol. 10 to a room Dad said when they first came here in the 50s. 
@@ -5219,7 +5024,7 @@ No Blacks, Dogs and Irish and she took down her sign till I use obeah to turn he
 <<set $showTranscriptIcon to true>>
 
 /* Scene name  */
-<<set $sceneName to "Brigstock Road">>
+<<set $sceneName to "Wilder Street">>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
@@ -5338,7 +5143,7 @@ An Irish playwright goaled – Oscar Wilde.
 <<set $showTranscriptIcon to true>>
 
 /* Scene name  */
-<<set $sceneName to "Brigstock Road">>
+<<set $sceneName to "Wilder Street">>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
@@ -5363,7 +5168,7 @@ An Irish playwright goaled – Oscar Wilde.
    <</replace>>
 <</timed>>
 
-<<timed 63s>>
+<<timed 59s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -5457,7 +5262,7 @@ Walk ahead and turn on your first left onto Wilder Street and walk until you see
     <<button "c) Looking down from above One Love...">>
         <<audio "correct" "play">>
       <<replace "#result">>Correct<</replace>>
-      <<timed 2s>>
+      <<timed 0.1s>>
         <<goto $nextpass>>
       <</timed>>
     <</button>> 
@@ -5594,7 +5399,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
         <<textbox "$codeword" "MY MUMMA IS A CLAART">>
     <</replace>>   
       <<replace "#result">>Correct<</replace>>
-      <<timed 3s>><<goto $nextpass>><</timed>>
+      <<timed 1s>><<goto $nextpass>><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "MY MUMMA IS A CLAART">>
@@ -5670,14 +5475,14 @@ Josie is trying to get back. She’s scrambled but she’s trying. I knew she wo
 /* Navigation options */
 <<set $prevpass to "SC13FX58">>
 <<set $passage to "SC13FX58B">>
-<<set $nextpass to "SC13FX58B-M">>
+<<set $nextpass to "SC14FX60">>
 /* <<set $nextpass to "SC14FX60">> */
 
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
-<<set $showMap to false>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5690,13 +5495,17 @@ Josie is trying to get back. She’s scrambled but she’s trying. I knew she wo
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC13FX58Btranscript">>
 /* --- */
+   <<audio ":all" "stop" >>
+
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene13_FX58.1.mp3"></audio>
 
 </div>
 
-<<include "header">><main class="general">
+<<include "headersimple">><main class="general">
+<div id="map" class="hide"><img src="./../assets/img/MAP15.jpg" alt="map "></div>
+<br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
@@ -5704,19 +5513,15 @@ Josie is trying to get back. She’s scrambled but she’s trying. I knew she wo
 <<timed 34s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p>Cross the road and walk down Little Bishop street and follow the road round and you’ll see the path ahead walkthrough the path into the park. 
+<div class="explain appear"><p>Cross the road and walk down Little Bishop street and follow the road round and you’ll see the path ahead. Walk through the path into the park. 
 <br/><br/>
-Stay on the path and walk out on your right through the path pass the church and you will reach Portland Square. Let me know when you reach</p></div>
+Stay on the path and walk out on your right through the path. Pass the church and you will reach Portland Square. Let me know when you reach.</p></div>
 <br/>
    <</replace>>
   <</timed>>
 
- <<timed 85s>>
-    <<append "#mount">>
-      <div class="menu-wrapper">
-    <<button "Show Map">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
+ <<timed 89s>>
+<<goto $nextpass>>
 <</timed>>
 
 
@@ -5764,80 +5569,19 @@ They could grind all week and then go out dressed like Minaj.
  
 
 
-:: SC13FX58B-M [nobr]
 
-/* Navigation options */
-<<set $prevpass to "SC13FX58B">>
-<<set $passage to "SC13FX58B-M">>
-<<set $nextpass to "SC14FX60">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to false>>
-
-/* Scene name  */
-<<set $sceneName to "Wilder Street">>
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "SC12FX55-Mtranscript">>
-/* --- */
-
-<<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
-  <<replace "#map">>
-  
-     <img src="./../assets/img/MAP15.jpg" alt="map">
-     <br/>
-     <br/>
-  <div class="explain appear"><p>Cross the road and walk down Little Bishop street and follow the road round and you’ll see the path ahead walkthrough the path into the park. 
-<br/><br/>
-Stay on the path and walk out on your right through the path pass the church and you will reach Portland Square. </p></div>
-<br/>
-   <</replace>>
-<</timed>>
-
-<<timed 4s>>
-  <<replace "#audioText">>
-      <div class="menu-wrapper">
-    <<button "I'm here">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-    <<append "#map">>
-      <div class="menu-wrapper">
-    <<button "I'm here">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-
-</main>
-<<include "footer">>
 
 :: SC14FX60 [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC13FX58B-M">>
+<<set $prevpass to "SC13FX58B">>
 <<set $passage to "SC14FX60">>
-<<set $nextpass to "SC14FX60-M">>
+<<set $nextpass to "SC14FX61">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
-<<set $showMap to false>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5856,8 +5600,9 @@ Stay on the path and walk out on your right through the path pass the church and
 
 </div>
 
-<<include "header">><main class="general">
-<div id="map"></div>
+<<include "headersimple">><main class="general">
+<div id="map" class="hide"><img src="./../assets/img/MAP15.jpg" alt="map "></div>
+<br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
@@ -5872,9 +5617,16 @@ Stay on the path and walk out on your right through the path pass the church and
 <</timed>>
 
 <<timed 51s>>
-<<append "#mount">>
+  <<audio "onb" "play" >>
+  <<audio "letme" "play">>
+  <<replace "#audioText">>
       <div class="menu-wrapper">
-    <<button "Show map">><<goto $nextpass>><</button>> 
+    <<button "Reached">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#mount">>
+      <div class="menu-wrapper">
+    <<button "Reached">><<goto $nextpass>><</button>> 
     </div>
    <</append>>
 <</timed>>
@@ -5906,68 +5658,7 @@ Cross the road safely and enter portland square.
 
 At the entrance by the red telephone box, find a place to sit and get your bottle of water ready for libation.
 
-:: SC14FX60-M [nobr]
 
-/* Navigation options */
-<<set $prevpass to "SC14FX60">>
-<<set $passage to "SC14FX60-M">>
-<<set $nextpass to "SC14FX61">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to false>>
-
-
-/* Transcript options */
-<<set $transcript to false>>
-/* <<set $transcriptname to "">> */
-/* --- */
-
-<<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
-  <<replace "#map">>
-  
-     <img src="./../assets/img/MAP15.jpg" alt="map">
-     <br/>
-     <br/>
-   <div class="explain appear"><p>Cross the road safely. <br/>
-Walk around the outside of the green in the centre of the square. 
-<br/>
-Cross the road when you are facing Cosies. 
-<br/>When you get outside get your bottle of water out and pour some water for libation. </p></div>
-<br/>
-   <</replace>>
-<</timed>>
-
-<<timed 4s>>
-  <<replace "#audioText">>
-      <div class="menu-wrapper">
-    <<button "Reached">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-    <<append "#map">>
-      <div class="menu-wrapper">
-    <<button "Reached">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-
-</main>
-<<include "footer">>
 
 :: SC14FX61 [nobr]
 
@@ -5985,6 +5676,7 @@ Cross the road when you are facing Cosies.
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to true>>
 
+   <<audio ":all" "stop" >>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
@@ -6004,7 +5696,7 @@ Cross the road when you are facing Cosies.
 
 
 
-<<timed 65s>>
+<<timed 60s>>
   <<goto $nextpass>>
 <</timed>>
 
@@ -6076,12 +5768,13 @@ Look at your phone. Press reached when you have found it.</p></div>
    <</replace>>
 <</timed>>
 
-<<timed 197s>>
-  <<append "#mount">>
+<<timed 210s>>
+  /* <<append "#mount">>
     <div class="menu-wrapper">
      <<button "Reached">><<goto $nextpass>><</button>> 
     </div>
-   <</append>>
+   <</append>> */
+   <<goto $nextpass>>
 <</timed>>
 
 
