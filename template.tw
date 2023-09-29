@@ -299,7 +299,7 @@ setup.backFive = () => {
 
 :: footer [nobr]{"position":"100,375","size":"100,100"}
 <footer>
-/* <p style="color:white">$passage</p> */
+<p style="color:white">$passage</p>
 <<if $showAudio is true>>
   <div class="nav-wrapper">
     <div class="nav-item controls">
@@ -508,7 +508,7 @@ setup.backFive = () => {
 
 :: duppyTitle [nobr]
 
-<img src="./../assets/img/titleTextLow.png" alt="Duppy Hunter"/>
+<img src="assets/img/titleTextLow.png" alt="Duppy Hunter"/>
 
 
 :: start [nobr]  {"position":"700,175","size":"100,100"}
@@ -527,7 +527,7 @@ setup.backFive = () => {
 
 <div class="comp-warning">Best experienced on a phone</div>
 <main class="start" id="">
-<img src="./../assets/img/titleLow.png"/>
+<img src="assets/img/titleLow.png"/>
 
 <span>BY EDSON BURTON & ST PAUL’S PEOPLE </span>
 
@@ -677,7 +677,7 @@ setup.backFive = () => {
 <<timed 13s>>
     <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-    <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
+    <div class="duppy-img-container appear"><img src="assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
     <br/>
   <</replace>>
   <<timed 2s>>
@@ -1330,7 +1330,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP1.jpg" alt="map from Trinity Centre to Trinity Road"></div>
+<div id="map" class="hide"><img src="assets/img/MAP1.jpg" alt="map from Trinity Centre to Trinity Road"></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -1416,7 +1416,7 @@ When you’ve exited Trinity and turned right – let me know you are walking do
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP2.jpeg" alt="map from Trinity Centre to Trinity Road"></div>
+<div id="map" class="hide"><img src="assets/img/MAP2.jpeg" alt="map from Trinity Centre to Trinity Road"></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -1860,7 +1860,7 @@ They were leaving before Mumma and Dad arrived.
    <<audio ":all" "stop" >>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP3.jpeg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP3.jpeg" alt="map "></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -2196,7 +2196,7 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP4.jpeg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP4.jpeg" alt="map "></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -2491,7 +2491,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP5.jpeg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP5.jpeg" alt="map "></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -2583,7 +2583,7 @@ Let me know when you reach.
   <<audio "mapappear" "play">>
   <<replace "#map">>
   
-     <img src="./../assets/img/MAP5.jpeg" alt="">
+     <img src="assets/img/MAP5.jpeg" alt="">
      <br/>
      <br/>
       <div class="explain appear"><p>Keep walking towards the roundabout underpass ahead,
@@ -2817,7 +2817,7 @@ What if he’s taken the priest ?
 <<include "header">><main class="general">
 <div id="transcript"></div>
 <br/>
-<div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
+<div class="duppy-img-container appear"><img src="assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
 <br/>
 <div id="mount"></div>
   <<timed 2s>>
@@ -3481,7 +3481,7 @@ Turn right and cross over the road, turn right again and pass Ludlow close and y
 <<timed 1s>>
   <<audio "mapappear" "play">>
   <<replace "#map">>
-     <img src="./../assets/img/MAP6.jpeg" alt="map to centre of the green">
+     <img src="assets/img/MAP6.jpeg" alt="map to centre of the green">
       <br/>
      <br/>
       <div class="explain appear"></div>
@@ -4302,7 +4302,7 @@ If we can’t work it out, the Hunt can’t continue.
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP11.jpg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP11.jpg" alt="map "></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -4610,7 +4610,7 @@ Push next on your phone to carry on.
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP12.jpg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP12.jpg" alt="map "></div>
 <br/>
 <div id="transcript"></div>
 <br/>
@@ -4789,7 +4789,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP13.jpeg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP13.jpeg" alt="map "></div>
 <br/>
 <div id="transcript"></div>
 <br/>
@@ -5350,7 +5350,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 <<timed 24s>>
     <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-    <div class="duppy-img-container appear"><img src="./../assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
+    <div class="duppy-img-container appear"><img src="assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
     <br/>
   <</replace>>
   <<timed 2s>>
@@ -5504,7 +5504,7 @@ Josie is trying to get back. She’s scrambled but she’s trying. I knew she wo
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP15.jpg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP15.jpg" alt="map "></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -5601,7 +5601,7 @@ They could grind all week and then go out dressed like Minaj.
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="./../assets/img/MAP15.jpg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP15.jpg" alt="map "></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
