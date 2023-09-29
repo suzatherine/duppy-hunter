@@ -356,8 +356,14 @@ setup.backFive = () => {
     </div>
     </div>
     <</if>>
+    <<if $showMap is true>>
+     <div class="nav-wrapper">
+    <div class="nav-item">
+    <<link [img[assets/img/map.png]]>><<toggleclass "#map" "hide">><</link>>
+    </div>
+    </div>
+    <</if>>
  <<if $showTranscriptIcon is true>>
-    
     <div class="nav-wrapper">
       <div class="nav-item">
   <<link [img[assets/img/transcript.png]]>>
@@ -600,6 +606,7 @@ setup.backFive = () => {
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -641,6 +648,7 @@ setup.backFive = () => {
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -702,6 +710,7 @@ If you can hear me then you are ready to start.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -760,6 +769,7 @@ If so look at your phone and let me know and push the button to get going.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -813,6 +823,7 @@ There might be some choices you have to make so when I ask you to, take out your
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -880,6 +891,7 @@ Look at your phone and let me know.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -954,6 +966,7 @@ Let me know when you reach.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1014,6 +1027,7 @@ Let me know when you reach.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1069,6 +1083,7 @@ All clear? Let me know.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1099,7 +1114,7 @@ All clear? Let me know.
    <</replace>>
   <</timed>>
 
-<<timed 18s>>
+<<timed 17s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -1126,6 +1141,7 @@ Turn around and look behind you at the Church.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1212,6 +1228,7 @@ Facety. Let’s carry on, push next on your phone.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1233,12 +1250,13 @@ Facety. Let’s carry on, push next on your phone.
 <<include "header">><main class="general">
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
+<div id="map" class="hide"></div>
 <div id="mount"></div>
 
 <<timed 69s>>
   <<append "#mount">>
         <div class="menu-wrapper">
-    <<button "Next.">><<goto $nextpass>><</button>> 
+    <<button "Next">><<goto $nextpass>><</button>> 
     </div>
    <</append>>
 <</timed>>
@@ -1284,11 +1302,12 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 /* Navigation options */
 <<set $prevpass to "SC1FX10">>
 <<set $passage to "SC1FX_10.1">>
-<<set $nextpass to "SC1FX_10.1-M">>
+<<set $nextpass to "SC2FX11">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1308,14 +1327,17 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map"></div>
+<div id="map" class="hide"><img src="./../assets/img/MAP1.jpg" alt="map from Trinity Centre to Trinity Road"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
 <<timed 8s>>
+
+  <<set $showMap to true>>
+
     <<replace "#transcript">><</replace>>
-  <<replace "#map">>
+  <<replace "#mount">>
     
    <div class="explain appear"><p>Walk through the Trinity Centre entrance <br/>and turn right into Trinity Road.
    <br/>
@@ -1324,9 +1346,9 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 <</timed>>
 
 
-<<timed 48s>>
-  <<append "#map">>
-    <div class="explain appear"><p>Once you reach the end of Trinity Road, just wait there.</p></div>
+<<timed 38s>>
+  <<append "#mount">>
+    <div class="explain appear"><p>When you’ve exited Trinity and turned right – let me know you are walking down the road by pushing the button on your phone. Once you reach the end of Trinity Road, just wait there.</p></div>
 
    <</append>>
 <</timed>>
@@ -1334,9 +1356,9 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 
 <<timed 52s>>
-    <<append "#map">>
+    <<append "#mount">>
       <div class="menu-wrapper">
-    <<button "Show Map">><<goto $nextpass>><</button>> 
+    <<button "Next">><<goto $nextpass>><</button>> 
     </div>
    <</append>>
 <</timed>>
@@ -1356,71 +1378,19 @@ Friend. We have to catch this duppy. St Paul’s means everything to me. It was 
 <span class="char-name">Mumma:</span>
 When you’ve exited Trinity and turned right – let me know you are walking down the road by pushing the button on your phone. Once you reach the end of Trinity Road just wait there.
 
-:: SC1FX_10.1-M [nobr]
 
-/* Navigation options */
-<<set $prevpass to "SC1FX_10.1">>
-<<set $passage to "SC1FX_10.1-M">>
-<<set $nextpass to "SC2FX11">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to false>>
-
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "">>
-/* --- */
-
-
-<<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
-  <<replace "#map">>
-  
-     <img src="./../assets/img/MAP1.jpg" alt="map from Trinity Centre to Trinity Road">
-   <</replace>>
-  
-<</timed>>
-
-<<timed 2s>>
-  <<replace "#audioText">>
-      <div class="menu-wrapper">
-    <<button "I’m walking down trinity road">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-    <<append "#map">>
-      <div class="menu-wrapper">
-    <<button "I’m walking down trinity road">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-</main>
-<<include "footer">>
 
 :: SC2FX11 [nobr]
 /* SHOWING MAP  */
 /* Navigation options */
 <<set $prevpass to "SC1FX_10.1">>
 <<set $passage to "SC2FX11">>
-<<set $nextpass to "SC2FX11-M">>
+<<set $nextpass to "SC3FX11-1">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1439,8 +1409,8 @@ When you’ve exited Trinity and turned right – let me know you are walking do
 
 </div>
 
-<<include "header">><main class="general">
-<div id="map"></div>
+<<include "headersimple">><main class="general">
+<div id="map" class="hide"><img src="./../assets/img/MAP2.jpeg" alt="map from Trinity Centre to Trinity Road"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
@@ -1448,7 +1418,7 @@ When you’ve exited Trinity and turned right – let me know you are walking do
 
 <<timed 132s>>
    <<replace "#transcript">><</replace>>
-  <<append "#map">>
+  <<append "#mount">>
     <div class="explain appear"><p>Turn right onto Stapleton road.
 <br/>
 Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross just yet. 
@@ -1457,10 +1427,16 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
    <</append>>
 <</timed>>
 
+
 <<timed 135s>>
-  <<append "#map">>
+  <<replace "#audioText">>
       <div class="menu-wrapper">
-    <<button "Show Map">><<goto $nextpass>><</button>> 
+    <<button "Reached Stapleton Road">><<goto $nextpass>><</button>> 
+    </div>
+   <</replace>>
+    <<append "#mount">>
+      <div class="menu-wrapper">
+    <<button "Reached Stapleton Road">><<goto $nextpass>><</button>> 
     </div>
    <</append>>
 <</timed>>
@@ -1532,6 +1508,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1587,13 +1564,14 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to true>>
 
 /* Scene name  */
-<<set $sceneName to " Stapleton Road">>
+<<set $sceneName to "Stapleton Road">>
 
 /* Transcript options */
 /* <<set $transcript to false>> */
@@ -1663,6 +1641,7 @@ Let me know you can see it and just stay there for a moment.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1748,6 +1727,7 @@ Let me know when you reached. Look both ways dear.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1824,6 +1804,7 @@ Let me know when you reached.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1899,6 +1880,7 @@ They were leaving before Mumma and Dad arrived.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -1916,13 +1898,14 @@ They were leaving before Mumma and Dad arrived.
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
+<div id="map" class="hide"><img src="./../assets/img/MAP3.jpeg" alt="map "></div>
+<div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
 <<timed 4s>>
-  <<replace "#map">>
+    <<replace "#transcript">><</replace>>
+  <<replace "#mount">>
     
    <div class="explain appear"><p>Turn right onto Pennywell Road.
    <br/>
@@ -1931,22 +1914,14 @@ They were leaving before Mumma and Dad arrived.
 <</timed>>
 
 
-<<timed 18s>>
-  <<audio "mapappear" "play">>
-  <<prepend "#map">>
-     <img src="./../assets/img/MAP3.jpeg" alt="map to Peel Street Green Space">
-     <br/><br/>
-   <</prepend>>
-<</timed>>
 
-
-<<timed 25s>>
+<<timed 16s>>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached the Peel Street Green Space">><<goto $nextpass>><</button>> 
     </div>
    <</replace>>
-    <<append "#map">>
+    <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Reached the Peel Street Green Space">><<goto $nextpass>><</button>> 
     </div>
@@ -1980,6 +1955,7 @@ Remember I need you.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2033,6 +2009,7 @@ Let me know when you reach.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2086,6 +2063,7 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2143,6 +2121,7 @@ When you done, let’s move on.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2229,6 +2208,7 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2303,6 +2283,7 @@ Turn right after the bridge and you will be on Newfoundland Road - cross over sa
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2358,6 +2339,7 @@ Turn right after the bridge and you will be on Newfoundland Road - cross over sa
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2418,6 +2400,7 @@ Let’s go ahead. Continue down Newfoundland Road towards the M32 roundabout. Yo
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2472,6 +2455,7 @@ Let me know you can see the DIY shop.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2563,6 +2547,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2638,6 +2623,7 @@ Keep walking towards the roundabout underpass ahead, until you come to the entra
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2700,6 +2686,7 @@ Keep walking towards the roundabout underpass ahead, until you come to the entra
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2802,6 +2789,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2872,6 +2860,7 @@ What if he’s taken the priest ?
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -2929,6 +2918,7 @@ Let me know the salt is in yer hand ready!
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3054,6 +3044,7 @@ If you can't work it out, the hunt can't continue.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3124,6 +3115,7 @@ Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you rea
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3220,6 +3212,7 @@ Burden.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3303,6 +3296,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3390,6 +3384,7 @@ Another riddle to solve – have a look aroud you -check your phone.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3520,6 +3515,7 @@ Turn right and cross over the road, turn right again and pass Ludlow close and y
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3579,6 +3575,7 @@ We need to speed up.   */
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3638,6 +3635,7 @@ That will be too easy he he.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3729,6 +3727,7 @@ What did the duppy say again. Let’s make and choice and find out where him is.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3788,6 +3787,7 @@ How good is your salt throwing skills? Well, we’ll find out...
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3860,6 +3860,7 @@ Not yet. There’s still time.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -3983,6 +3984,7 @@ Stop there and let me know when you reach.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4066,6 +4068,7 @@ Let me know when you reach.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4161,6 +4164,7 @@ c) steel
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4220,6 +4224,7 @@ Just wait by the statue. I’ll be able to tell.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4318,6 +4323,7 @@ If we can’t work it out, the Hunt can’t continue.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4426,6 +4432,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4493,6 +4500,7 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4677,6 +4685,7 @@ Push next on your phone to carry on.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4748,6 +4757,7 @@ Look out for the sign that has the words 7th Day.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4806,6 +4816,7 @@ Look out for the sign that has the words 7th Day.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4900,6 +4911,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -4994,6 +5006,7 @@ Let’s move on, walk ahead until you reach Brigstock road, the first left and w
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5059,6 +5072,7 @@ Brigstocke Road. Turn left onto Drummond Street. Continue down Drummond street. 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5129,6 +5143,7 @@ Cross over safely.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5197,6 +5212,7 @@ No Blacks, Dogs and Irish and she took down her sign till I use obeah to turn he
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5315,6 +5331,7 @@ An Irish playwright goaled – Oscar Wilde.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5383,6 +5400,7 @@ Walk ahead and turn on your first left onto Wilder Street and walk until you see
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5496,6 +5514,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5658,6 +5677,7 @@ Josie is trying to get back. She’s scrambled but she’s trying. I knew she wo
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5754,6 +5774,7 @@ They could grind all week and then go out dressed like Minaj.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5816,6 +5837,7 @@ Stay on the path and walk out on your right through the path pass the church and
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5894,6 +5916,7 @@ At the entrance by the red telephone box, find a place to sit and get your bottl
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -5956,6 +5979,7 @@ Cross the road when you are facing Cosies.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -6014,6 +6038,7 @@ He was always forgetting his keys. Leroy thought he was in trouble –but no. He
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
@@ -6157,6 +6182,7 @@ Look at your phone. Press reached when you have found it.
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
 <<set $showAudio to true>>
+<<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
