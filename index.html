@@ -556,6 +556,8 @@ setup.backFive = () => {
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showTranscriptIcon to false&gt;&gt;
 &lt;&lt;set $transcript to false&gt;&gt;
+&lt;div id=&quot;audioWrapper&quot;&gt;
+&lt;audio id=&quot;audio&quot; autoplay loop src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_OnboardingLoop.mp3&quot; &gt;&lt;/audio&gt;&lt;/div&gt;
 
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;h2&gt;Onboarding&lt;/h2&gt;
@@ -563,7 +565,8 @@ setup.backFive = () => {
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;p&gt;This icon takes you to a map &lt;&lt;link [img[assets/img/map-b.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/p&gt;
+    &lt;p&gt;This arrow skips you forward [img[Forward|assets/img/forw-b.png][$nextpass]]&lt;/p&gt;
+
   &lt;&lt;/replace&gt;&gt;
 
 &lt;&lt;/timed&gt;&gt;
@@ -572,22 +575,25 @@ setup.backFive = () => {
 &lt;p&gt;This arrow takes you back[img[Back|assets/img/back-b.png][$prevpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 4s&gt;&gt;
+/* &lt;&lt;timed 4s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;This arrow skips you forward [img[Forward|assets/img/forw-b.png][$nextpass]]&lt;/p&gt;
+    &lt;p&gt;This icon takes you to a map &lt;&lt;link [img[assets/img/map-b.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
-    
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;/timed&gt;&gt; */
+&lt;&lt;timed 4s&gt;&gt;
 &lt;&lt;append &quot;#mount&quot;&gt;&gt;
 &lt;p&gt;You can replay with this icon   [img[Replay|assets/img/replay-b.png][$passage]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
- &lt;&lt;timed 8s&gt;&gt;
+ &lt;&lt;timed 6s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
 &lt;p&gt;To read a transcript of the audio press[img[Forward|assets/img/trans-b.png][$nextpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
-
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+    &lt;p&gt;When a map is available, a button like this will appear &lt;&lt;button &quot;Show Map&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
  &lt;&lt;timed 10s&gt;&gt;

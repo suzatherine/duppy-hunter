@@ -542,6 +542,8 @@ setup.backFive = () => {
 <<set $showBackwards to true>>
 <<set $showTranscriptIcon to false>>
 <<set $transcript to false>>
+<div id="audioWrapper">
+<audio id="audio" autoplay loop src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_OnboardingLoop.mp3" ></audio></div>
 
 <main class="instructions">
 <h2>Onboarding</h2>
@@ -549,7 +551,8 @@ setup.backFive = () => {
 <div id="mount"></div>
 <<timed 0.1s>>
   <<replace "#mount">>
-    <p>This icon takes you to a map <<link [img[assets/img/map-b.png]]>><<toggleclass "#map" "hide">><</link>></p>
+    <p>This arrow skips you forward [img[Forward|assets/img/forw-b.png][$nextpass]]</p>
+
   <</replace>>
 
 <</timed>>
@@ -558,22 +561,25 @@ setup.backFive = () => {
 <p>This arrow takes you back[img[Back|assets/img/back-b.png][$prevpass]]</p>
   <</append>>
 <</timed>>
-<<timed 4s>>
+/* <<timed 4s>>
   <<append "#mount">>
-<p>This arrow skips you forward [img[Forward|assets/img/forw-b.png][$nextpass]]</p>
+    <p>This icon takes you to a map <<link [img[assets/img/map-b.png]]>><<toggleclass "#map" "hide">><</link>></p>
   <</append>>
-    
-<</timed>>
-<<timed 6s>>
+<</timed>> */
+<<timed 4s>>
 <<append "#mount">>
 <p>You can replay with this icon   [img[Replay|assets/img/replay-b.png][$passage]]</p>
   <</append>>
 <</timed>>
- <<timed 8s>>
+ <<timed 6s>>
   <<append "#mount">>
 <p>To read a transcript of the audio press[img[Forward|assets/img/trans-b.png][$nextpass]]</p>
   <</append>>
-
+<</timed>>
+<<timed 8s>>
+  <<append "#mount">>
+    <p>When a map is available, a button like this will appear <<button "Show Map">><</button>></p>
+  <</append>>
 <</timed>>
 
  <<timed 10s>>
