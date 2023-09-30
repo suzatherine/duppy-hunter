@@ -3697,13 +3697,13 @@ How good is your salt throwing skills? Well, we’ll find out...
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC7FX40transcript">>
 /* --- */
-   <<audio ":all" "stop" >>
+<<audio ":all" "stop" >>
 
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene7_FX40.mp3"></audio>
-
 </div>
+<div id="audioWrapper2"></div>
 
 <<include "header">><main class="general">
 
@@ -3713,9 +3713,11 @@ How good is your salt throwing skills? Well, we’ll find out...
 <br/>
 
 
-
+/* <<timed 108s>> */
 <<timed 108s>>
-  <<audio "next" play>>
+  <<replace "#audioWrapper2">><<audio "next" play>><</replace>>
+
+
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "Next">><<goto $nextpass>><</button>> 

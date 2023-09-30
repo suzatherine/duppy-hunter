@@ -3379,13 +3379,13 @@ How good is your salt throwing skills? Well, we’ll find out...</tw-passagedata
 /* &lt;&lt;set $transcript to false&gt;&gt; */
 &lt;&lt;set $transcriptname to &quot;SC7FX40transcript&quot;&gt;&gt;
 /* --- */
-   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
+&lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
 &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene7_FX40.mp3&quot;&gt;&lt;/audio&gt;
-
 &lt;/div&gt;
+&lt;div id=&quot;audioWrapper2&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 
@@ -3395,9 +3395,11 @@ How good is your salt throwing skills? Well, we’ll find out...</tw-passagedata
 &lt;br/&gt;
 
 
-
+/* &lt;&lt;timed 108s&gt;&gt; */
 &lt;&lt;timed 108s&gt;&gt;
-  &lt;&lt;audio &quot;next&quot; play&gt;&gt;
+  &lt;&lt;replace &quot;#audioWrapper2&quot;&gt;&gt;&lt;&lt;audio &quot;next&quot; play&gt;&gt;&lt;&lt;/replace&gt;&gt;
+
+
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
