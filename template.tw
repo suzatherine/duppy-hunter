@@ -1546,7 +1546,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 <<timed 46s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p>  Look across the street to your left at the green-fronted convenience store. <br/> Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe.</p></div>
+<div class="explain appear"><p>  Look across the street to your left at the convenience store. <br/> Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe.</p></div>
 <br/>
    <</replace>>
   <</timed>>
@@ -1676,7 +1676,7 @@ Let me know when you reached. Look both ways dear.
 
 
 :: SC3FX13 [nobr]
-/* I THINK THERE SHOULD BE A MAP HERE BUT THERE ISNT ONE  */
+
 /* Navigation options */
 <<set $prevpass to "SC3FX12">>
 <<set $passage to "SC3FX13">>
@@ -1699,7 +1699,7 @@ Let me know when you reached. Look both ways dear.
 <<set $transcriptname to "SC3FX13transcript">>
 /* --- */
 
-   <<audio ":all" "stop" >>
+<<audio ":all" "stop" >>
 
 
 <div id="audioWrapper">
@@ -1719,7 +1719,7 @@ Let me know when you reached. Look both ways dear.
 <<timed 30s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p>‘Now walk ahead and turn on Newton street<br/> and walk to the end of Newton Street,</br> let me know when you have reached.</p></div>
+<div class="explain appear"><p>‘Now walk ahead and turn on Newton street<br/> and walk to the end of Newton Street,<br/> let me know when you have reached.</p></div>
 <br/>
    <</replace>>
   <</timed>>
@@ -1778,6 +1778,8 @@ Let me know when you reached.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC4FX15transcript">>
 /* --- */
+
+<<audio ":all" "stop" >>
 
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15.mp3"></audio>
