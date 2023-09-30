@@ -1710,16 +1710,12 @@ Let me know when you reached. Look both ways dear.
 <<include "header">><main class="general">
 <div id="map"></div>
 <div id="mount"></div>
-<div id="transcript"></div>
-
 <div id="transcript"><<include "duppyTitle">></div>
 
-
-
-<<timed 30s>>
+<<timed 31s>>
   <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p>‘Now walk ahead and turn on Newton street<br/> and walk to the end of Newton Street,<br/> let me know when you have reached.</p></div>
+<div class="explain appear"><p>‘Now walk ahead and turn on Newton Street<br/> and walk to the end of Newton Street.<br/> Let me know when you have reached.</p></div>
 <br/>
    <</replace>>
   <</timed>>
