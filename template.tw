@@ -180,10 +180,15 @@ setup.backFive = () => {
 <<cacheaudio "duppyno2" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_02.mp3">>
 <<cacheaudio "duppyno3" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_03.mp3">>
 <<cacheaudio "correct" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Correct.mp3">>
-<<cacheaudio "letme" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3">>
-<<cacheaudio "carry" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_Let'sCarryOn.mp3">>
-<<cacheaudio "next" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_PushNext.mp3">>
+<<cacheaudio "letme" "assets/audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3">>
+<<cacheaudio "carry" "assets/audio/DuppyHunter_FX_Generic_Mumma_LetsCarryOn.mp3">>
+<<cacheaudio "next" "assets/audio/DuppyHunter_FX_Generic_Mumma_PushNextOnYourPhone.mp3">>
 <<cacheaudio "onb" "https://www.youhavefoundconey.net/DC/Audio/onboarding.mp3">>
+<<cacheaudio "fx14" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14.mp3">>
+<<cacheaudio "fx15" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15.mp3">>
+<<cacheaudio "fx16" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX16.mp3">>
+<<cacheaudio "fx30" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3">>
+<<cacheaudio "fx34" "https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX34.mp3">>
 
 <<waitforaudio>>
 
@@ -1680,17 +1685,21 @@ Let me know when you reached. Look both ways dear.
 /* --- */
 
 <<audio ":all" "stop" >>
-
-
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14.mp3"></audio>
 
+/* <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14.mp3"></audio> */
+/* I am using Twine cache audio here because it won't autoplay. Leaving it ihere so footer doesn't break */
+<audio id="audio" autoplay src=""></audio>
 </div>
+<<audio "fx14" "play" >>
+
+
 
 <<include "header">><main class="general">
 <div id="map"></div>
 <div id="mount"></div>
 <div id="transcript"><<include "duppyTitle">></div>
+
 
 <<timed 31s>>
   <<replace "#transcript">><</replace>>
@@ -1758,9 +1767,15 @@ Let me know when you reached.
 <<audio ":all" "stop" >>
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15.mp3"></audio>
+/* <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15.mp3"></audio> */
 
-</div>
+/* I am using Twine cache audio here because it won't autoplay. Leaving it ihere so footer doesn't break */
+<audio id="audio" autoplay src=""></audio></div>
+
+<<audio "fx15" "play" >>
+
+
+
 <<include "header">><main class="general">
 <div id="mount"></div>
 <div id="transcript"><<include "duppyTitle">></div>
@@ -1831,15 +1846,16 @@ They were leaving before Mumma and Dad arrived.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC4FX16transcript">>
 /* --- */
+ <<audio ":all" "stop" >>
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX16.mp3"></audio>
-
-</div>
-  <<audio ":all" "stop" >>
+/* <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX16.mp3"></audio> */
+/* I am using Twine cache audio here because it won't autoplay. Leaving it ihere so footer doesn't break */
+<audio id="audio" autoplay src=""></audio></div>
+<<audio "fx16" play>>
+ 
 <<include "headersimple">><main class="general">
 <div id="map" class="hide"><img src="assets/img/MAP3.jpeg" alt="map "></div>
-<br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <div id="mount"></div>
 
@@ -2485,6 +2501,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
    /* <<replace "#audioWrapper2">><audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3"></audio><</replace>> */
 
    <<replace "#audioText">>
+    <<audio "letme" play>>
       <div class="menu-wrapper">
     <<button "I'm at the park">><<goto $nextpass>><</button>> 
     </div>
@@ -2624,7 +2641,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 
 
 :: SC5FX29 [nobr]
-
+/* TODO AUTOPLAYING NOT WORKING  */
 /* Navigation options */
 <<set $prevpass to "SC5FX26">>
 <<set $passage to "SC5FX29">>
@@ -2669,8 +2686,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 <<timed 0.1s>>
 <<include "footer">>
 <</timed>>
-/* <<done>><<set $s to setup.play()>>
-<</done>> */
+
 
 :: SC5FX29transcript 
 
@@ -2719,20 +2735,22 @@ What if he’s taken the priest ?
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3"></audio>
+/* <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3"></audio> */
+/* I am using Twine cache audio here because it won't autoplay. Leaving it ihere so footer doesn't break */
+<audio id="audio" autoplay src=""></audio></div>
 
-</div>
+
 
 <<include "header">><main class="general">
+
 <div id="transcript"></div>
 <br/>
 <div class="duppy-img-container appear"><img src="assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
 <br/>
 <div id="mount"></div>
-<<timed 0.1s>>
-  <<replace "#audioWrapper">><audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3"></audio><</replace>>
-  <</timed>>
-  <<timed 2s>>
+
+  <<timed 0.1s>>
+    <<audio "fx30" play>>
     <<addclass "#detector" "pulse">>
   <</timed>>
 
@@ -2746,8 +2764,8 @@ What if he’s taken the priest ?
 
 </main>
 <<include "footer">>
-<<done>><<set $s to setup.play()>>
-<</done>>
+
+
 :: SC5FX30transcript 
 
 <span class="char-name">Josie:</span>
@@ -2920,17 +2938,16 @@ If you can't work it out, the hunt can't continue.
 <<timed 20s>>
     <<replace "#transcript">><</replace>>
    <<replace "#mount">>
-<div class="explain appear"><p> Walk back into the park <br/> and walk straight ahead until you see <br/>the Mr Drummond Mural on the left. <br/>Wait there and let me know when you reach.
+<div class="explain appear"><p> Walk back into the park <br/> and walk straight ahead until you see the Mr Drummond Mural on the left. <br/>Wait there and let me know when you reach.
 </p></div>
 <br/>
    <</replace>>
   <</timed>>
 
 <<timed 46s>>
-
+  <<append "#mount">>
   <<audio "onb" loop play>>
   <<audio "carry" play>>
-  <<append "#mount">>
     <div class="menu-wrapper">
      <<button "Finished">><<goto $nextpass>><</button>> 
     </div>
@@ -2960,7 +2977,7 @@ Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you rea
 
 
 :: SC5FX32.1 [nobr]
-
+/* TODO AUTO PLAY NOT WORKING  */
 /* Navigation options */
 <<set $prevpass to "SC5FX32">>
 <<set $passage to "SC5FX32.1">>
@@ -3165,15 +3182,17 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 /* --- */
 
 <div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX34.mp3"></audio>
+/* <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX34.mp3"></audio> */
+/* I am using Twine cache audio here because it won't autoplay. Leaving it ihere so footer doesn't break */
+<audio id="audio" autoplay src=""></audio></div>
 
-</div>
+
 
 <<include "headerchoice">><main class="general">
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
-
+<<audio "fx34" play>>
 
  <<timed 1s>>
  <<replace "#transcript">><</replace>>
@@ -3516,7 +3535,7 @@ That will be too easy he he.
 <br/>
 
 <<timed 1s>>
-      <<replace "#transcript">><</replace>>
+
       <<replace "#mount">>
          <div class="explain appear" >
    <p>Where is the Sankofa bird? </p>
@@ -4703,7 +4722,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 </div>
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="assets/img/MAP13.jpeg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP13.jpg" alt="map"></div>
 <br/>
 <div id="transcript"></div>
 <br/>

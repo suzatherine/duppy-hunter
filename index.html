@@ -255,10 +255,15 @@ setup.backFive = () => {
 &lt;&lt;cacheaudio &quot;duppyno2&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_02.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;duppyno3&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Duppy_YouWrong_03.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;correct&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Correct.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;letme&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;carry&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_Let&#39;sCarryOn.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;next&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_PushNext.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;letme&quot; &quot;assets/audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;carry&quot; &quot;assets/audio/DuppyHunter_FX_Generic_Mumma_LetsCarryOn.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;next&quot; &quot;assets/audio/DuppyHunter_FX_Generic_Mumma_PushNextOnYourPhone.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;onb&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/onboarding.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;fx14&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;fx15&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;fx16&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX16.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;fx30&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;fx34&quot; &quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX34.mp3&quot;&gt;&gt;
 
 &lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="225,100" size="100,100">&lt;header class=&quot;story&quot;&gt;
 &lt;&lt;if $showBackwards is true&gt;&gt;
@@ -1575,17 +1580,21 @@ Let me know when you reached. Look both ways dear.</tw-passagedata><tw-passageda
 /* --- */
 
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
-
-
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14.mp3&quot;&gt;&lt;/audio&gt;
 
+/* &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX14.mp3&quot;&gt;&lt;/audio&gt; */
+/* I am using Twine cache audio here because it won&#39;t autoplay. Leaving it ihere so footer doesn&#39;t break */
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
+&lt;&lt;audio &quot;fx14&quot; &quot;play&quot; &gt;&gt;
+
+
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
+
 
 &lt;&lt;timed 31s&gt;&gt;
   &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -1645,9 +1654,15 @@ Let me know when you reached.</tw-passagedata><tw-passagedata pid="46" name="SC4
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15.mp3&quot;&gt;&lt;/audio&gt;
+/* &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4_FX15.mp3&quot;&gt;&lt;/audio&gt; */
 
-&lt;/div&gt;
+/* I am using Twine cache audio here because it won&#39;t autoplay. Leaving it ihere so footer doesn&#39;t break */
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;&quot;&gt;&lt;/audio&gt;&lt;/div&gt;
+
+&lt;&lt;audio &quot;fx15&quot; &quot;play&quot; &gt;&gt;
+
+
+
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
@@ -1710,15 +1725,16 @@ They were leaving before Mumma and Dad arrived.</tw-passagedata><tw-passagedata 
 /* &lt;&lt;set $transcript to false&gt;&gt; */
 &lt;&lt;set $transcriptname to &quot;SC4FX16transcript&quot;&gt;&gt;
 /* --- */
+ &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX16.mp3&quot;&gt;&lt;/audio&gt;
-
-&lt;/div&gt;
-  &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
+/* &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX16.mp3&quot;&gt;&lt;/audio&gt; */
+/* I am using Twine cache audio here because it won&#39;t autoplay. Leaving it ihere so footer doesn&#39;t break */
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;&quot;&gt;&lt;/audio&gt;&lt;/div&gt;
+&lt;&lt;audio &quot;fx16&quot; play&gt;&gt;
+ 
 &lt;&lt;include &quot;headersimple&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;&lt;img src=&quot;assets/img/MAP3.jpeg&quot; alt=&quot;map &quot;&gt;&lt;/div&gt;
-&lt;br/&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -2290,6 +2306,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
    /* &lt;&lt;replace &quot;#audioWrapper2&quot;&gt;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3&quot;&gt;&lt;/audio&gt;&lt;&lt;/replace&gt;&gt; */
 
    &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
+    &lt;&lt;audio &quot;letme&quot; play&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I&#39;m at the park&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
@@ -2408,7 +2425,8 @@ I know we’re on a Duppy Hunt but show some respect, yeah? Acknowledge Ms Dette
 Oh wait. What did the duppy say again?
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-I’ll bring it up. It’s time to look at your phone and choose the options that are given to you. Look around. Think. Try to get it right. Go on, make a choice.</tw-passagedata><tw-passagedata pid="70" name="SC5FX29" tags="nobr" position="1225,850" size="100,100">/* Navigation options */
+I’ll bring it up. It’s time to look at your phone and choose the options that are given to you. Look around. Think. Try to get it right. Go on, make a choice.</tw-passagedata><tw-passagedata pid="70" name="SC5FX29" tags="nobr" position="1225,850" size="100,100">/* TODO AUTOPLAYING NOT WORKING  */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC5FX26&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC5FX29&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC5FX30&quot;&gt;&gt;
@@ -2451,9 +2469,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 &lt;/main&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-/* &lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.play()&gt;&gt;
-&lt;&lt;/done&gt;&gt; */</tw-passagedata><tw-passagedata pid="71" name="SC5FX29transcript" tags="" position="100,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="SC5FX29transcript" tags="" position="100,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 The junkyard for pickney’ the duppy meant the adventure playground.
 The red lodge where classes and meetings are kept
 Of course the shepherd must be a priest outside St Agnes Church – the stone tower.
@@ -2494,20 +2510,22 @@ What if he’s taken the priest ?</tw-passagedata><tw-passagedata pid="72" name=
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3&quot;&gt;&lt;/audio&gt;
+/* &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3&quot;&gt;&lt;/audio&gt; */
+/* I am using Twine cache audio here because it won&#39;t autoplay. Leaving it ihere so footer doesn&#39;t break */
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;&quot;&gt;&lt;/audio&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
+
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div class=&quot;duppy-img-container appear&quot;&gt;&lt;img src=&quot;assets/img/duppydetector.jpg&quot; alt=&quot;The Duppy Detector - an archaic oil lamp with a super radiance&quot; id=&quot;detector&quot;/&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 0.1s&gt;&gt;
-  &lt;&lt;replace &quot;#audioWrapper&quot;&gt;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3&quot;&gt;&lt;/audio&gt;&lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-  &lt;&lt;timed 2s&gt;&gt;
+
+  &lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;audio &quot;fx30&quot; play&gt;&gt;
     &lt;&lt;addclass &quot;#detector&quot; &quot;pulse&quot;&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
 
@@ -2520,9 +2538,7 @@ What if he’s taken the priest ?</tw-passagedata><tw-passagedata pid="72" name=
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.play()&gt;&gt;
-&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="SC5FX30transcript" tags="" position="350,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="SC5FX30transcript" tags="" position="350,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 Oh lord do you hear that sound? 
 
 It must mean that a Duppy is close, quick hit the button on your phone to let us know that your eyes are on alert, ears are alert and you have the salt ready, just in case you see it! 
@@ -2681,17 +2697,16 @@ If you can&#39;t work it out, the hunt can&#39;t continue.</tw-passagedata><tw-p
 &lt;&lt;timed 20s&gt;&gt;
     &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt; Walk back into the park &lt;br/&gt; and walk straight ahead until you see &lt;br/&gt;the Mr Drummond Mural on the left. &lt;br/&gt;Wait there and let me know when you reach.
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt; Walk back into the park &lt;br/&gt; and walk straight ahead until you see the Mr Drummond Mural on the left. &lt;br/&gt;Wait there and let me know when you reach.
 &lt;/p&gt;&lt;/div&gt;
 &lt;br/&gt;
    &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 46s&gt;&gt;
-
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
   &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
   &lt;&lt;audio &quot;carry&quot; play&gt;&gt;
-  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;Finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
@@ -2712,7 +2727,8 @@ Huh well while you were gone... I was done with the shepherd now I’ve passed o
 Walk back into the park and walk straight ahead until you see the Mr Drummond Mural on the left, wait there and let me know when you reach.
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
-Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you read what it says? He was the owner of the Speedy Bird Cafe, one of the first places where my parents and their friends would meet. Pour out a libation to Mr Drummond, yeah?</tw-passagedata><tw-passagedata pid="78" name="SC5FX32.1" tags="nobr" position="975,975" size="100,100">/* Navigation options */
+Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you read what it says? He was the owner of the Speedy Bird Cafe, one of the first places where my parents and their friends would meet. Pour out a libation to Mr Drummond, yeah?</tw-passagedata><tw-passagedata pid="78" name="SC5FX32.1" tags="nobr" position="975,975" size="100,100">/* TODO AUTO PLAY NOT WORKING  */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC5FX32&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC5FX32.1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC6FX33&quot;&gt;&gt;
@@ -2900,15 +2916,17 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 /* --- */
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX34.mp3&quot;&gt;&lt;/audio&gt;
+/* &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX34.mp3&quot;&gt;&lt;/audio&gt; */
+/* I am using Twine cache audio here because it won&#39;t autoplay. Leaving it ihere so footer doesn&#39;t break */
+&lt;audio id=&quot;audio&quot; autoplay src=&quot;&quot;&gt;&lt;/audio&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+
 
 &lt;&lt;include &quot;headerchoice&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-
+&lt;&lt;audio &quot;fx34&quot; play&gt;&gt;
 
  &lt;&lt;timed 1s&gt;&gt;
  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -3219,7 +3237,7 @@ That will be too easy he he.</tw-passagedata><tw-passagedata pid="90" name="SC7F
 &lt;br/&gt;
 
 &lt;&lt;timed 1s&gt;&gt;
-      &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
          &lt;div class=&quot;explain appear&quot; &gt;
    &lt;p&gt;Where is the Sankofa bird? &lt;/p&gt;
@@ -4299,7 +4317,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.</tw-passag
 &lt;/div&gt;
 
 &lt;&lt;include &quot;headersimple&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;&lt;img src=&quot;assets/img/MAP13.jpeg&quot; alt=&quot;map &quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;&lt;img src=&quot;assets/img/MAP13.jpg&quot; alt=&quot;map&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
