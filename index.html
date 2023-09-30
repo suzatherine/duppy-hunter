@@ -1294,7 +1294,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.</tw-passageda
 
 
 &lt;&lt;timed 52s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1363,7 +1363,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 
 &lt;&lt;timed 135s&gt;&gt;
   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached Stapleton Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1535,7 +1535,7 @@ Let me know you can see it and just stay there for a moment.</tw-passagedata><tw
 
 &lt;&lt;timed 50s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached the Congregational Centre&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1754,7 +1754,7 @@ They were leaving before Mumma and Dad arrived.</tw-passagedata><tw-passagedata 
 
 
 &lt;&lt;timed 16s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached the Peel Street Green Space&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1797,7 +1797,7 @@ Remember I need you.</tw-passagedata><tw-passagedata pid="50" name="SC5FX18" tag
 /* &lt;&lt;set $transcript to false&gt;&gt; */
 &lt;&lt;set $transcriptname to &quot;SC5FX18transcript&quot;&gt;&gt;
 /* --- */
-
+   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;div id=&quot;audioWrapper&quot;&gt;
 &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX18.mp3&quot;&gt;&lt;/audio&gt;
 
@@ -1807,16 +1807,24 @@ Remember I need you.</tw-passagedata><tw-passagedata pid="50" name="SC5FX18" tag
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
+
+   &lt;&lt;timed 27s&gt;&gt;
+        &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt; Walk forward – you will head towards Peel Street Bridge. 
+&lt;br/&gt;Go ahead and wait in the middle of the bridge. &lt;/p&gt;&lt;/div&gt;
+&lt;br/&gt;
+   &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;I&#39;m on the bridge&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-/* TODO - feels like there should be a map to the bridge here? */
+
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="SC5FX18transcript" tags="" position="100,725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 Wow. Look on the wall to your left of the industrial estate and on the wall on the right. I grew up with reggae then overnight in the 80s hip hop was everywhere, bright, bold letters on dead concrete,popping, breaking, rapping, tracksuits and nothing beats the smell of new trainers.
@@ -1903,6 +1911,7 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;timed 17s&gt;&gt;
+   &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1955,7 +1964,7 @@ When you done, let’s move on.</tw-passagedata><tw-passagedata pid="56" name="S
 
 &lt;&lt;timed 3s&gt;&gt;
    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Back on the path and &lt;br/&gt;walk through the park,&lt;br/&gt; towards the M32 bridge.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Back on the path and walk towards the M32 bridge.&lt;/p&gt;&lt;/div&gt;
 &lt;br/&gt;
    &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
@@ -1969,7 +1978,7 @@ When you done, let’s move on.</tw-passagedata><tw-passagedata pid="56" name="S
 
 &lt;&lt;timed 73s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;I&#39;m at the end of the bridge&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1980,7 +1989,7 @@ When you done, let’s move on.</tw-passagedata><tw-passagedata pid="56" name="S
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="SC5FX21transcript" tags="" position="850,725" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
 Done? 
-Right back on the path now and walk through the park towards the M32 bridge.  
+Right back on the path now and walk towards the M32 bridge.  
 
 &lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 This is where I would meet my friends. 
@@ -2047,7 +2056,7 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.</
 
 &lt;&lt;timed 24s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -2310,7 +2319,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 56s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
 &lt;&lt;audio &quot;letme&quot; &quot;play&quot;&gt;&gt;
    &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
@@ -2386,7 +2395,7 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="68" name="SC5FX
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I&#39;m at the park&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -2768,7 +2777,7 @@ If you can&#39;t work it out, the hunt can&#39;t continue.</tw-passagedata><tw-p
 
 &lt;&lt;timed 46s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;audio &quot;carry&quot; &quot;play&quot;&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
@@ -3077,7 +3086,7 @@ Another riddle to solve – have a look aroud you -check your phone.</tw-passage
 
 &lt;&lt;timed 140s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -3519,7 +3528,7 @@ Stop there and let me know when you reach.&lt;/p&gt;&lt;/div&gt;
 
 &lt;&lt;timed 176s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -3636,7 +3645,7 @@ On your right there should be an entrance into the park.
 
 &lt;&lt;timed 70s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I’m here&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -3950,7 +3959,7 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
 
   &lt;&lt;timed 136s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
     &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -4081,7 +4090,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 
 &lt;&lt;timed 200s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
     &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
@@ -4240,7 +4249,7 @@ Past the traffic lights, you will see the lock up Ajaxx shop front.
 
     &lt;&lt;timed 19s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
  &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -4400,7 +4409,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.</tw-passag
   &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 68s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
      &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -4485,7 +4494,7 @@ Let’s move on, walk ahead until you reach Brigstocke road, the first left and 
 
 &lt;&lt;timed 60s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I&#39;ve crossed&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -5128,7 +5137,7 @@ They could grind all week and then go out dressed like Minaj.</tw-passagedata><t
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 51s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
   &lt;&lt;audio &quot;letme&quot; &quot;play&quot;&gt;&gt;
   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;

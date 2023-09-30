@@ -1360,7 +1360,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 
 <<timed 52s>>
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Next">><<goto $nextpass>><</button>> 
@@ -1437,7 +1437,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 
 <<timed 135s>>
   <<audio ":all" "stop" >>
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached Stapleton Road">><<goto $nextpass>><</button>> 
@@ -1631,7 +1631,7 @@ Let me know you can see it and just stay there for a moment.
 
 <<timed 50s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "Reached the Congregational Centre">><<goto $nextpass>><</button>> 
@@ -1877,7 +1877,7 @@ They were leaving before Mumma and Dad arrived.
 
 
 <<timed 16s>>
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached the Peel Street Green Space">><<goto $nextpass>><</button>> 
@@ -1930,7 +1930,7 @@ Remember I need you.
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX18transcript">>
 /* --- */
-
+   <<audio ":all" "stop" >>
 <div id="audioWrapper">
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX18.mp3"></audio>
 
@@ -1940,16 +1940,24 @@ Remember I need you.
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
-   <<audio ":all" "stop" >>
+
+   <<timed 27s>>
+        <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p> Walk forward – you will head towards Peel Street Bridge. 
+<br/>Go ahead and wait in the middle of the bridge. </p></div>
+<br/>
+   <</replace>>
+  <</timed>>
 <<timed 33s>>
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<replace "#mount">>
     <div class="menu-wrapper">
      <<button "I'm on the bridge">><<goto $nextpass>><</button>> 
     </div>
    <</replace>>
 <</timed>>
-/* TODO - feels like there should be a map to the bridge here? */
+
 </main>
 <<include "footer">>
 
@@ -2050,6 +2058,7 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 <div id="mount"></div>
 
 <<timed 17s>>
+   <<audio "onb" loop "play" >>
   <<replace "#mount">>
     <div class="menu-wrapper">
      <<button "Done">><<goto $nextpass>><</button>> 
@@ -2110,7 +2119,7 @@ When you done, let’s move on.
 
 <<timed 3s>>
    <<replace "#mount">>
-<div class="explain appear"><p>Back on the path and <br/>walk through the park,<br/> towards the M32 bridge.</p></div>
+<div class="explain appear"><p>Back on the path and walk towards the M32 bridge.</p></div>
 <br/>
    <</replace>>
   <</timed>>
@@ -2124,7 +2133,7 @@ When you done, let’s move on.
 
 <<timed 73s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<append "#mount">>
     <div class="menu-wrapper">
      <<button "I'm at the end of the bridge">><<goto $nextpass>><</button>> 
@@ -2139,7 +2148,7 @@ When you done, let’s move on.
 
 <span class="char-name">Mumma:</span>
 Done? 
-Right back on the path now and walk through the park towards the M32 bridge.  
+Right back on the path now and walk towards the M32 bridge.  
 
 <span class="char-name">Josie:</span>
 This is where I would meet my friends. 
@@ -2210,7 +2219,7 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.
 
 <<timed 24s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached Newfoundland Road">><<goto $nextpass>><</button>> 
@@ -2508,7 +2517,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
 <</timed>>
 
 <<timed 56s>>
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
 <<audio "letme" "play">>
    <<replace "#audioText">>
       <div class="menu-wrapper">
@@ -2593,7 +2602,7 @@ Let me know when you reach.
 <</timed>>
 
 <<timed 2s>>
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "I'm at the park">><<goto $nextpass>><</button>> 
@@ -3013,7 +3022,7 @@ If you can't work it out, the hunt can't continue.
 
 <<timed 46s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<audio "carry" "play">>
   <<append "#mount">>
     <div class="menu-wrapper">
@@ -3357,7 +3366,7 @@ Another riddle to solve – have a look aroud you -check your phone.
 
 <<timed 140s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -3849,7 +3858,7 @@ Stop there and let me know when you reach.</p></div>
 
 <<timed 176s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -3975,7 +3984,7 @@ On your right there should be an entrance into the park.
 
 <<timed 70s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "I’m here">><<goto $nextpass>><</button>> 
@@ -4321,7 +4330,7 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
 
   <<timed 136s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
     <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -4463,7 +4472,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 
 <<timed 200s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
     <<replace "#transcript">><</replace>>
     <<append "#mount">>
       <div class="menu-wrapper">
@@ -4630,7 +4639,7 @@ Past the traffic lights, you will see the lock up Ajaxx shop front.
 
     <<timed 19s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
  <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -4810,7 +4819,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
   <</timed>>
 <<timed 68s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
      <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -4906,7 +4915,7 @@ Let’s move on, walk ahead until you reach Brigstocke road, the first left and 
 
 <<timed 60s>>
 
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "I've crossed">><<goto $nextpass>><</button>> 
@@ -5615,7 +5624,7 @@ They could grind all week and then go out dressed like Minaj.
 <</timed>>
 
 <<timed 51s>>
-  <<audio "onb" "play" >>
+  <<audio "onb" loop "play" >>
   <<audio "letme" "play">>
   <<replace "#audioText">>
       <div class="menu-wrapper">
