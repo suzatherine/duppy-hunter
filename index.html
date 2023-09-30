@@ -206,8 +206,9 @@ setup.pause = () => {
   }
 
 setup.checkPlaying = () => {
-  console.log("checking if playing")
+
    const audio = document.getElementById("audio");
+     console.log("checking if playing", audio)
    if (audio && !audio.paused) {
       // Audio is currently playing
       // console.log(audio.paused, "audio.paused");
@@ -1058,7 +1059,8 @@ All clear? Let me know.</tw-passagedata><tw-passagedata pid="30" name="SC1FX8" t
 /* &lt;&lt;set $transcript to false&gt;&gt; */
 &lt;&lt;set $transcriptname to &quot;SC1FX8transcript&quot;&gt;&gt;
 /* --- */
-
+  &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
+  
 &lt;div id=&quot;audioWrapper&quot;&gt;
 &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3&quot;&gt;&lt;/audio&gt;
 &lt;/div&gt;
@@ -1068,13 +1070,6 @@ All clear? Let me know.</tw-passagedata><tw-passagedata pid="30" name="SC1FX8" t
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 11s&gt;&gt;
-  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;  Turn around and look behind you at the Church.&lt;/p&gt;&lt;/div&gt;
-&lt;br/&gt;
-   &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 17s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
@@ -1087,7 +1082,8 @@ Oh I should have known. A low signal just means the duppy is at peace. You can�
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
 
-Turn around and look behind you at the Church.</tw-passagedata><tw-passagedata pid="32" name="SC1FX9" tags="nobr" position="225,475" size="100,100">/* Navigation options */
+Turn around and look behind you at the Church.</tw-passagedata><tw-passagedata pid="32" name="SC1FX9" tags="nobr" position="225,475" size="100,100">/* TODO AUDIO NOT PLAYING WITH AUTOADVANCE */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC1FX8&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC1FX9&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC1FX10&quot;&gt;&gt;
@@ -1101,23 +1097,25 @@ Turn around and look behind you at the Church.</tw-passagedata><tw-passagedata p
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showTranscriptIcon to true&gt;&gt;
 
-/* Scene name  */
-&lt;&lt;set $sceneName to &quot;Trinity&quot;&gt;&gt;
-
 /* Transcript options */
 /* &lt;&lt;set $transcript to false&gt;&gt; */
 &lt;&lt;set $transcriptname to &quot;SC1FX9transcript&quot;&gt;&gt;
 /* --- */
 
-&lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9.mp3&quot;&gt;&lt;/audio&gt;
-
-&lt;/div&gt;
+&lt;div id=&quot;audioWrapper&quot;&gt;&lt;audio id=&quot;audio&quot; autoplay &gt;
+ &lt;source src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9.mp3&quot;/&gt;&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+/* &lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;replace &quot;#audioWrapper&quot;&gt;&gt;
+       
+       &lt;p&gt;test&lt;/p&gt;
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt; */
 
 &lt;&lt;timed 115s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
@@ -1351,17 +1349,6 @@ When you’ve exited Trinity and turned right – let me know you are walking do
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 
-&lt;&lt;timed 132s&gt;&gt;
-   &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-    &lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Turn right onto Stapleton road.
-&lt;br/&gt;
-Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross just yet. 
-&lt;br/&gt;Let me know you reached and just wait there for a moment&lt;/p&gt;&lt;/div&gt;
-
-   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
 
 &lt;&lt;timed 135s&gt;&gt;
   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
@@ -1371,11 +1358,11 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
     &lt;&lt;button &quot;Reached Stapleton Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+    /* &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached Stapleton Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
-   &lt;&lt;/append&gt;&gt;
+   &lt;&lt;/append&gt;&gt; */
 &lt;&lt;/timed&gt;&gt;
 
 
@@ -1458,15 +1445,6 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 
 &lt;br/&gt;
-
-&lt;&lt;timed 46s&gt;&gt;
-  &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;  Look across the street to your left at the convenience store. &lt;br/&gt; Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe.&lt;/p&gt;&lt;/div&gt;
-&lt;br/&gt;
-   &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-
 &lt;&lt;timed 55s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
@@ -1492,7 +1470,7 @@ Huh from Irish Catholic, West Indian to East African and Muslim in no time. ‘T
 The duppy could step into a child.  
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;	
-Look across the street to your left at the green fronted convenience store. Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe. 
+Look across the street to your left at the convenience store. Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe. 
 
 Let me know you can see it and just stay there for a moment.</tw-passagedata><tw-passagedata pid="42" name="SC3FX12" tags="nobr" position="225,600" size="100,100">/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC3FX11-1&quot;&gt;&gt;
@@ -1573,7 +1551,8 @@ When next time your here go to Malik’s see how many fruits you can identify. A
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
 Walk ahead until you see a road crossing. Cross over safely and on your left you should see the Congregational Centre.
 
-Let me know when you reached. Look both ways dear.</tw-passagedata><tw-passagedata pid="44" name="SC3FX13" tags="nobr" position="475,600" size="100,100">/* Navigation options */
+Let me know when you reached. Look both ways dear.</tw-passagedata><tw-passagedata pid="44" name="SC3FX13" tags="nobr" position="475,600" size="100,100">/* TODO AUDIO NOT AUTOPLAYING  */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC3FX12&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC3FX13&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC4FX15&quot;&gt;&gt;
@@ -1640,7 +1619,8 @@ Ahem
 
 Now walk ahead and turn on Newton street and walk to the end of Newton Street.
 
-Let me know when you reached.</tw-passagedata><tw-passagedata pid="46" name="SC4FX15" tags="nobr" position="725,600" size="100,100">/* Navigation options */
+Let me know when you reached.</tw-passagedata><tw-passagedata pid="46" name="SC4FX15" tags="nobr" position="725,600" size="100,100">/* TODO AUDIO NOT AUTOPLAYING  */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC3FX13&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC4FX15&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC4FX16&quot;&gt;&gt;
@@ -1707,8 +1687,9 @@ After the Blitz, this area was never the same.
 
 It wasn’t just the bombing. After what they went through English working class wanted more. A better life, so they moved or were moved to Hartcliffe, Knowle, Southmead.  
 
-They were leaving before Mumma and Dad arrived.</tw-passagedata><tw-passagedata pid="48" name="SC4FX16" tags="nobr" position="975,600" size="100,100">/* SHOWING MAP  */
-/* TODO up tp here, need to confirm if this map need to be deleted  */
+They were leaving before Mumma and Dad arrived.</tw-passagedata><tw-passagedata pid="48" name="SC4FX16" tags="nobr" position="975,600" size="100,100">/* TODO AUDIO NOT AUTOPLAYING  */
+/* SHOWING MAP  */
+
 
 /* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC4FX15&quot;&gt;&gt;
@@ -1734,13 +1715,11 @@ They were leaving before Mumma and Dad arrived.</tw-passagedata><tw-passagedata 
 &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene4.1_FX16.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
-   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
-
+  &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;include &quot;headersimple&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;&lt;img src=&quot;assets/img/MAP3.jpeg&quot; alt=&quot;map &quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
-&lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;timed 4s&gt;&gt;
@@ -1762,11 +1741,7 @@ They were leaving before Mumma and Dad arrived.</tw-passagedata><tw-passagedata 
     &lt;&lt;button &quot;Reached the Peel Street Green Space&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-      &lt;div class=&quot;menu-wrapper&quot;&gt;
-    &lt;&lt;button &quot;Reached the Peel Street Green Space&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
-    &lt;/div&gt;
-   &lt;&lt;/append&gt;&gt;
+ 
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
@@ -1864,7 +1839,7 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="52" name="SC5FX
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 41s&gt;&gt;
+&lt;&lt;timed 39s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;Got it&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -2038,12 +2013,10 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.</
 
 &lt;div id=&quot;audioWrapper&quot;&gt;
 &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX22.mp3&quot;&gt;&lt;/audio&gt;
-
 &lt;/div&gt;
 
 &lt;&lt;include &quot;headersimple&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;&lt;img src=&quot;assets/img/MAP4.jpeg&quot; alt=&quot;map &quot;&gt;&lt;/div&gt;
-&lt;br/&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -2063,11 +2036,7 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.</
     &lt;&lt;button &quot;Reached Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-      &lt;div class=&quot;menu-wrapper&quot;&gt;
-    &lt;&lt;button &quot;Reached Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
-    &lt;/div&gt;
-   &lt;&lt;/append&gt;&gt;
+  
 
   &lt;&lt;/timed&gt;&gt;
 
@@ -2143,7 +2112,8 @@ Hurry up Hunter.
 I’m hungry
 
 &lt;span class=&quot;char-name&quot;&gt;Mumma:&lt;/span&gt;
-Let’s go ahead. Continue down Newfoundland Road towards the M32 roundabout. You should see it ahead, a big underpass.</tw-passagedata><tw-passagedata pid="62" name="SC5FX24" tags="nobr" position="225,850" size="100,100">/* Navigation options */
+Let’s go ahead. Continue down Newfoundland Road towards the M32 roundabout. You should see it ahead, a big underpass.</tw-passagedata><tw-passagedata pid="62" name="SC5FX24" tags="nobr" position="225,850" size="100,100">/* TODO AUDIO IS AUTOPLAYING!?  */
+/* Navigation options */
 &lt;&lt;set $prevpass to &quot;SC5FX23&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;SC5FX24&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;SC5FX24.1&quot;&gt;&gt;
@@ -2298,12 +2268,8 @@ You are now walking past some houses, which was where the the Empire Gym used to
 
 &lt;div id=&quot;audioWrapper&quot;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2.mp3&quot;&gt;&lt;/audio&gt;&lt;/div&gt;
 &lt;div id=&quot;audioWrapper2&quot;&gt;&lt;/div&gt;
-
-
-
 &lt;&lt;include &quot;headersimple&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;&lt;img src=&quot;assets/img/MAP5.jpeg&quot; alt=&quot;map&quot;&gt;&lt;/div&gt;
-&lt;br/&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
@@ -2311,28 +2277,23 @@ You are now walking past some houses, which was where the the Empire Gym used to
 &lt;&lt;timed 44s&gt;&gt;
     &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
- 
        &lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Keep walking towards the roundabout underpass ahead,
        &lt;br/&gt;until you come to the entrance to the park, on your left.
        &lt;br/&gt;
        &lt;br/&gt; Turn left through the gate up along the path into St Agnes Park.&lt;/p&gt;&lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
-   &lt;&lt;timed 12s&gt;&gt;&lt;&lt;audio &quot;letme&quot; play&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-
+&lt;&lt;timed 56s&gt;&gt;&lt;&lt;audio &quot;letme&quot; play&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 58s&gt;&gt;
+   /* &lt;&lt;replace &quot;#audioWrapper2&quot;&gt;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3&quot;&gt;&lt;/audio&gt;&lt;&lt;/replace&gt;&gt; */
 
    &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I&#39;m at the park&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-      &lt;div class=&quot;menu-wrapper&quot;&gt;
-    &lt;&lt;button &quot;I&#39;m at the park&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
-    &lt;/div&gt;
-   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 60s&gt;&gt;
   &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
@@ -2369,7 +2330,6 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="68" name="SC5FX
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showTranscriptIcon to true&gt;&gt;
 
-/* TODO THIRD WRONG ANSWER ADVANCES */
 
    &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 
@@ -2468,10 +2428,8 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 &lt;&lt;set $transcriptname to &quot;SC5FX29transcript&quot;&gt;&gt;
 /* --- */
 
-&lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX29.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioWrapper&quot;&gt;&lt;audio id=&quot;audio&quot; autoplay preload=&quot;auto&quot;&gt;&lt;source src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX29.mp3&quot;/&gt;&lt;/audio&gt;&lt;/div&gt;
 
-&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
@@ -2491,7 +2449,11 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="SC5FX29transcript" tags="" position="100,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+/* &lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.play()&gt;&gt;
+&lt;&lt;/done&gt;&gt; */</tw-passagedata><tw-passagedata pid="71" name="SC5FX29transcript" tags="" position="100,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 The junkyard for pickney’ the duppy meant the adventure playground.
 The red lodge where classes and meetings are kept
 Of course the shepherd must be a priest outside St Agnes Church – the stone tower.
