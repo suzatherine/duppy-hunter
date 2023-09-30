@@ -2206,14 +2206,13 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.
 <div id="map" class="hide"><img src="assets/img/MAP4.jpeg" alt="map "></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
-<br/>
 <div id="mount"></div>
 
 <<timed 18s>>
     <<replace "#transcript">><</replace>>
   <<replace "#mount">>
    <div class="explain appear"><p>Turn right after the bridge and you will be on Newfoundland Road.
-   <br/><br/>Cross over safely.</p></div>
+<br/>Cross over safely.</p></div>
    <</replace>>
 <</timed>>
 
@@ -2418,7 +2417,7 @@ Let me know you can see the DIY shop.
    <</replace>>
   <</timed>>
 
-<<timed 70s>>
+<<timed 65s>>
   <<append "#mount">>
     <div class="menu-wrapper">
      <<button "Let's go">><<goto $nextpass>><</button>> 
@@ -2515,10 +2514,13 @@ You are now walking past some houses, which was where the the Empire Gym used to
        <br/> Turn left through the gate up along the path into St Agnes Park.</p></div>
    <</replace>>
 <</timed>>
-
+<<timed 53s>>
+    <<audio "letme" play>>
+  <</timed>>
 <<timed 56s>>
-  <<audio "onb" loop "play" >>
-<<audio "letme" "play">>
+
+  <<audio "onb" loop play >>
+
    <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "I'm at the park">><<goto $nextpass>><</button>> 
@@ -2554,69 +2556,7 @@ Keep walking towards the roundabout underpass ahead, until you come to the entra
 Let me know when you reach.
 
 
-:: SC5FX24.2-M [nobr]
 
-/* Navigation options */
-<<set $prevpass to "SC5FX24.2">>
-<<set $passage to "SC5FX24.2-M">>
-<<set $nextpass to "SC5FX26">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to false>>
-
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "">>
-/* --- */
-   <<audio ":all" "stop" >>
-
-
-<<include "headersimple">><main class="general">
-<div id="map"></div>
-<div id="transcript"></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 1s>>
-  <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
-  <<replace "#map">>
-  
-     <img src="assets/img/MAP5.jpeg" alt="">
-     <br/>
-     <br/>
-      <div class="explain appear"><p>Keep walking towards the roundabout underpass ahead,
-       <br/>until you come to the entrance to the park, on your left.
-       <br/>
-       <br/> Turn left through the gate up along the path into St Agnes Park.</p></div>
-   <</replace>>
-  
-<</timed>>
-
-<<timed 2s>>
-  <<audio "onb" loop "play" >>
-  <<replace "#audioText">>
-      <div class="menu-wrapper">
-    <<button "I'm at the park">><<goto $nextpass>><</button>> 
-    </div>
-   <</replace>>
-    <<append "#map">>
-      <div class="menu-wrapper">
-    <<button "I'm at the park">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-</main>
-<<include "footer">>
 
 
 :: SC5FX26 [nobr]
