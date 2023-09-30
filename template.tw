@@ -338,6 +338,8 @@ setup.backFive = () => {
          /* If audio is playing  */
           <<set $fn to setup.pause()>>
              /* pause audio  */
+             /* also pause any cache audio  */
+            <<audio ":all" "stop" >>
           <<set $playToggle to false>>
                  /* Set playing variable to false  */
           <<removeclass "#playpause" "playhighlight">>
@@ -608,7 +610,7 @@ setup.backFive = () => {
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -650,7 +652,7 @@ setup.backFive = () => {
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -712,7 +714,7 @@ If you can hear me then you are ready to start.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -771,7 +773,7 @@ If so look at your phone and let me know and push the button to get going.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -825,7 +827,7 @@ There might be some choices you have to make so when I ask you to, take out your
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -893,7 +895,7 @@ Look at your phone and let me know.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -920,7 +922,7 @@ Look at your phone and let me know.
 
 
 /* <<timed 16s>>
-  <<audio "mapappear" "play">>
+  <<audio "mapappear" play>>
 <</timed>>
 <<timed 16.2s>>
    <<replace "#map">>
@@ -968,7 +970,7 @@ Let me know when you reach.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1029,7 +1031,7 @@ Let me know when you reach.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1085,7 +1087,7 @@ All clear? Let me know.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1143,7 +1145,7 @@ Turn around and look behind you at the Church.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1230,7 +1232,7 @@ Facety. Let’s carry on, push next on your phone.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1309,7 +1311,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1360,7 +1362,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.
 
 
 <<timed 52s>>
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Next">><<goto $nextpass>><</button>> 
@@ -1394,7 +1396,7 @@ When you’ve exited Trinity and turned right – let me know you are walking do
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1437,7 +1439,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 
 <<timed 135s>>
   <<audio ":all" "stop" >>
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached Stapleton Road">><<goto $nextpass>><</button>> 
@@ -1517,7 +1519,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1595,7 +1597,7 @@ Let me know you can see it and just stay there for a moment.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1631,7 +1633,7 @@ Let me know you can see it and just stay there for a moment.
 
 <<timed 50s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "Reached the Congregational Centre">><<goto $nextpass>><</button>> 
@@ -1684,7 +1686,7 @@ Let me know when you reached. Look both ways dear.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1760,7 +1762,7 @@ Let me know when you reached.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1838,7 +1840,7 @@ They were leaving before Mumma and Dad arrived.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1877,7 +1879,7 @@ They were leaving before Mumma and Dad arrived.
 
 
 <<timed 16s>>
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached the Peel Street Green Space">><<goto $nextpass>><</button>> 
@@ -1916,7 +1918,7 @@ Remember I need you.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -1950,7 +1952,7 @@ Remember I need you.
    <</replace>>
   <</timed>>
 <<timed 33s>>
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
   <<replace "#mount">>
     <div class="menu-wrapper">
      <<button "I'm on the bridge">><<goto $nextpass>><</button>> 
@@ -1979,7 +1981,7 @@ Let me know when you reach.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2033,7 +2035,7 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2058,7 +2060,7 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 <div id="mount"></div>
 
 <<timed 17s>>
-   <<audio "onb" loop "play" >>
+   <<audio "onb" loop play>>
   <<replace "#mount">>
     <div class="menu-wrapper">
      <<button "Done">><<goto $nextpass>><</button>> 
@@ -2093,7 +2095,7 @@ When you done, let’s move on.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2133,7 +2135,7 @@ When you done, let’s move on.
 
 <<timed 73s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
   <<append "#mount">>
     <div class="menu-wrapper">
      <<button "I'm at the end of the bridge">><<goto $nextpass>><</button>> 
@@ -2183,7 +2185,7 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2218,7 +2220,7 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.
 
 <<timed 24s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached Newfoundland Road">><<goto $nextpass>><</button>> 
@@ -2268,7 +2270,7 @@ Turn right after the bridge and you will be on Newfoundland Road - cross over sa
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2330,7 +2332,7 @@ Let’s go ahead. Continue down Newfoundland Road towards the M32 roundabout. Yo
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2385,7 +2387,7 @@ Let me know you can see the DIY shop.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2478,7 +2480,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2490,14 +2492,15 @@ You are now walking past some houses, which was where the the Empire Gym used to
 /* <<set $transcript to false>> */
 <<set $transcriptname to "SC5FX24.2transcript">>
 /* --- */
+<<audio ":all" "stop" >>
 
-<div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2.mp3"></audio>
+<div id="audioWrapper"><audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2.mp3"></audio></div>
+<div id="audioWrapper2"></div>
 
-</div>
+
 
 <<include "headersimple">><main class="general">
-<div id="map" class="hide"><img src="assets/img/MAP5.jpeg" alt="map "></div>
+<div id="map" class="hide"><img src="assets/img/MAP5.jpeg" alt="map"></div>
 <br/>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -2505,7 +2508,6 @@ You are now walking past some houses, which was where the the Empire Gym used to
 
 <<timed 44s>>
     <<replace "#transcript">><</replace>>
-
   <<replace "#mount">>
  
        <div class="explain appear"><p>Keep walking towards the roundabout underpass ahead,
@@ -2513,13 +2515,11 @@ You are now walking past some houses, which was where the the Empire Gym used to
        <br/>
        <br/> Turn left through the gate up along the path into St Agnes Park.</p></div>
    <</replace>>
+   <<timed 12s>><<audio "letme" play>><</timed>>
 <</timed>>
-<<timed 53s>>
-    <<audio "letme" play>>
-  <</timed>>
-<<timed 56s>>
 
-  <<audio "onb" loop play >>
+
+<<timed 58s>>
 
    <<replace "#audioText">>
       <div class="menu-wrapper">
@@ -2532,6 +2532,9 @@ You are now walking past some houses, which was where the the Empire Gym used to
     </div>
    <</append>>
 <</timed>>
+<<timed 60s>>
+  <<audio "onb" loop play>>
+  <</timed>>
 
 </main>
 <<include "footer">>
@@ -2568,7 +2571,7 @@ Let me know when you reach.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2611,17 +2614,17 @@ Let me know when you reach.
             <div id="result"></div>
             <div class="menu-wrapper">
             <<button "The stone tower overlooking the green">>
-              <<audio "correct" "play">>
+              <<audio "correct" play>>
             <<replace "#result">>Correct.<</replace>>
-            <<timed 0.1s>>
+            <<timed 1s>>
                 <<goto $nextpass>>
             <</timed>>
         <</button>> 
         <<button "The junkyard castle ruled by pickney">>
           <<replace "#result">>That's not right.<</replace>>
-          <<audio "mummano" "play">>
+          <<audio "mummano" play>>
         <<timed 2s>>
-          <<audio "duppyno2" "play">>
+          <<audio "duppyno2" play>>
           <</timed>>
           <<timed 4s>>
             <<replace "#result">><</replace>>
@@ -2629,9 +2632,9 @@ Let me know when you reach.
         <</button>> 
         <<button "In the lodge about to start a machine.">>
             <<replace "#result">>That's not right.<</replace>>
-          <<audio "mummano" "play">>
+          <<audio "mummano" play>>
         <<timed 2s>>
-          <<audio "duppyno" "play">>
+          <<audio "duppyno" play>>
           <</timed>>
           <<timed 4s>>
             <<replace "#result">><</replace>>
@@ -2672,7 +2675,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2743,7 +2746,7 @@ What if he’s taken the priest ?
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2767,6 +2770,9 @@ What if he’s taken the priest ?
 <div class="duppy-img-container appear"><img src="assets/img/duppydetector.jpg" alt="The Duppy Detector - an archaic oil lamp with a super radiance" id="detector"/></div>
 <br/>
 <div id="mount"></div>
+<<timed 0.1s>>
+  <<replace "#audioWrapper">><audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3"></audio><</replace>>
+  <</timed>>
   <<timed 2s>>
     <<addclass "#detector" "pulse">>
   <</timed>>
@@ -2781,7 +2787,8 @@ What if he’s taken the priest ?
 
 </main>
 <<include "footer">>
-
+<<done>><<set $s to setup.play()>>
+<</done>>
 :: SC5FX30transcript 
 
 <span class="char-name">Josie:</span>
@@ -2801,7 +2808,7 @@ Let me know the salt is in yer hand ready!
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2850,7 +2857,7 @@ Let me know the salt is in yer hand ready!
     <<set $codeword to $codeword.toUpperCase()>>
     /% CODEWORD CORRECT %/
     <<if $codeword isnot "" and $codeword is "I AM A DUPPY HUNTER" or $attempts is 2>>
-       <<audio "correct" "play">>
+       <<audio "correct" play>>
     <<replace ".code-input">> 
         <<textbox "$codeword" "I AM A DUPPY HUNTER">>
     <</replace>>   
@@ -2859,7 +2866,7 @@ Let me know the salt is in yer hand ready!
     <</if>>
       /% CODEWORD INCORRECT %/
       <<if $codeword isnot "" and $codeword is not "I AM A DUPPY HUNTER" and $attempts lt 2>>
-      <<audio "duppyno3" "play">>
+      <<audio "duppyno3" play>>
       <<replace "#result">>Thats not right.<</replace>>
       <<set $attempts += 1 >>
       <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
@@ -2928,7 +2935,7 @@ If you can't work it out, the hunt can't continue.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -2962,8 +2969,8 @@ If you can't work it out, the hunt can't continue.
 
 <<timed 46s>>
 
-  <<audio "onb" loop "play" >>
-  <<audio "carry" "play">>
+  <<audio "onb" loop play>>
+  <<audio "carry" play>>
   <<append "#mount">>
     <div class="menu-wrapper">
      <<button "Finished">><<goto $nextpass>><</button>> 
@@ -3002,7 +3009,7 @@ Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you rea
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3096,7 +3103,7 @@ Burden.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3180,7 +3187,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>  
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3221,7 +3228,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
         <div id="result"></div>
         <div class="menu-wrapper">
         <<button "a) Good Jim’s Magnolia Inn">>
-          <<audio "correct" "play">>
+          <<audio "correct" play>>
         <<replace "#result">>Correct.<</replace>>
         <<timed 0.1s>>
             <<goto $nextpass>>
@@ -3229,9 +3236,9 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
     <</button>> 
     <<button "b) Falafel Palais">>
       <<replace "#result">>That's not right.<</replace>>
-      <<audio "mummano" "play">>
+      <<audio "mummano" play>>
      <<timed 2s>>
-      <<audio "duppyno2" "play">>
+      <<audio "duppyno2" play>>
       <</timed>>
        <<timed 4s>>
         <<replace "#result">><</replace>>
@@ -3239,9 +3246,9 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
     <</button>> 
     <<button "c) The Big Palm Tree">>
         <<replace "#result">>That's not right.<</replace>>
-      <<audio "mummano" "play">>
+      <<audio "mummano" play>>
      <<timed 2s>>
-      <<audio "duppyno" "play">>
+      <<audio "duppyno" play>>
       <</timed>>
        <<timed 4s>>
         <<replace "#result">><</replace>>
@@ -3271,7 +3278,7 @@ Another riddle to solve – have a look aroud you -check your phone.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3290,7 +3297,6 @@ Another riddle to solve – have a look aroud you -check your phone.
 <audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX35.mp3"></audio>
 
 </div>
-
 <<include "header">><main class="general">
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
@@ -3306,7 +3312,7 @@ Another riddle to solve – have a look aroud you -check your phone.
 
 <<timed 140s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -3404,7 +3410,7 @@ Turn right and cross over the road, turn right again and pass Ludlow close and y
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3426,7 +3432,7 @@ Turn right and cross over the road, turn right again and pass Ludlow close and y
 <div id="mount"></div>
 
 <<timed 1s>>
-  <<audio "mapappear" "play">>
+  <<audio "mapappear" play>>
   <<replace "#map">>
      <img src="assets/img/MAP6.jpeg" alt="map to centre of the green">
       <br/>
@@ -3465,7 +3471,7 @@ We need to speed up.   */
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3525,7 +3531,7 @@ That will be too easy he he.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3567,9 +3573,9 @@ That will be too easy he he.
         <div class="menu-wrapper">
         <<button "a) Perched in a tree along the green">>
         <<replace "#result">>That's not right.<</replace>>
-        <<audio "mummano" "play">>
+        <<audio "mummano" play>>
       <<timed 2s>>
-      <<audio "duppyno3" "play">>
+      <<audio "duppyno3" play>>
       <</timed>>
        <<timed 4s>>
         <<replace "#result">><</replace>>
@@ -3577,16 +3583,16 @@ That will be too easy he he.
     <</button>> 
     <<button "b) The window where the hungry go to fill them belly">>
       <<replace "#result">>That's not right.<</replace>>
-      <<audio "mummano" "play">>
+      <<audio "mummano" play>>
      <<timed 2s>>
-      <<audio "duppyno2" "play">>
+      <<audio "duppyno2" play>>
       <</timed>>
        <<timed 4s>>
         <<replace "#result">><</replace>>
       <</timed>>
     <</button>> 
     <<button "c) On a wall between, glass, wood and concrete">>
-      <<audio "correct" "play">>
+      <<audio "correct" play>>
          <<replace "#result">>Correct.<</replace>>
         <<timed 2s>>
             <<goto $nextpass>>
@@ -3617,7 +3623,7 @@ What did the duppy say again. Let’s make and choice and find out where him is.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3677,7 +3683,7 @@ How good is your salt throwing skills? Well, we’ll find out...
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3709,7 +3715,7 @@ How good is your salt throwing skills? Well, we’ll find out...
 
 
 <<timed 108s>>
-  <<audio "next" "play">>
+  <<audio "next" play>>
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "Next">><<goto $nextpass>><</button>> 
@@ -3753,7 +3759,7 @@ Not yet. There’s still time.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3798,7 +3804,7 @@ Stop there and let me know when you reach.</p></div>
 
 <<timed 176s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -3880,7 +3886,7 @@ Stop there and let me know when you reach.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -3910,7 +3916,7 @@ Stop there and let me know when you reach.
 
 <<timed 56s>>
   <<replace "#transcript">><</replace>>
-  <<audio "mapappear" "play">>
+  <<audio "mapappear" play>>
   <<replace "#mount">>
    
       <div class="explain appear"><p>You should be at the top of the park. Face towards it and go down the path. 
@@ -3924,7 +3930,7 @@ On your right there should be an entrance into the park.
 
 <<timed 70s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
     <<append "#mount">>
       <div class="menu-wrapper">
     <<button "I’m here">><<goto $nextpass>><</button>> 
@@ -3967,7 +3973,7 @@ Let me know when you reach.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4005,9 +4011,9 @@ Let me know when you reach.
         <div class="menu-wrapper">
         <<button "a) Tree">>
            <<replace "#result">>That's not right.<</replace>>
-      <<audio "mummano" "play">>
+      <<audio "mummano" play>>
      <<timed 2s>>
-      <<audio "duppyno2" "play">>
+      <<audio "duppyno2" play>>
       <</timed>>
        <<timed 4s>>
         <<replace "#result">><</replace>>
@@ -4015,9 +4021,9 @@ Let me know when you reach.
     <</button>> 
     <<button "b) Stone">>
       <<replace "#result">>That's not right.<</replace>>
-      <<audio "mummano" "play">>
+      <<audio "mummano" play>>
      <<timed 2s>>
-      <<audio "duppyno3" "play">>
+      <<audio "duppyno3" play>>
       <</timed>>
        <<timed 4s>>
         <<replace "#result">><</replace>>
@@ -4025,7 +4031,7 @@ Let me know when you reach.
     <</button>> 
     <<button "c) Steel">>
 
-       <<audio "correct" "play">>
+       <<audio "correct" play>>
          <<replace "#result">>Correct.<</replace>>
         <<timed 0.1s>>
             <<goto $nextpass>>
@@ -4066,7 +4072,7 @@ c) steel
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4126,7 +4132,7 @@ Just wait by the statue. I’ll be able to tell.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4177,7 +4183,7 @@ Just wait by the statue. I’ll be able to tell.
 <<set $codeword to $codeword.toUpperCase()>>
 /% CODEWORD CORRECT %/
 <<if $codeword isnot "" and $codeword is "JOSIE" or $attempts is 2>>
-   <<audio "correct" "play">>
+   <<audio "correct" play>>
     <<replace ".code-input">> 
         <<textbox "$codeword" "JOSIE">>
     <</replace>>   
@@ -4186,7 +4192,7 @@ Just wait by the statue. I’ll be able to tell.
 <</if>>
   /% CODEWORD INCORRECT %/
   <<if $codeword isnot "" and $codeword is not "JOSIE">>
-    <<audio "duppyno2" "play">>
+    <<audio "duppyno2" play>>
   <<replace "#result">>Thats not right.<</replace>>
    <<set $attempts += 1 >>
   <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
@@ -4226,7 +4232,7 @@ If we can’t work it out, the Hunt can’t continue.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4270,7 +4276,7 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
 
   <<timed 136s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
     <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -4347,7 +4353,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4412,7 +4418,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 
 <<timed 200s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
     <<replace "#transcript">><</replace>>
     <<append "#mount">>
       <div class="menu-wrapper">
@@ -4534,7 +4540,7 @@ Push next on your phone to carry on.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4579,7 +4585,7 @@ Past the traffic lights, you will see the lock up Ajaxx shop front.
 
     <<timed 19s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
  <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -4618,7 +4624,7 @@ Look out for the sign that has the words 7th Day.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4715,7 +4721,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4759,7 +4765,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.
   <</timed>>
 <<timed 68s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
      <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -4817,7 +4823,7 @@ Let’s move on, walk ahead until you reach Brigstocke road, the first left and 
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4855,7 +4861,7 @@ Let’s move on, walk ahead until you reach Brigstocke road, the first left and 
 
 <<timed 60s>>
 
-  <<audio "onb" loop "play" >>
+  <<audio "onb" loop play>>
   <<append "#mount">>
         <div class="menu-wrapper">
     <<button "I've crossed">><<goto $nextpass>><</button>> 
@@ -4892,7 +4898,7 @@ Cross over safely.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -4963,7 +4969,7 @@ No Blacks, Dogs and Irish and she took down her sign till I use obeah to turn he
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -5082,7 +5088,7 @@ An Irish playwright goaled – Oscar Wilde.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -5151,7 +5157,7 @@ Walk ahead and turn on your first left onto Wilder Street and walk until you see
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -5188,9 +5194,9 @@ Walk ahead and turn on your first left onto Wilder Street and walk until you see
       <div class="menu-wrapper">
       <<button "a) Sitting in a garden shop window among the leaves">>
         <<replace "#result">>That's not right.<</replace>>
-        <<audio "mummano" "play">>
+        <<audio "mummano" play>>
         <<timed 2s>>
-          <<audio "duppyno3" "play">>
+          <<audio "duppyno3" play>>
         <</timed>>
         <<timed 4s>>
           <<replace "#result">><</replace>>
@@ -5198,16 +5204,16 @@ Walk ahead and turn on your first left onto Wilder Street and walk until you see
       <</button>> 
       <<button "b)  Inside the carpark">>
         <<replace "#result">>That's not right.<</replace>>
-        <<audio "mummano" "play">>
+        <<audio "mummano" play>>
         <<timed 2s>>
-          <<audio "duppyno" "play">>
+          <<audio "duppyno" play>>
         <</timed>>
         <<timed 4s>>
           <<replace "#result">><</replace>>
         <</timed>>
     <</button>> 
     <<button "c) Looking down from above One Love...">>
-        <<audio "correct" "play">>
+        <<audio "correct" play>>
       <<replace "#result">>Correct<</replace>>
       <<timed 0.1s>>
         <<goto $nextpass>>
@@ -5265,7 +5271,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -5341,7 +5347,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
       <<set $codeword to $codeword.toUpperCase()>>
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "MY MUMMA IS A CLAART" or $attempts is 2>>
-        <<audio "correct" "play">>
+        <<audio "correct" play>>
          <<replace ".code-input">> 
         <<textbox "$codeword" "MY MUMMA IS A CLAART">>
     <</replace>>   
@@ -5350,7 +5356,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
       <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "MY MUMMA IS A CLAART">>
-          <<audio "duppyno2" "play">>
+          <<audio "duppyno2" play>>
         <<replace "#result">>Thats not right.<</replace>>
          <<set $attempts += 1 >>
         <<timed 1.5s>><<replace "#result">><</replace>><</timed>>
@@ -5428,7 +5434,7 @@ Josie is trying to get back. She’s scrambled but she’s trying. I knew she wo
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -5527,7 +5533,7 @@ They could grind all week and then go out dressed like Minaj.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to true>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -5564,8 +5570,8 @@ They could grind all week and then go out dressed like Minaj.
 <</timed>>
 
 <<timed 51s>>
-  <<audio "onb" loop "play" >>
-  <<audio "letme" "play">>
+  <<audio "onb" loop play>>
+  <<audio "letme" play>>
   <<replace "#audioText">>
       <div class="menu-wrapper">
     <<button "Reached">><<goto $nextpass>><</button>> 
@@ -5616,7 +5622,7 @@ At the entrance by the red telephone box, find a place to sit and get your bottl
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -5676,7 +5682,7 @@ He was always forgetting his keys. Leroy thought he was in trouble –but no. He
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>
@@ -5821,7 +5827,7 @@ Look at your phone. Press reached when you have found it.
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
 <<set $showMap to false>>
 <<set $showReplay to true>>
 <<set $showForwards to true>>

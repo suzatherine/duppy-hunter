@@ -386,6 +386,8 @@ setup.backFive = () => {
          /* If audio is playing  */
           &lt;&lt;set $fn to setup.pause()&gt;&gt;
              /* pause audio  */
+             /* also pause any cache audio  */
+            &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
           &lt;&lt;set $playToggle to false&gt;&gt;
                  /* Set playing variable to false  */
           &lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
@@ -619,7 +621,7 @@ setup.backFive = () => {
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -657,7 +659,7 @@ setup.backFive = () => {
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -711,7 +713,7 @@ If you can hear me then you are ready to start.</tw-passagedata><tw-passagedata 
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -763,7 +765,7 @@ If so look at your phone and let me know and push the button to get going.</tw-p
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -810,7 +812,7 @@ There might be some choices you have to make so when I ask you to, take out your
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -872,7 +874,7 @@ Look at your phone and let me know.</tw-passagedata><tw-passagedata pid="24" nam
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -899,7 +901,7 @@ Look at your phone and let me know.</tw-passagedata><tw-passagedata pid="24" nam
 
 
 /* &lt;&lt;timed 16s&gt;&gt;
-  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; play&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 16.2s&gt;&gt;
    &lt;&lt;replace &quot;#map&quot;&gt;&gt;
@@ -940,7 +942,7 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="26" name="SC1FX
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -994,7 +996,7 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="28" name="SC1FX
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1042,7 +1044,7 @@ All clear? Let me know.</tw-passagedata><tw-passagedata pid="30" name="SC1FX8" t
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1092,7 +1094,7 @@ Turn around and look behind you at the Church.</tw-passagedata><tw-passagedata p
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1171,7 +1173,7 @@ Facety. Let’s carry on, push next on your phone.</tw-passagedata><tw-passageda
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1243,7 +1245,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.</tw-passageda
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1294,7 +1296,7 @@ Newfoundland Road? Before the roundabout. I know where that it is.</tw-passageda
 
 
 &lt;&lt;timed 52s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1320,7 +1322,7 @@ When you’ve exited Trinity and turned right – let me know you are walking do
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1363,7 +1365,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 
 &lt;&lt;timed 135s&gt;&gt;
   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached Stapleton Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1431,7 +1433,7 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1499,7 +1501,7 @@ Let me know you can see it and just stay there for a moment.</tw-passagedata><tw
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1535,7 +1537,7 @@ Let me know you can see it and just stay there for a moment.</tw-passagedata><tw
 
 &lt;&lt;timed 50s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached the Congregational Centre&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1578,7 +1580,7 @@ Let me know when you reached. Look both ways dear.</tw-passagedata><tw-passageda
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1645,7 +1647,7 @@ Let me know when you reached.</tw-passagedata><tw-passagedata pid="46" name="SC4
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1715,7 +1717,7 @@ They were leaving before Mumma and Dad arrived.</tw-passagedata><tw-passagedata 
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1754,7 +1756,7 @@ They were leaving before Mumma and Dad arrived.</tw-passagedata><tw-passagedata 
 
 
 &lt;&lt;timed 16s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached the Peel Street Green Space&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1783,7 +1785,7 @@ Remember I need you.</tw-passagedata><tw-passagedata pid="50" name="SC5FX18" tag
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1817,7 +1819,7 @@ Remember I need you.</tw-passagedata><tw-passagedata pid="50" name="SC5FX18" tag
    &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;I&#39;m on the bridge&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1839,7 +1841,7 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="52" name="SC5FX
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1886,7 +1888,7 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1911,7 +1913,7 @@ It’s time to dig into those pockets and get the fish food. Let her know once y
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;timed 17s&gt;&gt;
-   &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+   &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -1938,7 +1940,7 @@ When you done, let’s move on.</tw-passagedata><tw-passagedata pid="56" name="S
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -1978,7 +1980,7 @@ When you done, let’s move on.</tw-passagedata><tw-passagedata pid="56" name="S
 
 &lt;&lt;timed 73s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;I&#39;m at the end of the bridge&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -2020,7 +2022,7 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.</
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2055,7 +2057,7 @@ Walk across M32 Bridge. And let me know when you are at the end of the bridge.</
 
 &lt;&lt;timed 24s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached Newfoundland Road&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -2094,7 +2096,7 @@ Turn right after the bridge and you will be on Newfoundland Road - cross over sa
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2148,7 +2150,7 @@ Let’s go ahead. Continue down Newfoundland Road towards the M32 roundabout. Yo
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2195,7 +2197,7 @@ Let me know you can see the DIY shop.</tw-passagedata><tw-passagedata pid="64" n
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2280,7 +2282,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2292,14 +2294,15 @@ You are now walking past some houses, which was where the the Empire Gym used to
 /* &lt;&lt;set $transcript to false&gt;&gt; */
 &lt;&lt;set $transcriptname to &quot;SC5FX24.2transcript&quot;&gt;&gt;
 /* --- */
+&lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 
-&lt;div id=&quot;audioWrapper&quot;&gt;
-&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2.mp3&quot;&gt;&lt;/audio&gt;
+&lt;div id=&quot;audioWrapper&quot;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX24.2.mp3&quot;&gt;&lt;/audio&gt;&lt;/div&gt;
+&lt;div id=&quot;audioWrapper2&quot;&gt;&lt;/div&gt;
 
-&lt;/div&gt;
+
 
 &lt;&lt;include &quot;headersimple&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
-&lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;&lt;img src=&quot;assets/img/MAP5.jpeg&quot; alt=&quot;map &quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;&lt;img src=&quot;assets/img/MAP5.jpeg&quot; alt=&quot;map&quot;&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
@@ -2307,7 +2310,6 @@ You are now walking past some houses, which was where the the Empire Gym used to
 
 &lt;&lt;timed 44s&gt;&gt;
     &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
  
        &lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;Keep walking towards the roundabout underpass ahead,
@@ -2315,13 +2317,11 @@ You are now walking past some houses, which was where the the Empire Gym used to
        &lt;br/&gt;
        &lt;br/&gt; Turn left through the gate up along the path into St Agnes Park.&lt;/p&gt;&lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
+   &lt;&lt;timed 12s&gt;&gt;&lt;&lt;audio &quot;letme&quot; play&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 53s&gt;&gt;
-    &lt;&lt;audio &quot;letme&quot; play&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 56s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop play &gt;&gt;
+
+&lt;&lt;timed 58s&gt;&gt;
 
    &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
@@ -2334,6 +2334,9 @@ You are now walking past some houses, which was where the the Empire Gym used to
     &lt;/div&gt;
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 60s&gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="67" name="SC5FX24.2transcript" tags="" position="850,850" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
@@ -2359,7 +2362,7 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="68" name="SC5FX
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2402,17 +2405,17 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="68" name="SC5FX
             &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
             &lt;div class=&quot;menu-wrapper&quot;&gt;
             &lt;&lt;button &quot;The stone tower overlooking the green&quot;&gt;&gt;
-              &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+              &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
             &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
-            &lt;&lt;timed 0.1s&gt;&gt;
+            &lt;&lt;timed 1s&gt;&gt;
                 &lt;&lt;goto $nextpass&gt;&gt;
             &lt;&lt;/timed&gt;&gt;
         &lt;&lt;/button&gt;&gt; 
         &lt;&lt;button &quot;The junkyard castle ruled by pickney&quot;&gt;&gt;
           &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-          &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
         &lt;&lt;timed 2s&gt;&gt;
-          &lt;&lt;audio &quot;duppyno2&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;audio &quot;duppyno2&quot; play&gt;&gt;
           &lt;&lt;/timed&gt;&gt;
           &lt;&lt;timed 4s&gt;&gt;
             &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2420,9 +2423,9 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="68" name="SC5FX
         &lt;&lt;/button&gt;&gt; 
         &lt;&lt;button &quot;In the lodge about to start a machine.&quot;&gt;&gt;
             &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-          &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
         &lt;&lt;timed 2s&gt;&gt;
-          &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;audio &quot;duppyno&quot; play&gt;&gt;
           &lt;&lt;/timed&gt;&gt;
           &lt;&lt;timed 4s&gt;&gt;
             &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2452,7 +2455,7 @@ I’ll bring it up. It’s time to look at your phone and choose the options tha
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2515,7 +2518,7 @@ What if he’s taken the priest ?</tw-passagedata><tw-passagedata pid="72" name=
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2539,6 +2542,9 @@ What if he’s taken the priest ?</tw-passagedata><tw-passagedata pid="72" name=
 &lt;div class=&quot;duppy-img-container appear&quot;&gt;&lt;img src=&quot;assets/img/duppydetector.jpg&quot; alt=&quot;The Duppy Detector - an archaic oil lamp with a super radiance&quot; id=&quot;detector&quot;/&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;replace &quot;#audioWrapper&quot;&gt;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene5_FX30.mp3&quot;&gt;&lt;/audio&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
   &lt;&lt;timed 2s&gt;&gt;
     &lt;&lt;addclass &quot;#detector&quot; &quot;pulse&quot;&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
@@ -2552,7 +2558,9 @@ What if he’s taken the priest ?</tw-passagedata><tw-passagedata pid="72" name=
 &lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="SC5FX30transcript" tags="" position="350,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.play()&gt;&gt;
+&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="SC5FX30transcript" tags="" position="350,975" size="100,100">&lt;span class=&quot;char-name&quot;&gt;Josie:&lt;/span&gt;
 Oh lord do you hear that sound? 
 
 It must mean that a Duppy is close, quick hit the button on your phone to let us know that your eyes are on alert, ears are alert and you have the salt ready, just in case you see it! 
@@ -2566,7 +2574,7 @@ Let me know the salt is in yer hand ready!</tw-passagedata><tw-passagedata pid="
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2615,7 +2623,7 @@ Let me know the salt is in yer hand ready!</tw-passagedata><tw-passagedata pid="
     &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
     /% CODEWORD CORRECT %/
     &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;I AM A DUPPY HUNTER&quot; or $attempts is 2&gt;&gt;
-       &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+       &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
     &lt;&lt;replace &quot;.code-input&quot;&gt;&gt; 
         &lt;&lt;textbox &quot;$codeword&quot; &quot;I AM A DUPPY HUNTER&quot;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;   
@@ -2624,7 +2632,7 @@ Let me know the salt is in yer hand ready!</tw-passagedata><tw-passagedata pid="
     &lt;&lt;/if&gt;&gt;
       /% CODEWORD INCORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;I AM A DUPPY HUNTER&quot; and $attempts lt 2&gt;&gt;
-      &lt;&lt;audio &quot;duppyno3&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;duppyno3&quot; play&gt;&gt;
       &lt;&lt;replace &quot;#result&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
       &lt;&lt;set $attempts += 1 &gt;&gt;
       &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2685,7 +2693,7 @@ If you can&#39;t work it out, the hunt can&#39;t continue.</tw-passagedata><tw-p
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2719,8 +2727,8 @@ If you can&#39;t work it out, the hunt can&#39;t continue.</tw-passagedata><tw-p
 
 &lt;&lt;timed 46s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
-  &lt;&lt;audio &quot;carry&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
+  &lt;&lt;audio &quot;carry&quot; play&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;div class=&quot;menu-wrapper&quot;&gt;
      &lt;&lt;button &quot;Finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -2749,7 +2757,7 @@ Oh. Mr Drummond. The mural of Mr. Drummond on the wall to your left. Can you rea
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2835,7 +2843,7 @@ Burden.</tw-passagedata><tw-passagedata pid="80" name="SC6FX33" tags="nobr" posi
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2911,7 +2919,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;  
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -2952,7 +2960,7 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
         &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
         &lt;&lt;button &quot;a) Good Jim’s Magnolia Inn&quot;&gt;&gt;
-          &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 0.1s&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2960,9 +2968,9 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
     &lt;&lt;/button&gt;&gt; 
     &lt;&lt;button &quot;b) Falafel Palais&quot;&gt;&gt;
       &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
      &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno2&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;duppyno2&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 4s&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2970,9 +2978,9 @@ St Nicolas Street for me was the home of Ms Wynter her family and Tinker man. Mr
     &lt;&lt;/button&gt;&gt; 
     &lt;&lt;button &quot;c) The Big Palm Tree&quot;&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
      &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;duppyno&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 4s&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2993,7 +3001,7 @@ Another riddle to solve – have a look aroud you -check your phone.</tw-passage
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3012,7 +3020,6 @@ Another riddle to solve – have a look aroud you -check your phone.</tw-passage
 &lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene6_FX35.mp3&quot;&gt;&lt;/audio&gt;
 
 &lt;/div&gt;
-
 &lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
 &lt;br/&gt;
@@ -3028,7 +3035,7 @@ Another riddle to solve – have a look aroud you -check your phone.</tw-passage
 
 &lt;&lt;timed 140s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -3119,7 +3126,7 @@ Turn right and cross over the road, turn right again and pass Ludlow close and y
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3141,7 +3148,7 @@ Turn right and cross over the road, turn right again and pass Ludlow close and y
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;timed 1s&gt;&gt;
-  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; play&gt;&gt;
   &lt;&lt;replace &quot;#map&quot;&gt;&gt;
      &lt;img src=&quot;assets/img/MAP6.jpeg&quot; alt=&quot;map to centre of the green&quot;&gt;
       &lt;br/&gt;
@@ -3172,7 +3179,7 @@ We need to speed up.   */</tw-passagedata><tw-passagedata pid="88" name="SC6FX37
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3224,7 +3231,7 @@ That will be too easy he he.</tw-passagedata><tw-passagedata pid="90" name="SC7F
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3266,9 +3273,9 @@ That will be too easy he he.</tw-passagedata><tw-passagedata pid="90" name="SC7F
         &lt;div class=&quot;menu-wrapper&quot;&gt;
         &lt;&lt;button &quot;a) Perched in a tree along the green&quot;&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+        &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
       &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno3&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;duppyno3&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 4s&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -3276,16 +3283,16 @@ That will be too easy he he.</tw-passagedata><tw-passagedata pid="90" name="SC7F
     &lt;&lt;/button&gt;&gt; 
     &lt;&lt;button &quot;b) The window where the hungry go to fill them belly&quot;&gt;&gt;
       &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
      &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno2&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;duppyno2&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 4s&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/button&gt;&gt; 
     &lt;&lt;button &quot;c) On a wall between, glass, wood and concrete&quot;&gt;&gt;
-      &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
          &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 2s&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3307,7 +3314,7 @@ What did the duppy say again. Let’s make and choice and find out where him is.
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3358,7 +3365,7 @@ How good is your salt throwing skills? Well, we’ll find out...</tw-passagedata
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3390,7 +3397,7 @@ How good is your salt throwing skills? Well, we’ll find out...</tw-passagedata
 
 
 &lt;&lt;timed 108s&gt;&gt;
-  &lt;&lt;audio &quot;next&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;audio &quot;next&quot; play&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -3425,7 +3432,7 @@ Not yet. There’s still time.</tw-passagedata><tw-passagedata pid="96" name="SC
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3470,7 +3477,7 @@ Stop there and let me know when you reach.&lt;/p&gt;&lt;/div&gt;
 
 &lt;&lt;timed 176s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -3543,7 +3550,7 @@ Stop there and let me know when you reach.</tw-passagedata><tw-passagedata pid="
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3573,7 +3580,7 @@ Stop there and let me know when you reach.</tw-passagedata><tw-passagedata pid="
 
 &lt;&lt;timed 56s&gt;&gt;
   &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-  &lt;&lt;audio &quot;mapappear&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;audio &quot;mapappear&quot; play&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
    
       &lt;div class=&quot;explain appear&quot;&gt;&lt;p&gt;You should be at the top of the park. Face towards it and go down the path. 
@@ -3587,7 +3594,7 @@ On your right there should be an entrance into the park.
 
 &lt;&lt;timed 70s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I’m here&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -3623,7 +3630,7 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="100" name="SC9F
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3661,9 +3668,9 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="100" name="SC9F
         &lt;div class=&quot;menu-wrapper&quot;&gt;
         &lt;&lt;button &quot;a) Tree&quot;&gt;&gt;
            &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
      &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno2&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;duppyno2&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 4s&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -3671,9 +3678,9 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="100" name="SC9F
     &lt;&lt;/button&gt;&gt; 
     &lt;&lt;button &quot;b) Stone&quot;&gt;&gt;
       &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
      &lt;&lt;timed 2s&gt;&gt;
-      &lt;&lt;audio &quot;duppyno3&quot; &quot;play&quot;&gt;&gt;
+      &lt;&lt;audio &quot;duppyno3&quot; play&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 4s&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -3681,7 +3688,7 @@ Let me know when you reach.</tw-passagedata><tw-passagedata pid="100" name="SC9F
     &lt;&lt;/button&gt;&gt; 
     &lt;&lt;button &quot;c) Steel&quot;&gt;&gt;
 
-       &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+       &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
          &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct.&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 0.1s&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3713,7 +3720,7 @@ c) steel</tw-passagedata><tw-passagedata pid="102" name="SC9FX45" tags="nobr" po
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3766,7 +3773,7 @@ Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3817,7 +3824,7 @@ Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata
 &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
 /% CODEWORD CORRECT %/
 &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;JOSIE&quot; or $attempts is 2&gt;&gt;
-   &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+   &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
     &lt;&lt;replace &quot;.code-input&quot;&gt;&gt; 
         &lt;&lt;textbox &quot;$codeword&quot; &quot;JOSIE&quot;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;   
@@ -3826,7 +3833,7 @@ Just wait by the statue. I’ll be able to tell.</tw-passagedata><tw-passagedata
 &lt;&lt;/if&gt;&gt;
   /% CODEWORD INCORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;JOSIE&quot;&gt;&gt;
-    &lt;&lt;audio &quot;duppyno2&quot; &quot;play&quot;&gt;&gt;
+    &lt;&lt;audio &quot;duppyno2&quot; play&gt;&gt;
   &lt;&lt;replace &quot;#result&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
    &lt;&lt;set $attempts += 1 &gt;&gt;
   &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -3857,7 +3864,7 @@ If we can’t work it out, the Hunt can’t continue.</tw-passagedata><tw-passag
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -3901,7 +3908,7 @@ Go right to the top of the road and walk down Ashley Road. Let me know when you 
 
   &lt;&lt;timed 136s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
     &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -3967,7 +3974,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4032,7 +4039,7 @@ When you see Owen make you raise your water. He was a true champion for the comm
 
 &lt;&lt;timed 200s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
     &lt;&lt;replace &quot;#transcript&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
@@ -4146,7 +4153,7 @@ Push next on your phone to carry on.</tw-passagedata><tw-passagedata pid="110" n
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4191,7 +4198,7 @@ Past the traffic lights, you will see the lock up Ajaxx shop front.
 
     &lt;&lt;timed 19s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
  &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -4218,7 +4225,7 @@ Look out for the sign that has the words 7th Day.</tw-passagedata><tw-passagedat
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4307,7 +4314,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.</tw-passag
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4351,7 +4358,7 @@ Just wait a moment. The Duppy Hunter will decode this one. This time.</tw-passag
   &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 68s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
      &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -4398,7 +4405,7 @@ Let’s move on, walk ahead until you reach Brigstocke road, the first left and 
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4436,7 +4443,7 @@ Let’s move on, walk ahead until you reach Brigstocke road, the first left and 
 
 &lt;&lt;timed 60s&gt;&gt;
 
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
         &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I&#39;ve crossed&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -4463,7 +4470,7 @@ Cross over safely.</tw-passagedata><tw-passagedata pid="118" name="SC11FX54" tag
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4526,7 +4533,7 @@ No Blacks, Dogs and Irish and she took down her sign till I use obeah to turn he
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4636,7 +4643,7 @@ An Irish playwright goaled – Oscar Wilde.</tw-passagedata><tw-passagedata pid=
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4697,7 +4704,7 @@ Walk ahead and turn on your first left onto Wilder Street and walk until you see
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4734,9 +4741,9 @@ Walk ahead and turn on your first left onto Wilder Street and walk until you see
       &lt;div class=&quot;menu-wrapper&quot;&gt;
       &lt;&lt;button &quot;a) Sitting in a garden shop window among the leaves&quot;&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+        &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
         &lt;&lt;timed 2s&gt;&gt;
-          &lt;&lt;audio &quot;duppyno3&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;audio &quot;duppyno3&quot; play&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
         &lt;&lt;timed 4s&gt;&gt;
           &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -4744,16 +4751,16 @@ Walk ahead and turn on your first left onto Wilder Street and walk until you see
       &lt;&lt;/button&gt;&gt; 
       &lt;&lt;button &quot;b)  Inside the carpark&quot;&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;That&#39;s not right.&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;audio &quot;mummano&quot; &quot;play&quot;&gt;&gt;
+        &lt;&lt;audio &quot;mummano&quot; play&gt;&gt;
         &lt;&lt;timed 2s&gt;&gt;
-          &lt;&lt;audio &quot;duppyno&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;audio &quot;duppyno&quot; play&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
         &lt;&lt;timed 4s&gt;&gt;
           &lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/button&gt;&gt; 
     &lt;&lt;button &quot;c) Looking down from above One Love...&quot;&gt;&gt;
-        &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+        &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
       &lt;&lt;replace &quot;#result&quot;&gt;&gt;Correct&lt;&lt;/replace&gt;&gt;
       &lt;&lt;timed 0.1s&gt;&gt;
         &lt;&lt;goto $nextpass&gt;&gt;
@@ -4801,7 +4808,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -4877,7 +4884,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
       &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
       /% CODEWORD CORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;MY MUMMA IS A CLAART&quot; or $attempts is 2&gt;&gt;
-        &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+        &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
          &lt;&lt;replace &quot;.code-input&quot;&gt;&gt; 
         &lt;&lt;textbox &quot;$codeword&quot; &quot;MY MUMMA IS A CLAART&quot;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;   
@@ -4886,7 +4893,7 @@ Another riddle to solve –  look aroud you -check your phone and choose the rig
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;MY MUMMA IS A CLAART&quot;&gt;&gt;
-          &lt;&lt;audio &quot;duppyno2&quot; &quot;play&quot;&gt;&gt;
+          &lt;&lt;audio &quot;duppyno2&quot; play&gt;&gt;
         &lt;&lt;replace &quot;#result&quot;&gt;&gt;Thats not right.&lt;&lt;/replace&gt;&gt;
          &lt;&lt;set $attempts += 1 &gt;&gt;
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#result&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -4955,7 +4962,7 @@ Josie is trying to get back. She’s scrambled but she’s trying. I knew she wo
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to false&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -5042,7 +5049,7 @@ They could grind all week and then go out dressed like Minaj.</tw-passagedata><t
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -5079,8 +5086,8 @@ They could grind all week and then go out dressed like Minaj.</tw-passagedata><t
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 51s&gt;&gt;
-  &lt;&lt;audio &quot;onb&quot; loop &quot;play&quot; &gt;&gt;
-  &lt;&lt;audio &quot;letme&quot; &quot;play&quot;&gt;&gt;
+  &lt;&lt;audio &quot;onb&quot; loop play&gt;&gt;
+  &lt;&lt;audio &quot;letme&quot; play&gt;&gt;
   &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Reached&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -5121,7 +5128,7 @@ At the entrance by the red telephone box, find a place to sit and get your bottl
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -5171,7 +5178,7 @@ He was always forgetting his keys. Leroy thought he was in trouble –but no. He
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
@@ -5307,7 +5314,7 @@ Look at your phone. Press reached when you have found it.</tw-passagedata><tw-pa
 
 /* Footer menu options */
 &lt;&lt;set $passWillShowMapOrInstructions to true&gt;&gt;
-&lt;&lt;set $showAudio to true&gt;&gt;
+&lt;&lt;set $showAudio to true&gt;&gt;   &lt;&lt;audio &quot;:all&quot; &quot;stop&quot; &gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
