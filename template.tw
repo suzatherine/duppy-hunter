@@ -126,7 +126,11 @@ setup.pause = () => {
   }
 
 setup.checkPlaying = () => {
-
+window.addEventListener('unhandledrejection', function(event) {
+  console.log(event.promise); // [object Promise] - the promise that generated the error
+  console.log(event.reason); // Error: Whoops! - the unhandled error object
+                            // and now do something ...
+});
    const audio = document.getElementById("audio");
      console.log("checking if playing", audio)
    if (audio && !audio.paused) {
@@ -2482,7 +2486,6 @@ You are now walking past some houses, which was where the the Empire Gym used to
 <<include "headersimple">><main class="general">
 <div id="map" class="hide"><img src="assets/img/MAP5.jpeg" alt="map"></div>
 <div id="transcript"><<include "duppyTitle">></div>
-<br/>
 <div id="mount"></div>
 
 <<timed 44s>>
@@ -2501,7 +2504,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
    /* <<replace "#audioWrapper2">><audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3"></audio><</replace>> */
 
    <<replace "#audioText">>
-    <<audio "letme" play>>
+
       <div class="menu-wrapper">
     <<button "I'm at the park">><<goto $nextpass>><</button>> 
     </div>

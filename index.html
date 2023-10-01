@@ -206,7 +206,11 @@ setup.pause = () => {
   }
 
 setup.checkPlaying = () => {
-
+window.addEventListener('unhandledrejection', function(event) {
+  console.log(event.promise); // [object Promise] - the promise that generated the error
+  console.log(event.reason); // Error: Whoops! - the unhandled error object
+                            // and now do something ...
+});
    const audio = document.getElementById("audio");
      console.log("checking if playing", audio)
    if (audio && !audio.paused) {
@@ -2287,7 +2291,6 @@ You are now walking past some houses, which was where the the Empire Gym used to
 &lt;&lt;include &quot;headersimple&quot;&gt;&gt;&lt;main class=&quot;general&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;&lt;img src=&quot;assets/img/MAP5.jpeg&quot; alt=&quot;map&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;&lt;include &quot;duppyTitle&quot;&gt;&gt;&lt;/div&gt;
-&lt;br/&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;timed 44s&gt;&gt;
@@ -2306,7 +2309,7 @@ You are now walking past some houses, which was where the the Empire Gym used to
    /* &lt;&lt;replace &quot;#audioWrapper2&quot;&gt;&gt;&lt;audio id=&quot;audio&quot; autoplay src=&quot;https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_FX_Generic_Mumma_LetMeKnowWhenYouReach.mp3&quot;&gt;&lt;/audio&gt;&lt;&lt;/replace&gt;&gt; */
 
    &lt;&lt;replace &quot;#audioText&quot;&gt;&gt;
-    &lt;&lt;audio &quot;letme&quot; play&gt;&gt;
+
       &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;I&#39;m at the park&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
