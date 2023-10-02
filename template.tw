@@ -7,7 +7,7 @@ Ends & Tales
 	"ifid": "F9E39354-F641-4070-8B45-C337A3FDC8C9",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "start",
+	"start": "SC15FX62",
 	"zoom": 0.6
 }
 
@@ -1112,65 +1112,10 @@ Friend, you going to have be brave. I don’t want the duppy detecting my approa
 All clear? Let me know.
 
 
-:: SC1FX8 [nobr]
-/* TODO delete one have create a combo version  */
-/* Navigation options */
-<<set $prevpass to "SC1FX7">>
-<<set $passage to "SC1FX8">>
-<<set $nextpass to "SC1FX9">>
 
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to false>>
-<<set $showAudio to true>>   <<audio ":all" "stop" >>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-
-/* Scene name  */
-<<set $sceneName to "Trinity">>
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "SC1FX8transcript">>
-/* --- */
-  <<audio ":all" "stop" >>
-   <<audio "next" load>>
-  
-<div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX8.mp3"></audio>
-</div>
-
-<<include "header">><main class="general">
-<div id="transcript"><<include "duppyTitle">></div>
-<br/>
-<div id="mount"></div>
-
-
-<<timed 17s>>
- /* <<goto $nextpass>> */
- <<audio "next" play>>
-   <<replace "#mount">>
-<div class="menu-wrapper"> <<button "I can see it">> <<goto $nextpass>><</button>></div>
-   <</replace>>
-<</timed>>
-
-
-</main>
-<<include "footer">>
-
-:: SC1FX8transcript 
-<span class="char-name">Josie:</span>
-
-Oh I should have known. A low signal just means the duppy is at peace. You can’t see them, they're on the other side. 
-
-<span class="char-name">Mumma:</span>
-
-Turn around and look behind you at the Church.
 
 :: SC1FX9combo [nobr]
-/* TODO ADD COMBINED AUDIO */
+
 /* Navigation options */
 <<set $prevpass to "SC1FX7">>
 <<set $passage to "SC1FX9combo">>
@@ -1199,22 +1144,8 @@ Turn around and look behind you at the Church.
 <br/>
 <div id="mount"></div>
 
-/* <<timed 17s>>
- <<button "GO NEXT">> <<goto $nextpass>><</button>>
-<</timed>> */
-<<timed 17s>>
-   <<replace "#audio">>
-      <audio id="audio" autoplay >
-  <source src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene1_FX9.mp3"/></audio>
-   <</replace>>
-   <<timed 2s>>
- 
-    <<set $t to setup.checkPlaying()>>
-    <</timed>>
-<</timed>>
 
-
-<<timed 232s>>
+<<timed 132s>>
   <<replace "#mount">>
         <div class="menu-wrapper">
     <<button "Next">><<goto $nextpass>><</button>> 
@@ -1276,46 +1207,8 @@ Sorry friend, can I call you friend? Sorry for the arguments – the Controller 
 <span class="char-name">Mumma:</span>
 Facety. Let’s carry on, push next on your phone.
 
-:: SC1FX9transcript 
-<span class="char-name">Josie:</span>
-Trinity Hall. Trinity Centre. I knew it looked familiar. This is where I first saw them.  I was playing outside among the graves - back then this garden was a graveyard. It was Sunday, 77 or 78, Dad and his friends were inside converting the Church into a community centre.  
 
-...
 
-I saw them, some sitting, some rocking, some walking back and forth. Couples, friends, together	and alone.  
-
-Fine black lace, top hats, cloth caps and waistcoats. Duppy elders who came back to listen to the echo of a hymn.  
-
-//All things bright and beautiful.  
-All creatures great and small 
-All things wise and wonderful,  
-the Lord God made them all.//
-
-<span class="char-name">Josie:</span>
-One of the last songs sung here before it closed in 76. 
-
-I was so scared but Mumma let me into a secret. I was a obeah woman from a long line of obeah woman born with the power to-  
-
-<span class="char-name">Mumma:</span>
-to see and conquer duppies.  
-
-<span class="char-name">Josie:</span>
-I was going to say that. Controller why are you still here? 
-
-<span class="char-name">Mumma:</span>
-Cause your rusty.  
-
-<span class="char-name">Josie:</span>
-Not as much as you. You so rusty you spirit smell like iron. I’ve got this. 
-
-<span class="char-name">Mumma:</span>
-I’ll be making sure ‘yu have it.’ It’s been a while since you did a hunt after-all.  
-
-<span class="char-name">Josie:</span>
-Sorry friend, can I call you friend? Sorry for the arguments – the Controller is my mother. She’s got issues.  
-
-<span class="char-name">Mumma:</span>
-Facety. Let’s carry on, push next on your phone.
 
 
 :: SC1FX10 [nobr]
@@ -1595,11 +1488,11 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 
 
 :: SC3FX11-1 [nobr]
-/* TODO COMBINE THIS AND NEXT PASSAGE  */
+
 /* Navigation options */
 <<set $prevpass to "SC2FX11">>
 <<set $passage to "SC3FX11-1">>
-<<set $nextpass to "SC3FX12">>
+<<set $nextpass to "SC3FX13combo">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
@@ -1628,11 +1521,22 @@ Once you pass Maliks, it’ll be on the opposite side of the road, don’t cross
 <div id="transcript"><<include "duppyTitle">></div>
 
 <br/>
-<<timed 55s>>
-    <<replace "#transcript">><</replace>>
+
+<<timed 80s>>
+  <<replace "#transcript">><</replace>>
+   <<replace "#mount">>
+<div class="explain appear"><p>  Walk ahead until you see a road crossing.<br/>  Cross over safely and on your left 
+<br/>you should see the Congregational Centre.</p></div>
+<br/>
+   <</replace>>
+  <</timed>>
+
+<<timed 90s>>
+
+  <<audio "onb" loop play>>
   <<append "#mount">>
         <div class="menu-wrapper">
-    <<button "Mi see it">><<goto $nextpass>><</button>> 
+    <<button "Reached the Congregational Centre">><<goto $nextpass>><</button>> 
     </div>
    <</append>>
 <</timed>>
@@ -1658,88 +1562,11 @@ Huh from Irish Catholic, West Indian to East African and Muslim in no time. ‘T
 The duppy could step into a child.  
 
 
-/* TODO POSSIBLE CUT  */
-<span class="char-name">Mumma:</span>	
-Look across the street to your left at the convenience store. Turn to your right and see the green and yellow front of Nadine’s Caribbean Cafe. 
-
-Let me know you can see it and just stay there for a moment.  
-
-
-
-
-:: SC3FX12 [nobr]
-/* TODO COMBINE THIS AND PREV PASSAGE  */
-/* Navigation options */
-<<set $prevpass to "SC3FX11-1">>
-<<set $passage to "SC3FX12">>
-<<set $nextpass to "SC3FX13combo">>
-
-/* Footer menu options */
-<<set $passWillShowMapOrInstructions to true>>
-<<set $showAudio to true>>   <<audio ":all" "stop" >>
-<<set $showMap to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showTranscriptIcon to true>>
-
-/* Scene name  */
-<<set $sceneName to " Stapleton Road">>
-
-/* Transcript options */
-/* <<set $transcript to false>> */
-<<set $transcriptname to "SC3FX12transcript">>
-/* --- */
-  <<audio ":all" "stop" >>
-
-<div id="audioWrapper">
-<audio id="audio" autoplay src="https://www.youhavefoundconey.net/DC/Audio/DuppyHunter_Scene3_FX12.mp3"></audio>
-
-</div>
-
-<<include "header">><main class="general">
-<div id="mount"></div>
-<div id="transcript"><<include "duppyTitle">></div>
-
-<<timed 40s>>
-  <<replace "#transcript">><</replace>>
-   <<replace "#mount">>
-<div class="explain appear"><p>  Walk ahead until you see a road crossing.<br/>  Cross over safely and on your left 
-<br/>you should see the Congregational Centre.</p></div>
-<br/>
-   <</replace>>
-  <</timed>>
-
-<<timed 50s>>
-
-  <<audio "onb" loop play>>
-  <<append "#mount">>
-        <div class="menu-wrapper">
-    <<button "Reached the Congregational Centre">><<goto $nextpass>><</button>> 
-    </div>
-   <</append>>
-<</timed>>
-
-</main>
-<<include "footer">>
-
-
-
-:: SC3FX12transcript 
-/* TODO POSSIBLE CUT  */
-<span class="char-name">Mumma:</span>
-Their jerk chicken is good but mine is excellance. 
-
-<span class="char-name">Josie:</span>
-You mean scandalous: scandously dry. 
-/* TODO POSSIBLE CUT  */
-
 <span class="char-name">Mumma:</span>
 When shops like Malik’s opened up in the 60s it meant West Indian food, cafes, and restaurants, became possible. 
 
 It’s not always plain sailing but we try to get along.
 
- 
 <span class="char-name">Stella:</span>
 Eh you have sal’ fish, gungo, ackee, callaloo, green banana,  
 
@@ -1757,10 +1584,13 @@ Walk ahead until you see a road crossing. Cross over safely and on your left you
 
 Let me know when you reached. Look both ways dear.
 
+
+
+
 :: SC3FX13combo [nobr]
 
 /* Navigation options */
-<<set $prevpass to "SC3FX12">>
+<<set $prevpass to "SC3FX11-1">>
 <<set $passage to "SC3FX13combo">>
 <<set $nextpass to "SC5FX18">>
 
@@ -2584,7 +2414,7 @@ Let me know when you reach.
 
 :: SC5FX26 [nobr]
 /* MULTICHOICE OPTIONS */
-/* TODO AUTOPLAYING NOT WORKING  */
+
 /* Navigation options */
 <<set $prevpass to "SC5FX24.2">>
 <<set $passage to "SC5FX26">>
@@ -5778,7 +5608,7 @@ Look at your phone. Press reached when you have found it.
 /* Navigation options */
 <<set $prevpass to "SC14FX61B">>
 <<set $passage to "SC15FX62">>
-<<set $nextpass to "end">>
+<<set $nextpass to "SC15FX62">>
 
 /* Footer menu options */
 <<set $passWillShowMapOrInstructions to true>>
@@ -5801,13 +5631,25 @@ Look at your phone. Press reached when you have found it.
 </div>
 
 <<include "headerback">><main class="general">
-<div id="map"></div>
 <div id="transcript"><<include "duppyTitle">></div>
 <br/>
 <div id="mount"></div>
 
 <<timed 80s>>
   <<replace "#transcript">><</replace>>
+ <<replace "#mount">>
+ 
+<div class="explain appear final">
+ <<type 100ms>><h2>Thank you </h2><</type>>
+ <br/>
+<p>To late June Young a wonderful artist and mother, and the writer, journalist, broadcaster Ferdinand Dennis, co-founder of Bristol Black Writers Group </p>
+<strong>
+Edson Burton, Writer</strong>
+  </div>
+  <</replace>>
+  <</timed>>
+
+  <<timed 97s>>
    <<replace "#mount">>
 <div class="explain appear">
 <p>Thank you for experiencing Duppy Hunter.</p>
@@ -5820,7 +5662,7 @@ Look at your phone. Press reached when you have found it.
   </div>
 </div>
    <</replace>>
-  <</timed>>
+    <</timed>>
 
 </main>
 <<include "footer">>
@@ -5848,3 +5690,47 @@ Tell next time Mumma- I mean Controller.
 
 
 
+:: end [nobr]
+
+/* Navigation options */
+<<set $prevpass to "SC15FX62">>
+<<set $passage to "end">>
+<<set $nextpass to "end">>
+
+/* Footer menu options */
+<<set $passWillShowMapOrInstructions to false>>
+<<set $showAudio to true>>   <<audio ":all" "stop" >>
+<<set $showMap to false>>
+<<set $showReplay to true>>
+<<set $showForwards to true>>
+<<set $showBackwards to true>>
+<<set $showTranscriptIcon to false>>
+
+
+/* Transcript options */
+/* <<set $transcript to false>> */
+<<set $transcriptname to "">>
+/* --- */
+
+<<audio "onb" play>>
+<<include "headerback">><main class="general">
+
+<br/>
+<div id="mount"></div>
+<<timed 2s>>
+ <<replace "#mount">>
+<div class="explain appear">
+<p>Thank you for experiencing Duppy Hunter.</p>
+<p>Help us make our next event with you even better by telling us what you thought.</p>
+<p>It'll only take 2 minutes...</p>
+
+<br/>
+ <div class="menu-wrapper">
+<a rel="noreferrer" target="_blank" href="https://tamasha.typeform.com/to/by29cYzP" ><button>Let us know</button></a>
+  </div>
+</div>
+   <</replace>>
+  <</timed>>
+
+</main>
+<<include "footer">>

@@ -669,6 +669,17 @@ main.start {
   font-size: 2rem;
 }
 
+.explain.final > .macro-type > h2,
+.explain.final > strong {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.explain.final > strong {
+  font-size: 1.8rem;
+  display: block;
+}
+
 .duppy-img-container {
   max-width: 70%;
   margin: auto;
