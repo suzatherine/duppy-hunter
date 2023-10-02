@@ -116,9 +116,37 @@ h2 {
 
 header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: var(--padding);
+}
+
+header.story > .header-item,
+header > .header-item {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+header > .header-item.audioWarning {
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+header > .header-item.audioWarning > p {
+  margin-bottom: 0;
+  background-color: var(--accent-color-secondary);
+  color: var(--accent-color-secondary);
+  padding: 5px;
+  border-radius: 10px;
+  width: 100%;
+  color: #fffff3;
 }
 
 .header-item > h1 {
@@ -189,6 +217,7 @@ nav {
   color: var(--accent-color-primary);
 }
 
+.nav-item > p > a > img,
 .nav-item > a > img {
   width: 25px;
 }
@@ -539,7 +568,7 @@ main.story.captions {
 
 /* PLAY / PAUSE FOOTER  & HEADER */
 
-header > .titleWrapper {
+header > .header-item > .titleWrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -547,7 +576,7 @@ header > .titleWrapper {
   align-items: center;
 }
 
-header > .titleWrapper > h2 {
+header > .header-item > .titleWrapper > h2 {
   text-align: center;
   max-width: 80%;
   line-height: 3.3rem;
